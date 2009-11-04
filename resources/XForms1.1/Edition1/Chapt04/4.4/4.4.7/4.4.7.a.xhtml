@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xhtml:head>
+    <xhtml:title>4.4.7.a xforms-readwrite event</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+      <xforms:instance id="gen-2">
+	    <car>
+	      <make>Toyota</make>
+	    </car>
+      </xforms:instance>
+	  <xforms:bind nodeset="make" readwrite=".='Honda'" id="gen-3"/>
+	  <xforms:setvalue ref="make" ev:event="xforms-ready" id="gen-4">Honda</xforms:setvalue>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xforms:group id="gen-5">
+    	<xforms:label class="title" id="gen-6">4.4.7.a xforms-readwrite event</xforms:label>
+    </xforms:group>
+    
+    <xforms:group id="gen-7">
+    	<xforms:label id="gen-8">
+	    	You must have seen an xforms-readwrite event message.
+	    </xforms:label>	
+    </xforms:group>
+    
+    <xforms:input ref="make" id="gen-9">
+    	<xforms:label id="gen-10">Car make : </xforms:label>
+    	<xforms:message ev:event="xforms-readwrite" level="modal" id="gen-11">xforms-rewrite event</xforms:message>
+    </xforms:input>
+  </xhtml:body>
+</xhtml:html>

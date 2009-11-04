@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <xhtml:head>
+    <xhtml:title>4.3.6.b navigation sequence with navindex (non-normative)</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+      <xforms:instance id="gen-2">
+        <car>
+        	<make/>
+        	<year/>
+        </car>
+      </xforms:instance>
+      <xforms:bind id="hidden_bind" nodeset="/car/year" relevant="false()"/>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xforms:group id="gen-4">
+    	<xforms:label class="title" id="gen-5">4.3.6.b navigation sequence with navindex (non-normative)</xforms:label>
+    </xforms:group>
+    <xforms:group id="gen-6">
+    	<xforms:label id="gen-7">
+    	    This test case is non-normative and assumes that the navindex attribute is recognized and interpreted 
+    	    as described in section 4.3.6 of the W3C specification. 
+    	    Keyboard users can use the Tab key on the keyboard to move through the naviagation order of the input 
+    	    controls. As you move through
+    	    the page you must be going in the order that the input controls are labeled from the smallest number 
+    	    to the largest. 
+		</xforms:label>	
+   	</xforms:group>
+
+    <xforms:input navindex="14" ref="/car/make" id="gen-8">
+      	<xforms:label id="gen-9">2</xforms:label>
+    </xforms:input>
+
+    <xforms:input navindex="81" ref="/car/make" id="gen-10">
+      	<xforms:label id="gen-11">8</xforms:label>
+    </xforms:input>
+
+    <xforms:input navindex="15" bind="hidden_bind" id="gen-12">
+      	<xforms:label id="gen-13">Hidden-15</xforms:label>
+    </xforms:input>
+
+    <xforms:input navindex="19" ref="/car/make" id="gen-14">
+      	<xforms:label id="gen-15">3</xforms:label>
+    </xforms:input>
+    
+    <xforms:input navindex="78" ref="/car/make" id="gen-16">
+       	<xforms:label id="gen-17">7</xforms:label>
+    </xforms:input>
+    <xforms:input navindex="42" ref="/car/make" id="gen-18">
+       	<xforms:label id="gen-19">5</xforms:label>
+    </xforms:input>
+    <xforms:input navindex="8" ref="/car/make" id="gen-20">
+    	<xforms:label id="gen-21">1</xforms:label>
+    </xforms:input>
+    
+    <xforms:input bind="hidden_bind" id="gen-22">
+      	<xforms:label id="gen-23">Hidden2</xforms:label>
+    </xforms:input>
+    
+    <xforms:input navindex="55" ref="/car/make" id="gen-24">
+      	<xforms:label id="gen-25">6</xforms:label>
+    </xforms:input>
+    
+    <xforms:input navindex="33" ref="/car/make" id="gen-26">
+      	<xforms:label id="gen-27">4</xforms:label>
+    </xforms:input>
+    
+    <xforms:input navindex="99" ref="/car/make" id="gen-28">
+      	<xforms:label id="gen-29">9</xforms:label>
+    </xforms:input>
+    
+    <xforms:input navindex="99" ref="/car/make" id="gen-30">
+      	<xforms:label id="gen-31">10</xforms:label>
+    </xforms:input>
+    
+    <xforms:input navindex="0" ref="/car/make" id="gen-32">
+      	<xforms:label id="gen-33">11</xforms:label>
+    </xforms:input>
+    
+    <xforms:input ref="/car/make" id="gen-34">
+      	<xforms:label id="gen-35">12</xforms:label>
+    </xforms:input>
+	
+  </xhtml:body>
+</xhtml:html>

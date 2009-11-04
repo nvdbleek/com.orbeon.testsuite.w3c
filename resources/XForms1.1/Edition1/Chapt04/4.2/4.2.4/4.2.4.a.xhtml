@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <xhtml:head>
+    <xhtml:title>4.2.4.a xforms-model-destruct dispatched after form submission</xhtml:title>
+  	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+      <xforms:instance id="gen-2">
+	<data>
+	  <tested>false</tested>
+	</data>
+      </xforms:instance>
+      <!-- @if prevents this test from running when this page is closed for other reasons. -->
+      <xforms:load ev:event="xforms-model-destruct" if="boolean-from-string(tested)" resource="http://www.w3.org" show="new" id="gen-3"/>
+      <xforms:submission id="submission" action="http://xformstest.org/cgi-bin/echo.sh" method="post"/>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xforms:group id="gen-5">
+      <xforms:label class="title" id="gen-6">4.2.4.a xforms-model-destruct dispatched after form submission</xforms:label>
+    </xforms:group>
+    <xforms:group id="gen-7">
+      <xforms:label id="gen-8">
+	After activating the Submit trigger the W3C home page must show in a new context. This page will be 
+	replaced by the form data. 
+      </xforms:label>	
+    </xforms:group>
+
+    <xforms:group id="gen-9">
+      <xforms:output ref="tested" id="gen-10">
+	<xforms:label id="gen-11">Tested: </xforms:label>
+      </xforms:output>
+    </xforms:group>
+
+    <xforms:submit submission="submission" id="gen-12">
+      <xforms:label id="gen-13">Submit</xforms:label>
+      <xforms:setvalue ev:event="DOMActivate" ref="tested" id="gen-14">true</xforms:setvalue>
+    </xforms:submit>
+
+    
+  </xhtml:body>
+</xhtml:html>

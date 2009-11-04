@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <xhtml:head>
+        <xhtml:title>11.1.n encoding attribute of submission element</xhtml:title>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xforms:model id="gen-1">
+			<xforms:instance id="gen-2">
+				<carA>
+					<make>Acura</make>
+					<year>2005</year>
+					<color>blue</color>
+				</carA>
+			</xforms:instance>
+			<xforms:instance id="gen-3">
+				<carB>
+					<make>Acura</make>
+					<year>2005</year>
+					<color>blue</color>
+				</carB>
+			</xforms:instance>
+			<xforms:bind id="make_bindA" nodeset="/carA/make"/>
+			<xforms:bind id="year_bindA" nodeset="/carA/year"/>
+			<xforms:bind id="color_bindA" nodeset="/carA/color"/>
+			<xforms:submission id="submitA" action="http://xformstest.org/cgi-bin/echo.sh" method="post"/>
+			<xforms:submission id="submitB" action="http://xformstest.org/cgi-bin/echo.sh" method="post" encoding="ISO-8859-1"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+    	<xforms:group id="gen-9">
+  			<xforms:label class="title" id="gen-10">11.1.n encoding attribute of submission element</xforms:label>
+  		</xforms:group>
+  		<xforms:group id="gen-11">
+  			<xforms:label id="gen-12">
+  			  When you activate the Submit (UTF-8) control you must see the value 
+  			  " encoding="UTF-8" " at the top of the form data. 
+  			  When you activate the Submit (ISO) control you must see the value 
+  			  " encoding="ISO-8859-1" " at the top of the form data. 
+  			</xforms:label>
+  		</xforms:group>
+  		<xforms:submit submission="submitA" id="gen-13">
+  			<xforms:label id="gen-14">Submit (UTF-8)</xforms:label>
+  		</xforms:submit>
+  		<xforms:submit submission="submitB" id="gen-15">
+  			<xforms:label id="gen-16">Submit (ISO)</xforms:label>
+  		</xforms:submit>
+
+    </xhtml:body>
+</xhtml:html>

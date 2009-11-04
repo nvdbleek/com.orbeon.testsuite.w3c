@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<compile>
+		<classpath pathid="saxon.class.path" description="classpath for saxon">
+			<pathelement location="${basedir}/lib/saxon/saxon9.jar"
+				groupid="saxon" version="9" artifactId="saxon" />
+		</classpath>
+	</compile>
+	<test>
+		<!-- Selenium Properties -->
+
+		<selenium>
+			<!-- which browser to use for tests -->
+			<server>
+				<jar>${basedir}/lib/selenium/selenium-server-1.0.1.jar</jar>
+				<server>localhost</server>
+				<port>4444</port>
+				<url>http://localhost:4444/selenium-server/core/index.html</url>
+				<errorsBeginAt>404</errorsBeginAt>
+			</server>
+		</selenium>
+		<!-- home of the tomcat-server which serves testpages -->
+		<tomcat>
+			<home>/Applications/apache-tomcat-6.0.16</home>
+		</tomcat>
+		<orbeon>
+			<baseurl>http://localhost:8080/orbeon-N20091029</baseurl>
+		</orbeon>
+
+		<classpath pathid="test.class.path" description="classpath for compiling web classes">
+			<path refid="test.class.path" />
+			<pathelement path="${basedir}/target/test-classes" />
+			<pathelement
+				location="${basedir}/lib/selenium/selenium-java-client-driver-1.0.1.jar"
+				groupid="org.seleniumhq.selenium" version="1.0.1"
+				artifactId="selenium-java-client-driver" scope="test" />
+			<pathelement location="${basedir}/lib/junit/junit-4.7.jar"
+				groupid="junit" version="4.7" artifactId="junit" scope="test" />
+		</classpath>
+	</test>
+</root>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms">
+	<xhtml:head>
+		<xhtml:title>7.10.4.a context() function</xhtml:title>
+		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+<!--       <xf:model id="myModel">
+>        <xf:instance id="myInstance" xmlns="">
+>          <root>
+>            <fruit>apple</fruit>
+>            <fruit>orange</fruit>
+>            <fruit>mandarine</fruit>
+>            <fruit>tomato</fruit>
+>            <bad-fruit>Unknown</bad-fruit>
+>          </root>
+>        </xf:instance>
+>      </xf:model>
+>      <xf:repeat nodeset="instance('myInstance')/fruit" model="myModel"  
+> id="fruits-repeat">
+>        <xf:trigger>
+>          <xf:label>Pick</xf:label>
+>          <xf:action ev:event="DOMActivate">
+>            <xf:setvalue ref="instance('myInstance')/bad-fruit" value="."/>
+>          </xf:action>
+>        </xf:trigger>
+>      </xf:repeat>
+ -->
+
+		<xforms:model id="gen-1">
+			<xforms:instance id="fruitInstance">
+			    <fruitRoot>
+		            <fruit>apple</fruit>
+		            <fruit>orange</fruit>
+		            <fruit>mandarine</fruit>
+		            <fruit>tomato</fruit>
+		            <bad-fruit>Unknown</bad-fruit>
+				</fruitRoot>
+			</xforms:instance>
+		</xforms:model>
+	</xhtml:head>
+	<xhtml:body>
+	    <xforms:group id="gen-3">
+		    <xforms:label class="title" id="gen-4">
+			7.10.4.a context() function
+		    </xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-5">
+			<xforms:label id="gen-6">
+			  You must initially see the value "Unknown" for the Bad Fruit picked output and 
+			  four triggers labeled "apple", "orange", "mandarine", and "tomato".
+			  When you activate one of these triggers, you 
+			  must see one of these values for the Bad Fruit picked output: "apple", "orange", "mandarine", or "tomato".
+
+			</xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-7">              
+            <xforms:output ref="instance('fruitInstance')/bad-fruit" id="gen-8">
+            	<xforms:label id="gen-9">Bad Fruit picked : </xforms:label>
+            </xforms:output>
+       </xforms:group> 
+		<xforms:group id="gen-10">
+		    <xforms:repeat nodeset="instance('fruitInstance')/fruit" id="fruits-repeat">
+           		<xforms:trigger id="gen-12">
+          			<xforms:label ref="." id="gen-13"/>
+          			<xforms:action ev:event="DOMActivate" id="gen-14">
+            			<xforms:setvalue ref="instance('fruitInstance')/bad-fruit" value="context()" id="gen-15"/>
+          			</xforms:action>
+        		</xforms:trigger>
+     		</xforms:repeat>
+		</xforms:group>				
+	</xhtml:body>
+</xhtml:html>

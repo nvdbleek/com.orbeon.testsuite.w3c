@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+	<xhtml:head>
+		<xhtml:title>6.1.6.a constraint property</xhtml:title>
+		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+		<xforms:model id="gen-1">
+			<xforms:instance id="gen-2">
+				<range>
+					<from>10</from>
+					<to/>
+				</range>
+			</xforms:instance>
+			<xforms:bind nodeset="/range/to" constraint="number(.) &gt; number(/range/from)" id="gen-3"/>
+		</xforms:model>
+	</xhtml:head>
+	<xhtml:body>
+		<xforms:group id="gen-4">
+			<xforms:label class="title" id="gen-5">6.1.6.a constraint property</xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-6">
+			<xforms:label id="gen-7">
+				You must see an xforms-valid message when you activate the Valid Value trigger. 
+				You must see an xforms-invalid message when you activate the Invalid Value trigger. 
+			</xforms:label>
+		</xforms:group>
+		
+		<xforms:input ref="/range/from" id="gen-8">
+			<xforms:label id="gen-9">From </xforms:label>
+		</xforms:input>
+		<xforms:input ref="/range/to" id="gen-10">
+			<xforms:label id="gen-11">To </xforms:label>
+			<xforms:action ev:event="xforms-valid" id="gen-12">
+				<xforms:message level="modal" id="gen-13">xforms-valid</xforms:message>
+    		</xforms:action>
+    		<xforms:action ev:event="xforms-invalid" id="gen-14">
+    			<xforms:message level="modal" id="gen-15">xforms-invalid</xforms:message>
+    		</xforms:action>
+		</xforms:input>
+		
+		<xforms:trigger id="gen-16">
+			<xforms:label id="gen-17">Valid Value</xforms:label>
+			<xforms:setvalue ref="/range/to" ev:event="DOMActivate" id="gen-18">25</xforms:setvalue>
+		</xforms:trigger>
+		
+		<xforms:trigger id="gen-19">
+			<xforms:label id="gen-20">Invalid Value</xforms:label>
+			<xforms:setvalue ref="/range/to" ev:event="DOMActivate" id="gen-21">5</xforms:setvalue>
+		</xforms:trigger>
+		
+	</xhtml:body>
+</xhtml:html>

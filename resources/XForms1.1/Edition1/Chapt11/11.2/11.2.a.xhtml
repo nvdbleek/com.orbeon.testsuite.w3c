@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+  <xhtml:head>
+    <xhtml:title>11.2.a only one concurrent submit per submission element</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="m1">
+       <xforms:instance id="gen-2">       
+          <car>
+          	<make>Toyota</make>
+          	<model>Prius</model>
+          </car>
+       </xforms:instance>
+       <xforms:submission id="submission1" ref="/car/make" method="post" action="http://xformstest.org/cgi-bin/echo.sh" replace="none">
+       		<xforms:action ev:event="xforms-submit" id="gen-4">
+       			<xforms:message level="modal" id="gen-5">xforms-submit</xforms:message>
+       		</xforms:action>
+       		<xforms:action ev:event="xforms-submit-done" id="gen-6">
+       			<xforms:message level="modal" id="gen-7">xforms-submit-done</xforms:message>
+       		</xforms:action>
+       		<xforms:message ev:event="xforms-submit-error" level="modal" id="gen-8">xforms-submit-error</xforms:message>
+       </xforms:submission>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+  	<xforms:group id="gen-9">
+	  	<xforms:label class="title" id="gen-10">11.2.a only one concurrent submit per submission element</xforms:label>
+	</xforms:group>
+	<xforms:group id="gen-11">
+		<xforms:label id="gen-12">
+		  When you activate the Submit Twice submit control, you may see four messages: 
+		  xforms-submit, xforms-submit-done, xforms-submit, and 
+		  xforms-submit-done. You must NOT see an xforms-submit-error message. 
+		</xforms:label>
+	</xforms:group>
+	<xforms:trigger id="gen-13">
+      	<xforms:label id="gen-14">Submit Twice</xforms:label>
+      	<xforms:action ev:event="DOMActivate" id="gen-15">
+      	  <xforms:dispatch name="xforms-submit" targetid="submission1" id="gen-16"/>
+      	  <xforms:dispatch name="xforms-submit" targetid="submission1" id="gen-17"/>
+      	</xforms:action>
+   	</xforms:trigger>
+	
+  </xhtml:body>
+</xhtml:html>

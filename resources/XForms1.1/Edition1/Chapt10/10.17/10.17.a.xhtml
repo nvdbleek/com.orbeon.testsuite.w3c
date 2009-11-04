@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events">
+    <xhtml:head>
+        <xhtml:title>10.17.a conditional execution of XForms actions</xhtml:title>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xforms:model id="mod1">
+            <xforms:instance id="gen-2">
+                <two_table>
+                    <answers>
+                        <one>2</one>
+                        <two>4</two>
+                        <three>6</three>
+                        <four>8</four>
+                        <five>10</five>
+                    </answers>
+                    <user_answers>
+                        <one/>
+                        <two/>
+                        <three/>
+                        <four/>
+                        <five/>
+                    </user_answers>
+                </two_table>
+            </xforms:instance>
+            <xforms:instance id="fb">
+                <feedback>
+                    <feedback_one/>
+                    <feedback_two/>
+                    <feedback_three/>
+                    <feedback_four/>
+                    <feedback_five/>
+                </feedback>
+            </xforms:instance>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-4">
+            <xforms:label class="title" id="gen-5">10.17.a conditional execution of XForms actions</xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-6">
+            <xforms:label id="gen-7">
+              When you activate the Enter Correct Answers trigger you must see numbers appear as answers for the 
+              equations as well as the value "correct" output beside them. 
+              When you activate the Enter Incorrect Answers trigger you must see numbers appear as answers for the 
+              equations as well as the value "incorrect" output beside them. 
+            </xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-8">
+            <xforms:label id="gen-9"/>
+            <xforms:output ref="user_answers/one" id="gen-10">
+                <xforms:label class="hlist" id="gen-11">2 x 1 = </xforms:label>
+            </xforms:output>
+            <xforms:action ev:event="xforms-value-changed" id="gen-12">
+   				<xforms:setvalue ref="instance('fb')/feedback_one" if="user_answers/one != answers/one" id="gen-13">incorrect</xforms:setvalue>
+   				<xforms:setvalue ref="instance('fb')/feedback_one" if="user_answers/one = answers/one" id="gen-14">correct</xforms:setvalue>
+            </xforms:action>
+            <xforms:output ref="instance('fb')/feedback_one" id="gen-15">
+                <xforms:label id="gen-16"/>
+            </xforms:output>
+        </xforms:group>
+        <xforms:group id="gen-17">
+            <xforms:label id="gen-18"/>
+            <xforms:output ref="user_answers/two" id="gen-19">
+                <xforms:label class="hlist" id="gen-20">2 x 2 = </xforms:label>
+            </xforms:output>
+            <xforms:action ev:event="xforms-value-changed" id="gen-21">
+   				<xforms:setvalue ref="instance('fb')/feedback_two" if="user_answers/two != answers/two" id="gen-22">incorrect</xforms:setvalue>
+   				<xforms:setvalue ref="instance('fb')/feedback_two" if="user_answers/two = answers/two" id="gen-23">correct</xforms:setvalue>
+            </xforms:action>
+            <xforms:output ref="instance('fb')/feedback_two" id="gen-24">
+                <xforms:label id="gen-25"/>
+            </xforms:output>
+        </xforms:group>
+        <xforms:group id="gen-26">
+            <xforms:label id="gen-27"/>
+            <xforms:output ref="user_answers/three" id="gen-28">
+                <xforms:label class="hlist" id="gen-29">2 x 3 = </xforms:label>
+            </xforms:output>
+            <xforms:action ev:event="xforms-value-changed" id="gen-30">
+   				<xforms:setvalue ref="instance('fb')/feedback_three" if="user_answers/three != answers/three" id="gen-31">incorrect</xforms:setvalue>
+   				<xforms:setvalue ref="instance('fb')/feedback_three" if="user_answers/three = answers/three" id="gen-32">correct</xforms:setvalue>
+            </xforms:action>
+            <xforms:output ref="instance('fb')/feedback_three" id="gen-33">
+                <xforms:label id="gen-34"/>
+            </xforms:output>
+        </xforms:group>
+        <xforms:group id="gen-35">
+            <xforms:label id="gen-36"/>
+            <xforms:output ref="user_answers/four" id="gen-37">
+                <xforms:label class="hlist" id="gen-38">2 x 4 = </xforms:label>
+            </xforms:output>
+            <xforms:action ev:event="xforms-value-changed" id="gen-39">
+   				<xforms:setvalue ref="instance('fb')/feedback_four" if="user_answers/four != answers/four" id="gen-40">incorrect</xforms:setvalue>
+   				<xforms:setvalue ref="instance('fb')/feedback_four" if="user_answers/four = answers/four" id="gen-41">correct</xforms:setvalue>
+            </xforms:action>
+            <xforms:output ref="instance('fb')/feedback_four" id="gen-42">
+                <xforms:label id="gen-43"/>
+            </xforms:output>
+        </xforms:group>
+        <xforms:group id="gen-44">
+            <xforms:label id="gen-45"/>
+            <xforms:output ref="user_answers/five" id="gen-46">
+                <xforms:label class="hlist" id="gen-47">2 x 5 = </xforms:label>
+            </xforms:output>
+            <xforms:action ev:event="xforms-value-changed" id="gen-48">
+   				<xforms:setvalue ref="instance('fb')/feedback_five" if="user_answers/five != answers/five" id="gen-49">incorrect</xforms:setvalue>
+   				<xforms:setvalue ref="instance('fb')/feedback_five" if="user_answers/five = answers/five" id="gen-50">correct</xforms:setvalue>
+            </xforms:action>
+            <xforms:output ref="instance('fb')/feedback_five" id="gen-51">
+                <xforms:label id="gen-52"/>
+            </xforms:output>
+        </xforms:group>
+        <xforms:group id="gen-53">
+          <xforms:trigger id="gen-54">
+            <xforms:label id="gen-55">Enter Correct Answers</xforms:label>
+              <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/one" id="gen-56">2</xforms:setvalue>
+              <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/two" id="gen-57">4</xforms:setvalue>
+              <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/three" id="gen-58">6</xforms:setvalue>
+              <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/four" id="gen-59">8</xforms:setvalue>
+              <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/five" id="gen-60">10</xforms:setvalue>
+          </xforms:trigger>
+          <xforms:trigger id="gen-61">
+            <xforms:label id="gen-62">Enter Incorrect Answers</xforms:label>
+              <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/one" id="gen-63">0</xforms:setvalue>
+              <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/two" id="gen-64">0</xforms:setvalue>
+              <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/three" id="gen-65">0</xforms:setvalue>
+              <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/four" id="gen-66">0</xforms:setvalue>
+              <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/five" id="gen-67">0</xforms:setvalue>
+          </xforms:trigger>
+        </xforms:group>
+    </xhtml:body>
+</xhtml:html>

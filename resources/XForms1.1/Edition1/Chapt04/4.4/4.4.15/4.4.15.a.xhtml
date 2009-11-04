@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <xhtml:head>
+    <xhtml:title>4.4.15.a xforms-select and xforms-deselect events</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+      <xforms:instance id="gen-2">
+        <selectedCar/>
+      </xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xforms:group id="gen-3">
+    	<xforms:label class="title" id="gen-4">4.4.15.a xforms-select and xforms-deselect events</xforms:label>
+    </xforms:group>
+    <xforms:group id="gen-5">
+    	<xforms:label id="gen-6">  	
+      		You must see an xforms-select message when the value "Subaru" is selected in 
+      		the select control. 
+      		You must see an xforms-deselect message when the value "Subaru" is deselected in 
+      		the select control. 
+      	</xforms:label>	
+    </xforms:group>
+    
+    <xforms:select ref="/selectedCar" id="gen-7">
+      	<xforms:label id="gen-8">Cars</xforms:label>
+        <xforms:item id="gen-9">
+          	<xforms:label id="gen-10">Pinto</xforms:label>
+          	<xforms:value id="gen-11">pin</xforms:value>
+        </xforms:item>
+        <!-- you should see select/deselct messages when this item is selected/deselected -->
+        <xforms:item id="gen-12">
+          	<xforms:label id="gen-13">Subaru</xforms:label>
+          	<xforms:value id="gen-14">sub</xforms:value>
+          	<xforms:action ev:event="xforms-select" id="gen-15">
+          		<xforms:message level="modal" id="gen-16">xforms-select</xforms:message>
+          	</xforms:action>
+          	<xforms:action ev:event="xforms-deselect" id="gen-17">
+          		<xforms:message level="modal" id="gen-18">xforms-deselect</xforms:message>
+          	</xforms:action>
+        </xforms:item>
+    </xforms:select>
+	
+  </xhtml:body>
+</xhtml:html>

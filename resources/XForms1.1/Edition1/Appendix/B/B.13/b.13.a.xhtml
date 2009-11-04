@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <xhtml:head>
+  	<xhtml:title>b.13.a Move Element</xhtml:title>
+  	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+  	<xforms:model id="gen-1">
+	    <xforms:action ev:event="xforms-ready" id="gen-2">
+	        <xforms:insert context="playlist[2]" nodeset="track" origin="../playlist[1]/track[2]" id="gen-3"/>
+	        <xforms:delete nodeset="playlist[1]/track[2]" id="gen-4"/>
+	  	</xforms:action>
+  		<xforms:instance id="gen-5">
+  			<library>
+  				<playlist>
+  					<name>Music for Airports</name>
+  					<track id="382"/>
+  					<track id="461"/>
+  					<track id="629"/>
+  				</playlist>
+  				<playlist>
+  					<name>Lullabies</name>
+  					<track id="251"/>
+  					<track id="331"/>
+  				</playlist>
+  			</library>
+  		</xforms:instance>
+  	</xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+  	<xforms:group id="gen-6">
+  		<xforms:label class="title" id="gen-7">
+  			b.13.a Move Element
+  		</xforms:label>
+  	</xforms:group>
+  	<xforms:group id="gen-8">
+  		<xforms:label id="gen-9">
+  			You must see Track ids "251", "331" and "461" : 
+  		</xforms:label>
+  		<xforms:repeat nodeset="playlist[2]/track" id="gen-10">
+  			<xforms:output class="hlist" value="concat(./@id , ' ')" id="gen-11">
+  				<xforms:label id="gen-12">Track id : </xforms:label>
+  			</xforms:output>
+  		</xforms:repeat>
+  	</xforms:group>
+  </xhtml:body>
+</xhtml:html>

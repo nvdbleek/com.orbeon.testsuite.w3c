@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <xhtml:head>
+    <xhtml:title>4.3.4.a xforms-refresh event</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="car">
+    	<xforms:instance id="gen-2">
+    		<car>
+    			<make/>
+    			<year/>
+    			<color>default</color>
+    		</car>
+    	</xforms:instance>
+    	<xforms:setvalue ref="color" ev:event="xforms-ready" id="gen-3">blue</xforms:setvalue>
+    	<xforms:action ev:event="xforms-refresh" id="gen-4">
+      		<xforms:message level="modal" id="gen-5">xforms-refresh</xforms:message>
+      	</xforms:action>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+  	<xforms:group id="gen-6">
+  		<xforms:label class="title" id="gen-7">4.3.4.a xforms-refresh event</xforms:label>
+  	</xforms:group>
+  	<xforms:group id="gen-8">
+  		<xforms:label id="gen-9">
+  	  		You must have seen an xforms-refresh message. 
+  	  	</xforms:label>
+  	</xforms:group>
+	
+  </xhtml:body>
+</xhtml:html>

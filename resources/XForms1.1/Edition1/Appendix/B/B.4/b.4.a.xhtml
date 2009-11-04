@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <xhtml:head>
+  	<xhtml:title>b.4.a Set Attribute</xhtml:title>
+  	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+  	<xforms:model id="gen-1">
+	    <xforms:action ev:event="xforms-ready" id="gen-2">
+	  		<xforms:insert context="item[2]" origin="../item[1]/@rating" id="gen-3"/>
+			<xforms:insert context="item[3]" origin="../item[1]/@rating" id="gen-4"/>
+	  	</xforms:action>
+  		<xforms:instance id="gen-5">
+  			<items>
+  				<item key="23" rating="classified"/>
+  				<item key="42"/>
+  				<item key="68" rating="unknown"/>
+  			</items>
+  		</xforms:instance>
+  	</xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+  	<xforms:group id="gen-6">
+  		<xforms:label class="title" id="gen-7">
+  			b.4.a Set Attribute
+  		</xforms:label>
+  	</xforms:group>
+  	<xforms:group id="gen-8">
+  		<xforms:label id="gen-9">
+  			You must see the string "classified" after each key : 
+  		</xforms:label>
+  		<xforms:repeat nodeset="item" id="gen-10">
+  			<xforms:output class="hlist" value="concat(@key, ' ', @rating)" id="gen-11">
+  				<xforms:label id="gen-12">key : </xforms:label>
+  			</xforms:output>
+  		</xforms:repeat>
+  	</xforms:group>
+  </xhtml:body>
+</xhtml:html>

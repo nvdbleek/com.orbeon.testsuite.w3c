@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xhtml:head>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xhtml:title>10.4.f delete action and repeat element</xhtml:title>
+        <xforms:model id="gen-1">
+            <xforms:instance id="instance_1">
+                <number_lists>
+                    <number_list id="1st number_list">
+                        <number xsi:type="xsd:integer">1</number>
+                        <number xsi:type="xsd:integer">2</number>
+                        <number xsi:type="xsd:integer">3</number>
+                    </number_list>
+                </number_lists>
+            </xforms:instance>
+            <xforms:instance id="instance_2">
+                <number_lists>
+                    <number_list id="1st number_list">
+                        <number xsi:type="xsd:integer">1</number>
+                        <number xsi:type="xsd:integer">2</number>
+                        <number xsi:type="xsd:integer">3</number>
+                    </number_list>
+                    <number_list id="2nd number_list">
+                        <number xsi:type="xsd:integer">4</number>
+                        <number xsi:type="xsd:integer">5</number>
+                        <number xsi:type="xsd:integer">6</number>
+                    </number_list>
+                    <number_list id="3rd number_list">
+                        <number xsi:type="xsd:integer">7</number>
+                        <number xsi:type="xsd:integer">8</number>
+                        <number xsi:type="xsd:integer">9</number>
+                    </number_list>
+                </number_lists>
+            </xforms:instance>
+            <xforms:instance id="instance_3">
+                <number_lists>
+                    <number_list id="1st number_list">
+                        <number xsi:type="xsd:integer">1</number>
+                        <number xsi:type="xsd:integer">2</number>
+                        <number xsi:type="xsd:integer">3</number>
+                    </number_list>
+                    <number_list id="2nd number_list">
+                        <number xsi:type="xsd:integer">4</number>
+                        <number xsi:type="xsd:integer">5</number>
+                        <number xsi:type="xsd:integer">6</number>
+                    </number_list>
+                    <number_list id="3rd number_list">
+                        <number xsi:type="xsd:integer">7</number>
+                        <number xsi:type="xsd:integer">8</number>
+                        <number xsi:type="xsd:integer">9</number>
+                    </number_list>
+                </number_lists>
+            </xforms:instance>
+            <xforms:instance id="repeat_indices">
+                <xforms:root id="gen-6">
+                    <repeat_2/>
+                    <repeat_2_inner/>
+                    <repeat_3/>
+                    <repeat_3_inner/>
+                </xforms:root>
+            </xforms:instance>
+            <xforms:bind nodeset="instance('repeat_indices')/repeat_2" calculate="index('repeat_2')" id="gen-7"/>
+            <xforms:bind nodeset="instance('repeat_indices')/repeat_2_inner" calculate="index('repeat_2_inner')" id="gen-8"/>
+            <xforms:bind nodeset="instance('repeat_indices')/repeat_3" calculate="index('repeat_3')" id="gen-9"/>
+            <xforms:bind nodeset="instance('repeat_indices')/repeat_3_inner" calculate="index('repeat_3_inner')" id="gen-10"/>
+            <xforms:action ev:event="xforms-ready" id="gen-11">
+                <!--  delete the last member of the list, index should revert to 0 -->
+                <xforms:setindex repeat="repeat_1" index="1" id="gen-12"/>
+                <xforms:delete nodeset="instance('instance_1')/number_list" at="1" id="gen-13"/>
+                <!-- delete last in set, which had index. index should revert to new last element -->
+                <!-- inner repeat index should be reset to 1 -->
+                <xforms:setindex repeat="repeat_2" index="3" id="gen-14"/>
+                <xforms:setindex repeat="repeat_2_inner" index="3" id="gen-15"/>
+                <xforms:delete nodeset="instance('instance_2')/number_list" at="3" id="gen-16"/>
+                <!-- delete node that is not last one -->
+                <xforms:setindex repeat="repeat_3" index="2" id="gen-17"/>
+                <xforms:setindex repeat="repeat_3_inner" index="3" id="gen-18"/>
+                <xforms:delete nodeset="instance('instance_3')/number_list" at="2" id="gen-19"/>
+            </xforms:action>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-20">
+            <xforms:label class="title" id="gen-21">10.4.f delete action and repeat element</xforms:label>
+        </xforms:group>
+        <xforms:repeat id="repeat_1" nodeset="instance('instance_1')/number_list"/>
+        <xforms:repeat id="repeat_2" nodeset="instance('instance_2')/number_list">
+        	<xforms:repeat id="repeat_2_inner" nodeset="number"/>
+        </xforms:repeat>
+        <xforms:repeat id="repeat_3" nodeset="instance('instance_3')/number_list">
+            <xforms:repeat id="repeat_3_inner" nodeset="number"/>
+        </xforms:repeat>
+        <xforms:group id="gen-27">
+          <xforms:label id="gen-28">
+            You must see the correct values for each output control below. 
+          </xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-29">
+          <xforms:label id="gen-30">You must see the number 0 : </xforms:label>
+            <xforms:output value="index('repeat_1')" id="gen-31">
+            </xforms:output>
+        </xforms:group>
+        <xforms:group id="gen-32">
+          <xforms:label id="gen-33">You must see the number 2 : </xforms:label>
+            <xforms:output ref="instance('repeat_indices')/repeat_2" id="gen-34">
+            </xforms:output>
+        </xforms:group>
+        <xforms:group id="gen-35">
+          <xforms:label id="gen-36">You must see the number 1 : </xforms:label>
+            <xforms:output ref="instance('repeat_indices')/repeat_2_inner" id="gen-37">
+            </xforms:output>
+        </xforms:group>
+        <xforms:group id="gen-38">
+          <xforms:label id="gen-39">You must see the number 2 : </xforms:label>
+            <xforms:output ref="instance('repeat_indices')/repeat_3" id="gen-40">
+            </xforms:output>
+        </xforms:group>
+        <xforms:group id="gen-41">
+          <xforms:label id="gen-42">You must see the number 1 : </xforms:label>
+            <xforms:output ref="instance('repeat_indices')/repeat_3_inner" id="gen-43">
+            </xforms:output>
+        </xforms:group>
+    </xhtml:body>
+</xhtml:html>

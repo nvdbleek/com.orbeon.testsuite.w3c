@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+  	<xhtml:head>
+    	<xhtml:title>10.8.2.b targetid element has precedence over attribute</xhtml:title>
+    	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    	<xforms:model id="mymodel">
+       		<xforms:instance id="gen-2">
+				<car/>
+       		</xforms:instance>
+			<xforms:message level="modal" ev:event="custom-event" id="gen-3">custom-event</xforms:message>
+    	</xforms:model>
+    	<xforms:model id="wrongmodel">
+       		<xforms:instance id="gen-5">
+				<car/>
+       		</xforms:instance>
+			<xforms:message level="modal" ev:event="custom-event" id="gen-6">wrong custom-event</xforms:message>
+    	</xforms:model>
+  	</xhtml:head>
+  	<xhtml:body>
+  		<xforms:group id="gen-7">
+	  		<xforms:label class="title" id="gen-8">10.8.2.b targetid element has precedence over attribute</xforms:label>
+	  	</xforms:group>
+  		<xforms:group id="gen-9">
+  			<xforms:label id="gen-10">
+  			  After you activate the Fire Custom Event trigger you must see a custom-event message. 
+  			  If you see a wrong custom-event message you have failed this test case. 
+			</xforms:label>
+  		</xforms:group>
+		<xforms:trigger id="gen-11">
+	        <xforms:label id="gen-12">Fire Custom Event</xforms:label>
+	        <xforms:action ev:event="DOMActivate" id="gen-13">
+				<xforms:dispatch targetid="wrongmodel" name="custom-event" id="gen-14">
+					<xforms:targetid id="gen-15">mymodel</xforms:targetid>
+				</xforms:dispatch>
+			</xforms:action>
+		</xforms:trigger>
+		
+  </xhtml:body>
+</xhtml:html>

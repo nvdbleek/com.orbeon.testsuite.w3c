@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <xhtml:head>
+    <xhtml:title>4.4.18.a xforms-scroll-first and xforms-scroll-last events</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+      <xforms:instance id="gen-2">
+      	<carColors>
+      		<color>pheonix yellow metallic</color>
+      		<color>imola red</color>
+      		<color>interlago blue metallic</color>
+      		<color>alpine white</color>
+      	</carColors>
+      </xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xforms:group id="gen-3">
+    	<xforms:label class="title" id="gen-4">4.4.18.a xforms-scroll-first and xforms-scroll-last events</xforms:label>
+    </xforms:group>
+    
+    <xforms:group id="gen-5">
+    	<xforms:label id="gen-6">
+    		You must see an xforms-scroll-first message when you activate the Scroll First trigger. 
+    		You must see an xforms-scroll-last message when you activate the Scroll Last trigger. 
+    	</xforms:label>	
+    </xforms:group>
+    
+    <xforms:trigger id="gen-7">
+        <xforms:label id="gen-8">Scroll First</xforms:label>
+        <!-- decrement the index by 500, which should be out of range -->
+        <xforms:action ev:event="DOMActivate" id="gen-9">
+          <xforms:setindex repeat="repeat_001" index="index('repeat_001')-500" id="gen-10"/>
+        </xforms:action>
+    </xforms:trigger>
+    
+    <xforms:trigger id="gen-11">
+        <xforms:label id="gen-12">Scroll Last</xforms:label>
+        <!-- increment the index by 500, which should be out of range -->
+        <xforms:action ev:event="DOMActivate" id="gen-13">
+          <xforms:setindex repeat="repeat_001" index="index('repeat_001')+500" id="gen-14"/>
+        </xforms:action>
+    </xforms:trigger>
+    
+    <xforms:repeat id="repeat_001" nodeset="/carColors/color" startindex="1">
+    	<xforms:group id="gen-16">
+    		<xforms:label id="gen-17"/>
+	    </xforms:group>
+    </xforms:repeat>
+	<xforms:action ev:event="xforms-scroll-first" ev:observer="repeat_001" id="gen-18">
+		<xforms:message level="modal" id="gen-19">xforms-scroll-first</xforms:message>
+	</xforms:action>    
+	<xforms:action ev:event="xforms-scroll-last" ev:observer="repeat_001" id="gen-20">
+		<xforms:message level="modal" id="gen-21">xforms-scroll-last</xforms:message>
+	</xforms:action>	
+  </xhtml:body>
+</xhtml:html>

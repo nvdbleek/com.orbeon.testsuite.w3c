@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <xhtml:head>
+  	<xhtml:title>b.2.a Append Element Copy</xhtml:title>
+  	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+  	<xforms:model id="gen-1">
+	  	<xforms:action ev:event="xforms-ready" id="gen-2">
+	  		<xforms:insert context="people" nodeset="person" origin="instance('prototypes')/person" id="gen-3"/>
+	  	</xforms:action>
+  		<xforms:instance id="gen-4">
+  			<data>
+  				<people>
+  					<person>
+  						<name>Jane Doe</name>
+  					</person>
+  				</people>
+  			</data>
+  		</xforms:instance>
+  		<xforms:instance id="prototypes">
+  			<prototypes>
+  				<person>
+  					<name/>
+  				</person>
+  			</prototypes>
+  		</xforms:instance>
+  	</xforms:model>  	
+  </xhtml:head>
+  <xhtml:body>
+  	<xforms:group id="gen-6">
+  		<xforms:label class="title" id="gen-7">
+  			b.2.a Append Element Copy
+  		</xforms:label>
+  	</xforms:group>
+  	<xforms:group id="gen-8">
+  		<xforms:label id="gen-9">
+  			You must see an empty person name after the person name of "Jane Doe" : 
+  		</xforms:label>
+  		<xforms:repeat nodeset="people/person" id="gen-10">
+  			<xforms:output class="hlist" value="concat(. , ' ')" id="gen-11">
+  				<xforms:label id="gen-12">Person Name : </xforms:label>
+  			</xforms:output>
+  		</xforms:repeat>
+  	</xforms:group>
+  </xhtml:body>
+</xhtml:html>

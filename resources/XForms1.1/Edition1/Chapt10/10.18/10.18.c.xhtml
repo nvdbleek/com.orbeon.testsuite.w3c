@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xhtml:head>
+        <xhtml:title>10.18.c iteration executed zero times</xhtml:title>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xforms:model id="mod1">
+            <xforms:instance id="first">
+                <numbers>
+                  <number/>
+                </numbers>
+            </xforms:instance>
+            <xforms:insert ev:event="xforms-ready" nodeset="number" at="1" position="after" while="count(number) &gt; 10" id="gen-3"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-4">
+            <xforms:label class="title" id="gen-5">10.18.c iteration executed zero times</xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-6">
+            <xforms:label id="gen-7">You must see the value "1" for the Number Of Nodes output : </xforms:label>
+        </xforms:group>
+        <xforms:output value="count(number)" id="gen-8">
+            <xforms:label id="gen-9">Number Of Nodes : </xforms:label>
+        </xforms:output>
+        
+    </xhtml:body>
+</xhtml:html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <xhtml:head>
+  	<xhtml:title>b.5.a Remove Element</xhtml:title>
+  	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+  	<xforms:model id="gen-1">
+	  	<xforms:action ev:event="xforms-ready" id="gen-2">
+	  		<xforms:delete nodeset="item[2]" id="gen-3"/>
+	  	</xforms:action>
+  		<xforms:instance id="gen-4">
+  			<shoppingcart>
+  				<item>
+  					<product>SKU-0815</product>
+  					<quantity>1</quantity>
+  					<unitcost>29.99</unitcost>
+  					<price>29.99</price>
+  				</item>
+  				<item>
+  					<product>SKU-4711</product>
+  					<quantity>3</quantity>
+  					<unitcost>7.49</unitcost>
+  					<price>22.47</price>
+  				</item>
+  			</shoppingcart>
+  		</xforms:instance>
+  	</xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+  	<xforms:group id="gen-5">
+  		<xforms:label class="title" id="gen-6">
+  			b.5.a Remove Element
+  		</xforms:label>
+  	</xforms:group>
+  	<xforms:group id="gen-7">
+  		<xforms:label id="gen-8">
+  			You must see only one item product("SKU-0815") : 
+  		</xforms:label>
+  		<xforms:repeat nodeset="item" id="gen-9">
+  			<xforms:output class="hlist" value="concat(./product, ' ')" id="gen-10">
+  				<xforms:label id="gen-11">Product : </xforms:label>
+  			</xforms:output>
+  		</xforms:repeat>
+  	</xforms:group>
+  </xhtml:body>
+</xhtml:html>

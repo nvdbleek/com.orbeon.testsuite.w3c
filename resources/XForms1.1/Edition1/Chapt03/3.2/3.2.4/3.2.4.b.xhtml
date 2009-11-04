@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <xhtml:head>
+    <xhtml:title>3.2.4.b node-set binding - model attribute of itemset element</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="order">
+      <xforms:instance id="gen-2">
+        <carOrder/>
+      </xforms:instance>
+      <xforms:submission id="submit_car" method="post" action="http://xformstest.org/cgi-bin/echo.sh"/>
+    </xforms:model>
+    <xforms:model id="carsForSale">
+      <xforms:instance id="gen-5">
+        <carsAvailable>
+          <car>Audi</car>
+          <car>BMW</car>
+          <car>Mercedes</car>
+          <car>Porsche</car>
+          <car>Volkswagen</car>
+        </carsAvailable>
+      </xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+  	<xforms:group id="gen-6">
+  		<xforms:label class="title" id="gen-7">3.2.4.b node-set binding - model attribute of itemset element</xforms:label>
+  	</xforms:group>
+    
+    <xforms:group id="gen-8">
+		<xforms:label id="gen-9">
+      	You must be able to select any or all of the items in the select control. After activating the Submit Cars 
+      	trigger you must be able to see all the values you selected displayed on the screen in the form data.
+      	</xforms:label>
+    </xforms:group>
+    
+    <!-- itemset has model attribute and a nodeset attribute -->
+    <xforms:select ref="/carOrder" model="order" id="gen-10">
+      	<xforms:label id="gen-11">Cars</xforms:label>
+        <xforms:itemset nodeset="/carsAvailable/car" model="carsForSale" id="gen-12">
+	        <xforms:label ref="." id="gen-13"/>
+    	    <xforms:value ref="." id="gen-14"/>
+        </xforms:itemset>
+    </xforms:select>
+    
+    <xforms:submit submission="submit_car" id="gen-15">
+        <xforms:label id="gen-16">Submit Cars</xforms:label>
+    </xforms:submit>
+
+	
+  </xhtml:body>
+</xhtml:html>

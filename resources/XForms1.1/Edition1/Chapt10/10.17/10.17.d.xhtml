@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events">
+    <xhtml:head>
+        <xhtml:title>10.17.d conditional execution of XForms actions - Handling Focus for Empty Repeats example</xhtml:title>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xforms:model id="mod1">
+            <xforms:instance id="prototype">
+              <store>
+                <purchaseOrder>
+                  <lines>
+                    <line>Store Item</line>
+                    <line>Store Item</line>
+                    <line>Store Item</line>
+                  </lines>
+                </purchaseOrder>
+              </store>
+            </xforms:instance>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-3">
+            <xforms:label class="title" id="gen-4">10.17.d conditional execution of XForms actions - Handling Focus for Empty Repeats example</xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-5">
+            <xforms:label id="gen-6">
+              When you activate a Delete Row trigger the trigger and the output control on that row must 
+              disappear from the page and the focus must move to the Insert Row trigger when the last Delete Row trigger is activated. 
+            </xforms:label>
+        </xforms:group>
+		<xforms:trigger id="InsertControl">
+			<xforms:label id="gen-8">Insert Row</xforms:label>
+			<xforms:action ev:event="DOMActivate" id="gen-9">
+			  <xforms:insert nodeset="purchaseOrder/lines/line" at="1" position="before" id="gen-10"/>
+			  <xforms:setfocus control="PurchaseOrderRepeat" id="gen-11"/>
+			</xforms:action>
+		</xforms:trigger>
+		<xforms:repeat nodeset="purchaseOrder/lines/line" id="PurchaseOrderRepeat">
+		  <xforms:group id="gen-13">
+			<xforms:trigger id="gen-14">
+			  <xforms:label id="gen-15">Delete Row</xforms:label>
+				  <xforms:action ev:event="DOMActivate" id="gen-16">
+					  <xforms:setfocus control="InsertControl" if="last()=1" id="gen-17"/>
+					  <xforms:delete nodeset="../line" at="index('PurchaseOrderRepeat')" id="gen-18"/>
+				  </xforms:action>
+			</xforms:trigger>
+			<xforms:output ref="." id="gen-19">
+			  <xforms:label id="gen-20"/>
+			</xforms:output>
+		  </xforms:group>
+		</xforms:repeat>
+		
+    </xhtml:body>
+</xhtml:html>

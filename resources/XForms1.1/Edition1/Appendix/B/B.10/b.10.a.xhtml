@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <xhtml:head>
+  	<xhtml:title>b.10.a Replace Element</xhtml:title>
+  	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+  	<xforms:model id="gen-1">
+	  	<xforms:action ev:event="xforms-ready" id="gen-2">
+	  	   <xforms:insert nodeset="person[1]" origin="instance('prototypes')/person" id="gen-3"/>
+	       <xforms:delete nodeset="person[1]" id="gen-4"/>
+		</xforms:action>
+  		<xforms:instance id="gen-5">
+  			<people>
+  				<person>
+  					<name>John Doe</name>
+  				</person>
+  			</people>
+  		</xforms:instance>
+  		<xforms:instance id="prototypes">
+  			<prototypes>
+  				<person>
+  					<name/>
+  				</person>
+  			</prototypes>
+  		</xforms:instance>
+  	</xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+  	<xforms:group id="gen-7">
+  		<xforms:label class="title" id="gen-8">
+  			b.10.a Replace Element
+  		</xforms:label>
+  	</xforms:group>
+  	<xforms:group id="gen-9">
+  		<xforms:label id="gen-10">
+  			You must see an empty string for a person name : 
+  		</xforms:label>
+  		<xforms:repeat nodeset="person" id="gen-11">
+  			<xforms:output class="hlist" value="concat(./name , ' ')" id="gen-12">
+  				<xforms:label id="gen-13">Person Name : </xforms:label>
+  			</xforms:output>
+  		</xforms:repeat>
+  	</xforms:group>
+  </xhtml:body>
+</xhtml:html>

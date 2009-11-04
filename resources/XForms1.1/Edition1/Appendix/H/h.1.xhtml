@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><!--$Id: h.1.xhtml,v 1.1 2007/11/14 20:55:44 kwells Exp $--><html xmlns:my="http://commerce.example.com/payment" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title xml:lang="fr">XForms en XHTML</title>
+
+    <xforms:model schema="payschema.xsd" id="gen-1">
+      <xforms:instance id="gen-2">
+        <my:payment as="credit">
+          <my:cc/>
+        </my:payment>
+      </xforms:instance>
+      <xforms:submission action="http://xformstest.org/cgi-bin/echo.sh" method="post" id="s00"/>
+      <xforms:bind nodeset="my:cc" relevant="../@as='credit'" required="true()" id="gen-4"/>
+      <xforms:bind nodeset="my:exp" relevant="../@as='credit'" required="true()" id="gen-5"/>
+    </xforms:model>
+  </head>
+  <body>
+    <xforms:group xmlns="http://www.w3.org/2002/xforms" id="gen-6">
+      <xforms:trigger id="gen-7">
+        <xforms:label id="gen-8">Français</xforms:label>
+        <toggle case="fr" ev:event="DOMActivate" id="gen-9"/>
+      </xforms:trigger>
+      <xforms:trigger id="gen-10">
+        <xforms:label id="gen-11">English</xforms:label>
+        <toggle case="en" ev:event="DOMActivate" id="gen-12"/>
+      </xforms:trigger>
+    </xforms:group>
+    
+    <switch xmlns="http://www.w3.org/2002/xforms" id="gen-13">
+      <case id="fr">
+        <select1 ref="@as" id="gen-15">
+          <xforms:label xml:lang="fr" id="gen-16">Choisissez un mode de paiement</xforms:label>
+          <choices id="gen-17">
+            <item id="gen-18">
+              <xforms:label xml:lang="fr" id="gen-19">Comptant</xforms:label>
+              <value id="gen-20">cash</value>
+              <message level="modeless" ev:event="xforms-select" xml:lang="fr" id="gen-21">
+                         Ne pas envoyer d'argent comptant par la poste.</message>
+            </item>
+            <item id="gen-22">
+              <xforms:label xml:lang="fr" id="gen-23">Carte bancaire</xforms:label>
+              <value id="gen-24">credit</value>
+            </item>
+          </choices>
+        </select1>
+
+        <xforms:input ref="my:cc" id="gen-25">
+          <xforms:label xml:lang="fr" id="gen-26">Numéro de carte bancaire</xforms:label>
+          <alert xml:lang="fr" id="gen-27">Saississez un numéro de carte bancaire en cours
+           (séparez par un espace ou un trait d'union chaque groupe de chiffres)</alert>
+        </xforms:input>
+
+        <xforms:input ref="my:exp" id="gen-28">
+          <xforms:label xml:lang="fr" id="gen-29">Date d'échéance</xforms:label>
+        </xforms:input>
+
+        <submit submission="s00" id="gen-30">
+          <xforms:label xml:lang="fr" id="gen-31">Achetez</xforms:label>
+        </submit>
+      </case>
+      <case id="en">
+        <select1 ref="@as" id="gen-33">
+          <xforms:label xml:lang="en" id="gen-34">Select Payment Method</xforms:label>
+          <choices id="gen-35">
+            <item id="gen-36">
+              <xforms:label xml:lang="en" id="gen-37">Cash</xforms:label>
+              <value id="gen-38">cash</value>
+              <message level="modeless" ev:event="xforms-select" xml:lang="en" id="gen-39">
+              Please do not mail cash.</message>
+            </item>
+            <item id="gen-40">
+              <xforms:label xml:lang="en" id="gen-41">Credit</xforms:label>
+              <value id="gen-42">credit</value>
+            </item>
+          </choices>
+        </select1>
+
+        <xforms:input ref="my:cc" id="gen-43">
+          <xforms:label xml:lang="en" id="gen-44">Credit Card Number</xforms:label>
+          <alert xml:lang="en" id="gen-45">Please specify a valid credit card number
+            (use spaces or hyphens between digit groups)</alert>
+        </xforms:input>
+
+        <xforms:input ref="my:exp" id="gen-46">
+          <xforms:label xml:lang="en" id="gen-47">Expiration Date</xforms:label>
+        </xforms:input>
+
+        <submit submission="s00" id="gen-48">
+          <xforms:label xml:lang="en" id="gen-49">Buy</xforms:label>
+        </submit>
+      </case>
+    </switch>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+	<xhtml:head>
+		<xhtml:title>6.1.1.a type property</xhtml:title>
+		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+		<xforms:model id="model-001">
+			<xforms:instance id="gen-2">
+				<person>
+					<month/>
+					<year xsi:type="xsd:gYear"/>
+				</person>
+			</xforms:instance>
+			<xforms:bind id="month_bind" type="xsd:gMonth" nodeset="/person/month"/>
+		</xforms:model>
+	</xhtml:head>
+	<xhtml:body>
+	    <xforms:group id="gen-4">
+		    <xforms:label class="title" id="gen-5">6.1.1.a type property</xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-6">
+			<xforms:label id="gen-7">
+			  When you activate the Check Month trigger you must see a message that says "You have entered 
+			  a valid gMonth". 
+			  When you activate the Check Year trigger you must see a message that says "You have entered 
+			  a valid gYear". 
+			</xforms:label>	
+		</xforms:group>
+		<xforms:group id="gen-8">
+			<xforms:input bind="month_bind" id="gen-9">
+				<xforms:label id="gen-10">Month : </xforms:label>
+				<xforms:action ev:event="xforms-valid" id="gen-11">
+					<xforms:message level="modal" id="gen-12">You have entered a valid gMonth</xforms:message>
+        		</xforms:action>
+			</xforms:input>
+
+			<xforms:input ref="/person/year" id="gen-13">
+				<xforms:label id="gen-14">Year : </xforms:label>
+				<xforms:action ev:event="xforms-valid" id="gen-15">
+					<xforms:message level="modal" id="gen-16">You have entered a valid gYear</xforms:message>
+        		</xforms:action>
+			</xforms:input>
+			
+			<xforms:trigger id="gen-17">
+				<xforms:label id="gen-18">Check Month</xforms:label>
+				<xforms:setvalue ref="/person/month" ev:event="DOMActivate" id="gen-19">--04</xforms:setvalue>
+			</xforms:trigger>
+			
+			<xforms:trigger id="gen-20">
+				<xforms:label id="gen-21">Check Year</xforms:label>
+				<xforms:setvalue ref="/person/year" ev:event="DOMActivate" id="gen-22">1999</xforms:setvalue>
+			</xforms:trigger>
+		</xforms:group>
+			
+			
+	</xhtml:body>
+</xhtml:html>

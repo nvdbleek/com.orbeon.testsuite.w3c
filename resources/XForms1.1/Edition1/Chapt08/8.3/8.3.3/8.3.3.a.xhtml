@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xhtml:head>
+    <xhtml:title>8.3.3.a data binding restrictions on value element</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+    	<xforms:instance id="gen-2">
+    		<icecream>
+    			<flavor xsi:type="xsd:string"/>
+    			<scoops xsi:type="xsd:int"/>
+    		</icecream>
+    	</xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xforms:group id="gen-3">
+    	<xforms:label class="title" id="gen-4">8.3.3.a data binding restrictions on value element</xforms:label>
+    </xforms:group>
+	<xforms:group id="gen-5">
+		<xforms:label id="gen-6">
+		  When you select the values "One" or "Two" from the Number select1 control you must see an xforms-invalid 
+		  message. When you select the value "Three" from the Number select1 control you must see an xforms-valid 
+		  message. 
+		</xforms:label>
+	</xforms:group>
+	<xforms:select1 ref="/icecream/scoops" id="gen-7">
+		<xforms:label id="gen-8">Number:</xforms:label>
+		<xforms:item id="gen-9">
+			<xforms:label id="gen-10">One</xforms:label>
+			<xforms:value id="gen-11">one</xforms:value>
+		</xforms:item>
+		<xforms:item id="gen-12">
+			<xforms:label id="gen-13">Two</xforms:label>
+			<xforms:value id="gen-14">two</xforms:value>
+		</xforms:item>
+		<xforms:item id="gen-15">
+			<xforms:label id="gen-16">Three</xforms:label>
+			<xforms:value id="gen-17">3</xforms:value>
+		</xforms:item>
+		<xforms:action ev:event="xforms-valid" id="gen-18">
+			<xforms:message level="modal" id="gen-19">xforms-valid</xforms:message>
+		</xforms:action>
+		<xforms:action ev:event="xforms-invalid" id="gen-20">
+			<xforms:message level="modal" id="gen-21">xforms-invalid</xforms:message>
+		</xforms:action>
+	</xforms:select1>
+	
+  </xhtml:body>
+</xhtml:html>

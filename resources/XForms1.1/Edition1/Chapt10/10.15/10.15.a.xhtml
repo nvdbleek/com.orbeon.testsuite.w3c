@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+  	<xhtml:head>
+    	<xhtml:title>10.15.a send element</xhtml:title>
+    	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    	<xforms:model id="gen-1">
+       		<xforms:instance id="gen-2">
+				<car>
+					<color>Blue</color>
+					<condition>good</condition>
+				</car>
+       		</xforms:instance>
+			<xforms:submission id="submit_color" action="http://xformstest.org/cgi-bin/echo.sh" ref="/car/color" method="post" replace="none">
+        		<xforms:action ev:event="xforms-submit-done" id="gen-4">
+        			<xforms:message level="modal" id="gen-5">xforms-submit-done</xforms:message>
+        		</xforms:action>
+        	</xforms:submission>
+			<xforms:submission id="submit_condition" action="http://xformstest.org/cgi-bin/echo.sh" ref="/car/condition" method="post" replace="none">
+        		<xforms:action ev:event="xforms-submit-done" id="gen-7">
+        			<xforms:message level="modal" id="gen-8">xforms-submit-done</xforms:message>
+        		</xforms:action>
+        	</xforms:submission>
+    	</xforms:model>
+  	</xhtml:head>
+  	<xhtml:body>
+  		<xforms:group id="gen-9">
+	  		<xforms:label class="title" id="gen-10">10.15.a send element</xforms:label>
+	  	</xforms:group>
+  		<xforms:group id="gen-11">
+  			<xforms:label id="gen-12">
+  			  When you activate either trigger on this page you must see an xforms-submit-done message. 
+  			</xforms:label>
+  		</xforms:group>
+
+		<xforms:trigger id="gen-13">
+			<xforms:label id="gen-14">Send Color</xforms:label>
+			<xforms:action ev:event="DOMActivate" id="gen-15">
+				<xforms:send submission="submit_color" id="gen-16"/>
+			</xforms:action>
+		</xforms:trigger>
+
+		<xforms:trigger id="gen-17">
+			<xforms:label id="gen-18">Send Condition</xforms:label>
+			<xforms:action ev:event="DOMActivate" id="gen-19">
+				<xforms:send submission="submit_condition" id="gen-20"/>
+			</xforms:action>
+		</xforms:trigger>
+
+		
+
+  </xhtml:body>
+</xhtml:html>

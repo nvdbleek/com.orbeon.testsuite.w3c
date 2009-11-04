@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+  <xhtml:head>
+    <xhtml:title>8.1.7.e example of range element</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+       <xforms:instance id="gen-2">       
+			<stats>
+				<balance xsi:type="xsd:decimal">0</balance>
+			</stats>
+       </xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xforms:group id="gen-3">
+  	    <xforms:label class="title" id="gen-4">8.1.7.e example of range element</xforms:label>
+  	</xforms:group>
+  	<xforms:group id="gen-5">
+  		<xforms:label id="gen-6">
+  			You should see a range control with range of -2 to 2 and increments by 0.5.
+  		</xforms:label>
+  	</xforms:group>
+  	<xforms:group id="gen-7">
+  		<xforms:range ref="/stats/balance" start="-2.0" end="2.0" step="0.5" incremental="true" id="gen-8">
+  			<xforms:label id="gen-9">Balance : </xforms:label>
+  		</xforms:range>
+  	</xforms:group>
+  	<xforms:group id="gen-10">
+  		<xforms:output ref="/stats/balance" id="gen-11">
+  			<xforms:label id="gen-12">Balance:</xforms:label>
+  		</xforms:output>
+  	</xforms:group>
+  	
+  </xhtml:body>
+</xhtml:html>

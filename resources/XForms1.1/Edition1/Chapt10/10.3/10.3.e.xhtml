@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xhtml:head>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xhtml:title>10.3.e insert action using position attribute</xhtml:title>
+        <xforms:model id="mod1">
+            <xforms:instance id="first">
+                <number_lists>
+                    <number_list>
+                        <number>1</number>
+                        <number>2</number>
+                        <number>3</number>
+                        <number>4</number>
+                        <number>5</number>
+                    </number_list>
+                    <number_list/>
+                </number_lists>
+            </xforms:instance>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-3">
+            <xforms:label class="title" id="gen-4">10.3.e insert action using position attribute</xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-5">
+            <xforms:label id="gen-6">
+              After activating any of the Test triggers the numbers output onto the page must match those on 
+              the label of the activated trigger control. 
+            </xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-7">
+            <xforms:trigger id="gen-8">
+                <xforms:label id="gen-9">Test A: 1 2 3 5 4 5</xforms:label>
+                <xforms:action ev:event="DOMActivate" id="gen-10">
+                    <xforms:reset model="mod1" id="gen-11"/>
+                    <!-- without position attribute, should default to after -->
+                    <xforms:insert nodeset="number_list/number" at="3" id="gen-12"/>
+                </xforms:action>
+            </xforms:trigger>
+            <xforms:trigger id="gen-13">
+                <xforms:label id="gen-14">Test B: 1 2 5 3 4 5</xforms:label>
+                <xforms:action ev:event="DOMActivate" id="gen-15">
+                    <xforms:reset model="mod1" id="gen-16"/>
+                    <!-- position = after -->
+                    <xforms:insert nodeset="number_list/number" at="2" position="after" id="gen-17"/>
+                </xforms:action>
+            </xforms:trigger>
+            <xforms:trigger id="gen-18">
+                <xforms:label id="gen-19">Test C: 1 2 5 3 4 5</xforms:label>
+                <xforms:action ev:event="DOMActivate" id="gen-20">
+                    <xforms:reset model="mod1" id="gen-21"/>
+                    <!-- position = before -->
+                    <xforms:insert ev:observer="mod1" nodeset="number_list/number" at="3" position="before" id="gen-22"/>
+                </xforms:action>
+            </xforms:trigger>
+            <xforms:trigger id="gen-23">
+                <xforms:label id="gen-24">Test G: Sizes remain 5 and 0, respectively</xforms:label>
+                <xforms:action ev:event="DOMActivate" id="gen-25">
+                    <xforms:reset model="mod1" id="gen-26"/>
+                    <!-- empty nodeset -->
+                    <xforms:insert nodeset="number_list[2]/number" position="before" id="gen-27"/>
+                </xforms:action>
+            </xforms:trigger>
+        </xforms:group>
+        <xforms:group id="gen-28">
+            <xforms:label id="gen-29">Integer sequence:</xforms:label>
+        </xforms:group>
+        <xforms:repeat nodeset="number_list[1]/number" id="gen-30">
+            <xforms:output value="." id="gen-31">
+                <xforms:label id="gen-32"/>
+            </xforms:output>
+        </xforms:repeat>
+        <xforms:output value="count(number_list[1]/number)" id="gen-33">
+            <xforms:label id="gen-34">Size of List X:</xforms:label>
+        </xforms:output>
+        <xforms:output value="count(number_list[2]/number)" id="gen-35">
+            <xforms:label id="gen-36">Size of List Y:</xforms:label>
+        </xforms:output>
+        
+    </xhtml:body>
+</xhtml:html>

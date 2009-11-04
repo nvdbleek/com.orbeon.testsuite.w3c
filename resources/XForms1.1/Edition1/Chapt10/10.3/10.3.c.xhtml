@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xhtml:head>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xhtml:title>10.3.c insert action using origin attribute</xhtml:title>
+        <xforms:model id="mod1">
+            <xforms:instance id="first">
+                <number_lists>
+                    <number_list>
+                        <number>1</number>
+                        <number>2</number>
+                        <number>3</number>
+                    </number_list>
+                    <number_list id="pick_me">
+                        <number>4</number>
+                        <number>5</number>
+                        <number>6</number>
+                    </number_list>
+                </number_lists>
+            </xforms:instance>
+            <xforms:instance id="second">
+                <number_lists>
+                    <number_list>
+                        <number>0</number>
+                    </number_list>
+                    <number_list/>
+                </number_lists>
+            </xforms:instance>
+            <xforms:action ev:event="xforms-ready" id="gen-4">
+                <!-- empty nodeset without origin attribute, insert terminates with no effect -->
+                <xforms:insert nodeset="instance('second')/number_list[2]/number" id="gen-5"/>
+                <!-- without origin attribute -->
+                <xforms:insert nodeset="number_list[1]/number" at="3" id="gen-6"/>
+                <!-- with origin attribute -->
+                <xforms:insert nodeset="number_list[1]/number" at="3" origin="instance('second')/number_list/number" id="gen-7"/>
+                <!-- origin does not point to a nodeset, terminates w/o effect -->
+                <xforms:insert nodeset="number_list[1]/number" at="3" origin="googlymoogly" id="gen-8"/>
+            </xforms:action>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-9">
+            <xforms:label class="title" id="gen-10">10.3.c insert action using origin attribute</xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-11">
+			<xforms:label id="gen-12">
+			  You must see the correct values for each output control below.
+			</xforms:label>
+		</xforms:group>
+        <xforms:group ref="instance('first')" id="gen-13">
+            <xforms:label id="gen-14">You must not see a value : </xforms:label>
+            <xforms:repeat nodeset="instance('second')/number_list[2]/number" id="gen-15">
+                <xforms:output class="hlist" value="concat(. ,' ')" id="gen-16">
+                    <xforms:label id="gen-17"/>
+                </xforms:output>
+            </xforms:repeat>
+        </xforms:group>
+        <xforms:group ref="instance('first')" id="gen-18">
+            <xforms:label id="gen-19">You must see the numbers 1, 2, 3, 0, and 3 : </xforms:label>
+            <xforms:repeat nodeset="number_list[1]/number" id="gen-20">
+                <xforms:output class="hlist" value="concat(. ,' ')" id="gen-21">
+                    <xforms:label id="gen-22"/>
+                </xforms:output>
+            </xforms:repeat>
+        </xforms:group>
+        
+    </xhtml:body>
+</xhtml:html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <xhtml:head>
+    <xhtml:title>7.6.2.a is-card-number() function</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+      <xforms:instance id="gen-2">
+		<root>341111111111111</root>
+      </xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+  	<xforms:group id="gen-3">
+  		<xforms:label class="title" id="gen-4">7.6.2.a is-card-number() function</xforms:label>
+  	</xforms:group>
+  	
+  	<xforms:group id="gen-5">
+  		<xforms:label id="gen-6">
+  			You must see the value "true" for the Test 1, Test 2, and Test 3 output controls. 
+  			You must see the value "false" for the Test 4, Test 5, and Test 6 output controls.
+  		</xforms:label>
+  	</xforms:group>
+  	
+  	<xforms:group id="gen-7">
+      <xforms:output value="is-card-number('541234567890125')" id="gen-8">
+        <xforms:label id="gen-9">Test 1 : </xforms:label>
+        <!-- must output true -->
+      </xforms:output>
+    </xforms:group>
+    <xforms:group id="gen-10">
+      <xforms:output value="is-card-number('1002312234567990000')" id="gen-11">
+      	<xforms:label id="gen-12">Test 2 : </xforms:label>
+      	<!-- must output true -->
+      </xforms:output>
+    </xforms:group>
+    <xforms:group id="gen-13">
+      <xforms:output value="is-card-number(.)" id="gen-14"> <!-- trying to use the root node in instance data, the # itself is valid -->
+      	<xforms:label id="gen-15">Test 3 : </xforms:label>
+      	<!-- must output true (if it doesn't the XPath may be broken) -->
+      </xforms:output>
+    </xforms:group> 
+    <xforms:group id="gen-16">
+      <xforms:output value="is-card-number('123456789012')" id="gen-17">
+        <xforms:label id="gen-18">Test 4 : </xforms:label>
+        <!-- must output false -->
+      </xforms:output>
+    </xforms:group>
+    <xforms:group id="gen-19">
+      <xforms:output value="is-card-number('123')" id="gen-20">
+        <xforms:label id="gen-21">Test 5 : </xforms:label>
+        <!-- must output false -->
+      </xforms:output>
+    </xforms:group>
+    <xforms:group id="gen-22">
+      <xforms:output value="is-card-number('12345a789012')" id="gen-23">
+      	<xforms:label id="gen-24">Test 6 : </xforms:label>
+      	<!-- must output false -->
+      </xforms:output>
+    </xforms:group>
+		
+  </xhtml:body>
+</xhtml:html>

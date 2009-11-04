@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <xhtml:head>
+  	<xhtml:title>4.2.2.c2 invalid QNAME causes xforms-binding-exception</xhtml:title>
+  	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+  	<xforms:model id="gen-1">
+  	</xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+
+  	<xforms:group id="gen-2">
+  		<xforms:label class="title" id="gen-3">4.2.2.c2 invalid QNAME causes xforms-binding-exception</xforms:label>
+  	</xforms:group>
+  	<xforms:group id="gen-4">
+  		<xforms:label id="gen-5">
+  			You must have seen an xforms-binding-exception message or a fatal error due to an 
+			xforms-binding-exception. 
+		</xforms:label>
+  	</xforms:group>
+
+	<!-- The slash is illegal for automatic instance construction -->
+	<xforms:input ref="/car" id="gen-6">
+		<xforms:label id="gen-7">Type a car model:</xforms:label>
+   	<xforms:message level="modal" ev:event="xforms-binding-exception" id="gen-8">xforms-binding-exception</xforms:message>
+	</xforms:input>
+	<xforms:output value="concat(local-name(*[1]),'=',car)" id="gen-9"/>
+	
+  </xhtml:body>
+</xhtml:html>

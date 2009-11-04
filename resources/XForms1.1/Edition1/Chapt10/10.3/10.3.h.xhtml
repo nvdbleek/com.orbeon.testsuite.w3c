@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xhtml:head>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xhtml:title>10.3.h insert action and repeat element</xhtml:title>
+        <xforms:model id="gen-1">
+            <xforms:instance id="first">
+                <number_lists>
+                    <number_list id="first_list">
+                        <number>1</number>
+                        <number>2</number>
+                        <number>3</number>
+                        <number>4</number>
+                        <number>5</number>
+                    </number_list>
+                    <number_list>
+                      <number>1</number>
+                    </number_list>
+                    <number_list>
+                      <number>2</number>
+                    </number_list>
+                </number_lists>
+            </xforms:instance>
+            <xforms:setindex ev:event="xforms-ready" repeat="repeat_2" index="3" id="gen-3"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-4">
+            <xforms:label class="title" id="gen-5">10.3.h insert action and repeat element</xforms:label>
+        </xforms:group>      
+        <xforms:group id="gen-6">
+            <xforms:label id="gen-7">
+              You must see the correct values for the two output controls both before and after 
+              activating the Perform Insert trigger. The conditions change after the trigger is activated. 
+            </xforms:label>
+        </xforms:group>
+        <xforms:switch id="gen-8">
+            <xforms:case id="before">
+                <xforms:group id="gen-10">
+                  <xforms:label id="gen-11">Before - You must see the value "1" : </xforms:label>
+                  <xforms:output value="index('repeat_1')" id="gen-12">	<!-- this is the index(outer) -->
+                  </xforms:output>
+                </xforms:group>
+                <xforms:group id="gen-13">
+                  <xforms:label id="gen-14">Before - You must see the value "3" : </xforms:label>
+                  <xforms:output value="index('repeat_2')" id="gen-15">	<!-- this is the index(inner) -->
+                  </xforms:output>
+                </xforms:group>
+            </xforms:case>
+            <xforms:case id="after">
+                <xforms:group id="gen-17">
+                  <xforms:label id="gen-18">After - You must see the value "3" : </xforms:label>
+                  <xforms:output value="index('repeat_1')" id="gen-19">	<!-- this is the index(outer) -->
+                  </xforms:output>
+                </xforms:group>
+                <xforms:group id="gen-20">
+                  <xforms:label id="gen-21">After - You must see the value "1" : </xforms:label>
+                  <xforms:output value="index('repeat_2')" id="gen-22">	<!-- this is the index(inner) -->
+                  </xforms:output>
+                </xforms:group>
+            </xforms:case>
+        </xforms:switch>
+        <xforms:group id="gen-23">
+            <xforms:trigger id="gen-24">
+                <xforms:label id="gen-25">Perform Insert</xforms:label>
+                <xforms:insert ev:event="DOMActivate" position="after" nodeset="number_list" at="2" id="gen-26"/>
+                <xforms:toggle ev:event="DOMActivate" case="after" id="gen-27"/>
+            </xforms:trigger>
+        </xforms:group>  
+        <xforms:group id="gen-28">
+          <!-- 
+            <xforms:label>The repeats being acted upon: </xforms:label>
+          -->  
+            <xforms:repeat id="repeat_1" nodeset="number_list">
+                <xforms:repeat id="repeat_2" nodeset="number">
+                  <!-- 
+                    <xforms:output ref=".">
+                        <xforms:label/>
+                    </xforms:output>
+                  --> 
+                </xforms:repeat>
+            </xforms:repeat>
+        </xforms:group>
+    </xhtml:body>
+</xhtml:html>

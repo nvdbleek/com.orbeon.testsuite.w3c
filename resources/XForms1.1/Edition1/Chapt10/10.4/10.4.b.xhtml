@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xhtml:head>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xhtml:title>10.4.b delete action using context and bind attributes</xhtml:title>
+        <xforms:model id="mod1">
+            <xforms:instance id="first">
+                <number_lists>
+                    <number_list>
+                        <number>1</number>
+                        <number>2</number>
+                        <number>3</number>
+                    </number_list>
+                    <number_list id="pick_me">
+                        <number>4</number>
+                        <number>5</number>
+                        <number>6</number>
+                    </number_list>
+                    <number_list/>
+                </number_lists>
+            </xforms:instance>
+            <xforms:bind id="bind1" nodeset="number_list[2]/number[3]"/>
+        </xforms:model>
+        <xforms:model id="mod2">
+            <xforms:instance id="gen-5">
+                <number_lists>
+                    <number_list>
+                        <number>7</number>
+                        <number>8</number>
+                        <number>9</number>
+                        <number>10</number>
+                    </number_list>
+                    <number_list>
+                        <number>11</number>
+                        <number>12</number>
+                        <number>13</number>
+                        <number>14</number>
+                    </number_list>
+                </number_lists>
+            </xforms:instance>
+            <!-- second instance to make sure the default instance of model specified by model attr is used -->
+            <xforms:instance id="second">
+                <number_lists>
+                    <number_list>
+                        <number>15</number>
+                        <number>16</number>
+                        <number>17</number>
+                        <number>18</number>
+                    </number_list>
+                    <number_list>
+                        <number>19</number>
+                        <number>20</number>
+                        <number>21</number>
+                        <number>22</number>
+                    </number_list>
+                </number_lists>
+            </xforms:instance>
+            <xforms:action ev:event="xforms-ready" id="gen-7">
+                <!-- delete <number>6</number> in second number_list nodeset, context attr should be ignored-->
+                <xforms:delete bind="bind1" context="number_list/number" id="gen-8"/>
+                <!-- make sure default element node of default instance of model specified by model attr used (10 is deleted) -->
+                <xforms:delete model="mod2" nodeset="number_list[1]/number[4]" id="gen-9"/>
+                <!-- make sure evaluation context changed b4 special attributes evaluated (14 is deleted) -->
+                <xforms:delete model="mod2" context="number_list[2]" nodeset="number[4]" id="gen-10"/>
+            </xforms:action>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-11">
+            <xforms:label class="title" id="gen-12">10.4.b delete action using context and bind attributes</xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-13">
+            <xforms:label id="gen-14">You must see only the numbers 4 and 5 :</xforms:label>
+            <xforms:repeat nodeset="number_list[2]/number" id="gen-15">
+                <xforms:output class="hlist" value="concat(. , ' ')" id="gen-16">
+                    <xforms:label id="gen-17"/>
+                </xforms:output>
+            </xforms:repeat>
+        </xforms:group>
+        <xforms:group model="mod2" id="gen-18">
+            <xforms:label id="gen-19">You must see only the numbers 7, 8, and 9 :</xforms:label>
+            <xforms:repeat nodeset="number_list[1]/number" id="gen-20">
+                <xforms:output class="hlist" value="concat(. , ' ')" id="gen-21">
+                    <xforms:label id="gen-22"/>
+                </xforms:output>
+            </xforms:repeat>
+        </xforms:group>
+        <xforms:group model="mod2" id="gen-23">
+            <xforms:label id="gen-24">You must see only the numbers 11, 12, and 13 :</xforms:label>
+            <xforms:repeat nodeset="number_list[2]/number" id="gen-25">
+                <xforms:output class="hlist" value="concat(. , ' ')" id="gen-26">
+                    <xforms:label id="gen-27"/>
+                </xforms:output>
+            </xforms:repeat>
+        </xforms:group>
+    </xhtml:body>
+</xhtml:html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+  	<xhtml:head>
+    	<xhtml:title>10.d revalidate in action element</xhtml:title>
+    	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    	<xforms:model id="thismodel">
+       		<xforms:instance id="gen-2">
+				<car>
+					<model>Pacifica</model>
+				</car>
+       		</xforms:instance>
+       		<xforms:message level="modal" ev:event="xforms-revalidate" id="gen-3">xforms-revalidate</xforms:message>
+    	</xforms:model>
+  	</xhtml:head>
+  	<xhtml:body>
+  		<xforms:group id="gen-4">
+	  		<xforms:label class="title" id="gen-5">10.d revalidate in action element</xforms:label>
+	  	</xforms:group>
+  		<xforms:group id="gen-6">
+  			<xforms:label id="gen-7">
+  			  When you activate the Update Car trigger you must see an xforms:action message and an xforms-revalidate 
+  			  message. 
+  			</xforms:label>
+  		</xforms:group>
+  		
+		    <xforms:repeat nodeset="/car/model" id="gen-8">
+		        <xforms:input ref="." id="gen-9">
+		            <xforms:label id="gen-10">Car model : </xforms:label>
+		        </xforms:input>
+		    </xforms:repeat>
+  		
+ 		
+			<xforms:trigger id="gen-11">
+		        <xforms:label id="gen-12">Update Car</xforms:label>
+		        <xforms:action ev:event="DOMActivate" id="gen-13">
+		            <xforms:setvalue ref="/car/model" id="gen-14">Pilot</xforms:setvalue>
+		            <xforms:message level="modal" id="gen-15">xforms:action</xforms:message>
+		        </xforms:action>
+			</xforms:trigger>
+		
+  </xhtml:body>
+</xhtml:html>

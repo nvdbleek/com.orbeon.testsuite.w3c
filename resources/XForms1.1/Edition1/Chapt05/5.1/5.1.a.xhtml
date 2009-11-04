@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+  <xhtml:head>
+    <xhtml:title>5.1.a built-in primitive types</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+      <xforms:instance id="gen-2">
+	<types>
+	  <my_dateTime/>
+	  <my_time/>
+	  <my_date/>
+	  <my_gYearMonth/>
+	  <my_gYear/>
+	  <my_gMonthDay/>
+	  <my_gDay/>
+	  <my_gMonth/>
+	  <my_string/>
+	  <my_boolean/>
+	  <my_base64Binary/>
+	  <my_hexBinary/>
+	  <my_float/>
+	  <my_decimal/>
+	  <my_double/>
+	  <my_anyURI/>	
+	  <my_QName/>	
+	</types>
+      </xforms:instance>
+
+      <xforms:bind nodeset="my_dateTime" type="xsd:dateTime" id="gen-3"/>
+      <xforms:bind nodeset="my_time" type="xsd:time" id="gen-4"/>
+      <xforms:bind nodeset="my_date" type="xsd:date" id="gen-5"/>
+      <xforms:bind nodeset="my_gYearMonth" type="xsd:gYearMonth" id="gen-6"/>
+      <xforms:bind nodeset="my_gYear" type="xsd:gYear" id="gen-7"/>
+      <xforms:bind nodeset="my_gMonthDay" type="xsd:gMonthDay" id="gen-8"/>
+      <xforms:bind nodeset="my_gDay" type="xsd:gDay" id="gen-9"/>
+      <xforms:bind nodeset="my_gMonth" type="xsd:gMonth" id="gen-10"/>
+      <xforms:bind nodeset="my_string" type="xsd:string" id="gen-11"/>
+      <xforms:bind nodeset="my_boolean" type="xsd:boolean" id="gen-12"/>
+      <xforms:bind nodeset="my_base64Binary" type="xsd:base64Binary" id="gen-13"/>
+      <xforms:bind nodeset="my_hexBinary" type="xsd:hexBinary" id="gen-14"/>
+      <xforms:bind nodeset="my_float" type="xsd:float" id="gen-15"/>
+      <xforms:bind nodeset="my_decimal" type="xsd:decimal" id="gen-16"/>
+      <xforms:bind nodeset="my_double" type="xsd:double" id="gen-17"/>
+      <xforms:bind nodeset="my_anyURI" type="xsd:anyURI" id="gen-18"/>	
+      <xforms:bind nodeset="my_QName" type="xsd:QName" id="gen-19"/>	
+    </xforms:model>
+    
+    <xforms:model id="event_model">
+      <xforms:instance id="gen-21">
+	<events>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	  <event/>
+	</events>
+      </xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  
+  <xhtml:body>
+    <xforms:group id="gen-22">
+      <xforms:label class="title" id="gen-23">5.1.a built-in primitive types</xforms:label>
+    </xforms:group>
+    <xforms:group id="gen-24">
+      <xforms:label id="gen-25">
+	When you activate the Valid Values trigger you must see an "xforms-valid" output for all the 
+	data types. When you activate the Invalid Values trigger you must see an "XFORMS-INVALID" 
+	output for all the data types except string, which will either have an output of xforms-valid 
+	or no output. 
+      </xforms:label>
+    </xforms:group>
+    <xforms:group id="gen-26">
+      <xforms:label id="gen-27">Results:</xforms:label>
+      <xforms:repeat model="event_model" nodeset="/events/event" id="gen-28">
+	<xforms:output model="event_model" ref="." id="gen-29">
+	  <xforms:label id="gen-30"/>
+	</xforms:output>
+      </xforms:repeat>
+    </xforms:group>
+    <xforms:trigger id="gen-31">
+      <xforms:label id="gen-32">Valid Values</xforms:label>
+      <xforms:action ev:event="DOMActivate" id="gen-33">
+	<xforms:setvalue ref="my_dateTime" id="gen-34">1999-05-31T13:20:00-05:00</xforms:setvalue>
+	<xforms:setvalue ref="my_time" id="gen-35">13:20:00-05:00</xforms:setvalue>
+	<xforms:setvalue ref="my_date" id="gen-36">1999-05-31</xforms:setvalue>
+	<xforms:setvalue ref="my_gYearMonth" id="gen-37">1999-05</xforms:setvalue>
+	<xforms:setvalue ref="my_gYear" id="gen-38">1999</xforms:setvalue>				
+	<xforms:setvalue ref="my_gMonthDay" id="gen-39">--09-14</xforms:setvalue>
+	<xforms:setvalue ref="my_gDay" id="gen-40">---15</xforms:setvalue>
+	<xforms:setvalue ref="my_gMonth" id="gen-41">--11</xforms:setvalue>
+	<xforms:setvalue ref="my_string" id="gen-42">Strings, strings, everywhere.</xforms:setvalue>
+	<xforms:setvalue ref="my_boolean" id="gen-43">true</xforms:setvalue>
+	<xforms:setvalue ref="my_base64Binary" id="gen-44">WEZvcm1zIFJ1bGVz</xforms:setvalue>
+	<xforms:setvalue ref="my_hexBinary" id="gen-45">DEADBEEF</xforms:setvalue>
+	<xforms:setvalue ref="my_float" id="gen-46">1e-6</xforms:setvalue>
+	<xforms:setvalue ref="my_decimal" id="gen-47">12678967.543233</xforms:setvalue>
+	<xforms:setvalue ref="my_double" id="gen-48">INF</xforms:setvalue>
+	<xforms:setvalue ref="my_anyURI" id="gen-49">http://example.com/data/potato</xforms:setvalue>
+	<xforms:setvalue ref="my_QName" id="gen-50">my:myelement</xforms:setvalue>
+      </xforms:action>
+    </xforms:trigger>
+    <xforms:trigger id="gen-51">
+      <xforms:label id="gen-52">Invalid Values</xforms:label>
+      <xforms:action ev:event="DOMActivate" id="gen-53">
+	<xforms:setvalue ref="my_dateTime" id="gen-54">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_time" id="gen-55">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_date" id="gen-56">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_gYearMonth" id="gen-57">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_gYear" id="gen-58">Bogus Data</xforms:setvalue>				
+	<xforms:setvalue ref="my_gMonthDay" id="gen-59">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_gDay" id="gen-60">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_gMonth" id="gen-61">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_string" id="gen-62"/>
+	<xforms:setvalue ref="my_boolean" id="gen-63">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_base64Binary" id="gen-64">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_hexBinary" id="gen-65">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_float" id="gen-66">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_decimal" id="gen-67">Bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_double" id="gen-68">bogus Data</xforms:setvalue>
+	<xforms:setvalue ref="my_anyURI" id="gen-69">% 6 7</xforms:setvalue>
+	<xforms:setvalue ref="my_QName" id="gen-70">Bogus Data</xforms:setvalue>
+      </xforms:action>
+    </xforms:trigger>
+    <xforms:group id="gen-71">
+      <xforms:input ref="my_dateTime" id="gen-72">
+	<xforms:label id="gen-73">dateTime </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[1]" id="gen-74">
+	  XFORMS-INVALID (dateTime)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[1]" id="gen-75">
+	  xforms-valid (dateTime)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-76">
+      <xforms:input ref="my_time" id="gen-77">
+	<xforms:label id="gen-78">time </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[2]" id="gen-79">
+	  XFORMS-INVALID (time)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[2]" id="gen-80">
+	  xforms-valid (time)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-81">
+      <xforms:input ref="my_date" id="gen-82">
+	<xforms:label id="gen-83">date </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[3]" id="gen-84">
+	  XFORMS-INVALID (date)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[3]" id="gen-85">
+	  xforms-valid (date)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-86">
+      <xforms:input ref="my_gYearMonth" id="gen-87">
+	<xforms:label id="gen-88">gYearMonth </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[4]" id="gen-89">
+	  XFORMS-INVALID (gYearMonth)
+	</xforms:setvalue> 
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[4]" id="gen-90">
+	  xforms-valid (gYearMonth)
+	</xforms:setvalue> 
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-91">
+      <xforms:input ref="my_gYear" id="gen-92">
+	<xforms:label id="gen-93">gYear </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[5]" id="gen-94">
+	  XFORMS-INVALID (gYear)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[5]" id="gen-95">
+	  xforms-valid (gYear)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-96">
+      <xforms:input ref="my_gMonthDay" id="gen-97">
+	<xforms:label id="gen-98">gMonthDay </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[6]" id="gen-99">
+	  XFORMS-INVALID (gMonthDay)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[6]" id="gen-100">
+	  xforms-valid (gMonthDay)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-101">
+      <xforms:input ref="my_gDay" id="gen-102">
+	<xforms:label id="gen-103">gDay </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[7]" id="gen-104">
+	  XFORMS-INVALID (gDay)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[7]" id="gen-105">
+	  xforms-valid (gDay)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-106">
+      <xforms:input ref="my_gMonth" id="gen-107">
+	<xforms:label id="gen-108">gMonth </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[8]" id="gen-109">
+	  XFORMS-INVALID (gMonth)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[8]" id="gen-110">
+	  xforms-valid (gMonth)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-111">
+      <xforms:input ref="my_string" id="gen-112">
+	<xforms:label id="gen-113">string </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[9]" id="gen-114">
+	  XFORMS-INVALID (string)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[9]" id="gen-115">
+	  xforms-valid (string)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-116">
+      <xforms:input ref="my_boolean" id="gen-117">
+	<xforms:label id="gen-118">boolean </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[10]" id="gen-119">
+	  XFORMS-INVALID (boolean)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[10]" id="gen-120">
+	  xforms-valid (boolean)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-121">
+			<xforms:output ref="my_base64Binary" id="gen-122">
+				<xforms:label id="gen-123">base64Binary </xforms:label>
+				<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[11]" id="gen-124">
+					XFORMS-INVALID (base64Binary)
+				</xforms:setvalue>
+				<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[11]" id="gen-125">
+					xforms-valid (base64Binary)
+				</xforms:setvalue>
+			</xforms:output>
+    </xforms:group>
+    <xforms:group id="gen-126">
+			<xforms:output ref="my_hexBinary" id="gen-127">
+				<xforms:label id="gen-128">hexBinary </xforms:label>
+				<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[12]" id="gen-129">
+					XFORMS-INVALID (hexBinary)
+				</xforms:setvalue>
+				<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[12]" id="gen-130">
+					xforms-valid (hexBinary)
+				</xforms:setvalue>
+			</xforms:output>
+    </xforms:group>
+    <xforms:group id="gen-131">
+      <xforms:input ref="my_float" id="gen-132">
+	<xforms:label id="gen-133">float </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[13]" id="gen-134">
+	  XFORMS-INVALID (float)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[13]" id="gen-135">
+	  xforms-valid (float)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-136">
+      <xforms:input ref="my_decimal" id="gen-137">
+	<xforms:label id="gen-138">decimal </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[14]" id="gen-139">
+	  XFORMS-INVALID (decimal)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[14]" id="gen-140">
+	  xforms-valid (decimal)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-141">
+      <xforms:input ref="my_double" id="gen-142">
+	<xforms:label id="gen-143">double </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[15]" id="gen-144">
+	  XFORMS-INVALID (double)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[15]" id="gen-145">
+	  xforms-valid (double)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-146">
+      <xforms:input ref="my_anyURI" id="gen-147">
+	<xforms:label id="gen-148">anyURI </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[16]" id="gen-149">
+	  XFORMS-INVALID (anyURI)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[16]" id="gen-150">
+	  xforms-valid (anyURI)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    <xforms:group id="gen-151">
+      <xforms:input ref="my_QName" id="gen-152">
+	<xforms:label id="gen-153">QName </xforms:label>
+	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[17]" id="gen-154">
+	  XFORMS-INVALID (QName)
+	</xforms:setvalue>
+	<xforms:setvalue ev:event="xforms-valid" model="event_model" ref="/events/event[17]" id="gen-155">
+	  xforms-valid (QName)
+	</xforms:setvalue>
+      </xforms:input>
+    </xforms:group>
+    
+  </xhtml:body>
+  
+</xhtml:html>

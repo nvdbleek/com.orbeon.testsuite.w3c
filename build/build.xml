@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     29-okt-2009 15:20:36                                                        
+
+     Update test suite    
+     Update and prepare test suite for running inside orbeon
+                   
+     nvdbleek                                                                
+     ====================================================================== -->
+<project name="Update test suite" default="update" basedir="..">
+	<xmlproperty file="build.properties.xml" semanticAttributes="true" keepRoot="false" />
+	<property name="resources.dir" value="${basedir}/resources" />
+	<property name="work.dir" value="work" />
+	<property name="orbeon.install.dir" value="C:/Program Files (x86)/Apache Software Foundation/Tomcat 5.5/webapps/orbeon-N20091029" />
+
+	<description>
+            Update and prepare test suite for running inside orbeon
+			wget --accept=xhtml --no-parent --wait 1 --recursive --no-host-directories --cut-dirs=4 --exclude-directories=MarkUp/Forms/Test/XForms1.1/Edition1/driverPages/,MarkUp/Forms/Test/XForms1.1/Edition1/zip/ http://www.w3.org/MarkUp/Forms/Test/XForms1.1/Edition1/
+    </description>
+
+
+	<!-- ================================= 
+          target: update tests             
+         ================================= -->
+	<target name="update" depends="patch-tests, deploy-tests" description="Update and prepare test suite for running inside orbeon">
+
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: patch tests                     
+         - - - - - - - - - - - - - - - - - -->
+	<target name="patch-tests">
+		<move todir="${resources.dir}/XForms1.1/Edition1" includeemptydirs="false">
+			<fileset dir="${resources.dir}/XForms1.1/Edition1">
+				<exclude name="**/*.bak" />
+			</fileset>
+			<mapper type="glob" from="*.xhtml" to="*.xhtml.bak" />
+		</move>
+
+		<xslt basedir="${resources.dir}/XForms1.1/Edition1" destdir="${resources.dir}/XForms1.1/Edition1" style="build/orbeon-xforms.xsl">
+			<classpath refid="saxon.class.path" />
+			<mapper type="glob" from="*.xhtml.bak" to="*.xhtml" />
+			<xmlcatalog refid="html" />
+		</xslt>
+		<delete>
+			<fileset dir="${resources.dir}/XForms1.1/Edition1" includes="**/*.xhtml.bak" />
+		</delete>
+	</target>
+
+	<target name="deploy-tests">
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps">
+			<fileset dir="resources/apps" includes="**/*" />
+		</copy>
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/forms">
+			<fileset dir="resources" includes="XForms1.1/Edition1/**/*" />
+		</copy>
+	</target>
+
+
+	<!-- ================================= 
+	          target: start selenium RC             
+	     ================================= -->
+	<target name="start-seleniumRC">
+		<echo />
+		<echo message="************************************************************************************" />
+		<echo message="Starting seleniumRC on ${test.selenium.server.server}:${test.selenium.server.port} via ${test.selenium.server.jar}" />
+		<echo message="************************************************************************************" />
+		<echo />
+
+		<java jar="${test.selenium.server.jar}" fork="true" spawn="true">
+		</java>
+
+		<waitfor maxwait="20" maxwaitunit="second">
+			<and>
+				<socket server="${test.selenium.server.server}" port="${test.selenium.server.port}" />
+				<http url="${test.selenium.server.url}" errorsBeginAt="${test.selenium.server.errorsBeginAt}" />
+			</and>
+		</waitfor>
+	</target>
+
+	<!-- ================================= 
+			target: stop selenium RC             
+		 ================================= -->
+	<target name="stop-seleniumRC">
+		<echo />
+		<echo message="************************************************************************************" />
+		<echo message="Stopping seleniumRC" />
+		<echo message="************************************************************************************" />
+		<echo />
+		<get taskname="selenium-shutdown" src="http://${test.selenium.server.server}:${test.selenium.server.port}/selenium-server/driver/?cmd=shutDownSeleniumServer" dest="result.txt" ignoreerrors="false" />
+	</target>
+
+	<xmlcatalog id="html">
+		<dtd publicId="-//W3C//DTD XHTML 1.0 Transitional//EN" location="build/html/xhtml1-transitional.dtd" />
+		<dtd publicId="-//W3C//DTD XHTML 1.0 Strict//EN" location="build/xhtml/xhtml1-strict.dtd" />
+	</xmlcatalog>
+</project>

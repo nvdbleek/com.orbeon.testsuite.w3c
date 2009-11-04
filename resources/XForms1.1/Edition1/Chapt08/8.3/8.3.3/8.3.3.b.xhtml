@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xhtml:head>
+    <xhtml:title>8.3.3.b precedence for value element</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+    	<xforms:instance id="gen-2">
+    		<icecream>
+    			<flavor/>
+    			<default>Neapolitan</default>
+    		</icecream>
+    	</xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xforms:group id="gen-3">
+    	<xforms:label class="title" id="gen-4">8.3.3.b precedence for value element</xforms:label>
+    </xforms:group>
+    <xforms:group id="gen-5">
+    	<xforms:label id="gen-6">
+    	  No matter what flavor you choose in the Flavors select1 control the value "Neapolitan" must be 
+    	  displayed in the Selected Flavor output control. 
+    	</xforms:label>
+    </xforms:group>
+	<xforms:select1 ref="/icecream/flavor" appearance="compact" id="gen-7">
+		<xforms:label id="gen-8">Flavors:</xforms:label>
+		<xforms:item id="gen-9">
+			<xforms:label id="gen-10">Vanilla</xforms:label>
+			<xforms:value ref="/icecream/default" id="gen-11">vanilla</xforms:value>
+		</xforms:item>
+		<xforms:item id="gen-12">
+			<xforms:label id="gen-13">Strawberry</xforms:label>
+			<xforms:value ref="/icecream/default" id="gen-14">strawberry</xforms:value>
+		</xforms:item>
+		<xforms:item id="gen-15">
+			<xforms:label id="gen-16">Chocolate</xforms:label>
+			<xforms:value ref="/icecream/default" id="gen-17">chocolate</xforms:value>
+		</xforms:item>
+	</xforms:select1>
+	<xforms:output ref="/icecream/flavor" id="gen-18">
+		<xforms:label id="gen-19">Selected Flavor : </xforms:label>
+	</xforms:output>
+	
+  </xhtml:body>
+</xhtml:html>

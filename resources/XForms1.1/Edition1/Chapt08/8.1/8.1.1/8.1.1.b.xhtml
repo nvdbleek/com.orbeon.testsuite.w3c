@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+	<xhtml:head>
+		<xhtml:title>8.1.1.b non-relevant form control becoming relevant</xhtml:title>
+		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+		<xforms:model id="gen-1">
+			<xforms:instance id="gen-2">
+				<person-name>
+					<first-name>
+						<title/>
+						<name/>
+					</first-name>
+					<last-name/>
+					<switch>0</switch>
+				</person-name>
+			</xforms:instance>
+			<xforms:bind id="fname_bind" nodeset="/person-name/first-name" relevant="/person-name/switch &gt; 1"/>
+			<xforms:setvalue ev:event="xforms-ready" ref="/person-name/switch" id="gen-4">2</xforms:setvalue>
+		</xforms:model>
+	</xhtml:head>
+	<xhtml:body>
+		<xforms:group id="gen-5">
+			<xforms:label class="title" id="gen-6">8.1.1.b non-relevant form control becoming relevant</xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-7">
+			<xforms:label id="gen-8">
+			  You must see an xforms-enabled message, an xforms-value-changed message, an xforms-valid 
+			  message, an xforms-readwrite message, and an xforms-optional message. 
+			</xforms:label>	
+		</xforms:group>
+		  <xforms:input ref="/person-name/first-name/name" id="gen-9">
+			<xforms:label id="gen-10">First Name:</xforms:label>
+			<xforms:action ev:event="xforms-enabled" id="gen-11">
+			  <xforms:message level="modal" id="gen-12">xforms-enabled</xforms:message>
+			</xforms:action>
+			<xforms:action ev:event="xforms-value-changed" id="gen-13">
+			  <xforms:message level="modal" id="gen-14">xforms-value-changed</xforms:message>
+			</xforms:action>
+			<xforms:action ev:event="xforms-valid" id="gen-15">
+			  <xforms:message level="modal" id="gen-16">xforms-valid</xforms:message>
+			</xforms:action>
+			<xforms:action ev:event="xforms-readwrite" id="gen-17">
+			  <xforms:message level="modal" id="gen-18">xforms-readwrite</xforms:message>
+			</xforms:action>
+			<xforms:action ev:event="xforms-optional" id="gen-19">
+			  <xforms:message level="modal" id="gen-20">xforms-optional</xforms:message>
+			</xforms:action>
+		  </xforms:input>
+		
+	</xhtml:body>
+</xhtml:html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+  	<xhtml:head>
+    	<xhtml:title>10.13.b reset element with model attribute</xhtml:title>
+    	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    	<xforms:model id="m1">
+			<xforms:instance id="gen-2">
+				<car>Mercedes</car>
+			</xforms:instance>
+    	</xforms:model>
+    	<xforms:model id="m2">
+       		<xforms:instance id="gen-4">
+				<car>
+					<color>white</color>
+				</car>
+       		</xforms:instance>
+       		<xforms:bind id="color" nodeset="/car/color"/>
+       		<xforms:bind id="year" nodeset="/car/year"/>
+       		<xforms:action ev:event="xforms-reset" id="gen-7">
+       			<xforms:message level="modal" id="gen-8">xforms-reset</xforms:message>
+       		</xforms:action>
+       		<xforms:setvalue model="m1" ref="/car" ev:event="xforms-ready" id="gen-9">BMW</xforms:setvalue>
+			<xforms:setvalue model="m2" ref="/car/color" ev:event="xforms-ready" id="gen-10">red</xforms:setvalue>
+    	</xforms:model>
+  	</xhtml:head>
+  	<xhtml:body>
+  		<xforms:group id="gen-11">
+	  		<xforms:label class="title" id="gen-12">10.13.b reset element with model attribute</xforms:label>
+	  	</xforms:group>
+  		<xforms:group id="gen-13">
+  			<xforms:label id="gen-14">
+  			  When you activate the Reset Car Type Value trigger the value in the Car Type output must change to 
+  			  "Mercedes". You must NOT see a message. 
+  			  When you activate the Reset Car Color Value trigger the value in the Car Color output must change to 
+  			  "white" and you must see an xforms-reset message. 
+			</xforms:label>
+  		</xforms:group>
+		<xforms:group id="gen-15">
+		<xforms:output model="m1" ref="/car" id="gen-16">
+			<xforms:label id="gen-17">Car Type : </xforms:label>
+		</xforms:output>
+		
+		<xforms:trigger id="gen-18">
+			<xforms:label id="gen-19">Reset Car Type Value</xforms:label>
+			<xforms:action ev:event="DOMActivate" id="gen-20">
+				<xforms:reset id="gen-21"/>
+			</xforms:action>
+		</xforms:trigger>
+		</xforms:group>
+		<xforms:group id="gen-22">
+		<xforms:output model="m2" ref="/car/color" id="gen-23">
+			<xforms:label id="gen-24">Car Color : </xforms:label>
+		</xforms:output>
+		
+		<xforms:trigger id="gen-25">
+			<xforms:label id="gen-26">Reset Car Color Value</xforms:label>
+			<xforms:action ev:event="DOMActivate" id="gen-27">
+				<xforms:reset model="m2" id="gen-28"/>
+			</xforms:action>
+		</xforms:trigger>
+		</xforms:group>
+		
+  </xhtml:body>
+</xhtml:html>

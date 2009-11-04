@@ -1,0 +1,32 @@
+
+	<!--
+		Copyright (C) 2009 Orbeon, Inc. This program is free software; you can
+		redistribute it and/or modify it under the terms of the GNU Lesser
+		General Public License as published by the Free Software Foundation;
+		either version 2.1 of the License, or (at your option) any later
+		version. This program is distributed in the hope that it will be
+		useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+		Lesser General Public License for more details. The full text of the
+		license is available at http://www.gnu.org/copyleft/lesser.html
+	-->
+<config xmlns="http://www.orbeon.com/oxf/controller" xmlns:oxf="http://www.orbeon.com/oxf/processors"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" instance-passing="forward">
+
+	<files path-info="*.gif" />
+	<files path-info="*.css" />
+	<files path-info="*.pdf" />
+	<files path-info="*.js" />
+	<files path-info="*.png" />
+	<files path-info="*.jpg" />
+
+	<page path-info="/xforms-test-suite/forms/(.+).xhtml" matcher="oxf:perl5-matcher"
+		view="forms/${1}.xhtml" />
+		
+	<page path-info="/xforms-test-suite/boe" matcher="oxf:perl5-matcher"
+		view="forms/XForms1.1/Edition1/Chapt02/2.3.a.xhtml" />
+	
+
+	<epilogue url="oxf:/config/epilogue.xpl" />
+
+</config>

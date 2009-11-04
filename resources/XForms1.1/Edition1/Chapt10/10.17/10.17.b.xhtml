@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xhtml:head>
+        <xhtml:title>10.17.b conditional execution of XForms actions using action element</xhtml:title>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xforms:model id="car">
+            <xforms:instance id="data">
+                <root>beer</root>
+            </xforms:instance>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-3">
+            <xforms:label class="title" id="gen-4">10.17.b conditional execution of XForms actions using action element</xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-5">
+            <xforms:label id="gen-6">
+              When you activate the Positive Test trigger you must see the message "This is the positive test". 
+              When you activate the Negative Test trigger you must NOT see the message "This is the negative 
+              test". 
+            </xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-7">
+            <xforms:trigger id="gen-8">
+              <xforms:label id="gen-9">Positive Test</xforms:label>
+              <xforms:action ev:event="DOMActivate" if="/root='beer'" id="gen-10">
+                <xforms:message ev:event="DOMActivate" level="modal" id="gen-11">This is the positive test</xforms:message>
+              </xforms:action>
+            </xforms:trigger>
+            <xforms:trigger id="gen-12">
+              <xforms:label id="gen-13">Negative Test</xforms:label>
+              <xforms:action ev:event="DOMActivate" if="/root='rootrootforthehometeam'" id="gen-14">
+                <xforms:message ev:event="DOMActivate" level="modal" id="gen-15">This is the negative test</xforms:message>
+              </xforms:action>
+            </xforms:trigger>
+        </xforms:group>
+        
+    </xhtml:body>
+</xhtml:html>

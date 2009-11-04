@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xhtml:head>
+		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+		<xhtml:title>11.2.d xforms-submit with empty instance data and required attribute</xhtml:title>
+		<xforms:model id="gen-1">
+			<xforms:instance id="gen-2">
+				<root>
+					<data/>
+				</root>
+			</xforms:instance>
+			<xforms:bind nodeset="data" required="true()" id="gen-3"/>
+			<xforms:instance id="error_holder">
+				<root>
+					<error_name/>
+				</root>
+			</xforms:instance>
+			<xforms:submission id="sub1" method="post" ref="data" action="http://xformstest.org/cgi-bin/echo.sh" replace="none"/>
+		</xforms:model>
+	</xhtml:head>
+	<xhtml:body>
+		<xforms:group id="gen-6">
+			<xforms:label class="title" id="gen-7">11.2.d xforms-submit with empty instance data and required attribute</xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-8">
+			<xforms:label id="gen-9">
+			  After you activate the Submit Here submit control you must see an xforms-submit-error 
+			  message and see the value "validation-error" as output from the Error Name output control. 
+			</xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-10">
+			<xforms:output ref="instance('error_holder')/error_name" id="gen-11">
+				<xforms:label id="gen-12">Error Name : </xforms:label>
+			</xforms:output>
+		</xforms:group>
+		<xforms:submit submission="sub1" id="gen-13">
+			<xforms:label id="gen-14">Submit Here</xforms:label>
+		</xforms:submit>
+		<xforms:action ev:event="xforms-submit-error" ev:observer="sub1" id="gen-15">
+			<xforms:message level="modal" id="gen-16">xforms-submit-error</xforms:message>
+			<xforms:setvalue ref="instance('error_holder')/error_name" value="event('error-type')" id="gen-17"/>
+		</xforms:action>
+		
+	</xhtml:body>
+</xhtml:html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+	<xhtml:head>
+		<xhtml:title>7.2.f namespace declarations in scope for the attribute are applied to the expression</xhtml:title>
+		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+		<xforms:model id="gen-1">
+			<xforms:instance id="gen-2">
+				<Root xmlns="http://example.org">Mazda</Root>
+			</xforms:instance>
+			<xforms:bind xmlns:ex="http://example.org" nodeset="/ex:Root" readonly="true()" id="gen-3"/>
+		</xforms:model>
+	</xhtml:head>
+	<xhtml:body>
+		<xforms:group id="gen-4">
+			<xforms:label class="title" id="gen-5">7.2.f namespace declarations in scope for the attribute are applied to the 
+			expression</xforms:label>
+		</xforms:group>	
+		<xforms:group id="gen-6">
+			<xforms:label id="gen-7">
+			The Car Make input control must contain the value "Mazda" and you must be unable to 
+			change the value. 
+			<!-- 
+				Rule 8: Create an instance whose Root element node declares
+				a default namespace of http://example.org. Create a bind
+				element that declares xmlns:ex to be equal to
+				http://example.org and which assigns readonly of true() to
+				the ex:Root element. Create an input control that declares
+				xmlns:ex again and also binds to ex:Root. Ensure that the
+				input control is read only and the default value should be 'Mazda'.
+			-->
+			</xforms:label>	
+		</xforms:group>
+		<xforms:input xmlns:ex="http://example.org" ref="/ex:Root" id="gen-8">
+			<xforms:label id="gen-9">Car Make : </xforms:label>
+		</xforms:input>		
+		
+	</xhtml:body>
+</xhtml:html>

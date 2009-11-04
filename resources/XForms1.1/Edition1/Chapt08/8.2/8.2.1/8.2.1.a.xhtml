@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+  <xhtml:head>
+    <xhtml:title>8.2.1.a label element references instance data</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+       <xforms:instance id="gen-2">       
+          <mylabel>Instance Data</mylabel>
+       </xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+  	<xforms:group id="gen-3">
+  		<xforms:label class="title" id="gen-4">8.2.1.a label element references instance data</xforms:label>
+  	</xforms:group>	
+	<xforms:group id="gen-5">
+		<xforms:label id="gen-6">
+		  You must see an input control with the label "Instance Data". 
+		</xforms:label>	
+	</xforms:group>
+	<xforms:input id="gen-7">
+		<xforms:label ref="/mylabel" id="gen-8"/>
+	</xforms:input>
+	
+  </xhtml:body>
+</xhtml:html>

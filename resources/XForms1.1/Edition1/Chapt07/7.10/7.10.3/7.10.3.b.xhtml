@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms">
+    <xhtml:head>
+        <xhtml:title>7.10.3.b id() function with xml:id</xhtml:title>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xforms:model id="gen-1">
+            <xforms:instance id="gen-2">
+                <root>
+                    <level_1a>
+                        <level_1achild xml:id="a">Node-A</level_1achild>
+                        <level_1achild xml:id="d">Node-D</level_1achild>
+                    </level_1a>
+                    <level_1b>
+                        <level_1bchild xml:id="b">Node-B</level_1bchild>
+                        <level_1bchild xml:id="f">Node-F</level_1bchild>
+                        <level_1bchild xml:id="c">Node-C</level_1bchild>
+                    </level_1b>
+                </root>
+            </xforms:instance>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-3">
+            <xforms:label class="title" id="gen-4">7.10.3.b id() function with xml:id</xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-5">
+            <xforms:label id="gen-6">
+              You must see the value "Node-A" for the Node Values output. <!-- ...I think -->
+            <!-- //This is the old case description, just in case
+                This repeat should operate only on elements in the nodeset
+                &quot;level_1a&quot; whose IDs match &quot;a&quot;, &quot;b&quot;, or
+                &quot;c&quot;. You should see only &quot;a IDREF&quot; below.
+            -->
+            </xforms:label>
+        </xforms:group>
+        <xforms:repeat nodeset="id('a b c', /root/level_1a)" id="gen-7">
+            <xforms:output ref="." id="gen-8">
+                <xforms:label id="gen-9"/>
+            </xforms:output>
+        </xforms:repeat>
+    </xhtml:body>
+
+</xhtml:html>

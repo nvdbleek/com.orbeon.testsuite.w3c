@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+  	<xhtml:head>
+    	<xhtml:title>10.8.e dispatch element dispatches cancelled custom event</xhtml:title>
+    	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    	<xforms:model id="model1" ev:event="custom-event" ev:defaultAction="cancel">
+    		<xforms:action id="gen-2">
+    			<xforms:message level="modal" id="gen-3">custom-event</xforms:message>
+    		</xforms:action>
+    	</xforms:model>
+    	
+  	</xhtml:head>
+  	<xhtml:body>
+  		<xforms:group id="gen-4">
+	  		<xforms:label class="title" id="gen-5">10.8.e dispatch element dispatches cancelled custom event</xforms:label>
+	  	</xforms:group>	
+  		<xforms:group id="gen-6">
+  			<xforms:label id="gen-7">
+  				When you activate the Fire Custom Event trigger you must not see a custom-event message. 
+			</xforms:label>
+  		</xforms:group>
+  		<xforms:trigger id="gen-8">
+	        <xforms:label id="gen-9">Fire Custom Event</xforms:label>
+	        <xforms:action ev:event="DOMActivate" id="gen-10">
+				<xforms:dispatch name="custom-event" targetid="model1" cancelable="true" id="gen-11"/>
+			</xforms:action>
+		</xforms:trigger>
+		
+  </xhtml:body>
+</xhtml:html>

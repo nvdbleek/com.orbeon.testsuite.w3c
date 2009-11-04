@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+  	<xhtml:head>
+    	<xhtml:title>10.2.a setvalue elements with expression or literal</xhtml:title>
+    	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    	<xforms:model id="m1">
+       		<xforms:instance id="gen-2">
+				<car>
+					<color>white</color>
+					<originalCondition>excellent</originalCondition>
+					<currentCondition>fair</currentCondition>
+					<make>Toyota</make>
+				</car>
+       		</xforms:instance>
+       		<xforms:bind id="color" nodeset="/car/color"/>
+       		<xforms:bind id="year" nodeset="/car/year"/>
+    	</xforms:model>
+  	</xhtml:head>
+  	<xhtml:body>
+  		<xforms:group id="gen-5">
+	  		<xforms:label class="title" id="gen-6">10.2.a setvalue elements with expression or literal</xforms:label>
+	  	</xforms:group>
+  		<xforms:group id="gen-7">
+  			<xforms:label id="gen-8">
+  			  You must see the value "white" in the Color output control, the value 
+  			  "excellent" in the Condition output control, and the value "Toyoto" 
+			  in the Make output control. 
+  			  When you activate the Set Color trigger the value in the Color output must change to "blue". 
+  			  When you activate the Set Condition trigger the value in the Condition output must change to 
+  			  "fair". 
+  			  When you activate the Set Make trigger the value in the Make output must not change. 
+			</xforms:label>
+  		</xforms:group>
+		<xforms:group id="gen-9">
+		  <xforms:output ref="/car/color" id="gen-10">
+			<xforms:label id="gen-11">Color : </xforms:label>
+		  </xforms:output>
+		  <xforms:trigger id="gen-12"> <!-- uses literal -->
+			<xforms:label id="gen-13">Set Color</xforms:label>
+			  <xforms:action ev:event="DOMActivate" id="gen-14">
+				<xforms:setvalue ref="/car/color" id="gen-15">blue</xforms:setvalue>
+			  </xforms:action>
+		  </xforms:trigger>
+		</xforms:group>
+		<xforms:group id="gen-16">
+			<xforms:output ref="/car/originalCondition" id="gen-17">
+				<xforms:label id="gen-18">Original Condition : </xforms:label>
+			</xforms:output>
+			<xforms:trigger id="gen-19">	<!-- uses expression -->
+				<xforms:label id="gen-20">Set Condition</xforms:label>
+				<xforms:action ev:event="DOMActivate" id="gen-21">
+					<xforms:setvalue ref="/car/originalCondition" value="/car/currentCondition" id="gen-22"/>
+				</xforms:action>
+			</xforms:trigger>
+		</xforms:group>
+		
+		<xforms:group id="gen-23">
+			<xforms:output ref="/car/make" id="gen-24">
+				<xforms:label id="gen-25">Make : </xforms:label>
+			</xforms:output>
+			<xforms:trigger id="gen-26">	<!-- uses expression -->
+				<xforms:label id="gen-27">Set Make</xforms:label>
+				<xforms:action ev:event="DOMActivate" id="gen-28">
+					<xforms:setvalue ref="/car/doabarrelroll" id="gen-29">FAIL</xforms:setvalue>
+				</xforms:action>
+			</xforms:trigger>
+		</xforms:group>
+		
+	<!-- 
+		<xforms:trigger>
+			<xforms:label>Reset Values</xforms:label>
+			<xforms:action ev:event="DOMActivate">
+				<xforms:setvalue ref="/car/originalCondition" value="/car/currentCondition"/>
+			</xforms:action>
+		  </xforms:trigger>
+		</xforms:group>
+	-->
+  </xhtml:body>
+</xhtml:html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+	<xhtml:head>
+		<xhtml:title>11.1.r replace attribute of submission element</xhtml:title>
+		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+		<xforms:model id="form1">
+			<xforms:submission id="submit01" method="get" replace="instance" instance="instance2" action="11.1.r.data.xml"/>
+			<xforms:instance id="instance1">
+				<car>
+					<carOwner>Henry</carOwner>
+					<make>Acura</make>
+					<color>white</color>
+				</car>
+			</xforms:instance>
+			<xforms:instance id="instance2">
+				<car>
+					<carOwner>Thomas</carOwner>
+					<make>Toyota</make>
+					<color>silver</color>
+				</car>
+			</xforms:instance>
+		</xforms:model>
+	</xhtml:head>
+	<xhtml:body>
+	    <xforms:group id="gen-5">
+		    <xforms:label class="title" id="gen-6">11.1.r replace attribute of submission element</xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-7">
+		    <xforms:label id="gen-8">
+			  You must see the values "Henry", "Acura", and "white" in the First 
+			  Instance. You must see the values "Thomas", "Toyota", and "silver" in 
+			  the Second Instance. When you activate the Replace Instance submit control the values in the First 
+			  Instance must stay the same. The values in the second instance must change to "Janel", 
+			  "Saturn", and "red". 
+		    </xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-9">
+		    <xforms:label class="subtitle" id="gen-10">First Instance</xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-11">
+			<xforms:output ref="/car/carOwner" id="gen-12">
+				<xforms:label id="gen-13">Car Owner : </xforms:label>
+			</xforms:output>
+		</xforms:group>
+		<xforms:group id="gen-14">
+			<xforms:output ref="/car/make" id="gen-15">
+				<xforms:label id="gen-16">Car Make : </xforms:label>
+			</xforms:output>
+		</xforms:group>
+		<xforms:group id="gen-17">
+			<xforms:output ref="/car/color" id="gen-18">
+				<xforms:label id="gen-19">Car Color : </xforms:label>
+			</xforms:output>
+		</xforms:group>
+		<xforms:group id="gen-20">
+		    <xforms:label class="subtitle" id="gen-21">Second Instance</xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-22">
+			<xforms:output ref="instance('instance2')/carOwner" id="gen-23">
+				<xforms:label id="gen-24">Car Owner : </xforms:label>
+			</xforms:output>
+		</xforms:group>
+		<xforms:group id="gen-25">
+			<xforms:output ref="instance('instance2')/make" id="gen-26">
+				<xforms:label id="gen-27">Car Make : </xforms:label>
+			</xforms:output>
+		</xforms:group>
+		<xforms:group id="gen-28">
+			<xforms:output ref="instance('instance2')/color" id="gen-29">
+				<xforms:label id="gen-30">Car Color : </xforms:label>
+			</xforms:output>
+		</xforms:group>
+		<xforms:group id="gen-31">
+			<xforms:submit submission="submit01" id="gen-32">
+				<xforms:label id="gen-33">Replace Instance</xforms:label>
+			</xforms:submit>
+		</xforms:group>
+	</xhtml:body>
+</xhtml:html>

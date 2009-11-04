@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xhtml:head>
+    <xhtml:title>4.4.5.a xforms-invalid event</xhtml:title>
+    <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+    <xforms:model id="gen-1">
+      <xforms:instance id="gen-2">
+        <carNumber>43</carNumber>
+      </xforms:instance>
+      <xforms:bind nodeset="/carNumber" constraint="/carNumber='43'" id="gen-3"/>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xforms:group id="gen-4">
+    	<xforms:label class="title" id="gen-5">4.4.5.a xforms-invalid event</xforms:label>
+    </xforms:group>
+    <xforms:group id="gen-6">
+    	<xforms:label id="gen-7">
+    	  When you activate the Enter Invalid Value trigger you must see an xforms-invalid message.  
+	    </xforms:label>	
+    </xforms:group>
+    <xforms:input ref="/carNumber" id="gen-8">
+        <xforms:label id="gen-9">Car Number</xforms:label>
+        <xforms:action ev:event="xforms-invalid" id="gen-10">
+			<xforms:message level="modal" id="gen-11">xforms-invalid</xforms:message>
+        </xforms:action>
+    </xforms:input>
+    
+    <xforms:trigger id="gen-12">
+    	<xforms:label id="gen-13">Enter Invalid Value</xforms:label>
+    	<xforms:setvalue ref="/carNumber" ev:event="DOMActivate" id="gen-14">42</xforms:setvalue>
+    </xforms:trigger>
+	
+  </xhtml:body>
+</xhtml:html>

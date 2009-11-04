@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:my="http://commerce.example.com/payment">
+    <xhtml:head>
+        <xhtml:title>2.2.a Example: Encapsulation of Instance Data</xhtml:title>
+        <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+        <xforms:model id="gen-1">
+            <xforms:instance id="gen-2">
+                <payment xmlns="http://commerce.example.com/payment" method="cc">
+                    <number/>
+                    <expiry/>
+                </payment>
+            </xforms:instance>
+            <xforms:submission id="submit" method="post" action="http://xformstest.org/cgi-bin/echo.sh"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xforms:group id="gen-4">
+            <xforms:label class="title" id="gen-5">2.2.a Example: Encapsulation of Instance Data</xforms:label>
+        </xforms:group>
+        <xforms:group id="gen-6">
+            <xforms:label id="gen-7">
+            	You must see a select1 control with the values "Cash" and "Credit" as well as two 
+                input controls on the page. When you activate the Submit Now submit control this page must be 
+                replaced by the form data. You must see the value "cc" if you had selected Credit or the 
+                value "cash" if you had selected Cash. You must also see the values, if any, you entered 
+                in the Credit Card Number and Expiration Date input controls. 
+            </xforms:label>
+        </xforms:group>
+        <xforms:select1 ref="@method" id="gen-8">
+            <xforms:label id="gen-9">Select Payment Method:</xforms:label>
+            <xforms:item id="gen-10">
+                <xforms:label id="gen-11">Cash</xforms:label>
+                <xforms:value id="gen-12">cash</xforms:value>
+            </xforms:item>
+            <xforms:item id="gen-13">
+                <xforms:label id="gen-14">Credit</xforms:label>
+                <xforms:value id="gen-15">cc</xforms:value>
+            </xforms:item>
+        </xforms:select1>
+        <xforms:input ref="my:number" id="gen-16">
+            <xforms:label id="gen-17">Credit Card Number:</xforms:label>
+        </xforms:input>
+        <xforms:input ref="/my:payment/my:expiry" id="gen-18">
+            <xforms:label id="gen-19">Expiration Date:</xforms:label>
+        </xforms:input>
+        <xforms:submit submission="submit" id="gen-20">
+            <xforms:label id="gen-21">Submit Now</xforms:label>
+        </xforms:submit>
+    </xhtml:body>
+</xhtml:html>

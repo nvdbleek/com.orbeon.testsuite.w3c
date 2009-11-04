@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xforms="http://www.w3.org/2002/xforms">
+	<xhtml:head>
+		<xhtml:title>6.1.2.b inheritance rules of readonly property</xhtml:title>
+		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
+		<xforms:model id="gen-1">
+			<xforms:instance id="gen-2">
+				<person-name>
+					<first-name>Roland</first-name>
+					<last-name>Orlando</last-name>
+				</person-name>
+			</xforms:instance>
+			<xforms:bind id="person" nodeset="/person-name" readonly="true()"/>
+			<!-- last-name should be readonly because it inherits the ancestor node's value -->
+			<xforms:bind id="lname" nodeset="/person-name/last-name" readonly="false()"/>
+		</xforms:model>
+	</xhtml:head>
+	<xhtml:body>
+		<xforms:group id="gen-5">
+			<xforms:label class="title" id="gen-6">6.1.2.b inheritance rules of readonly property</xforms:label>
+		</xforms:group>
+		<xforms:group id="gen-7">
+			<xforms:label id="gen-8">
+				You must see the value "Roland" in the First Name input control and the value 
+				"Orlando" in the Last Name input control. You must not be able to change the value in 
+				either of the input controls. 
+			</xforms:label>	
+		</xforms:group>
+			
+			<xforms:group id="gen-9">
+				<xforms:label id="gen-10"/>
+				<xforms:input ref="/person-name/first-name" id="gen-11">
+					<xforms:label id="gen-12">First Name:</xforms:label>
+				</xforms:input>
+			</xforms:group>
+			
+			<xforms:group id="gen-13">
+				<xforms:label id="gen-14"/>
+				<xforms:input ref="/person-name/last-name" id="gen-15">
+					<xforms:label id="gen-16">Last Name:</xforms:label>
+				</xforms:input>
+			</xforms:group>
+			
+	</xhtml:body>
+</xhtml:html>
