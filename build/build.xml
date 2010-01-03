@@ -46,7 +46,14 @@
 			<fileset dir="${resources.dir}/XForms1.1/Edition1" includes="**/*.xhtml.bak" />
 		</delete>
 	</target>
+
 	
+	<!--
+	Open tests:
+		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_Suite.html&resultsUrl=..%2FpostResults
+		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_02_Suite.html&resultsUrl=..%2FpostResults
+		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_AppendixB_Suite.html&resultsUrl=..%2FpostResults
+	-->
 	<target name="deploy-tests">
 		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps">
 			<fileset dir="resources/apps" includes="**/*" />
@@ -60,6 +67,16 @@
 				<include name="**/*"/>
 			</fileset>
 		</copy>
+	</target>
+
+
+	<target name="generateHTMLWebtests" description="generate Selenium HTML Webtests">
+		<xslt basedir="${resources.dir}/XForms1.1/Edition1/driverPages/results" destdir="work/selenium-tests" style="build/selenium.xsl" force="true">
+			<classpath refid="saxon.class.path" />
+			<include name="*.xml"/>
+			<exclude name="XF11_01_Results.xml"/>
+			<mapper type="glob" from="*Results.xml" to="*Suite.html" />
+		</xslt>
 	</target>
 
 
