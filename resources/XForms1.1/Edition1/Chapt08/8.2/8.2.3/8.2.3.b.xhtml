@@ -4,7 +4,10 @@
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     <xforms:model id="gen-1">
        <xforms:instance id="gen-2">       
-          <msg/>
+          <data>
+             <msg>Instance Hint Message (WRONG)</msg>
+             <myinput/>
+          </data>
        </xforms:instance>
     </xforms:model>
   </xhtml:head>
@@ -18,7 +21,7 @@
 		  "Inline Hint Message". 
 		</xforms:label>	
 	</xforms:group>
-	<xforms:input id="input1">
+	<xforms:input id="input1" ref="myinput">
 		<xforms:label id="gen-8">Input : </xforms:label>
 		<xforms:hint id="hintInv">Inline Hint Message</xforms:hint>
   	</xforms:input>

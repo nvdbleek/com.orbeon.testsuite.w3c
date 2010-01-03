@@ -4,7 +4,10 @@
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     <xforms:model id="gen-1">
        <xforms:instance id="gen-2">
+          <data>
 			<msg>Instance Help Message</msg>
+			<myinput/>
+	      </data>
        </xforms:instance>
        <xforms:bind id="inst_help" nodeset="/mail/message"/>
     </xforms:model>
@@ -20,9 +23,9 @@
 		</xforms:label>	
 	</xforms:group>
 	
-	<xforms:input id="input1">
+	<xforms:input id="input1" ref="myinput">
 		<xforms:label id="gen-9">Input : </xforms:label>
-		<xforms:help ref="/msg" id="gen-10">Inline Help Message (WRONG)</xforms:help>
+		<xforms:help ref="../msg" id="gen-10">Inline Help Message (WRONG)</xforms:help>
   	</xforms:input>
   	
   	<xforms:trigger id="help_trigger">

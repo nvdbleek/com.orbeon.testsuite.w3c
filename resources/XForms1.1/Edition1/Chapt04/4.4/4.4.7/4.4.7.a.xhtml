@@ -4,12 +4,12 @@
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     <xforms:model id="gen-1">
       <xforms:instance id="gen-2">
-	    <car>
+	    <car modifiable="false">
 	      <make>Toyota</make>
 	    </car>
       </xforms:instance>
-	  <xforms:bind nodeset="make" readwrite=".='Honda'" id="gen-3"/>
-	  <xforms:setvalue ref="make" ev:event="xforms-ready" id="gen-4">Honda</xforms:setvalue>
+	  <xforms:bind nodeset="make" readonly="not(boolean-from-string(../@modifiable))" id="gen-3"/>
+	  <xforms:setvalue ref="@modifiable" ev:event="xforms-ready" id="gen-4">true</xforms:setvalue>
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
@@ -25,7 +25,7 @@
     
     <xforms:input ref="make" id="gen-9">
     	<xforms:label id="gen-10">Car make : </xforms:label>
-    	<xforms:message ev:event="xforms-readwrite" level="modal" id="gen-11">xforms-rewrite event</xforms:message>
+    	<xforms:message ev:event="xforms-readwrite" level="modal" id="gen-11">xforms-readwrite event</xforms:message>
     </xforms:input>
   </xhtml:body>
 </xhtml:html>

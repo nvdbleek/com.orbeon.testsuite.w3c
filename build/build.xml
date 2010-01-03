@@ -11,7 +11,7 @@
 	<xmlproperty file="build.properties.xml" semanticAttributes="true" keepRoot="false" />
 	<property name="resources.dir" value="${basedir}/resources" />
 	<property name="work.dir" value="work" />
-	<property name="orbeon.install.dir" value="C:/Program Files (x86)/Apache Software Foundation/Tomcat 5.5/webapps/orbeon-N20091029" />
+	<property name="orbeon.install.dir" value="C:/workspaces/OrbeonGit/orbeon-forms/build/orbeon-war" />
 
 	<description>
             Update and prepare test suite for running inside orbeon
@@ -46,13 +46,19 @@
 			<fileset dir="${resources.dir}/XForms1.1/Edition1" includes="**/*.xhtml.bak" />
 		</delete>
 	</target>
-
+	
 	<target name="deploy-tests">
 		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps">
 			<fileset dir="resources/apps" includes="**/*" />
 		</copy>
 		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/forms">
 			<fileset dir="resources" includes="XForms1.1/Edition1/**/*" />
+		</copy>
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/selenium-core/core">
+			<fileset dir="src/selenium/core">
+				<include name="*"/>
+				<include name="**/*"/>
+			</fileset>
 		</copy>
 	</target>
 
@@ -68,6 +74,8 @@
 		<echo />
 
 		<java jar="${test.selenium.server.jar}" fork="true" spawn="true">
+			<arg value="-userExtensions"/>
+			<arg path="src/selenium/user-extensions.js"/>
 		</java>
 
 		<waitfor maxwait="20" maxwaitunit="second">

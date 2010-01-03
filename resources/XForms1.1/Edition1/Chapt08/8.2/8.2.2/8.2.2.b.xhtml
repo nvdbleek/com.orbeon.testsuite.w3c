@@ -3,8 +3,11 @@
     <xhtml:title>8.2.2.b help element uses inline text</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     <xforms:model id="gen-1">
-       <xforms:instance id="gen-2">       
-          <msg/>
+       <xforms:instance id="gen-2">
+          <data>       
+            <msg>Instance Help Message (WRONG)</msg>
+            <myinput/>
+          </data>
        </xforms:instance>
     </xforms:model>
   </xhtml:head>
@@ -18,7 +21,7 @@
 		  "Inline Help Message". 
 		</xforms:label>
 	</xforms:group>
-	<xforms:input id="input1">
+	<xforms:input id="input1" ref="myinput">
 		<xforms:label id="gen-8">Input : </xforms:label>
 		<xforms:help id="extHelp">Inline Help Message</xforms:help>
   	</xforms:input>

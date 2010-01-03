@@ -3,8 +3,11 @@
     <xhtml:title>8.2.2.a help element references instance data</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     <xforms:model id="gen-1">
-       <xforms:instance id="gen-2">       
-          <msg>Instance Help Message</msg>
+       <xforms:instance id="gen-2">
+          <data>       
+             <msg>Instance Help Message</msg>
+             <myinput/>
+          </data>
        </xforms:instance>
     </xforms:model>
   </xhtml:head>
@@ -18,9 +21,9 @@
 		  "Instance Help Message". 
 		</xforms:label>	
 	</xforms:group>
-	<xforms:input id="input1">
+	<xforms:input id="input1" ref="myinput">
 		<xforms:label id="gen-8">Input : </xforms:label>
-		<xforms:help id="extHelp" ref="/msg"/>
+		<xforms:help id="extHelp" ref="../msg"/>
   	</xforms:input>
   	<xforms:trigger id="help_trigger">
 	    <xforms:label id="gen-11">Dispatch Help Message</xforms:label>

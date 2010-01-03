@@ -3,8 +3,11 @@
     <xhtml:title>8.2.1.b label element uses inline text</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     <xforms:model id="gen-1">
-       <xforms:instance id="gen-2">       
-          <mylabel>Instance Data</mylabel>
+       <xforms:instance id="gen-2">
+          <data>       
+             <mylabel>Instance Data (WRONG)</mylabel>
+             <myinput/>
+          </data>
        </xforms:instance>
     </xforms:model>
   </xhtml:head>
@@ -17,7 +20,7 @@
 		  You must see an input control with the label "Inline Text". 
 		</xforms:label>	
 	</xforms:group>
-	<xforms:input id="gen-7">
+	<xforms:input ref="myinput" id="gen-7">
 		<xforms:label id="gen-8">Inline Text</xforms:label>
 	</xforms:input>
 	

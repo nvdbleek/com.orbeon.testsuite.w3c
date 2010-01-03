@@ -24,7 +24,7 @@
 			<home>/Applications/apache-tomcat-6.0.16</home>
 		</tomcat>
 		<orbeon>
-			<baseurl>http://localhost:8080/orbeon-N20091029</baseurl>
+			<baseurl>http://localhost:8080/orbeon-git</baseurl>
 		</orbeon>
 
 		<classpath pathid="test.class.path" description="classpath for compiling web classes">

@@ -21,34 +21,82 @@
 		  elements labeled Group 4, Group 5, Group 6. 
 		</xforms:label>
 	</xforms:group>
-	<xforms:group id="gen-7">
-		<xforms:select ref="/icecream/flavor" id="gen-8">
-			<xforms:label id="gen-9">select control:</xforms:label>
-			<xforms:choices id="gen-10">
-			  <xforms:label id="gen-11">Group 1</xforms:label>
-			</xforms:choices>
-			<xforms:choices id="gen-12">
-			  <xforms:label id="gen-13">Group 2</xforms:label>
-			</xforms:choices>
-			<xforms:choices id="gen-14">
-			  <xforms:label id="gen-15">Group 3</xforms:label>
-			</xforms:choices>
-		</xforms:select>
-	</xforms:group>
-	<xforms:group id="gen-16">
-		<xforms:select1 ref="/icecream/flavor" id="gen-17">
-			<xforms:label id="gen-18">select1 control:</xforms:label>
-			<xforms:choices id="gen-19">
-			  <xforms:label id="gen-20">Group 4</xforms:label>
-			</xforms:choices>
-			<xforms:choices id="gen-21">
-			  <xforms:label id="gen-22">Group 5</xforms:label>
-			</xforms:choices>
-			<xforms:choices id="gen-23">
-			  <xforms:label id="gen-24">Group 6</xforms:label>
-			</xforms:choices>
-		</xforms:select1>
-	</xforms:group>
+<xforms:group id="gen-7">
+  <xforms:select ref="/icecream/flavor" id="gen-8">
+    <xforms:label id="gen-9">select control:</xforms:label>
+    <xforms:choices id="gen-10">
+      <xforms:label id="gen-11">Group 1</xforms:label>
+      <xforms:item id="gen-12">
+        <xforms:label id="gen-13">Vanilla</xforms:label>
+        <xforms:value id="gen-14">vanilla</xforms:value>
+      </xforms:item>
+      <xforms:item id="gen-15">
+        <xforms:label id="gen-16">Chocolate</xforms:label>
+        <xforms:value id="gen-17">chocolate</xforms:value>
+      </xforms:item>
+    </xforms:choices>
+    <xforms:choices id="gen-18">
+      <xforms:label id="gen-19">Group 2</xforms:label>
+      <xforms:item id="gen-20">
+        <xforms:label id="gen-21">Orange Creamsicle</xforms:label>
+        <xforms:value id="gen-22">orangeCreamsicle</xforms:value>
+      </xforms:item>
+      <xforms:item id="gen-23">
+        <xforms:label id="gen-24">Fudge Ripple</xforms:label>
+        <xforms:value id="gen-25">fudgeRipple</xforms:value>
+      </xforms:item>
+    </xforms:choices>
+    <xforms:choices id="gen-26">
+      <xforms:label id="gen-27">Group 3</xforms:label>
+      <xforms:item id="gen-28">
+        <xforms:label id="gen-29">Dill Pickle</xforms:label>
+        <xforms:value id="gen-30">yuck</xforms:value>
+      </xforms:item>
+      <xforms:item id="gen-31">
+        <xforms:label id="gen-32">Carob</xforms:label>
+        <xforms:value id="gen-33">whyBother</xforms:value>
+      </xforms:item>
+    </xforms:choices>
+  </xforms:select>
+</xforms:group>
+<xforms:group id="gen-34">
+  <xforms:select1 ref="/icecream/flavor" id="gen-35">
+    <xforms:label id="gen-36">select1 control:</xforms:label>
+    <xforms:choices id="gen-37">
+      <xforms:label id="gen-38">Group 4</xforms:label>
+      <xforms:item id="gen-39">
+        <xforms:label id="gen-40">Vanilla</xforms:label>
+        <xforms:value id="gen-41">vanilla</xforms:value>
+      </xforms:item>
+      <xforms:item id="gen-42">
+        <xforms:label id="gen-43">Chocolate</xforms:label>
+        <xforms:value id="gen-44">chocolate</xforms:value>
+      </xforms:item>
+    </xforms:choices>
+    <xforms:choices id="gen-45">
+      <xforms:label id="gen-46">Group 5</xforms:label>
+      <xforms:item id="gen-47">
+        <xforms:label id="gen-48">Orange Creamsicle</xforms:label>
+        <xforms:value id="gen-49">orangeCreamsicle</xforms:value>
+      </xforms:item>
+      <xforms:item id="gen-50">
+        <xforms:label id="gen-51">Fudge Ripple</xforms:label>
+        <xforms:value id="gen-52">fudgeRipple</xforms:value>
+      </xforms:item>
+    </xforms:choices>
+    <xforms:choices id="gen-53">
+      <xforms:label id="gen-54">Group 6</xforms:label>
+      <xforms:item id="gen-55">
+        <xforms:label id="gen-56">Dill Pickle</xforms:label>
+        <xforms:value id="gen-57">yuck</xforms:value>
+      </xforms:item>
+      <xforms:item id="gen-58">
+        <xforms:label id="gen-59">Carob</xforms:label>
+        <xforms:value id="gen-60">whyBother</xforms:value>
+      </xforms:item>
+    </xforms:choices>
+  </xforms:select1>
+</xforms:group>
 	
   </xhtml:body>
 </xhtml:html>
