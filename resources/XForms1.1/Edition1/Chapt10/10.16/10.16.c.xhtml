@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>10.16.c message element interface created at run time</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-       <xforms:instance id="gen-2">       
+    <xforms:model>
+       <xforms:instance>       
 			<mail>
 				<message>Instance Message</message>
 				<body/>
@@ -13,19 +13,19 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-4">
-	  	<xforms:label class="title" id="gen-5">10.16.c message element interface created at run time</xforms:label>
+  	<xforms:group>
+	  	<xforms:label class="title">10.16.c message element interface created at run time</xforms:label>
   	</xforms:group>
-	<xforms:group id="gen-6">
-		<xforms:label id="gen-7">
+	<xforms:group>
+		<xforms:label>
 		  When you activate the See Message trigger you must see a message that says "Hello, world!". 
 		</xforms:label>
 	</xforms:group>
-	<xforms:group id="gen-8">
-	  <xforms:trigger id="gen-9">
-	    <xforms:label id="gen-10">See Message</xforms:label>
-	  	<xforms:setvalue ev:event="DOMActivate" ref="message" id="gen-11">world</xforms:setvalue>
-		<xforms:message ev:event="DOMActivate" level="modal" id="gen-12">Hello, <xforms:output value="message" id="gen-13"/>!</xforms:message>
+	<xforms:group>
+	  <xforms:trigger id="xf-trigger-1">
+	    <xforms:label>See Message</xforms:label>
+	  	<xforms:setvalue ev:event="DOMActivate" ref="message">world</xforms:setvalue>
+		<xforms:message ev:event="DOMActivate" level="modal">Hello, <xforms:output value="message" id="xf-output-1"/>!</xforms:message>
 	  </xforms:trigger>
 	</xforms:group>
   </xhtml:body>

@@ -2,12 +2,12 @@
     <xhtml:head>
         <xhtml:title>4.5.4.a xforms-link-exception</xhtml:title>
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-        <xforms:model id="gen-1">
-        	  <xforms:instance id="gen-2">
+        <xforms:model>
+        	  <xforms:instance>
                 <data>Hello world!</data>
             </xforms:instance>
-            <xforms:instance resource="badfile.xml" id="gen-3"/>
-            <xforms:message ev:event="xforms-link-exception" level="modal" id="gen-4">xforms-link-exception</xforms:message>
+            <xforms:instance resource="badfile.xml"/>
+            <xforms:message ev:event="xforms-link-exception" level="modal">xforms-link-exception</xforms:message>
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
@@ -16,8 +16,8 @@
               Processing must halt after dispatching an xforms-link-exception with a resource-uri of the link that failed.
             	Processor specific testing is required to listen for an xforms-link-exception and validate the resource-uri.
             	You must not see 'Hello world!' beneath this paragraph.</xhtml:p>
-        <xforms:output ref="/data" id="gen-5">
-          <xforms:label id="gen-6">You shouldn't see this : </xforms:label>
+        <xforms:output ref="/data" id="xf-output-1">
+          <xforms:label>You shouldn't see this : </xforms:label>
         </xforms:output>
     </xhtml:body>
 </xhtml:html>

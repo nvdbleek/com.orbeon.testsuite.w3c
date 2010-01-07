@@ -3,7 +3,7 @@
     	<xhtml:title>10.2.b setvalue element with expression and literal, element with neither</xhtml:title>
     	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     	<xforms:model id="m1">
-       		<xforms:instance id="gen-2">
+       		<xforms:instance>
 				<car>
 					<originalColor>white</originalColor>
 					<currentColor>blue</currentColor>
@@ -16,11 +16,11 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group id="gen-5">
-	  		<xforms:label class="title" id="gen-6">10.2.b setvalue element with expression and literal, element with neither</xforms:label>
+  		<xforms:group>
+	  		<xforms:label class="title">10.2.b setvalue element with expression and literal, element with neither</xforms:label>
 	  	</xforms:group>
-  		<xforms:group id="gen-7">
-  			<xforms:label id="gen-8">
+  		<xforms:group>
+  			<xforms:label>
   			  You must see the value "white" in the Color output control and the value 
   			  "excellent" in the Condition output control. 
   			  When you activate the Set Color trigger the value in the Color output must change to "blue". 
@@ -28,27 +28,27 @@
   			  empty. 
 			</xforms:label>
   		</xforms:group>
-		<xforms:group id="gen-9">
-		<xforms:output ref="/car/originalColor" id="gen-10">
-			<xforms:label id="gen-11">Color : </xforms:label>
+		<xforms:group>
+		<xforms:output ref="/car/originalColor" id="xf-output-1">
+			<xforms:label>Color : </xforms:label>
 		</xforms:output>
 
-		<xforms:trigger id="gen-12">	<!-- both expression and literal -->
-			<xforms:label id="gen-13">Set color</xforms:label>
-			<xforms:action ev:event="DOMActivate" id="gen-14">
-				<xforms:setvalue ref="/car/originalColor" value="/car/currentColor" id="gen-15">lapis blue metallic</xforms:setvalue>
+		<xforms:trigger id="xf-trigger-1">	<!-- both expression and literal -->
+			<xforms:label>Set color</xforms:label>
+			<xforms:action ev:event="DOMActivate">
+				<xforms:setvalue ref="/car/originalColor" value="/car/currentColor">lapis blue metallic</xforms:setvalue>
 			</xforms:action>
 		</xforms:trigger>
 		</xforms:group>
-		<xforms:group id="gen-16">
-		<xforms:output ref="/car/originalCondition" id="gen-17">
-			<xforms:label id="gen-18">Condition : </xforms:label>
+		<xforms:group>
+		<xforms:output ref="/car/originalCondition" id="xf-output-2">
+			<xforms:label>Condition : </xforms:label>
 		</xforms:output>
 
-		<xforms:trigger id="gen-19">	<!-- using expression -->
-			<xforms:label id="gen-20">Set condition</xforms:label>
-			<xforms:action ev:event="DOMActivate" id="gen-21">
-				<xforms:setvalue ref="/car/originalCondition" id="gen-22"/>
+		<xforms:trigger id="xf-trigger-2">	<!-- using expression -->
+			<xforms:label>Set condition</xforms:label>
+			<xforms:action ev:event="DOMActivate">
+				<xforms:setvalue ref="/car/originalCondition"/>
 			</xforms:action>
 		</xforms:trigger>
 		</xforms:group>

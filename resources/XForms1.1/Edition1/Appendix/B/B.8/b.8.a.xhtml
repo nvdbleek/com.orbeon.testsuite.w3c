@@ -2,11 +2,11 @@
   <xhtml:head>
   	<xhtml:title>b.8.a Copy Nodeset</xhtml:title>
   	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-  	<xforms:model id="gen-1">
-	  	<xforms:action ev:event="xforms-ready" id="gen-2">
-	  		<xforms:insert context="people" nodeset="person" origin="instance('prototypes')/person" id="gen-3"/>
+  	<xforms:model>
+	  	<xforms:action ev:event="xforms-ready">
+	  		<xforms:insert context="people" nodeset="person" origin="instance('prototypes')/person"/>
 	  	</xforms:action>
-  		<xforms:instance id="gen-4">
+  		<xforms:instance>
   			<data>
   				<people/>
   			</data>
@@ -27,18 +27,18 @@
   	</xforms:model>  	
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-6">
-  		<xforms:label class="title" id="gen-7">
+  	<xforms:group>
+  		<xforms:label class="title">
   			b.8.a Copy Nodeset
   		</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-8">
-  		<xforms:label id="gen-9">
+  	<xforms:group>
+  		<xforms:label>
   			You must see the strings "Jane Doe", "John Doe", and "Joe Sixpack" : 
   		</xforms:label>
-  		<xforms:repeat nodeset="people/person" id="gen-10">
-  			<xforms:output class="hlist" value="concat(./name , ' ')" id="gen-11">
-  				<xforms:label id="gen-12"/>
+  		<xforms:repeat nodeset="people/person">
+  			<xforms:output class="hlist" value="concat(./name , ' ')" id="xf-output-1">
+  				<xforms:label/>
   			</xforms:output>
   		</xforms:repeat>
   	</xforms:group>

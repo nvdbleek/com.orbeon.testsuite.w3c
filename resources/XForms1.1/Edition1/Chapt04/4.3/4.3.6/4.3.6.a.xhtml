@@ -2,58 +2,58 @@
   <xhtml:head>
   	<xhtml:title>4.3.6.a xforms-previous and xforms-next</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-      <xforms:instance id="gen-2">
+    <xforms:model>
+      <xforms:instance>
         <car/>
       </xforms:instance>      
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-3">
-  		<xforms:label class="title" id="gen-4">4.3.6.a xforms-previous and xforms-next</xforms:label>
+  	<xforms:group>
+  		<xforms:label class="title">4.3.6.a xforms-previous and xforms-next</xforms:label>
   	</xforms:group>
-	<xforms:group id="gen-5">
-		<xforms:label id="gen-6">
+	<xforms:group>
+		<xforms:label>
 		  When you activate the Previous trigger you must see an xforms-previous message. 
 		  When you activate the Next trigger you must see an xforms-next message. 
 		</xforms:label>	
 	</xforms:group>
 	
 	<xforms:trigger id="prevtrigger">
-	    <xforms:label id="gen-8">Previous</xforms:label>
-	    <xforms:action ev:event="DOMActivate" id="gen-9">
-      		<xforms:dispatch name="xforms-previous" targetid="input3" id="gen-10"/> 
+	    <xforms:label>Previous</xforms:label>
+	    <xforms:action ev:event="DOMActivate">
+      		<xforms:dispatch name="xforms-previous" targetid="input3"/> 
      	</xforms:action>
 	</xforms:trigger>
 
 	<xforms:trigger id="nexttrigger">
-	      <xforms:label id="gen-12">Next</xforms:label>
-	      <xforms:action ev:event="DOMActivate" id="gen-13">
-      		<xforms:dispatch name="xforms-next" targetid="input1" id="gen-14"/> 
+	      <xforms:label>Next</xforms:label>
+	      <xforms:action ev:event="DOMActivate">
+      		<xforms:dispatch name="xforms-next" targetid="input1"/> 
       	  </xforms:action>
 	</xforms:trigger>
 	
-	<xforms:group id="gen-15">
+	<xforms:group>
 	    <xforms:input ref="/car" id="input1">
-			<xforms:label id="gen-17">First Input:</xforms:label>
-	      	<xforms:action ev:event="xforms-next" id="gen-18">
-			     <xforms:message level="modal" id="gen-19">xforms-next</xforms:message>
+			<xforms:label>First Input:</xforms:label>
+	      	<xforms:action ev:event="xforms-next">
+			     <xforms:message level="modal">xforms-next</xforms:message>
 			</xforms:action>
-			<xforms:action ev:event="xforms-previous" id="gen-20">
-		     	<xforms:message level="modal" id="gen-21">xforms-previous</xforms:message>
+			<xforms:action ev:event="xforms-previous">
+		     	<xforms:message level="modal">xforms-previous</xforms:message>
 		    </xforms:action>
 	    </xforms:input>
 	
 	    <xforms:input ref="/car" id="input2">
-			<xforms:label id="gen-23">Second Input:</xforms:label>
-		    <xforms:message level="modal" ev:event="xforms-next" id="gen-24">xforms-next</xforms:message>
-		    <xforms:message level="modal" ev:event="xforms-previous" id="gen-25">xforms-previous</xforms:message>
+			<xforms:label>Second Input:</xforms:label>
+		    <xforms:message level="modal" ev:event="xforms-next">xforms-next</xforms:message>
+		    <xforms:message level="modal" ev:event="xforms-previous">xforms-previous</xforms:message>
 	    </xforms:input>
 	
 	    <xforms:input ref="/car" id="input3">
-	       	<xforms:label id="gen-27">Third Input:</xforms:label>
-	      	<xforms:message level="modal" ev:event="xforms-next" id="gen-28">xforms-next</xforms:message>
-		    <xforms:message level="modal" ev:event="xforms-previous" id="gen-29">xforms-previous</xforms:message>
+	       	<xforms:label>Third Input:</xforms:label>
+	      	<xforms:message level="modal" ev:event="xforms-next">xforms-next</xforms:message>
+		    <xforms:message level="modal" ev:event="xforms-previous">xforms-previous</xforms:message>
 	    </xforms:input>
 	</xforms:group>
 	

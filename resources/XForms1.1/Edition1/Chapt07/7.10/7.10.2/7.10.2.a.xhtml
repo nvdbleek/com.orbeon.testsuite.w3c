@@ -2,8 +2,8 @@
     <xhtml:head>
         <xhtml:title>7.10.2.a current() function example 1</xhtml:title>
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-        <xforms:model id="gen-1">
-            <xforms:instance id="gen-2">
+        <xforms:model>
+            <xforms:instance>
                 <converter>
                     <amount>100</amount>
                     <currency>jpy</currency>
@@ -18,18 +18,18 @@
                     <rate currency="usd">0.76138</rate>
                 </convTable>
             </xforms:instance>
-            <xforms:bind nodeset="convertedAmount" calculate="../amount * instance('convTable')/rate[@currency=current()/../currency]" id="gen-4"/>
+            <xforms:bind nodeset="convertedAmount" calculate="../amount * instance('convTable')/rate[@currency=current()/../currency]"/>
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-5">
-            <xforms:label class="title" id="gen-6">7.10.2.a current() function example 1</xforms:label>
+        <xforms:group>
+            <xforms:label class="title">7.10.2.a current() function example 1</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-7">
-        	<xforms:label id="gen-8">You must see the value "8023.451" for the Converted Amount output.</xforms:label>
+        <xforms:group>
+        	<xforms:label>You must see the value "8023.451" for the Converted Amount output.</xforms:label>
         </xforms:group>
-        <xforms:output ref="convertedAmount" id="gen-9">
-            <xforms:label id="gen-10">Converted Amount :</xforms:label>
+        <xforms:output ref="convertedAmount" id="xf-output-1">
+            <xforms:label>Converted Amount :</xforms:label>
         </xforms:output>
     </xhtml:body>
 </xhtml:html>

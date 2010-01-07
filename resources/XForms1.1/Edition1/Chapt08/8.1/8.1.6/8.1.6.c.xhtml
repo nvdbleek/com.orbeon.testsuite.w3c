@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>8.1.6.c filename and mediatype elements for upload element</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-       <xforms:instance id="gen-2">       
+    <xforms:model>
+       <xforms:instance>       
           <mail>
           	<picture>
           		<attach xsi:type="xsd:base64Binary"/>
@@ -15,30 +15,30 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-3">
-  	    <xforms:label class="title" id="gen-4">8.1.6.c filename and mediatype elements for upload element</xforms:label>
+    <xforms:group>
+  	    <xforms:label class="title">8.1.6.c filename and mediatype elements for upload element</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-5">
-  		<xforms:label id="gen-6">
+  	<xforms:group>
+  		<xforms:label>
   		  After activating the Upload control and selecting a file you must see the Filename and Media Type 
   		  output controls display the name and type of the file you selected. 
   		</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-7">	
-       	<xforms:upload ref="/mail/picture/attach" id="gen-8">
-       		<xforms:label id="gen-9">Upload</xforms:label>
-       		<xforms:filename ref="/mail/picture/name" id="gen-10"/>
-       		<xforms:mediatype ref="/mail/picture/type" id="gen-11"/>
+  	<xforms:group>	
+       	<xforms:upload ref="/mail/picture/attach" id="xf-upload-1">
+       		<xforms:label>Upload</xforms:label>
+       		<xforms:filename ref="/mail/picture/name"/>
+       		<xforms:mediatype ref="/mail/picture/type"/>
        	</xforms:upload>
   	</xforms:group>
-  	<xforms:group id="gen-12">
-  		<xforms:output ref="/mail/picture/name" id="gen-13">
-  			<xforms:label id="gen-14">Filename : </xforms:label>
+  	<xforms:group>
+  		<xforms:output ref="/mail/picture/name" id="xf-output-1">
+  			<xforms:label>Filename : </xforms:label>
   		</xforms:output>
 	</xforms:group>
-	<xforms:group id="gen-15">
-		<xforms:output ref="/mail/picture/type" id="gen-16">
-			<xforms:label id="gen-17">Media type : </xforms:label>
+	<xforms:group>
+		<xforms:output ref="/mail/picture/type" id="xf-output-2">
+			<xforms:label>Media type : </xforms:label>
 		</xforms:output>
     </xforms:group>
   </xhtml:body>

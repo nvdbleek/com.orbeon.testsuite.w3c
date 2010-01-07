@@ -14,22 +14,22 @@
                     </number_list>
                 </number_lists>
             </xforms:instance>
-            <xforms:insert ev:event="xforms-ready" nodeset="number_list/number" at="1" position="before" id="gen-3"/>
-        	<xforms:message ev:event="xforms-insert" level="modal" id="gen-4">xforms-insert</xforms:message>
+            <xforms:insert ev:event="xforms-ready" nodeset="number_list/number" at="1" position="before"/>
+        	<xforms:message ev:event="xforms-insert" level="modal">xforms-insert</xforms:message>
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-5">
-            <xforms:label class="title" id="gen-6">10.3.i insert action - xforms-insert event</xforms:label>
+        <xforms:group>
+            <xforms:label class="title">10.3.i insert action - xforms-insert event</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-7">
-            <xforms:label id="gen-8">
+        <xforms:group>
+            <xforms:label>
               You must have seen an xforms-insert message. The Node Count output must display a 
               value of "6". 
             </xforms:label>
         </xforms:group>
-        <xforms:output value="count(number_list/number)" id="gen-9">
-            <xforms:label id="gen-10">Node Count : </xforms:label>
+        <xforms:output value="count(number_list/number)" id="xf-output-1">
+            <xforms:label>Node Count : </xforms:label>
         </xforms:output>
         
     </xhtml:body>

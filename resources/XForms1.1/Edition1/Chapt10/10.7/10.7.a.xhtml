@@ -2,8 +2,8 @@
   	<xhtml:head>
     	<xhtml:title>10.7.a setfocus element</xhtml:title>
     	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    	<xforms:model id="gen-1">
-       		<xforms:instance id="gen-2">
+    	<xforms:model>
+       		<xforms:instance>
        			<cart>
 					<items>
 						<item name="brake pad"/>
@@ -16,11 +16,11 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group id="gen-3">
-	  		<xforms:label class="title" id="gen-4">10.7.a setfocus element</xforms:label>
+  		<xforms:group>
+	  		<xforms:label class="title">10.7.a setfocus element</xforms:label>
 	  	</xforms:group>
-  		<xforms:group id="gen-5">
-  			<xforms:label id="gen-6">
+  		<xforms:group>
+  			<xforms:label>
   			  The triggers below must shift the focus to the proper form controls when activated. The Set Focus To 
   			  Shipping trigger 
   			  must place the focus into the empty input control labeled Shipping. The Set Focus To 
@@ -30,31 +30,31 @@
 			</xforms:label>
   		</xforms:group>
 		<xforms:input id="shipping_input" ref="/cart/shipping">
-			<xforms:label id="gen-8">Shipping:</xforms:label>
+			<xforms:label>Shipping:</xforms:label>
 		</xforms:input>
 		<xforms:repeat id="lineset" nodeset="/cart/items/item" startindex="1">
 			<xforms:input ref="@name" id="repeat_input">
-				<xforms:label id="gen-11">Item Name:</xforms:label>
+				<xforms:label>Item Name:</xforms:label>
 			</xforms:input>
 		</xforms:repeat>
-		<xforms:trigger id="gen-12">
-			<xforms:label id="gen-13">Set Focus To Shipping</xforms:label>
-			<xforms:action ev:event="DOMActivate" id="gen-14">
-				<xforms:setfocus control="shipping_input" id="gen-15"/>
+		<xforms:trigger id="xf-trigger-1">
+			<xforms:label>Set Focus To Shipping</xforms:label>
+			<xforms:action ev:event="DOMActivate">
+				<xforms:setfocus control="shipping_input"/>
 			</xforms:action>
 		</xforms:trigger>
-		<xforms:trigger id="gen-16">
-			<xforms:label id="gen-17">Set Focus To First Item</xforms:label>
-			<xforms:action ev:event="DOMActivate" id="gen-18">
-				<xforms:setfocus control="repeat_input" id="gen-19"/>
+		<xforms:trigger id="xf-trigger-2">
+			<xforms:label>Set Focus To First Item</xforms:label>
+			<xforms:action ev:event="DOMActivate">
+				<xforms:setfocus control="repeat_input"/>
 			</xforms:action>
 		</xforms:trigger>
-		<xforms:trigger id="gen-20">
-			<xforms:label id="gen-21">Set Focus To Third Item</xforms:label>
-			<xforms:action ev:event="DOMActivate" id="gen-22">
-				<xforms:setindex repeat="lineset" index="3" id="gen-23"/>
-				<xforms:setfocus control="repeat_input" id="gen-24"/>
-				<xforms:setindex repeat="lineset" index="1" id="gen-25"/>
+		<xforms:trigger id="xf-trigger-3">
+			<xforms:label>Set Focus To Third Item</xforms:label>
+			<xforms:action ev:event="DOMActivate">
+				<xforms:setindex repeat="lineset" index="3"/>
+				<xforms:setfocus control="repeat_input"/>
+				<xforms:setindex repeat="lineset" index="1"/>
 			</xforms:action>
 		</xforms:trigger>
 

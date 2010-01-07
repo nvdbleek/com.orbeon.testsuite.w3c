@@ -67,6 +67,11 @@
 				<include name="**/*"/>
 			</fileset>
 		</copy>
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/selenium-core/core/scripts" overwrite="true">
+			<fileset dir="src/selenium/orbeon">
+				<include name="*.js"/>
+			</fileset>
+		</copy>
 	</target>
 
 
@@ -76,6 +81,15 @@
 			<include name="*.xml"/>
 			<exclude name="XF11_01_Results.xml"/>
 			<mapper type="glob" from="*Results.xml" to="*Suite.html" />
+		</xslt>
+	</target>
+
+	<target name="generateTests" description="generate tests based on test suite">
+		<xslt basedir="${resources.dir}/XForms1.1/Edition1/driverPages/results" destdir="work/tests" style="build/gen-tests.xsl" force="true">
+			<classpath refid="saxon.class.path" />
+			<include name="*.xml"/>
+			<exclude name="XF11_01_Results.xml"/>
+			<mapper type="glob" from="*Results.xml" to="*Suite.xml" />
 		</xslt>
 	</target>
 

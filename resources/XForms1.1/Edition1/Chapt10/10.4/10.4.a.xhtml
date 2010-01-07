@@ -29,35 +29,35 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-4">
-            <xforms:label class="title" id="gen-5">10.4.a delete action using context attribute</xforms:label>
+        <xforms:group>
+            <xforms:label class="title">10.4.a delete action using context attribute</xforms:label>
         </xforms:group>
-        <xforms:group ref="instance('first')" id="gen-6">
-            <xforms:action ev:event="xforms-ready" ev:observer="model_1" id="gen-7">
-                <xforms:delete context="instance('second')" nodeset="number_list/number[2]" id="gen-8"/>
-                <xforms:delete nodeset="number_list/number[3]" id="gen-9"/>
-                <xforms:delete context="number_list[@id = 'pick_me']" nodeset="number[2]" id="gen-10"/>
-                <xforms:delete context="number_list[3]" nodeset="number" id="gen-11"/>
+        <xforms:group ref="instance('first')">
+            <xforms:action ev:event="xforms-ready" ev:observer="model_1">
+                <xforms:delete context="instance('second')" nodeset="number_list/number[2]"/>
+                <xforms:delete nodeset="number_list/number[3]"/>
+                <xforms:delete context="number_list[@id = 'pick_me']" nodeset="number[2]"/>
+                <xforms:delete context="number_list[3]" nodeset="number"/>
             </xforms:action>
         </xforms:group>
-        <xforms:group ref="instance('second')" id="gen-12">
-          <xforms:label id="gen-13">You must see only the number 10:</xforms:label>
-            <xforms:repeat nodeset="number_list/number" id="gen-14">
-                <xforms:output class="hlist" value="concat(. ,' ')" id="gen-15">
+        <xforms:group ref="instance('second')">
+          <xforms:label>You must see only the number 10:</xforms:label>
+            <xforms:repeat nodeset="number_list/number">
+                <xforms:output class="hlist" value="concat(. ,' ')" id="xf-output-1">
                 </xforms:output>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group ref="instance('first')" id="gen-16">
-          <xforms:label id="gen-17">You must see only the number 4:</xforms:label>
-            <xforms:repeat nodeset="number_list[2]/number" id="gen-18">
-                <xforms:output class="hlist" value="concat(. ,' ')" id="gen-19">
+        <xforms:group ref="instance('first')">
+          <xforms:label>You must see only the number 4:</xforms:label>
+            <xforms:repeat nodeset="number_list[2]/number">
+                <xforms:output class="hlist" value="concat(. ,' ')" id="xf-output-2">
                 </xforms:output>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group ref="instance('first')" id="gen-20">
-          <xforms:label id="gen-21">You must see only the numbers 1 and 2:</xforms:label>
-            <xforms:repeat nodeset="number_list[1]/number" id="gen-22">
-                <xforms:output class="hlist" value="concat(. ,' ')" id="gen-23">
+        <xforms:group ref="instance('first')">
+          <xforms:label>You must see only the numbers 1 and 2:</xforms:label>
+            <xforms:repeat nodeset="number_list[1]/number">
+                <xforms:output class="hlist" value="concat(. ,' ')" id="xf-output-3">
                 </xforms:output>
             </xforms:repeat>
         </xforms:group>

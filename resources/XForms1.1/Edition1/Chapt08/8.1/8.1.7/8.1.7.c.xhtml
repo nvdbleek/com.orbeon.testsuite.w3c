@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>8.1.7.c step attribute of range element</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-       <xforms:instance id="gen-2">       
+    <xforms:model>
+       <xforms:instance>       
 			<car>
 				<mileage xsi:type="xsd:integer"/>
 				<age xsi:type="xsd:integer">2</age>	
@@ -12,22 +12,22 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-3">
-  	    <xforms:label class="title" id="gen-4">8.1.7.c step attribute of range element</xforms:label>
+    <xforms:group>
+  	    <xforms:label class="title">8.1.7.c step attribute of range element</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-5">
-  		<xforms:label id="gen-6">
+  	<xforms:group>
+  		<xforms:label>
   			You must see a range control that increments by 2. No start or end values are defined.
   		</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-7">
-  		<xforms:range ref="/car/age" step="2" id="gen-8">
-  			<xforms:label id="gen-9">Car age</xforms:label>
+  	<xforms:group>
+  		<xforms:range ref="/car/age" step="2" id="xf-range-1">
+  			<xforms:label>Car age</xforms:label>
   		</xforms:range>
   	</xforms:group>
-  	<xforms:group id="gen-10">
-  		<xforms:output ref="/car/age" id="gen-11">
-			<xforms:label id="gen-12">Car age : </xforms:label>
+  	<xforms:group>
+  		<xforms:output ref="/car/age" id="xf-output-1">
+			<xforms:label>Car age : </xforms:label>
 		</xforms:output>
   	</xforms:group>
   </xhtml:body>

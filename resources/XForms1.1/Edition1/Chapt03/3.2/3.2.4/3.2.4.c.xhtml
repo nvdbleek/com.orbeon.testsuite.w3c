@@ -3,7 +3,7 @@
     <xhtml:title>3.2.4.c node-set binding - bind attribute of itemset element</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     <xforms:model id="carsForSale">
-      <xforms:instance id="gen-2">
+      <xforms:instance>
         <carsAvailable>
           <car>Audi</car>
           <car>BMW</car>
@@ -20,28 +20,28 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-6">
-  		<xforms:label class="title" id="gen-7">3.2.4.c node-set binding - bind attribute of itemset element</xforms:label>
+  	<xforms:group>
+  		<xforms:label class="title">3.2.4.c node-set binding - bind attribute of itemset element</xforms:label>
   	</xforms:group>
-    <xforms:group id="gen-8">
-    	<xforms:label id="gen-9">
+    <xforms:group>
+    	<xforms:label>
 	      You must be able to select any or all of the items in the select control. After activating the Submit Cars 
       	trigger you must be able to see all the values you selected displayed on the screen in the form data.
 	    </xforms:label>
 	    <!-- No other elements of the data instance should be submitted due to the bind. -->
     </xforms:group>    
 
-    <xforms:select bind="bind_carOrder" id="gen-10">
-     	<xforms:label id="gen-11">Cars</xforms:label>
+    <xforms:select bind="bind_carOrder" id="xf-select-1">
+     	<xforms:label>Cars</xforms:label>
       	<!-- itemset uses bind instead of nodeset -->
-        <xforms:itemset bind="bind_car" id="gen-12">
-	        <xforms:label ref="." id="gen-13"/>
-    	    <xforms:value ref="." id="gen-14"/>
+        <xforms:itemset bind="bind_car">
+	        <xforms:label ref="."/>
+    	    <xforms:value ref="."/>
         </xforms:itemset>
     </xforms:select>
     
-    <xforms:submit submission="submit_carOrder" id="gen-15">
-        <xforms:label id="gen-16">Submit Cars</xforms:label>
+    <xforms:submit submission="submit_carOrder" id="xf-submit-1">
+        <xforms:label>Submit Cars</xforms:label>
     </xforms:submit>
 
 	

@@ -3,7 +3,7 @@
     <xhtml:title>11.6.1.a resource element</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     <xforms:model id="test_model">
-	    <xforms:instance id="gen-2">
+	    <xforms:instance>
 	   	    <root>
 			    <data>1</data>
 			    <data>2</data>
@@ -12,16 +12,16 @@
 	    <xforms:submission id="sub1" resource="http://xformstest.org/cgi-bin/echo.sh" action="http://bad.url" method="put">    	
 	    </xforms:submission>
 	    <xforms:submission id="sub2" resource="http://bad.url" method="put">    	
-	    	<xforms:resource id="gen-5">http://xformstest.org/cgi-bin/echo.sh</xforms:resource>
+	    	<xforms:resource>http://xformstest.org/cgi-bin/echo.sh</xforms:resource>
 	    </xforms:submission>     	
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-6">
-  		<xforms:label class="title" id="gen-7">11.6.1.a resource element</xforms:label>
+  	<xforms:group>
+  		<xforms:label class="title">11.6.1.a resource element</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-8">
-  		<xforms:label id="gen-9">
+  	<xforms:group>
+  		<xforms:label>
   		  When you activate the "Submit (@resource)" submit control the instance data must be submitted to the 
   		  xformstest.org site. If the page is not replaced by the form data then you have failed the test case. 
   		  
@@ -29,16 +29,16 @@
   		  xformstest.org site. If the page is not replaced by the form data then you have failed the test case.
   		</xforms:label>
   	</xforms:group>
-  	<xforms:action ev:event="xforms-submit-error" ev:observer="test_model" id="gen-10">
-  		<xforms:message level="modal" id="gen-11">Unable to submit</xforms:message>
+  	<xforms:action ev:event="xforms-submit-error" ev:observer="test_model">
+  		<xforms:message level="modal">Unable to submit</xforms:message>
   	</xforms:action>
   	
-  	<xforms:submit submission="sub1" id="gen-12">
-  	  <xforms:label id="gen-13">Submit (@resource)</xforms:label>
+  	<xforms:submit submission="sub1" id="xf-submit-1">
+  	  <xforms:label>Submit (@resource)</xforms:label>
   	</xforms:submit>
   	
-  	<xforms:submit submission="sub2" id="gen-14">
-  	  <xforms:label id="gen-15">Submit (resource element)</xforms:label>
+  	<xforms:submit submission="sub2" id="xf-submit-2">
+  	  <xforms:label>Submit (resource element)</xforms:label>
   	</xforms:submit>
   	
   </xhtml:body>

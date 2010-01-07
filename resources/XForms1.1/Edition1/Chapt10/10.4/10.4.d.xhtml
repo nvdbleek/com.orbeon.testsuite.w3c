@@ -2,7 +2,7 @@
     <xhtml:head>
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
         <xhtml:title>10.4.d delete action using at attribute</xhtml:title>
-        <xforms:model id="gen-1">
+        <xforms:model>
             <xforms:instance id="Instance_1">
                 <number_lists>
                     <number_list id="first">
@@ -41,65 +41,65 @@
                     </number_list>
                 </number_lists>
             </xforms:instance>
-            <xforms:action ev:event="xforms-ready" id="gen-4">
+            <xforms:action ev:event="xforms-ready">
                 <!-- example without at, should delete last node -->
-                <xforms:delete nodeset="number_list[1]/number[3]" id="gen-5"/>               
+                <xforms:delete nodeset="number_list[1]/number[3]"/>               
                 <!-- non-integer example, uses round(), should be 2 -->
-                <xforms:delete nodeset="number_list[2]/number" at="1.5" id="gen-6"/>
+                <xforms:delete nodeset="number_list[2]/number" at="1.5"/>
                 <!-- at < 1, should be 1 -->
-                <xforms:delete nodeset="number_list[3]/number" at="-2" id="gen-7"/>
+                <xforms:delete nodeset="number_list[3]/number" at="-2"/>
                 <!-- at > node-set size, should be node-set size, 3 -->
-                <xforms:delete nodeset="number_list[4]/number" at="7" id="gen-8"/>
+                <xforms:delete nodeset="number_list[4]/number" at="7"/>
                 <!-- round() returns NaN at should be node-set size, 3 -->
-                <xforms:delete nodeset="number_list[5]/number" at="number('NaN')" id="gen-9"/>
+                <xforms:delete nodeset="number_list[5]/number" at="number('NaN')"/>
                  <!-- example with at between node-set size and 1 -->
-                <xforms:delete nodeset="instance('instance_2')/number_list/number" at="1" id="gen-10"/>
+                <xforms:delete nodeset="instance('instance_2')/number_list/number" at="1"/>
             </xforms:action>
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-11">
-            <xforms:label class="title" id="gen-12">10.4.d delete action using at attribute</xforms:label>
+        <xforms:group>
+            <xforms:label class="title">10.4.d delete action using at attribute</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-13">
-          <xforms:label id="gen-14">
+        <xforms:group>
+          <xforms:label>
             You must see the correct values for each output control below. 
           </xforms:label>
         </xforms:group>
-        <xforms:group id="gen-15">
-          <xforms:label id="gen-16">You must see only the numbers 1 and 2 : </xforms:label>
-            <xforms:repeat nodeset="number_list[1]/number" id="gen-17">
-                <xforms:output value="string(concat(. ,' '))" id="gen-18"/>
+        <xforms:group>
+          <xforms:label>You must see only the numbers 1 and 2 : </xforms:label>
+            <xforms:repeat nodeset="number_list[1]/number">
+                <xforms:output value="string(concat(. ,' '))" id="xf-output-1"/>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group id="gen-19">
-          <xforms:label id="gen-20">You must see only the numbers 4 and 6 : </xforms:label>
-            <xforms:repeat nodeset="number_list[2]/number" id="gen-21">
-                <xforms:output value="string(concat(. ,' '))" id="gen-22"/>
+        <xforms:group>
+          <xforms:label>You must see only the numbers 4 and 6 : </xforms:label>
+            <xforms:repeat nodeset="number_list[2]/number">
+                <xforms:output value="string(concat(. ,' '))" id="xf-output-2"/>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group id="gen-23">
-          <xforms:label id="gen-24">You must see only the numbers 8 and 9: </xforms:label>
-            <xforms:repeat nodeset="number_list[3]/number" id="gen-25">
-                <xforms:output value="string(concat(. ,' '))" id="gen-26"/>
+        <xforms:group>
+          <xforms:label>You must see only the numbers 8 and 9: </xforms:label>
+            <xforms:repeat nodeset="number_list[3]/number">
+                <xforms:output value="string(concat(. ,' '))" id="xf-output-3"/>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group id="gen-27">
-          <xforms:label id="gen-28">You must see only the numbers 10 and 11 : </xforms:label>
-            <xforms:repeat nodeset="number_list[4]/number" id="gen-29">
-                <xforms:output value="string(concat(. ,' '))" id="gen-30"/>
+        <xforms:group>
+          <xforms:label>You must see only the numbers 10 and 11 : </xforms:label>
+            <xforms:repeat nodeset="number_list[4]/number">
+                <xforms:output value="string(concat(. ,' '))" id="xf-output-4"/>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group id="gen-31">
-          <xforms:label id="gen-32">You must see only the numbers 13 and 14 : </xforms:label>
-            <xforms:repeat nodeset="number_list[5]/number" id="gen-33">
-                <xforms:output value="string(concat(. ,' '))" id="gen-34"/>
+        <xforms:group>
+          <xforms:label>You must see only the numbers 13 and 14 : </xforms:label>
+            <xforms:repeat nodeset="number_list[5]/number">
+                <xforms:output value="string(concat(. ,' '))" id="xf-output-5"/>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group id="gen-35">
-          <xforms:label id="gen-36">You must see only the number 17 : </xforms:label>
-            <xforms:repeat nodeset="instance('instance_2')/number_list/number" id="gen-37">
-                <xforms:output value="string(concat(. ,' '))" id="gen-38"/>
+        <xforms:group>
+          <xforms:label>You must see only the number 17 : </xforms:label>
+            <xforms:repeat nodeset="instance('instance_2')/number_list/number">
+                <xforms:output value="string(concat(. ,' '))" id="xf-output-6"/>
             </xforms:repeat>
         </xforms:group>
         

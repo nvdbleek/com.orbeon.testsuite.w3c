@@ -2,8 +2,8 @@
   	<xhtml:head>
     	<xhtml:title>10.14.a load element attributes</xhtml:title>
     	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    	<xforms:model id="gen-1">
-       		<xforms:instance id="gen-2">
+    	<xforms:model>
+       		<xforms:instance>
 				<data>
 					<uri>http://www.w3.org/TR/xforms11/</uri>
 					<binduri uri="http://www.w3.org/TR/xforms11/"/>
@@ -13,28 +13,28 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group id="gen-4">
-	  		<xforms:label class="title" id="gen-5">10.14.a load element attributes</xforms:label>
+  		<xforms:group>
+	  		<xforms:label class="title">10.14.a load element attributes</xforms:label>
 	  	</xforms:group>
-  		<xforms:group id="gen-6">
-  			<xforms:label id="gen-7">
+  		<xforms:group>
+  			<xforms:label>
   			  When activated, each of the three triggers below must take you to the XForms 1.1 specification 
   			  on the W3C website. 
 			</xforms:label>
   		</xforms:group>
-		<xforms:trigger id="gen-8">
-			<xforms:label id="gen-9">Load Xforms Spec From resource Attribute</xforms:label>
-			<xforms:load ev:event="DOMActivate" resource="http://www.w3.org/TR/xforms11/" id="gen-10"/>
+		<xforms:trigger id="xf-trigger-1">
+			<xforms:label>Load Xforms Spec From resource Attribute</xforms:label>
+			<xforms:load ev:event="DOMActivate" resource="http://www.w3.org/TR/xforms11/"/>
 		</xforms:trigger>
 
-		<xforms:trigger id="gen-11">
-			<xforms:label id="gen-12">Load Xforms Spec From ref Attribute</xforms:label>
-			<xforms:load ev:event="DOMActivate" ref="/data/uri" id="gen-13"/>
+		<xforms:trigger id="xf-trigger-2">
+			<xforms:label>Load Xforms Spec From ref Attribute</xforms:label>
+			<xforms:load ev:event="DOMActivate" ref="/data/uri"/>
 		</xforms:trigger>
 
-		<xforms:trigger id="gen-14">
-			<xforms:label id="gen-15">Load Xforms Spec From bind Attribute</xforms:label>
-			<xforms:load ev:event="DOMActivate" bind="uribind" id="gen-16"/>
+		<xforms:trigger id="xf-trigger-3">
+			<xforms:label>Load Xforms Spec From bind Attribute</xforms:label>
+			<xforms:load ev:event="DOMActivate" bind="uribind"/>
 		</xforms:trigger>
 
   </xhtml:body>

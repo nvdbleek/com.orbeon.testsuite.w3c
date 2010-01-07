@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>3.2.3.g first node rule</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-      <xforms:instance id="gen-2">
+    <xforms:model>
+      <xforms:instance>
         <car>
           <make>Mercedes</make>
    		  <make>Chrysler</make>
@@ -15,15 +15,15 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-3">
-  		<xforms:label class="title" id="gen-4">3.2.3.g first node rule</xforms:label>
+  	<xforms:group>
+  		<xforms:label class="title">3.2.3.g first node rule</xforms:label>
   	</xforms:group>
 	<!-- First-node rule picks the first occurence of the duplication for /car/make -->
-	<xforms:group id="gen-5">
-		<xforms:label id="gen-6">You must see the value "Mercedes":</xforms:label>
+	<xforms:group>
+		<xforms:label>You must see the value "Mercedes":</xforms:label>
 	</xforms:group>
-    <xforms:output ref="/car/make" id="gen-7">
-      	<xforms:label id="gen-8"/>
+    <xforms:output ref="/car/make" id="xf-output-1">
+      	<xforms:label/>
     </xforms:output>
 
 	

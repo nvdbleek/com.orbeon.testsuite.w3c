@@ -2,37 +2,37 @@
 	<xhtml:head>
 		<xhtml:title>Test case for p3ptype property</xhtml:title>
 		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-		<xforms:model id="gen-1">
-			<xforms:instance id="gen-2">
+		<xforms:model>
+			<xforms:instance>
 				<person-name>
 					<first-name/>
 					<last-name/>
 				</person-name>
 			</xforms:instance>
-			<xforms:bind nodeset="/person-name/first-name" p3ptype="user.name.given" id="gen-3"/>
-			<xforms:bind nodeset="/person-name/last-name" p3ptype="user.name.family" id="gen-4"/>
+			<xforms:bind nodeset="/person-name/first-name" p3ptype="user.name.given"/>
+			<xforms:bind nodeset="/person-name/last-name" p3ptype="user.name.family"/>
 			<xforms:submission id="submit_names" ref="/person-name" action="http://xformstest.org/cgi-bin/echo.sh" method="post"/>
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-		<xforms:group id="gen-6">
-			<xforms:label class="title" id="gen-7">6.1.7.a p3ptype property</xforms:label>
+		<xforms:group>
+			<xforms:label class="title">6.1.7.a p3ptype property</xforms:label>
 		</xforms:group>
-		<xforms:group id="gen-8">
-			<xforms:label id="gen-9">
+		<xforms:group>
+			<xforms:label>
 				Test case for the p3ptype property.  After submitting data into the fields
 				the fields may be auto filled the second time you try to input the same 
 				data.
 			</xforms:label>
 		</xforms:group>
-		<xforms:input ref="/person-name/first-name" id="gen-10">
-			<xforms:label id="gen-11">First-Name</xforms:label>
+		<xforms:input ref="/person-name/first-name" id="xf-input-1">
+			<xforms:label>First-Name</xforms:label>
 		</xforms:input>
-		<xforms:input ref="/person-name/last-name" id="gen-12">
-			<xforms:label id="gen-13">Last-Name</xforms:label>
+		<xforms:input ref="/person-name/last-name" id="xf-input-2">
+			<xforms:label>Last-Name</xforms:label>
 		</xforms:input>
-		<xforms:submit submission="submit_names" id="gen-14">
-			<xforms:label id="gen-15">Submit Names</xforms:label>
+		<xforms:submit submission="submit_names" id="xf-submit-1">
+			<xforms:label>Submit Names</xforms:label>
 		</xforms:submit>
 		
 	</xhtml:body>

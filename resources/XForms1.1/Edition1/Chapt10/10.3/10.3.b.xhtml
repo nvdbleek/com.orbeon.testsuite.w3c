@@ -21,7 +21,7 @@
             <xforms:bind id="bind1" nodeset="number_list[2]/number"/>
         </xforms:model>
         <xforms:model id="mod2">
-            <xforms:instance id="gen-5">
+            <xforms:instance>
                 <number_lists>
                     <number_list>
                         <number>7</number>
@@ -54,49 +54,49 @@
                     </number_list>
                 </number_lists>
             </xforms:instance>
-            <xforms:action ev:event="xforms-ready" id="gen-7">
+            <xforms:action ev:event="xforms-ready">
                  <!-- insert <number>6</number> in second number_list nodeset, context attr should be ignored-->
-                <xforms:insert bind="bind1" context="number_list/number" id="gen-8"/>
+                <xforms:insert bind="bind1" context="number_list/number"/>
                  <!-- make sure default element node of default instance of model specified by model attr used -->
-                <xforms:insert model="mod2" nodeset="number_list[1]/number" id="gen-9"/>
+                <xforms:insert model="mod2" nodeset="number_list[1]/number"/>
                  <!-- make sure evaluation context changed b4 special attributes evaluated -->
-                <xforms:insert model="mod2" context="number_list[2]" nodeset="number" id="gen-10"/>
+                <xforms:insert model="mod2" context="number_list[2]" nodeset="number"/>
             </xforms:action>
         </xforms:model>
     </xhtml:head>
 
     <xhtml:body>
-        <xforms:group id="gen-11">
-            <xforms:label class="title" id="gen-12">10.3.b insert action with bind and model attributes</xforms:label>
+        <xforms:group>
+            <xforms:label class="title">10.3.b insert action with bind and model attributes</xforms:label>
         </xforms:group>
-		<xforms:group id="gen-13">
-			<xforms:label id="gen-14">
+		<xforms:group>
+			<xforms:label>
 			  You must see the correct values for each output control below.
 			</xforms:label>
 		</xforms:group>
-        <xforms:group id="gen-15">
-            <xforms:label id="gen-16">You must see the numbers 4, 5, 6, and 6 : </xforms:label>
-            <xforms:repeat nodeset="number_list[2]/number" id="gen-17">
-                <xforms:output class="hlist" value="concat(. , ' ')" id="gen-18">
-                    <xforms:label id="gen-19"/>
+        <xforms:group>
+            <xforms:label>You must see the numbers 4, 5, 6, and 6 : </xforms:label>
+            <xforms:repeat nodeset="number_list[2]/number">
+                <xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-1">
+                    <xforms:label/>
                 </xforms:output>
             </xforms:repeat>
         </xforms:group>
 
-        <xforms:group model="mod2" id="gen-20">
-            <xforms:label id="gen-21">You must see the numbers 7, 8, 9, 10, and 10 : </xforms:label>
-            <xforms:repeat nodeset="number_list[1]/number" id="gen-22">
-                <xforms:output class="hlist" value="concat(. , ' ')" id="gen-23">
-                    <xforms:label id="gen-24"/>
+        <xforms:group model="mod2">
+            <xforms:label>You must see the numbers 7, 8, 9, 10, and 10 : </xforms:label>
+            <xforms:repeat nodeset="number_list[1]/number">
+                <xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-2">
+                    <xforms:label/>
                 </xforms:output>
             </xforms:repeat>
         </xforms:group>
 
-        <xforms:group model="mod2" id="gen-25">
-            <xforms:label id="gen-26">You must see the numbers 11, 12, 13, 14, and 14 : </xforms:label>
-            <xforms:repeat nodeset="number_list[2]/number" id="gen-27">
-                <xforms:output class="hlist" value="concat(. , ' ')" id="gen-28">
-                    <xforms:label id="gen-29"/>
+        <xforms:group model="mod2">
+            <xforms:label>You must see the numbers 11, 12, 13, 14, and 14 : </xforms:label>
+            <xforms:repeat nodeset="number_list[2]/number">
+                <xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-3">
+                    <xforms:label/>
                 </xforms:output>
             </xforms:repeat>
         </xforms:group>

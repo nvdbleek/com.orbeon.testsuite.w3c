@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><xhtml:html xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <xhtml:head>
         <xhtml:title>8.1.6.a mediatype attribute for upload element (non-normative)</xhtml:title>
-        <xforms:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="gen-1">
-            <xforms:instance id="gen-2">
+        <xforms:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <xforms:instance>
                 <mail>
                     <picture>
                         <attach xsi:type="xsd:base64Binary"/>
@@ -15,19 +15,19 @@
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="gen-3">
-            <xforms:label class="title" id="gen-4">8.1.6.a mediatype attribute for upload element (non-normative)</xforms:label>
+        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <xforms:label class="title">8.1.6.a mediatype attribute for upload element (non-normative)</xforms:label>
         </xforms:group>
-        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="gen-5">
-            <xforms:label id="gen-6">
+        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <xforms:label>
               When you activate the Upload Image upload control your choice of files may be limited to those 
               that are the same media type as the ones in the mediatype attribute. The mediatype attribute 
               contains the value "image/jpeg image/png". 
   			</xforms:label>
         </xforms:group>
-        <xforms:upload xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" mediatype="image/jpeg image/png" ref="/mail/picture/attach" id="gen-7">
-            <xforms:label id="gen-8">Upload Image</xforms:label>
-            <xforms:mediatype ref="@mediatype" id="gen-9"/>
+        <xforms:upload xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" mediatype="image/jpeg image/png" ref="/mail/picture/attach" id="xf-upload-1">
+            <xforms:label>Upload Image</xforms:label>
+            <xforms:mediatype ref="@mediatype"/>
         </xforms:upload>
     </xhtml:body>
 </xhtml:html>

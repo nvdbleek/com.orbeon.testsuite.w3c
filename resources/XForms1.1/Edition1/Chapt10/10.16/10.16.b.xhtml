@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>10.16.b level attribute of message element</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-       <xforms:instance id="gen-2">       
+    <xforms:model>
+       <xforms:instance>       
           <mail>
           	<attachment/>
           </mail>
@@ -11,11 +11,11 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-3">
-	  	<xforms:label class="title" id="gen-4">10.16.b level attribute of message element</xforms:label>
+  	<xforms:group>
+	  	<xforms:label class="title">10.16.b level attribute of message element</xforms:label>
 	</xforms:group>
-	<xforms:group id="gen-5">
-		<xforms:label id="gen-6">
+	<xforms:group>
+		<xforms:label>
 		  The Display Modal Message trigger must display a message that says "Modal Message" when activated. 
 		  The Display Modeless Message trigger must display a message that says "Modeless Message" when 
 		  activated. 
@@ -23,22 +23,22 @@
 		  activated. 
 		</xforms:label>
 	</xforms:group>
-	<xforms:trigger id="gen-7">
-		<xforms:label id="gen-8">Display Modal Message</xforms:label>
-		<xforms:action ev:event="DOMActivate" id="gen-9">
-			<xforms:message level="modal" id="gen-10">Modal Message</xforms:message>
+	<xforms:trigger id="xf-trigger-1">
+		<xforms:label>Display Modal Message</xforms:label>
+		<xforms:action ev:event="DOMActivate">
+			<xforms:message level="modal">Modal Message</xforms:message>
       	</xforms:action>
    	</xforms:trigger>
-	<xforms:trigger id="gen-11">
-		<xforms:label id="gen-12">Display Modeless Message</xforms:label>
-		<xforms:action ev:event="DOMActivate" id="gen-13">
-			<xforms:message level="modeless" id="gen-14">Modeless Message</xforms:message>
+	<xforms:trigger id="xf-trigger-2">
+		<xforms:label>Display Modeless Message</xforms:label>
+		<xforms:action ev:event="DOMActivate">
+			<xforms:message level="modeless">Modeless Message</xforms:message>
       	</xforms:action>
    	</xforms:trigger>
-	<xforms:trigger id="gen-15">
-		<xforms:label id="gen-16">Display Ephemeral Message</xforms:label>
-		<xforms:action ev:event="DOMActivate" id="gen-17">
-			<xforms:message level="ephemeral" id="gen-18">Ephemeral Message</xforms:message>
+	<xforms:trigger id="xf-trigger-3">
+		<xforms:label>Display Ephemeral Message</xforms:label>
+		<xforms:action ev:event="DOMActivate">
+			<xforms:message level="ephemeral">Ephemeral Message</xforms:message>
       	</xforms:action>
    	</xforms:trigger>
 

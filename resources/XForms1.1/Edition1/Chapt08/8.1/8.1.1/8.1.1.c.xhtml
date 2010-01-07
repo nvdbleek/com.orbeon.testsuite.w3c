@@ -2,8 +2,8 @@
 	<xhtml:head>
 		<xhtml:title>8.1.1.c relevant form control becoming non-relevant</xhtml:title>
 		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-		<xforms:model id="gen-1">
-			<xforms:instance id="gen-2">
+		<xforms:model>
+			<xforms:instance>
 				<person-name>
 					<first-name>
 						<title/>
@@ -14,27 +14,27 @@
 				</person-name>
 			</xforms:instance>
 			<xforms:bind id="fname_bind" nodeset="/person-name/first-name" relevant="/person-name/switch &gt; 1"/>
-			<xforms:setvalue ev:event="xforms-ready" ref="/person-name/switch" id="gen-4">0</xforms:setvalue>
+			<xforms:setvalue ev:event="xforms-ready" ref="/person-name/switch">0</xforms:setvalue>
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-		<xforms:group id="gen-5">
-			<xforms:label class="title" id="gen-6">8.1.1.c relevant form control becoming non-relevant</xforms:label>
+		<xforms:group>
+			<xforms:label class="title">8.1.1.c relevant form control becoming non-relevant</xforms:label>
 		</xforms:group>
-		<xforms:group id="gen-7">
-			<xforms:label id="gen-8">
+		<xforms:group>
+			<xforms:label>
 			  You must see an xforms-disabled message only. 
 			</xforms:label>	
 		</xforms:group>
-		  <xforms:input ref="/person-name/first-name/name" id="gen-9">
-			<xforms:label id="gen-10">First Name:</xforms:label>
-			<xforms:message level="modal" ev:event="xforms-disabled" id="gen-11">xforms-disabled</xforms:message>
-			<xforms:message level="modal" ev:event="xforms-enabled" id="gen-12">xforms-enabled</xforms:message>
-			<xforms:message level="modal" ev:event="xforms-value-changed" id="gen-13">xforms-value-changed</xforms:message>
-			<xforms:message level="modal" ev:event="xforms-valid" id="gen-14">xforms-valid</xforms:message>
-			<xforms:message level="modal" ev:event="xforms-readwrite" id="gen-15">xforms-readwrite</xforms:message>
-			<xforms:message level="modal" ev:event="xforms-optional" id="gen-16">xforms-optional</xforms:message>
-			<xforms:message level="modal" ev:event="xforms-in-range" id="gen-17">xforms-in-range</xforms:message>
+		  <xforms:input ref="/person-name/first-name/name" id="xf-input-1">
+			<xforms:label>First Name:</xforms:label>
+			<xforms:message level="modal" ev:event="xforms-disabled">xforms-disabled</xforms:message>
+			<xforms:message level="modal" ev:event="xforms-enabled">xforms-enabled</xforms:message>
+			<xforms:message level="modal" ev:event="xforms-value-changed">xforms-value-changed</xforms:message>
+			<xforms:message level="modal" ev:event="xforms-valid">xforms-valid</xforms:message>
+			<xforms:message level="modal" ev:event="xforms-readwrite">xforms-readwrite</xforms:message>
+			<xforms:message level="modal" ev:event="xforms-optional">xforms-optional</xforms:message>
+			<xforms:message level="modal" ev:event="xforms-in-range">xforms-in-range</xforms:message>
 		  </xforms:input>
 		
 	</xhtml:body>

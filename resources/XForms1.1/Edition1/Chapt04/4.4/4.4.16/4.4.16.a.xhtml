@@ -3,7 +3,7 @@
   	<xhtml:title>4.4.16.a xforms-in-range event</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     <xforms:model id="car">
-      <xforms:instance id="gen-2">
+      <xforms:instance>
         <car>
           <quantity xsi:type="xsd:integer">1000</quantity>
           <mileage xsi:type="xsd:integer">2</mileage>
@@ -13,26 +13,26 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-3">
-  		<xforms:label class="title" id="gen-4">4.4.16.a xforms-in-range event</xforms:label>
+  	<xforms:group>
+  		<xforms:label class="title">4.4.16.a xforms-in-range event</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-5">
-  		<xforms:label id="gen-6">
+  	<xforms:group>
+  		<xforms:label>
   			You must see an xforms-in-range message when you activate the In Range trigger. 
 	  	</xforms:label>	
 	</xforms:group>
-    <xforms:group id="gen-7">
-		<xforms:trigger id="gen-8">
-			<xforms:label id="gen-9">In Range</xforms:label>
-			<xforms:setvalue ref="/car/quantity" ev:event="DOMActivate" id="gen-10">5</xforms:setvalue>
+    <xforms:group>
+		<xforms:trigger id="xf-trigger-1">
+			<xforms:label>In Range</xforms:label>
+			<xforms:setvalue ref="/car/quantity" ev:event="DOMActivate">5</xforms:setvalue>
 		</xforms:trigger>
 	    
-	    <xforms:range ref="/car/quantity" start="0" end="10" step="1" id="gen-11">
-	        <xforms:label id="gen-12">Range 1: </xforms:label>
-	        <xforms:action ev:event="xforms-in-range" id="gen-13">
-	          <xforms:message level="modal" id="gen-14">xforms-in-range</xforms:message>
+	    <xforms:range ref="/car/quantity" start="0" end="10" step="1" id="xf-range-1">
+	        <xforms:label>Range 1: </xforms:label>
+	        <xforms:action ev:event="xforms-in-range">
+	          <xforms:message level="modal">xforms-in-range</xforms:message>
 	        </xforms:action>
-	        <xforms:message ev:event="xforms-in-range" level="modal" id="gen-15">xforms-in-range</xforms:message>
+	        <xforms:message ev:event="xforms-in-range" level="modal">xforms-in-range</xforms:message>
 	    </xforms:range>
     </xforms:group>
 	

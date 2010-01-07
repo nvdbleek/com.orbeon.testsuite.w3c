@@ -2,21 +2,21 @@
 	<xhtml:head>
 		<xhtml:title>8.1.5.c UI Common added to output element</xhtml:title>
 		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-		<xforms:model id="gen-1">
-			<xforms:instance id="gen-2">
+		<xforms:model>
+			<xforms:instance>
 				<ID>
 					<name>Bill</name>
 				</ID>
 			</xforms:instance>
-			<xforms:bind nodeset="name" constraint="string-length(string(/ID/name)) &gt; 0" id="gen-3"/>
+			<xforms:bind nodeset="name" constraint="string-length(string(/ID/name)) &gt; 0"/>
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-		<xforms:group id="gen-4">
-			<xforms:label class="title" id="gen-5">8.1.5.c UI Common added to output element</xforms:label>
+		<xforms:group>
+			<xforms:label class="title">8.1.5.c UI Common added to output element</xforms:label>
 		</xforms:group>
-		<xforms:group id="gen-6">
-			<xforms:label id="gen-7">
+		<xforms:group>
+			<xforms:label>
 			  When you activate the Enter An Invalid Value trigger you must see a message that says "That is 
 			  an invalid name". 
 			  When you activate the Dispatch Hint Message trigger you must see a message that says "This is 
@@ -25,28 +25,28 @@
 			  the help message". 
 			</xforms:label>
 		</xforms:group>
-		<xforms:group id="gen-8">
+		<xforms:group>
 			<xforms:output ref="name" xsi:type="xsd:string" id="name_output">
-				<xforms:label id="gen-10">Name : </xforms:label>
-				<xforms:hint id="gen-11">This is the hint message</xforms:hint>
-				<xforms:help id="gen-12">This is the help message</xforms:help>
-				<xforms:alert id="gen-13">That is an invalid name</xforms:alert>
+				<xforms:label>Name : </xforms:label>
+				<xforms:hint>This is the hint message</xforms:hint>
+				<xforms:help>This is the help message</xforms:help>
+				<xforms:alert>That is an invalid name</xforms:alert>
    			</xforms:output>
    		</xforms:group>
-		<xforms:trigger id="gen-14">
-			<xforms:label id="gen-15">Enter An Invalid Value</xforms:label>
-			<xforms:setvalue ev:event="DOMActivate" ref="name" id="gen-16"/>
+		<xforms:trigger id="xf-trigger-1">
+			<xforms:label>Enter An Invalid Value</xforms:label>
+			<xforms:setvalue ev:event="DOMActivate" ref="name"/>
 		</xforms:trigger>
-		<xforms:trigger id="gen-17">
-			<xforms:label id="gen-18">Dispatch Hint Message</xforms:label>
-			<xforms:action ev:event="DOMActivate" id="gen-19">
-      			<xforms:dispatch name="xforms-hint" targetid="name_output" id="gen-20"/> 
+		<xforms:trigger id="xf-trigger-2">
+			<xforms:label>Dispatch Hint Message</xforms:label>
+			<xforms:action ev:event="DOMActivate">
+      			<xforms:dispatch name="xforms-hint" targetid="name_output"/> 
      		</xforms:action>
 		</xforms:trigger>
-		<xforms:trigger id="gen-21">
-			<xforms:label id="gen-22">Dispatch Help Message</xforms:label>
-			<xforms:action ev:event="DOMActivate" id="gen-23">
-      			<xforms:dispatch name="xforms-help" targetid="name_output" id="gen-24"/> 
+		<xforms:trigger id="xf-trigger-3">
+			<xforms:label>Dispatch Help Message</xforms:label>
+			<xforms:action ev:event="DOMActivate">
+      			<xforms:dispatch name="xforms-help" targetid="name_output"/> 
      		</xforms:action>
 		</xforms:trigger>
 

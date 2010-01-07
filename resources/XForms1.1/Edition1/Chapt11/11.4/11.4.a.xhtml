@@ -16,8 +16,8 @@
       </xforms:instance>
       <!-- submission submits only what the bind is attached to -->
       <xforms:submission id="submit" action="http://xformstest.org/cgi-bin/echo.sh" bind="year_bind" method="post" replace="none">
-	      	<xforms:action ev:event="xforms-submit-done" id="gen-5">
-	      		<xforms:message level="modal" id="gen-6">xforms-submit-done</xforms:message>
+	      	<xforms:action ev:event="xforms-submit-done">
+	      		<xforms:message level="modal">xforms-submit-done</xforms:message>
 	      	</xforms:action>
       </xforms:submission>
       <xforms:bind id="make_bind" nodeset="/car/make"/>
@@ -27,16 +27,16 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-11">
-  		<xforms:label class="title" id="gen-12">11.4.a xforms-submit-done event</xforms:label>
+  	<xforms:group>
+  		<xforms:label class="title">11.4.a xforms-submit-done event</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-13">
-  		<xforms:label id="gen-14">
+  	<xforms:group>
+  		<xforms:label>
   		  When you activate the Submit Now submit control you must see an xforms-submit-done message. 
 	  	</xforms:label>	
   	</xforms:group>
-	<xforms:submit submission="submit" id="gen-15">
-	    <xforms:label id="gen-16">Submit Now</xforms:label>
+	<xforms:submit submission="submit" id="xf-submit-1">
+	    <xforms:label>Submit Now</xforms:label>
 	</xforms:submit>
 	
   </xhtml:body>

@@ -2,11 +2,11 @@
   <xhtml:head>
   	<xhtml:title>b.6.a Remove Attribute</xhtml:title>
   	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-  	<xforms:model id="gen-1">
-	    <xforms:action ev:event="xforms-ready" id="gen-2">
-	  		<xforms:delete nodeset="item/@rating" id="gen-3"/>
+  	<xforms:model>
+	    <xforms:action ev:event="xforms-ready">
+	  		<xforms:delete nodeset="item/@rating"/>
 	  	</xforms:action>
-  		<xforms:instance id="gen-4">
+  		<xforms:instance>
   			<items>
   				<item key="23" rating="classified"/>
   			</items>
@@ -14,18 +14,18 @@
   	</xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-5">
-  		<xforms:label class="title" id="gen-6">
+  	<xforms:group>
+  		<xforms:label class="title">
   			b.6.a Remove Attribute
   		</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-7">
-  		<xforms:label id="gen-8">
+  	<xforms:group>
+  		<xforms:label>
   			You must not see the string "classified" after key '23' : 
   		</xforms:label>
-  		<xforms:repeat nodeset="item" id="gen-9">
-  			<xforms:output class="hlist" value="concat(@key, ' ', @rating)" id="gen-10">
-  				<xforms:label id="gen-11">key : </xforms:label>
+  		<xforms:repeat nodeset="item">
+  			<xforms:output class="hlist" value="concat(@key, ' ', @rating)" id="xf-output-1">
+  				<xforms:label>key : </xforms:label>
   			</xforms:output>
   		</xforms:repeat>
   	</xforms:group>

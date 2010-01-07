@@ -2,8 +2,8 @@
 	<xhtml:head>
 		<xhtml:title>7.2.d context node for the computed expression is the node currently being processed</xhtml:title>
 		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-		<xforms:model xmlns:test="http://example.org" id="gen-1">
-			<xforms:instance id="gen-2">
+		<xforms:model xmlns:test="http://example.org">
+			<xforms:instance>
 				<test:Lines>
 					<test:Line>
 						<test:Units>2</test:Units>
@@ -22,17 +22,17 @@
 					</test:Line>
 				</test:Lines>
 			</xforms:instance>
-			<xforms:bind nodeset="test:Line/test:Subtotal" calculate="../test:Units * ../test:Price" id="gen-3"/>
+			<xforms:bind nodeset="test:Line/test:Subtotal" calculate="../test:Units * ../test:Price"/>
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-		<xforms:group id="gen-4">
-			<xforms:label class="title" id="gen-5">
+		<xforms:group>
+			<xforms:label class="title">
 				7.2.d context node for the computed expression is the node currently being processed
 			</xforms:label>
 		</xforms:group>	
-		<xforms:group id="gen-6">
-			<xforms:label id="gen-7">
+		<xforms:group>
+			<xforms:label>
 			<!-- 
 				Rule 4: Create an instance with multiple Line elements each
 				containing children Units, Price, Subtotal. Set the Units
@@ -44,10 +44,10 @@
 			</xforms:label>	
 		</xforms:group>
 		
-		<xforms:repeat xmlns:test="http://example.org" nodeset="test:Line" id="gen-8">
-			<xforms:group id="gen-9">
-				<xforms:output ref="test:Subtotal" id="gen-10">
-					<xforms:label id="gen-11">Subtotal : </xforms:label>
+		<xforms:repeat xmlns:test="http://example.org" nodeset="test:Line">
+			<xforms:group>
+				<xforms:output ref="test:Subtotal" id="xf-output-1">
+					<xforms:label>Subtotal : </xforms:label>
 				</xforms:output>
 			</xforms:group>
 		</xforms:repeat>

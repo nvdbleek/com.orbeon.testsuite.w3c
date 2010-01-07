@@ -2,8 +2,8 @@
   	<xhtml:head>
     	<xhtml:title>9.3.5.a repeating structures via attributes (non-normative)</xhtml:title>
     	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    	<xforms:model id="gen-1">
-       		<xforms:instance id="gen-2">
+    	<xforms:model>
+       		<xforms:instance>
 				<cart>
 					<items>
 						<item>windshield wipers</item>
@@ -17,11 +17,11 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group id="gen-4">	
-  			<xforms:label class="title" id="gen-5">9.3.5.a repeating structures via attributes (non-normative)</xforms:label>
+  		<xforms:group>	
+  			<xforms:label class="title">9.3.5.a repeating structures via attributes (non-normative)</xforms:label>
   		</xforms:group>	
-  		<xforms:group id="gen-6">
-  			<xforms:label id="gen-7">
+  		<xforms:group>
+  			<xforms:label>
   				Part 1: If the XForms processor under test supports repeat-* attribute usage, you will see a list of car parts (windshield wipers, tires, exhaust, air freshener):
   			</xforms:label>	
   		</xforms:group>
@@ -29,29 +29,29 @@
 	  		<html:table xforms:repeat-nodeset="/cart/items/item" xforms:repeat-bind="bind_001">
 	  			<html:tr>
 	  				<html:td>
-	  					<xforms:output ref="." id="gen-8">
-							<xforms:label id="gen-9"/>
+	  					<xforms:output ref="." id="xf-output-1">
+							<xforms:label/>
 						</xforms:output>
 	  				</html:td>
 	  			</html:tr>
 	  		</html:table>
 	
-  		<xforms:group id="gen-10">
-  			<xforms:label id="gen-11">Part 2: If the XForms processor under test supports repeat-* attribute usage, you will see a list of car parts (windshield wipers, tires, exhaust, air freshener):</xforms:label>
+  		<xforms:group>
+  			<xforms:label>Part 2: If the XForms processor under test supports repeat-* attribute usage, you will see a list of car parts (windshield wipers, tires, exhaust, air freshener):</xforms:label>
   		</xforms:group>	
-  		<xforms:group xforms:repeat-nodeset="/cart/items/item" id="gen-12">
-  			<xforms:output ref="." id="gen-13">
-				<xforms:label id="gen-14"/>
+  		<xforms:group xforms:repeat-nodeset="/cart/items/item">
+  			<xforms:output ref="." id="xf-output-2">
+				<xforms:label/>
 			</xforms:output>			
   		</xforms:group>
-  		<xforms:group id="gen-15">
-  			<xforms:label id="gen-16">Part 3: If the XForms processor under test supports repeat-* attribute usage, you will see a list of car parts (windshield wipers, tires, exhaust, air freshener):</xforms:label>
+  		<xforms:group>
+  			<xforms:label>Part 3: If the XForms processor under test supports repeat-* attribute usage, you will see a list of car parts (windshield wipers, tires, exhaust, air freshener):</xforms:label>
   		</xforms:group>
-  		<xforms:group id="gen-17">
-  			<xforms:label id="gen-18">Items in cart : </xforms:label> 
-			<xforms:repeat nodeset="/cart/items/item" id="gen-19">
-					<xforms:output ref="." id="gen-20">
-						<xforms:label id="gen-21"/>
+  		<xforms:group>
+  			<xforms:label>Items in cart : </xforms:label> 
+			<xforms:repeat nodeset="/cart/items/item">
+					<xforms:output ref="." id="xf-output-3">
+						<xforms:label/>
 					</xforms:output>
 			</xforms:repeat>
   		</xforms:group>

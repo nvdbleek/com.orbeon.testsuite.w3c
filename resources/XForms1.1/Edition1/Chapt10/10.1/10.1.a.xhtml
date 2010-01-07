@@ -3,7 +3,7 @@
     	<xhtml:title>10.1.a action element</xhtml:title>
     	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     	<xforms:model id="thismodel">
-       		<xforms:instance id="gen-2">
+       		<xforms:instance>
        		  <root>
 				<car>Porche</car>
 			  </root>
@@ -11,29 +11,29 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group id="gen-3">
-	  		<xforms:label class="title" id="gen-4">10.1.a action element</xforms:label>
+  		<xforms:group>
+	  		<xforms:label class="title">10.1.a action element</xforms:label>
 	  	</xforms:group>
-  		<xforms:group id="gen-5">
-  			<xforms:label id="gen-6">
+  		<xforms:group>
+  			<xforms:label>
   			  After you activate the Fire Test trigger the value in the Car Model output must be "BMW". 
   			</xforms:label>
   		</xforms:group>
-  		<xforms:group id="gen-7">
-		  <xforms:input ref="car" id="gen-8">
-			<xforms:label id="gen-9">Car Model : </xforms:label>
+  		<xforms:group>
+		  <xforms:input ref="car" id="xf-input-1">
+			<xforms:label>Car Model : </xforms:label>
 		  </xforms:input>
 		</xforms:group>
-		<xforms:group id="gen-10">
-		  <xforms:trigger id="gen-11">
-  			<xforms:label id="gen-12">Fire Test</xforms:label>
-  			<xforms:action ev:event="DOMActivate" id="gen-13">
-    			<xforms:setvalue ref="car" id="gen-14">Pinto</xforms:setvalue>
-    			<xforms:setvalue ref="car" id="gen-15">Delorian</xforms:setvalue>
-    			<xforms:setvalue ref="car" id="gen-16">M-M-M-MONSTER JAM</xforms:setvalue>
-    			<xforms:setvalue ref="car" id="gen-17">KIDS SEATS STILL JUST 5 BUCKS</xforms:setvalue>
-    			<xforms:setvalue ref="car" id="gen-18">El Camino</xforms:setvalue>
-    			<xforms:setvalue ref="car" id="gen-19">BMW</xforms:setvalue>
+		<xforms:group>
+		  <xforms:trigger id="xf-trigger-1">
+  			<xforms:label>Fire Test</xforms:label>
+  			<xforms:action ev:event="DOMActivate">
+    			<xforms:setvalue ref="car">Pinto</xforms:setvalue>
+    			<xforms:setvalue ref="car">Delorian</xforms:setvalue>
+    			<xforms:setvalue ref="car">M-M-M-MONSTER JAM</xforms:setvalue>
+    			<xforms:setvalue ref="car">KIDS SEATS STILL JUST 5 BUCKS</xforms:setvalue>
+    			<xforms:setvalue ref="car">El Camino</xforms:setvalue>
+    			<xforms:setvalue ref="car">BMW</xforms:setvalue>
   			</xforms:action>
 		  </xforms:trigger>
 		</xforms:group>

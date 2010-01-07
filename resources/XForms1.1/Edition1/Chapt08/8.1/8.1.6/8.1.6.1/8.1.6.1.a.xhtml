@@ -3,8 +3,8 @@
   
     <xhtml:title>8.1.6.1.a filename element</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-       <xforms:instance id="gen-2">       
+    <xforms:model>
+       <xforms:instance>       
           <mail>
           	<attachment xsi:type="xsd:base64Binary" filename="" mediatype=""/>
           </mail>
@@ -12,25 +12,25 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-3">
-  	    <xforms:label class="title" id="gen-4">8.1.6.1.a filename element</xforms:label>
+    <xforms:group>
+  	    <xforms:label class="title">8.1.6.1.a filename element</xforms:label>
   	</xforms:group>
-	<xforms:group id="gen-5">
-		<xforms:label id="gen-6">
+	<xforms:group>
+		<xforms:label>
 		  After using the upload control to select a file you must see the file name displayed in the Filename output 
 		  control. 
 		</xforms:label>	
 	</xforms:group>
-	<xforms:group id="gen-7">
-   		<xforms:upload ref="/mail/attachment" mediatype="image/*" id="gen-8">
-   			<xforms:label id="gen-9">Select an image to attach</xforms:label>
-   			<xforms:filename ref="@filename" id="gen-10"/>
-   			<xforms:mediatype ref="@mediatype" id="gen-11"/>
+	<xforms:group>
+   		<xforms:upload ref="/mail/attachment" mediatype="image/*" id="xf-upload-1">
+   			<xforms:label>Select an image to attach</xforms:label>
+   			<xforms:filename ref="@filename"/>
+   			<xforms:mediatype ref="@mediatype"/>
    		</xforms:upload>
    	</xforms:group>
-	<xforms:group id="gen-12">
-		<xforms:output ref="/mail/attachment/@filename" id="gen-13">
-			<xforms:label id="gen-14">Filename : </xforms:label>
+	<xforms:group>
+		<xforms:output ref="/mail/attachment/@filename" id="xf-output-1">
+			<xforms:label>Filename : </xforms:label>
 		</xforms:output>
 	</xforms:group>
 	

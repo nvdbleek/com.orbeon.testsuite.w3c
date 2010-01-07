@@ -21,28 +21,28 @@
                     </item_list>
                 </item_lists>
             </xforms:instance>
-            <xforms:action ev:event="xforms-ready" id="gen-4">
-              <xforms:insert origin="instance('second')/item_list/item[1]/@price" nodeset="instance('first')/item_list/item[1]" id="gen-5"/>
-              <xforms:insert origin="instance('second')/item_list/item[2]/@price" nodeset="instance('first')/item_list/item[2]" id="gen-6"/>
-              <xforms:insert origin="instance('second')/item_list/item[3]/@price" nodeset="instance('first')/item_list/item[3]" id="gen-7"/>
+            <xforms:action ev:event="xforms-ready">
+              <xforms:insert origin="instance('second')/item_list/item[1]/@price" nodeset="instance('first')/item_list/item[1]"/>
+              <xforms:insert origin="instance('second')/item_list/item[2]/@price" nodeset="instance('first')/item_list/item[2]"/>
+              <xforms:insert origin="instance('second')/item_list/item[3]/@price" nodeset="instance('first')/item_list/item[3]"/>
             </xforms:action>
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-8">
-            <xforms:label class="title" id="gen-9">10.3.j insert action - copying an attribute</xforms:label>
+        <xforms:group>
+            <xforms:label class="title">10.3.j insert action - copying an attribute</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-10">
-          <xforms:label id="gen-11">You must not see the value "4.00" : </xforms:label>
-          <xforms:output ref="instance('first')/item_list/item[1]/@price" id="gen-12"/>
+        <xforms:group>
+          <xforms:label>You must not see the value "4.00" : </xforms:label>
+          <xforms:output ref="instance('first')/item_list/item[1]/@price" id="xf-output-1"/>
         </xforms:group>
-        <xforms:group id="gen-13">
-          <xforms:label id="gen-14">You must not see the value "5.00" : </xforms:label>
-          <xforms:output ref="instance('first')/item_list/item[2]/@price" id="gen-15"/>
+        <xforms:group>
+          <xforms:label>You must not see the value "5.00" : </xforms:label>
+          <xforms:output ref="instance('first')/item_list/item[2]/@price" id="xf-output-2"/>
         </xforms:group>
-        <xforms:group id="gen-16">
-          <xforms:label id="gen-17">You must not see the value "6.00" : </xforms:label>
-          <xforms:output ref="instance('first')/item_list/item[3]/@price" id="gen-18"/>
+        <xforms:group>
+          <xforms:label>You must not see the value "6.00" : </xforms:label>
+          <xforms:output ref="instance('first')/item_list/item[3]/@price" id="xf-output-3"/>
         </xforms:group>
     </xhtml:body>
 </xhtml:html>

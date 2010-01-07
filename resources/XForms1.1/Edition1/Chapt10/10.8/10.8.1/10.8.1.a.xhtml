@@ -3,27 +3,27 @@
     	<xhtml:title>10.8.1.a dispatch element with name child element</xhtml:title>
     	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     	<xforms:model id="mymodel">
-       		<xforms:instance id="gen-2">
+       		<xforms:instance>
 				<car/>
        		</xforms:instance>
-			<xforms:message level="modal" ev:event="xforms-rebuild" id="gen-3">xforms-rebuild</xforms:message>
+			<xforms:message level="modal" ev:event="xforms-rebuild">xforms-rebuild</xforms:message>
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group id="gen-4">
-	  		<xforms:label class="title" id="gen-5">10.8.1.a dispatch element with name child element</xforms:label>
+  		<xforms:group>
+	  		<xforms:label class="title">10.8.1.a dispatch element with name child element</xforms:label>
 	  	</xforms:group>	
-  		<xforms:group id="gen-6">
-  			<xforms:label id="gen-7">
+  		<xforms:group>
+  			<xforms:label>
   			  After you activate the Rebuild trigger you must see an xforms-rebuild message. You must not see 
   			  a custom-event message. 
 			</xforms:label>
   		</xforms:group>
-		<xforms:trigger id="gen-8">
-	        <xforms:label id="gen-9">Rebuild</xforms:label>
-	        <xforms:action ev:event="DOMActivate" id="gen-10">
-				<xforms:dispatch targetid="mymodel" id="gen-11">
-					<xforms:name id="gen-12">xforms-rebuild</xforms:name>
+		<xforms:trigger id="xf-trigger-1">
+	        <xforms:label>Rebuild</xforms:label>
+	        <xforms:action ev:event="DOMActivate">
+				<xforms:dispatch targetid="mymodel">
+					<xforms:name>xforms-rebuild</xforms:name>
 				</xforms:dispatch>
 			</xforms:action>
 		</xforms:trigger>

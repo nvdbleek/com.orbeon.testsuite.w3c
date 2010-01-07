@@ -2,8 +2,8 @@
     <xhtml:head>
         <xhtml:title>10.6.1.b case element child of the toggle element precedence testing</xhtml:title>
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-        <xforms:model id="gen-1">
-            <xforms:instance id="gen-2">
+        <xforms:model>
+            <xforms:instance>
                 <yourname/>
             </xforms:instance>
             <xforms:instance id="inst_case">
@@ -16,55 +16,55 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-4">
-            <xforms:label class="title" id="gen-5">10.6.1.b case element child of the toggle element precedence testing
+        <xforms:group>
+            <xforms:label class="title">10.6.1.b case element child of the toggle element precedence testing
             </xforms:label>
         </xforms:group>
-        <xforms:group id="gen-6">
-            <xforms:label id="gen-7">    <!-- in case I broke this test case, the filename used to be 3.4.b -->
+        <xforms:group>
+            <xforms:label>    <!-- in case I broke this test case, the filename used to be 3.4.b -->
                 Activating different triggers will place the the switch element into different cases. When in the
                 In case, you must see a Go To Out Case trigger. When in the Out case, you must see a Go To Exit Case
                 trigger and a Go To In Case trigger. When in the Exit case, you must see a Go To Out Case trigger.
             </xforms:label>
         </xforms:group>
-        <xforms:switch id="gen-8">
+        <xforms:switch>
             <xforms:case id="in" selected="true">
-                <xforms:label id="gen-10">You are in the In case</xforms:label>
-                <xforms:group id="gen-11">
-                    <xforms:trigger id="gen-12">
-                        <xforms:label id="gen-13">Go To Out Case</xforms:label>
-                        <xforms:toggle ev:event="DOMActivate" case="out" id="gen-14"/>
+                <xforms:label>You are in the In case</xforms:label>
+                <xforms:group>
+                    <xforms:trigger id="xf-trigger-1">
+                        <xforms:label>Go To Out Case</xforms:label>
+                        <xforms:toggle ev:event="DOMActivate" case="out"/>
                     </xforms:trigger>
                 </xforms:group>
             </xforms:case>
             <xforms:case id="out">
-                <xforms:label id="gen-16">You are in the Out case</xforms:label>
-                <xforms:group id="gen-17">
+                <xforms:label>You are in the Out case</xforms:label>
+                <xforms:group>
                     <xforms:trigger id="edit">
-                        <xforms:label id="gen-19">Go To Exit Case</xforms:label>
+                        <xforms:label>Go To Exit Case</xforms:label>
                         <!-- case attr in toggle and case element in toggle, element has precedence -->
-                        <xforms:toggle ev:event="DOMActivate" case="in" id="gen-20">
-                            <xforms:case id="gen-21">exit</xforms:case>
+                        <xforms:toggle ev:event="DOMActivate" case="in">
+                            <xforms:case>exit</xforms:case>
                         </xforms:toggle>
                     </xforms:trigger>
                     <xforms:trigger id="exit_btn">
-                        <xforms:label id="gen-23">Go To In Case</xforms:label>
-                        <xforms:toggle ev:event="DOMActivate" id="gen-24">
+                        <xforms:label>Go To In Case</xforms:label>
+                        <xforms:toggle ev:event="DOMActivate">
                             <!-- value attr in case element with inline content, value attr has precedence -->
-                            <xforms:case value="instance('inst_case')/in" id="gen-25">exit</xforms:case>
+                            <xforms:case value="instance('inst_case')/in">exit</xforms:case>
                         </xforms:toggle>
                     </xforms:trigger>
                 </xforms:group>
             </xforms:case>
             <xforms:case id="exit" selected="true">
-                <xforms:label id="gen-27">You are in the Exit case</xforms:label>
-                <xforms:group id="gen-28">
+                <xforms:label>You are in the Exit case</xforms:label>
+                <xforms:group>
                     <xforms:trigger id="rtrn_edit">
-                        <xforms:label id="gen-30">Go To Out Case</xforms:label>
+                        <xforms:label>Go To Out Case</xforms:label>
                         <!-- case attr in toggle element with value attr in case element and inline content,
                                  value attr has precedence -->
-                        <xforms:toggle ev:event="DOMActivate" case="in" id="gen-31">
-                            <xforms:case value="instance('inst_case')/out" id="gen-32">in</xforms:case>
+                        <xforms:toggle ev:event="DOMActivate" case="in">
+                            <xforms:case value="instance('inst_case')/out">in</xforms:case>
                         </xforms:toggle>
                     </xforms:trigger>
                 </xforms:group>

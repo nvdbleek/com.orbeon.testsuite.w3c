@@ -2,11 +2,11 @@
   <xhtml:head>
   	<xhtml:title>b.5.a Remove Element</xhtml:title>
   	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-  	<xforms:model id="gen-1">
-	  	<xforms:action ev:event="xforms-ready" id="gen-2">
-	  		<xforms:delete nodeset="item[2]" id="gen-3"/>
+  	<xforms:model>
+	  	<xforms:action ev:event="xforms-ready">
+	  		<xforms:delete nodeset="item[2]"/>
 	  	</xforms:action>
-  		<xforms:instance id="gen-4">
+  		<xforms:instance>
   			<shoppingcart>
   				<item>
   					<product>SKU-0815</product>
@@ -25,18 +25,18 @@
   	</xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-5">
-  		<xforms:label class="title" id="gen-6">
+  	<xforms:group>
+  		<xforms:label class="title">
   			b.5.a Remove Element
   		</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-7">
-  		<xforms:label id="gen-8">
+  	<xforms:group>
+  		<xforms:label>
   			You must see only one item product("SKU-0815") : 
   		</xforms:label>
-  		<xforms:repeat nodeset="item" id="gen-9">
-  			<xforms:output class="hlist" value="concat(./product, ' ')" id="gen-10">
-  				<xforms:label id="gen-11">Product : </xforms:label>
+  		<xforms:repeat nodeset="item">
+  			<xforms:output class="hlist" value="concat(./product, ' ')" id="xf-output-1">
+  				<xforms:label>Product : </xforms:label>
   			</xforms:output>
   		</xforms:repeat>
   	</xforms:group>

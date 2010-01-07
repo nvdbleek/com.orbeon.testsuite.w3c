@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>8.1.11.c appearance attribute of select1 element</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-    	<xforms:instance id="gen-2">
+    <xforms:model>
+    	<xforms:instance>
     		<icecream>
     			<flavor/>
     		</icecream>
@@ -11,67 +11,67 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-3">
-    	<xforms:label class="title" id="gen-4">8.1.11.c appearance attribute of select1 element</xforms:label>
+    <xforms:group>
+    	<xforms:label class="title">8.1.11.c appearance attribute of select1 element</xforms:label>
     </xforms:group>
-	<xforms:group id="gen-5">
-		<xforms:label id="gen-6">
+	<xforms:group>
+		<xforms:label>
 		  You must see three select1 controls each with a different value for appearance (Full, Compact, or Minimal). 
 		  When you make a selection the first letter of the flavor must be displayed in the Selected Flavor 
 		  output control. 
 		</xforms:label>
 	</xforms:group>
-    	<xforms:output ref="/icecream/flavor" id="gen-7">
-    		<xforms:label id="gen-8">Selected Flavor : </xforms:label>
+    	<xforms:output ref="/icecream/flavor" id="xf-output-1">
+    		<xforms:label>Selected Flavor : </xforms:label>
     	</xforms:output>
-    <xforms:group id="gen-9">
-		<xforms:select1 ref="/icecream/flavor" appearance="full" id="gen-10">
-			<xforms:label id="gen-11">Select A Flavor(Full):</xforms:label>
-			<xforms:item id="gen-12">
-				<xforms:label id="gen-13">Vanilla</xforms:label>
-				<xforms:value id="gen-14">v</xforms:value>
+    <xforms:group>
+		<xforms:select1 ref="/icecream/flavor" appearance="full" id="xf-select1-1">
+			<xforms:label>Select A Flavor(Full):</xforms:label>
+			<xforms:item>
+				<xforms:label>Vanilla</xforms:label>
+				<xforms:value>v</xforms:value>
 			</xforms:item>
-			<xforms:item id="gen-15">
-				<xforms:label id="gen-16">Strawberry</xforms:label>
-				<xforms:value id="gen-17">s</xforms:value>
+			<xforms:item>
+				<xforms:label>Strawberry</xforms:label>
+				<xforms:value>s</xforms:value>
 			</xforms:item>
-			<xforms:item id="gen-18">
-				<xforms:label id="gen-19">Chocolate</xforms:label>
-				<xforms:value id="gen-20">c</xforms:value>
-			</xforms:item>
-		</xforms:select1>
-    </xforms:group>
-    <xforms:group id="gen-21">
-		<xforms:select1 ref="/icecream/flavor" appearance="compact" id="gen-22">
-			<xforms:label id="gen-23">Select A Flavor(Compact):</xforms:label>
-			<xforms:item id="gen-24">
-				<xforms:label id="gen-25">Vanilla</xforms:label>
-				<xforms:value id="gen-26">v</xforms:value>
-			</xforms:item>
-			<xforms:item id="gen-27">
-				<xforms:label id="gen-28">Strawberry</xforms:label>
-				<xforms:value id="gen-29">s</xforms:value>
-			</xforms:item>
-			<xforms:item id="gen-30">
-				<xforms:label id="gen-31">Chocolate</xforms:label>
-				<xforms:value id="gen-32">c</xforms:value>
+			<xforms:item>
+				<xforms:label>Chocolate</xforms:label>
+				<xforms:value>c</xforms:value>
 			</xforms:item>
 		</xforms:select1>
     </xforms:group>
-    <xforms:group id="gen-33">
-		<xforms:select1 ref="/icecream/flavor" appearance="minimal" id="gen-34">
-			<xforms:label id="gen-35">Select A Flavor(Minimal):</xforms:label>
-			<xforms:item id="gen-36">
-				<xforms:label id="gen-37">Vanilla</xforms:label>
-				<xforms:value id="gen-38">v</xforms:value>
+    <xforms:group>
+		<xforms:select1 ref="/icecream/flavor" appearance="compact" id="xf-select1-2">
+			<xforms:label>Select A Flavor(Compact):</xforms:label>
+			<xforms:item>
+				<xforms:label>Vanilla</xforms:label>
+				<xforms:value>v</xforms:value>
 			</xforms:item>
-			<xforms:item id="gen-39">
-				<xforms:label id="gen-40">Strawberry</xforms:label>
-				<xforms:value id="gen-41">s</xforms:value>
+			<xforms:item>
+				<xforms:label>Strawberry</xforms:label>
+				<xforms:value>s</xforms:value>
 			</xforms:item>
-			<xforms:item id="gen-42">
-				<xforms:label id="gen-43">Chocolate</xforms:label>
-				<xforms:value id="gen-44">c</xforms:value>
+			<xforms:item>
+				<xforms:label>Chocolate</xforms:label>
+				<xforms:value>c</xforms:value>
+			</xforms:item>
+		</xforms:select1>
+    </xforms:group>
+    <xforms:group>
+		<xforms:select1 ref="/icecream/flavor" appearance="minimal" id="xf-select1-3">
+			<xforms:label>Select A Flavor(Minimal):</xforms:label>
+			<xforms:item>
+				<xforms:label>Vanilla</xforms:label>
+				<xforms:value>v</xforms:value>
+			</xforms:item>
+			<xforms:item>
+				<xforms:label>Strawberry</xforms:label>
+				<xforms:value>s</xforms:value>
+			</xforms:item>
+			<xforms:item>
+				<xforms:label>Chocolate</xforms:label>
+				<xforms:value>c</xforms:value>
 			</xforms:item>
 		</xforms:select1>
     </xforms:group>

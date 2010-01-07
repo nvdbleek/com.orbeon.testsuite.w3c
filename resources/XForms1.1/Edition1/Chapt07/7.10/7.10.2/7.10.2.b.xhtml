@@ -2,7 +2,7 @@
     <xhtml:head>
         <xhtml:title>7.10.2.b current() function example 2</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-        <xforms:model id="gen-1">
+        <xforms:model>
             <xforms:instance id="i1">
                 <months>
                     <mon>01</mon>
@@ -20,15 +20,15 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-4">
-            <xforms:label class="title" id="gen-5">7.10.2.b current() function example 2</xforms:label>
+        <xforms:group>
+            <xforms:label class="title">7.10.2.b current() function example 2</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-6">
-            <xforms:label id="gen-7">You must see the value "Jan Feb Mar" for the Months output. </xforms:label>
+        <xforms:group>
+            <xforms:label>You must see the value "Jan Feb Mar" for the Months output. </xforms:label>
         </xforms:group>
-        <xforms:repeat nodeset="mon" id="gen-8">
-            <xforms:output value="instance('i2')/month[@code = current()]" id="gen-9">
-                <xforms:label id="gen-10">Months : </xforms:label>
+        <xforms:repeat nodeset="mon">
+            <xforms:output value="instance('i2')/month[@code = current()]" id="xf-output-1">
+                <xforms:label>Months : </xforms:label>
             </xforms:output>
         </xforms:repeat>
     </xhtml:body>

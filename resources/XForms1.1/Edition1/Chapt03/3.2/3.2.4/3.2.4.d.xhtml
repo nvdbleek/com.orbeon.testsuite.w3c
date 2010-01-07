@@ -3,14 +3,14 @@
     <xhtml:title>3.2.4.d node-set binding - bind attribute overrides model attribute</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     <xforms:model id="model1">
-      <xforms:instance id="gen-2">
+      <xforms:instance>
         <carsAvailable>
           <car>Audi</car>
         </carsAvailable>
       </xforms:instance>
     </xforms:model>
     <xforms:model id="model2">
-      <xforms:instance id="gen-4">
+      <xforms:instance>
         <carsAvailable>
           <car>BMW</car>
         </carsAvailable>
@@ -19,17 +19,17 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-6">
-  		<xforms:label class="title" id="gen-7">3.2.4.d node-set binding - bind attribute overrides model attribute</xforms:label>
+  	<xforms:group>
+  		<xforms:label class="title">3.2.4.d node-set binding - bind attribute overrides model attribute</xforms:label>
   	</xforms:group>
-    <xforms:group id="gen-8">
-		<xforms:label id="gen-9">
+    <xforms:group>
+		<xforms:label>
       		You must see the value "BMW": 
       	</xforms:label>
     </xforms:group>
 
-	<xforms:output ref="car" model="model1" bind="bind1" id="gen-10">
-    	<xforms:label id="gen-11"/>
+	<xforms:output ref="car" model="model1" bind="bind1" id="xf-output-1">
+    	<xforms:label/>
     </xforms:output>
 
   </xhtml:body>

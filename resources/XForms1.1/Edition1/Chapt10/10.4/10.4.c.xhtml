@@ -2,7 +2,7 @@
     <xhtml:head>
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
         <xhtml:title>10.4.c delete action using context attribute terminates with no effect</xhtml:title>
-        <xforms:model id="gen-1">
+        <xforms:model>
             <xforms:instance id="first">
                 <number_lists>
                     <number_list>
@@ -30,26 +30,26 @@
                 </number_lists>
             </xforms:instance>
             <!-- Delete should terminate with no effect, make sure no nodesets were changed -->
-            <xforms:delete ev:event="xforms-ready" nodeset="number_list[3]/number" id="gen-4"/>
+            <xforms:delete ev:event="xforms-ready" nodeset="number_list[3]/number"/>
             <!-- trying to delete an instance, should terminate with no effect -->
-            <xforms:delete ev:event="xforms-ready" nodeset="instance('first')" id="gen-5"/>
+            <xforms:delete ev:event="xforms-ready" nodeset="instance('first')"/>
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-6">
-            <xforms:label class="title" id="gen-7">10.4.c delete action using context attribute terminates with no effect</xforms:label>
+        <xforms:group>
+            <xforms:label class="title">10.4.c delete action using context attribute terminates with no effect</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-8">
-          <xforms:label id="gen-9">You must see the number 3 : </xforms:label>
-            <xforms:output value="count(number_list)" id="gen-10"/>
+        <xforms:group>
+          <xforms:label>You must see the number 3 : </xforms:label>
+            <xforms:output value="count(number_list)" id="xf-output-1"/>
         </xforms:group>
-        <xforms:group id="gen-11">
-          <xforms:label id="gen-12">You must see the number 6 : </xforms:label>
-            <xforms:output value="count(number_list[1]/number)" id="gen-13"/>
+        <xforms:group>
+          <xforms:label>You must see the number 6 : </xforms:label>
+            <xforms:output value="count(number_list[1]/number)" id="xf-output-2"/>
         </xforms:group>
-        <xforms:group id="gen-14">
-          <xforms:label id="gen-15">You must see the number 3 : </xforms:label>
-            <xforms:output value="count(number_list[2]/number)" id="gen-16"/>
+        <xforms:group>
+          <xforms:label>You must see the number 3 : </xforms:label>
+            <xforms:output value="count(number_list[2]/number)" id="xf-output-3"/>
         </xforms:group>
         
     </xhtml:body>

@@ -2,8 +2,8 @@
     <xhtml:head>
         <xhtml:title>3.2.3.a single-node binding - ref attribute</xhtml:title>
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-        <xforms:model id="gen-1">
-            <xforms:instance id="gen-2">
+        <xforms:model>
+            <xforms:instance>
                 <car>
                     <make>Acura</make>
                     <year>1994</year>
@@ -15,30 +15,30 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-4">
-            <xforms:label class="title" id="gen-5">3.2.3.a single-node binding - ref attribute</xforms:label>
+        <xforms:group>
+            <xforms:label class="title">3.2.3.a single-node binding - ref attribute</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-6">
-        	<xforms:label id="gen-7">
+        <xforms:group>
+        	<xforms:label>
         		<!-- ref attribute points to a valid node;  -->
         		You must see the value "120": 
         	</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-8">
-            <xforms:output ref="/car/hp" id="gen-9">
-                <xforms:label id="gen-10"/>
+        <xforms:group>
+            <xforms:output ref="/car/hp" id="xf-output-1">
+                <xforms:label/>
             </xforms:output>
         </xforms:group>
         
-        <xforms:group id="gen-11">
-        	<xforms:label id="gen-12">
+        <xforms:group>
+        	<xforms:label>
         		<!-- ref has no meaning when bind is present;  -->
         		You must see the value "1994": 
         	</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-13">
-            <xforms:output ref="/car/make" bind="bind_001" id="gen-14">
-                <xforms:label id="gen-15"/>
+        <xforms:group>
+            <xforms:output ref="/car/make" bind="bind_001" id="xf-output-2">
+                <xforms:label/>
             </xforms:output>
         </xforms:group>
         

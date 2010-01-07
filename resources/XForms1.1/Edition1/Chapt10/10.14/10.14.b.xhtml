@@ -2,8 +2,8 @@
   	<xhtml:head>
     	<xhtml:title>10.14.b show attribute of load element</xhtml:title>
     	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    	<xforms:model id="gen-1">
-       		<xforms:instance id="gen-2">
+    	<xforms:model>
+       		<xforms:instance>
 				<data>
 					<uri>http://www.w3.org/TR/xforms/index-all.html</uri>
 					<binduri uri="http://www.w3.org/TR/xforms11/"/>
@@ -13,30 +13,30 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group id="gen-4">
-	  		<xforms:label class="title" id="gen-5">10.14.b show attribute of load element</xforms:label>
+  		<xforms:group>
+	  		<xforms:label class="title">10.14.b show attribute of load element</xforms:label>
 	  	</xforms:group>
-  		<xforms:group id="gen-6">
-  			<xforms:label id="gen-7">
+  		<xforms:group>
+  			<xforms:label>
   			  When activated, each of the three triggers below must take you to the XForms 1.1 specification 
   			  on the W3C website. The Show Not Defined and Show=Replace triggers must replace this form with 
   			  the specification. The Show=New trigger must display the specification without replacing this form. 
 			</xforms:label>
   		</xforms:group>
 
-		<xforms:trigger id="gen-8">
-			<xforms:label id="gen-9">Show Not Defined</xforms:label>
-			<xforms:load ev:event="DOMActivate" resource="http://www.w3.org/TR/xforms11/" id="gen-10"/>
+		<xforms:trigger id="xf-trigger-1">
+			<xforms:label>Show Not Defined</xforms:label>
+			<xforms:load ev:event="DOMActivate" resource="http://www.w3.org/TR/xforms11/"/>
 		</xforms:trigger>
 		
-		<xforms:trigger id="gen-11">
-			<xforms:label id="gen-12">Show=Replace</xforms:label>
-			<xforms:load ev:event="DOMActivate" show="replace" resource="http://www.w3.org/TR/xforms11/" id="gen-13"/>
+		<xforms:trigger id="xf-trigger-2">
+			<xforms:label>Show=Replace</xforms:label>
+			<xforms:load ev:event="DOMActivate" show="replace" resource="http://www.w3.org/TR/xforms11/"/>
 		</xforms:trigger>
 		
-		<xforms:trigger id="gen-14">
-			<xforms:label id="gen-15">Show=New</xforms:label>
-			<xforms:load ev:event="DOMActivate" show="new" resource="http://www.w3.org/TR/xforms11/" id="gen-16"/>
+		<xforms:trigger id="xf-trigger-3">
+			<xforms:label>Show=New</xforms:label>
+			<xforms:load ev:event="DOMActivate" show="new" resource="http://www.w3.org/TR/xforms11/"/>
 		</xforms:trigger>
 
   </xhtml:body>

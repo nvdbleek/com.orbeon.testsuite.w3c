@@ -2,34 +2,34 @@
   <xhtml:head>
     <xhtml:title>4.4.13.a DOMFocusIn event</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-      <xforms:instance id="gen-2">
+    <xforms:model>
+      <xforms:instance>
         <car>
           <make/>
           <year/>
         </car>
       </xforms:instance>
-      <xforms:setfocus control="input_year" ev:event="xforms-ready" id="gen-3"/>
+      <xforms:setfocus control="input_year" ev:event="xforms-ready"/>
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-4">
-    	<xforms:label class="title" id="gen-5">4.4.13.a DOMFocusIn event</xforms:label>
+    <xforms:group>
+    	<xforms:label class="title">4.4.13.a DOMFocusIn event</xforms:label>
     </xforms:group>
-    <xforms:group id="gen-6">
-    	<xforms:label id="gen-7">
+    <xforms:group>
+    	<xforms:label>
 	    	You must have seen a DOMFocusIn message.
 	    </xforms:label>	
     </xforms:group>
     <xforms:input id="input_make" ref="/car/make">
-    	<xforms:label id="gen-9">Car make</xforms:label>
+    	<xforms:label>Car make</xforms:label>
     </xforms:input>
     <xforms:input id="input_year" ref="/car/year">
-       	<xforms:label id="gen-11">Car year</xforms:label>
-       	<xforms:action ev:event="DOMFocusIn" id="gen-12">
-        	<xforms:message level="modal" id="gen-13">DOMFocusIn</xforms:message>
+       	<xforms:label>Car year</xforms:label>
+       	<xforms:action ev:event="DOMFocusIn">
+        	<xforms:message level="modal">DOMFocusIn</xforms:message>
           	<!-- change focus back to the other form -->
-          	<xforms:setfocus control="input_make" id="gen-14"/>
+          	<xforms:setfocus control="input_make"/>
        	</xforms:action>
     </xforms:input>
 	

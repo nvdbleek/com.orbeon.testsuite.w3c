@@ -3,7 +3,7 @@
         <xhtml:title>10.7.1.b control element precedence tests</xhtml:title>
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
         <xforms:model id="mod1">
-            <xforms:instance id="gen-2">
+            <xforms:instance>
                 <data>
                   <name>Alex</name>
                   <age>23</age>
@@ -19,45 +19,45 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-4">
-          <xforms:label class="title" id="gen-5">10.7.1.b control element precedence tests</xforms:label>
+        <xforms:group>
+          <xforms:label class="title">10.7.1.b control element precedence tests</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-6">
-          <xforms:label id="gen-7">
+        <xforms:group>
+          <xforms:label>
             The triggers below must shift the focus to the proper form controls when activated. 
             The "Set Focus To Age" trigger must place the focus into the input control labeled Age. 
             The "Set Focus To DOB" trigger must place the focus into the input control labeled DOB. 
           </xforms:label>
         </xforms:group>
-        <xforms:group id="gen-8">
+        <xforms:group>
           <xforms:input id="Name" ref="name">
-            <xforms:label id="gen-10">Name:</xforms:label>
+            <xforms:label>Name:</xforms:label>
           </xforms:input>
         </xforms:group>
-        <xforms:group id="gen-11">
+        <xforms:group>
           <xforms:input id="Age" ref="age">
-            <xforms:label id="gen-13">Age:</xforms:label>
+            <xforms:label>Age:</xforms:label>
           </xforms:input>
         </xforms:group>
-        <xforms:group id="gen-14">
+        <xforms:group>
           <xforms:input id="DOB" ref="dob">
-            <xforms:label id="gen-16">DOB:</xforms:label>
+            <xforms:label>DOB:</xforms:label>
           </xforms:input>
         </xforms:group>
         
-        <xforms:trigger id="gen-17">
-	      <xforms:label id="gen-18">Set Focus To Age</xforms:label>
+        <xforms:trigger id="xf-trigger-1">
+	      <xforms:label>Set Focus To Age</xforms:label>
 	        <!-- value attr with inline content, value attr has precedence -->
-			<xforms:setfocus ev:event="DOMActivate" id="gen-19">
-			  <xforms:control value="instance('focus_holder')/focus" id="gen-20">Name</xforms:control>
+			<xforms:setfocus ev:event="DOMActivate">
+			  <xforms:control value="instance('focus_holder')/focus">Name</xforms:control>
 		    </xforms:setfocus>
 		</xforms:trigger>
 		
-		<xforms:trigger id="gen-21">
-	      <xforms:label id="gen-22">Set Focus To DOB</xforms:label>
+		<xforms:trigger id="xf-trigger-2">
+	      <xforms:label>Set Focus To DOB</xforms:label>
 	        <!-- control attr with control element, control element has precedence -->
-			<xforms:setfocus ev:event="DOMActivate" control="Name" id="gen-23">
-			  <xforms:control value="instance('focus_holder')/focus2" id="gen-24">Age</xforms:control>
+			<xforms:setfocus ev:event="DOMActivate" control="Name">
+			  <xforms:control value="instance('focus_holder')/focus2">Age</xforms:control>
 		    </xforms:setfocus>
 		</xforms:trigger>
 		

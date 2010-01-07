@@ -3,7 +3,7 @@
         <xhtml:title>10.17.c conditional execution of XForms actions - Automatic Focus Advancement example</xhtml:title>
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
         <xforms:model id="mod1">
-            <xforms:instance id="gen-2">
+            <xforms:instance>
               <info>
                 <areaCode/>
                 <exchange/>
@@ -14,11 +14,11 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group id="gen-3">
-            <xforms:label class="title" id="gen-4">10.17.c conditional execution of XForms actions - Automatic Focus Advancement example</xforms:label>
+        <xforms:group>
+            <xforms:label class="title">10.17.c conditional execution of XForms actions - Automatic Focus Advancement example</xforms:label>
         </xforms:group>
-        <xforms:group id="gen-5">
-            <xforms:label id="gen-6">
+        <xforms:group>
+            <xforms:label>
               This test case shifts the focus to different input controls depending on if conditions have been met. 
               If you enter three characters into the Area Code input the focus must move to the Exchange input. 
               If you enter three characters into the Exchange input the focus must move to the Local input. 
@@ -26,19 +26,19 @@
             </xforms:label>
         </xforms:group>
         <xforms:input ref="/info/areaCode" id="AreaCodeControl" incremental="true">
-			<xforms:label id="gen-8">Area Code:</xforms:label>
-			<xforms:setfocus ev:event="xforms-value-changed" control="ExchangeControl" if="string-length(.)=3 and . &gt; 0" id="gen-9"/>
+			<xforms:label>Area Code:</xforms:label>
+			<xforms:setfocus ev:event="xforms-value-changed" control="ExchangeControl" if="string-length(.)=3 and . &gt; 0"/>
 		</xforms:input>
 		<xforms:input ref="/info/exchange" id="ExchangeControl" incremental="true">
-			<xforms:label id="gen-11">Exchange:</xforms:label>
-			<xforms:setfocus ev:event="xforms-value-changed" control="LocalControl" if="string-length(.)=3 and . &gt; 0" id="gen-12"/>
+			<xforms:label>Exchange:</xforms:label>
+			<xforms:setfocus ev:event="xforms-value-changed" control="LocalControl" if="string-length(.)=3 and . &gt; 0"/>
 		</xforms:input>
 		<xforms:input ref="/info/local" id="LocalControl" incremental="true">
-			<xforms:label id="gen-14">Local:</xforms:label>
-			<xforms:setfocus ev:event="xforms-value-changed" control="ExtensionControl" if="string-length(.)=4 and . &gt; 0" id="gen-15"/>
+			<xforms:label>Local:</xforms:label>
+			<xforms:setfocus ev:event="xforms-value-changed" control="ExtensionControl" if="string-length(.)=4 and . &gt; 0"/>
 		</xforms:input>
 		<xforms:input ref="/info/extension" id="ExtensionControl">
-			<xforms:label id="gen-17">Extension:</xforms:label>
+			<xforms:label>Extension:</xforms:label>
 		</xforms:input>
     </xhtml:body>
 </xhtml:html>

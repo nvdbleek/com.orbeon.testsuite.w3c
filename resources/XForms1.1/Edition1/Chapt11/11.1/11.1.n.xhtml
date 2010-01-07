@@ -2,15 +2,15 @@
     <xhtml:head>
         <xhtml:title>11.1.n encoding attribute of submission element</xhtml:title>
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-        <xforms:model id="gen-1">
-			<xforms:instance id="gen-2">
+        <xforms:model>
+			<xforms:instance>
 				<carA>
 					<make>Acura</make>
 					<year>2005</year>
 					<color>blue</color>
 				</carA>
 			</xforms:instance>
-			<xforms:instance id="gen-3">
+			<xforms:instance>
 				<carB>
 					<make>Acura</make>
 					<year>2005</year>
@@ -25,22 +25,22 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-    	<xforms:group id="gen-9">
-  			<xforms:label class="title" id="gen-10">11.1.n encoding attribute of submission element</xforms:label>
+    	<xforms:group>
+  			<xforms:label class="title">11.1.n encoding attribute of submission element</xforms:label>
   		</xforms:group>
-  		<xforms:group id="gen-11">
-  			<xforms:label id="gen-12">
+  		<xforms:group>
+  			<xforms:label>
   			  When you activate the Submit (UTF-8) control you must see the value 
   			  " encoding="UTF-8" " at the top of the form data. 
   			  When you activate the Submit (ISO) control you must see the value 
   			  " encoding="ISO-8859-1" " at the top of the form data. 
   			</xforms:label>
   		</xforms:group>
-  		<xforms:submit submission="submitA" id="gen-13">
-  			<xforms:label id="gen-14">Submit (UTF-8)</xforms:label>
+  		<xforms:submit submission="submitA" id="xf-submit-1">
+  			<xforms:label>Submit (UTF-8)</xforms:label>
   		</xforms:submit>
-  		<xforms:submit submission="submitB" id="gen-15">
-  			<xforms:label id="gen-16">Submit (ISO)</xforms:label>
+  		<xforms:submit submission="submitB" id="xf-submit-2">
+  			<xforms:label>Submit (ISO)</xforms:label>
   		</xforms:submit>
 
     </xhtml:body>

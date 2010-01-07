@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>g.3 namespace example (non-normative)</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-      <xforms:instance id="gen-2">
+    <xforms:model>
+      <xforms:instance>
         <car>
           <make>Honda</make>
           <make>Toyota</make>
@@ -13,23 +13,23 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-3">
-  		<xforms:label class="title" id="gen-4">g.3 namespace example (non-normative)</xforms:label>
+  	<xforms:group>
+  		<xforms:label class="title">g.3 namespace example (non-normative)</xforms:label>
   	</xforms:group>
-    <xforms:group id="gen-5">
-		<xforms:label id="gen-6">You should see a list of cars, with the background a 'teal' color 
+    <xforms:group>
+		<xforms:label>You should see a list of cars, with the background a 'teal' color 
 		for the current item. Also, the repeat items should have a dashed box 
 		around them.
 		</xforms:label>
     </xforms:group>
-    <xforms:group id="gen-7">
-    	<xforms:repeat nodeset="/car/make" id="gen-8">
-    		<xforms:output ref="." id="gen-9">
-    			<xforms:label id="gen-10"/>
+    <xforms:group>
+    	<xforms:repeat nodeset="/car/make">
+    		<xforms:output ref="." id="xf-output-1">
+    			<xforms:label/>
     		</xforms:output>
     	</xforms:repeat>
     </xforms:group>
-    <xforms:group id="gen-11">
+    <xforms:group>
 		
 	</xforms:group>
   </xhtml:body>

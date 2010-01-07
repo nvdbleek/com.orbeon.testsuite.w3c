@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>10.16.a message element using single node binding</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-       <xforms:instance id="gen-2">       
+    <xforms:model>
+       <xforms:instance>       
 			<mail>
 				<message>Instance Message</message>
 				<body/>
@@ -13,11 +13,11 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-4">
-	  	<xforms:label class="title" id="gen-5">10.16.a message element using single node binding</xforms:label>
+  	<xforms:group>
+	  	<xforms:label class="title">10.16.a message element using single node binding</xforms:label>
   	</xforms:group>
-	<xforms:group id="gen-6">
-		<xforms:label id="gen-7">
+	<xforms:group>
+		<xforms:label>
 		  When activated both triggers must cause you to see a message that says "Instance Message". 
 	<!-- 
 		(The first message has a bind and inline data, the bind attribute has precedence.
@@ -25,18 +25,18 @@
 		</xforms:label>
 	</xforms:group>
 
-	<xforms:trigger id="gen-8">
-		<xforms:label id="gen-9">Message with bind attribute</xforms:label>
-		<xforms:action ev:event="DOMActivate" id="gen-10">
-			<xforms:message bind="inst_alert" level="modal" id="gen-11">
+	<xforms:trigger id="xf-trigger-1">
+		<xforms:label>Message with bind attribute</xforms:label>
+		<xforms:action ev:event="DOMActivate">
+			<xforms:message bind="inst_alert" level="modal">
 				Inline Message
 	      	</xforms:message>
 	     </xforms:action>
    	</xforms:trigger>
-	<xforms:trigger id="gen-12">
-		<xforms:label id="gen-13">Message with ref attribute</xforms:label>
-		<xforms:action ev:event="DOMActivate" id="gen-14">
-			<xforms:message ref="message" level="modal" id="gen-15">
+	<xforms:trigger id="xf-trigger-2">
+		<xforms:label>Message with ref attribute</xforms:label>
+		<xforms:action ev:event="DOMActivate">
+			<xforms:message ref="message" level="modal">
 				Inline Message
 	      	</xforms:message>
 		</xforms:action>

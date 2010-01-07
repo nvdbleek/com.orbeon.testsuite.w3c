@@ -24,7 +24,7 @@
 >      </xf:repeat>
  -->
 
-		<xforms:model id="gen-1">
+		<xforms:model>
 			<xforms:instance id="fruitInstance">
 			    <fruitRoot>
 		            <fruit>apple</fruit>
@@ -37,13 +37,13 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-	    <xforms:group id="gen-3">
-		    <xforms:label class="title" id="gen-4">
+	    <xforms:group>
+		    <xforms:label class="title">
 			7.10.4.a context() function
 		    </xforms:label>
 		</xforms:group>
-		<xforms:group id="gen-5">
-			<xforms:label id="gen-6">
+		<xforms:group>
+			<xforms:label>
 			  You must initially see the value "Unknown" for the Bad Fruit picked output and 
 			  four triggers labeled "apple", "orange", "mandarine", and "tomato".
 			  When you activate one of these triggers, you 
@@ -51,17 +51,17 @@
 
 			</xforms:label>
 		</xforms:group>
-		<xforms:group id="gen-7">              
-            <xforms:output ref="instance('fruitInstance')/bad-fruit" id="gen-8">
-            	<xforms:label id="gen-9">Bad Fruit picked : </xforms:label>
+		<xforms:group>              
+            <xforms:output ref="instance('fruitInstance')/bad-fruit" id="xf-output-1">
+            	<xforms:label>Bad Fruit picked : </xforms:label>
             </xforms:output>
        </xforms:group> 
-		<xforms:group id="gen-10">
+		<xforms:group>
 		    <xforms:repeat nodeset="instance('fruitInstance')/fruit" id="fruits-repeat">
-           		<xforms:trigger id="gen-12">
-          			<xforms:label ref="." id="gen-13"/>
-          			<xforms:action ev:event="DOMActivate" id="gen-14">
-            			<xforms:setvalue ref="instance('fruitInstance')/bad-fruit" value="context()" id="gen-15"/>
+           		<xforms:trigger id="xf-trigger-1">
+          			<xforms:label ref="."/>
+          			<xforms:action ev:event="DOMActivate">
+            			<xforms:setvalue ref="instance('fruitInstance')/bad-fruit" value="context()"/>
           			</xforms:action>
         		</xforms:trigger>
      		</xforms:repeat>
