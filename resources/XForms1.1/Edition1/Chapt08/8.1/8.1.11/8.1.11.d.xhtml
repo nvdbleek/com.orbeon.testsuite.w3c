@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>8.1.11.d value out of range of a select1 element</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-    	<xforms:instance id="gen-2">
+    <xforms:model>
+    	<xforms:instance>
     		<icecream>
     			<flavor>v</flavor>
     		</icecream>
@@ -11,43 +11,43 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-3">
-    	<xforms:label class="title" id="gen-4">8.1.11.d value out of range of a select1 element</xforms:label>
+    <xforms:group>
+    	<xforms:label class="title">8.1.11.d value out of range of a select1 element</xforms:label>
     </xforms:group>
-	<xforms:group id="gen-5">
-		<xforms:label id="gen-6">
+	<xforms:group>
+		<xforms:label>
 		  When you activate the Enter An Invalid Value trigger you must see an indication of an out-of-range 
 		  condition. This may take the form of an xforms-out-of-range message. 
 		</xforms:label>
 	</xforms:group>
-	<xforms:group id="gen-7">
-	<xforms:output ref="/icecream/flavor" id="gen-8">
-		<xforms:label id="gen-9">Selected Flavor : </xforms:label>
+	<xforms:group>
+	<xforms:output ref="/icecream/flavor" id="xf-output-1">
+		<xforms:label>Selected Flavor : </xforms:label>
 	</xforms:output>
 	</xforms:group>
-	<xforms:group id="gen-10">
-	<xforms:select1 ref="/icecream/flavor" selection="closed" id="gen-11">
-	    <xforms:label id="gen-12">Select a Flavor :</xforms:label>
-		<xforms:item id="gen-13">
-			<xforms:label id="gen-14">Vanilla</xforms:label>
-			<xforms:value id="gen-15">v</xforms:value>
+	<xforms:group>
+	<xforms:select1 ref="/icecream/flavor" selection="closed" id="xf-select1-1">
+	    <xforms:label>Select a Flavor :</xforms:label>
+		<xforms:item>
+			<xforms:label>Vanilla</xforms:label>
+			<xforms:value>v</xforms:value>
 		</xforms:item>
-		<xforms:item id="gen-16">
-			<xforms:label id="gen-17">Strawberry</xforms:label>
-			<xforms:value id="gen-18">s</xforms:value>
+		<xforms:item>
+			<xforms:label>Strawberry</xforms:label>
+			<xforms:value>s</xforms:value>
 		</xforms:item>
-		<xforms:item id="gen-19">
-			<xforms:label id="gen-20">Chocolate</xforms:label>
-			<xforms:value id="gen-21">c</xforms:value>
+		<xforms:item>
+			<xforms:label>Chocolate</xforms:label>
+			<xforms:value>c</xforms:value>
 		</xforms:item>
-		<xforms:action ev:event="xforms-out-of-range" id="gen-22">
-      		<xforms:message level="modal" id="gen-23">xforms-out-of-range</xforms:message>
+		<xforms:action ev:event="xforms-out-of-range">
+      		<xforms:message level="modal">xforms-out-of-range</xforms:message>
     	</xforms:action>
 	</xforms:select1>
    </xforms:group>
-	<xforms:trigger id="gen-24">
-		<xforms:label id="gen-25">Enter An Invalid Value</xforms:label>
-		<xforms:setvalue ev:event="DOMActivate" ref="/icecream/flavor" id="gen-26">mango</xforms:setvalue>
+	<xforms:trigger id="xf-trigger-1">
+		<xforms:label>Enter An Invalid Value</xforms:label>
+		<xforms:setvalue ev:event="DOMActivate" ref="/icecream/flavor">mango</xforms:setvalue>
 	</xforms:trigger>
 	
   </xhtml:body>

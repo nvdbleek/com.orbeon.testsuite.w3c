@@ -3,8 +3,8 @@
         <xhtml:title>4.5.1.a4 xforms-binding-exception, invalid instance attribute of submission attribute</xhtml:title>
         <xforms:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="form1">
             <xforms:submission action="response.xml" id="submit" method="get" replace="instance" instance="INVALID">
-		        <xforms:action ev:event="xforms-binding-exception" id="gen-3">
-		          <xforms:message level="modal" id="gen-4">xforms-binding-exception</xforms:message>
+		        <xforms:action ev:event="xforms-binding-exception">
+		          <xforms:message level="modal">xforms-binding-exception</xforms:message>
 		        </xforms:action>
             </xforms:submission>
             <xforms:instance id="instance1">
@@ -18,11 +18,11 @@
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="gen-6">
-            <xforms:label class="title" id="gen-7">4.5.1.a4 xforms-binding-exception, invalid instance attribute of submission attribute</xforms:label>
+        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <xforms:label class="title">4.5.1.a4 xforms-binding-exception, invalid instance attribute of submission attribute</xforms:label>
         </xforms:group>
-       	<xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="gen-8">
-       		<xforms:label id="gen-9">
+       	<xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+       		<xforms:label>
        			When you activate the Submit Now submit control you must see an xforms-binding-exception message or a 
        			fatal error due to an xforms-binding-exception. 
 			<!-- 	
@@ -32,8 +32,8 @@
 			</xforms:label>
         </xforms:group>
         
-        <xforms:submit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" submission="submit" id="gen-10">
-            <xforms:label id="gen-11">Submit Now</xforms:label>
+        <xforms:submit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" submission="submit" id="xf-submit-1">
+            <xforms:label>Submit Now</xforms:label>
         </xforms:submit>
         
     </xhtml:body>

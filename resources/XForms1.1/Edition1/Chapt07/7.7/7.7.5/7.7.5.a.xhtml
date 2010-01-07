@@ -2,8 +2,8 @@
 	<xhtml:head>
 		<xhtml:title>7.7.5.a index() function</xhtml:title>
 		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-		<xforms:model id="gen-1">
-			<xforms:instance id="gen-2">
+		<xforms:model>
+			<xforms:instance>
 				<ex:root>
 					<ex:value>2</ex:value>
 					<ex:value>6</ex:value>
@@ -12,23 +12,23 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-	    <xforms:group id="gen-3">
-		    <xforms:label class="title" id="gen-4">
+	    <xforms:group>
+		    <xforms:label class="title">
 			7.7.5.a index() function
 		    </xforms:label>
 		</xforms:group>
-		<xforms:group id="gen-5">
-			<xforms:label id="gen-6">
+		<xforms:group>
+			<xforms:label>
 				You must see the value "1" for Index.
 			</xforms:label>
 		</xforms:group>
 		<xforms:repeat nodeset="ex:value" id="myrepeat">
-			<xforms:group id="gen-8">
+			<xforms:group>
 			</xforms:group>
 		</xforms:repeat>
-		<xforms:group id="gen-9">
-			<xforms:output value="index('myrepeat')" id="gen-10">
-				<xforms:label id="gen-11">Index : </xforms:label>
+		<xforms:group>
+			<xforms:output value="index('myrepeat')" id="xf-output-1">
+				<xforms:label>Index : </xforms:label>
 			</xforms:output>
 		</xforms:group>
 	</xhtml:body>

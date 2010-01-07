@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>8.1.6.b incremental attribute for upload element</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-       <xforms:instance id="gen-2">
+    <xforms:model>
+       <xforms:instance>
           <mail>
           	<picture>
           		<attach xsi:type="xsd:base64Binary"/>
@@ -15,22 +15,22 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-3">
-  	    <xforms:label class="title" id="gen-4">8.1.6.b incremental attribute for upload element</xforms:label>
+    <xforms:group>
+  	    <xforms:label class="title">8.1.6.b incremental attribute for upload element</xforms:label>
   	</xforms:group>
-	<xforms:group id="gen-5">
-		<xforms:label id="gen-6">
+	<xforms:group>
+		<xforms:label>
 		  After activating the Upload control and selecting a file you must see an 
 		  xforms-value-changed message. 
   		</xforms:label>
   	</xforms:group>
-  	<xforms:group id="gen-7">
-  		<xforms:upload ref="/mail/picture/attach" incremental="true" id="gen-8">
-   			<xforms:label id="gen-9">Upload File:</xforms:label>
-   			<xforms:filename ref="/mail/picture/name" id="gen-10"/>
-   			<xforms:mediatype ref="/mail/picture/type" id="gen-11"/>
-   			<xforms:action ev:event="xforms-value-changed" id="gen-12">
-   				<xforms:message level="modal" id="gen-13">xforms-value-changed</xforms:message>
+  	<xforms:group>
+  		<xforms:upload ref="/mail/picture/attach" incremental="true" id="xf-upload-1">
+   			<xforms:label>Upload File:</xforms:label>
+   			<xforms:filename ref="/mail/picture/name"/>
+   			<xforms:mediatype ref="/mail/picture/type"/>
+   			<xforms:action ev:event="xforms-value-changed">
+   				<xforms:message level="modal">xforms-value-changed</xforms:message>
    			</xforms:action>
    		</xforms:upload>
   	</xforms:group>

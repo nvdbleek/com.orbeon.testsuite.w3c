@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>3.3.2.b instance with inline data</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-      <xforms:instance resource="inst1.xml" id="gen-2">
+    <xforms:model>
+      <xforms:instance resource="inst1.xml">
         <entry>
           <name>Wendy</name>
           <age>20</age>
@@ -13,29 +13,29 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-3">
-      <xforms:label class="title" id="gen-4">3.3.2.b instance with inline data</xforms:label>
+    <xforms:group>
+      <xforms:label class="title">3.3.2.b instance with inline data</xforms:label>
     </xforms:group>
-    <xforms:group id="gen-5">
-      <xforms:label id="gen-6">
+    <xforms:group>
+      <xforms:label>
         You must see three output fields. The Name output field must have the value "Wendy", 
         the Age output field must have the value "20", and the Education output field must 
         have the value "college".
       </xforms:label>
     </xforms:group>
-    <xforms:group id="gen-7">
-      <xforms:output ref="name" id="gen-8">
-        <xforms:label id="gen-9">Name : </xforms:label>
+    <xforms:group>
+      <xforms:output ref="name" id="xf-output-1">
+        <xforms:label>Name : </xforms:label>
       </xforms:output>
     </xforms:group>
-    <xforms:group id="gen-10">
-      <xforms:output ref="age" id="gen-11">
-        <xforms:label id="gen-12">Age : </xforms:label>
+    <xforms:group>
+      <xforms:output ref="age" id="xf-output-2">
+        <xforms:label>Age : </xforms:label>
       </xforms:output>
     </xforms:group>
-    <xforms:group id="gen-13">
-      <xforms:output ref="education" id="gen-14">
-        <xforms:label id="gen-15">Education : </xforms:label>
+    <xforms:group>
+      <xforms:output ref="education" id="xf-output-3">
+        <xforms:label>Education : </xforms:label>
       </xforms:output>
     </xforms:group>
   </xhtml:body>

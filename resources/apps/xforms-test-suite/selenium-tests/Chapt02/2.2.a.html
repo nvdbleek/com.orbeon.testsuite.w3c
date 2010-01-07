@@ -5,6 +5,11 @@
             <td rowspan="1" colspan="3">2.2.a Example: Encapsulation of Instance Data</td>
          </tr>
          <tr>
+            <td>echo</td>
+            <td>Test Credit</td>
+            <td></td>
+         </tr>
+         <tr>
             <td>open</td>
             <td>../../../xforms-test-suite/forms/XForms1.1/Edition1/Chapt02/2.2.a.xhtml</td>
             <td></td>
@@ -15,10 +20,111 @@
             <td></td>
          </tr>
          <tr>
-            <td>fail</td>
-            <td>Test not implemented yet!</td>
+			<td>assertXFormsSelectionOptions</td>
+			<td>xf-select1-1</td>
+			<td>Cash,Credit</td>
+		 </tr>
+         <tr>
+            <td>assertXFormsInputElementPresent</td>
+            <td>xf-input-1</td>
             <td></td>
          </tr>
+         <tr>
+            <td>assertXFormsInputElementPresent</td>
+            <td>xf-input-2</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>xFormsTypeInput</td>
+            <td>xf-input-1</td>
+            <td>4012888888881881</td>
+         </tr>
+         <tr>
+            <td>xFormsTypeInput</td>
+            <td>xf-input-2</td>
+            <td>2001-08</td>
+         </tr>
+         <tr>
+            <td>click</td>
+            <td>xf-submit-1</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>waitForPageToLoad</td>
+            <td>30000</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>assertTitle</td>
+            <td>Results from echo.sh</td>
+            <td></td>
+         </tr>
+         <tr>
+			<td>assertTextPresent</td>
+			<td>method=&quot;cc&quot;</td>
+			<td></td>
+		</tr>
+         <tr>
+			<td>assertTextPresent</td>
+			<td>&lt;number&gt;4012888888881881&lt;/number&gt;</td>
+			<td></td>
+		</tr>
+         <tr>
+			<td>assertTextPresent</td>
+			<td>&lt;expiry&gt;2001-08&lt;/expiry&gt;</td>
+			<td></td>
+		</tr>
+		
+		<tr>
+            <td>echo</td>
+            <td>Test Cash</td>
+            <td></td>
+        </tr>
+		<tr>
+            <td>open</td>
+            <td>../../../xforms-test-suite/forms/XForms1.1/Edition1/Chapt02/2.2.a.xhtml</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>assertTitle</td>
+            <td>Orbeon Forms Example Applications - 2.2.a Example: Encapsulation of Instance Data</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>xFormsSelect</td>
+            <td>xf-select1-1</td>
+            <td>Cash</td>
+         </tr>
+         <tr>
+            <td>click</td>
+            <td>xf-submit-1</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>waitForPageToLoad</td>
+            <td>30000</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>assertTitle</td>
+            <td>Results from echo.sh</td>
+            <td></td>
+         </tr>
+         <tr>
+			<td>assertTextPresent</td>
+			<td>method=&quot;cash&quot;</td>
+			<td></td>
+		</tr>
+         <tr>
+			<td>assertTextPresent</td>
+			<td>&lt;number/&gt;</td>
+			<td></td>
+		</tr>
+         <tr>
+			<td>assertTextPresent</td>
+			<td>&lt;expiry/&gt;</td>
+			<td></td>
+		</tr>
       </tbody>
    </table>
 </html>

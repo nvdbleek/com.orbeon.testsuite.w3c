@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>g.2.c repeat-index pseudo-element (non-normative)</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-      <xforms:instance id="gen-2">
+    <xforms:model>
+      <xforms:instance>
         <car>
           <make>Honda</make>
           <make>Toyota</make>
@@ -13,11 +13,11 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group id="gen-3">
-  		<xforms:label class="title" id="gen-4">g.2.c repeat-index pseudo-element (non-normative)</xforms:label>
+  	<xforms:group>
+  		<xforms:label class="title">g.2.c repeat-index pseudo-element (non-normative)</xforms:label>
   	</xforms:group>
-    <xforms:group id="gen-5">
-    	<xforms:label id="gen-6">
+    <xforms:group>
+    	<xforms:label>
 		You must see a list of cars. Also, the repeat item 
 		with the current index must have a dashed box around it with a 
 		yellow background. When you change the index with the triggers at the 
@@ -26,24 +26,24 @@
 		</xforms:label>
     </xforms:group>
    	<xforms:repeat id="repeat1" nodeset="/car/make">
-   		<xforms:output ref="." id="gen-8">
-   			<xforms:label id="gen-9"/>
+   		<xforms:output ref="." id="xf-output-1">
+   			<xforms:label/>
    		</xforms:output>
    	</xforms:repeat>
-   	<xforms:trigger id="gen-10">
-   		<xforms:label id="gen-11">Set Index to 1</xforms:label>
-   		<xforms:setindex ev:event="DOMActivate" repeat="repeat1" index="1" id="gen-12"/>
+   	<xforms:trigger id="xf-trigger-1">
+   		<xforms:label>Set Index to 1</xforms:label>
+   		<xforms:setindex ev:event="DOMActivate" repeat="repeat1" index="1"/>
    	</xforms:trigger>
-   	<xforms:trigger id="gen-13">
-   		<xforms:label id="gen-14">Set Index to 2</xforms:label>
-   		<xforms:setindex ev:event="DOMActivate" repeat="repeat1" index="2" id="gen-15"/>
+   	<xforms:trigger id="xf-trigger-2">
+   		<xforms:label>Set Index to 2</xforms:label>
+   		<xforms:setindex ev:event="DOMActivate" repeat="repeat1" index="2"/>
    	</xforms:trigger>
-   	<xforms:trigger id="gen-16">
-   		<xforms:label id="gen-17">Set Index to 3</xforms:label>
-   		<xforms:setindex ev:event="DOMActivate" repeat="repeat1" index="3" id="gen-18"/>
+   	<xforms:trigger id="xf-trigger-3">
+   		<xforms:label>Set Index to 3</xforms:label>
+   		<xforms:setindex ev:event="DOMActivate" repeat="repeat1" index="3"/>
    	</xforms:trigger>
-   	<xforms:output value="index('repeat1')" id="gen-19">
-		<xforms:label id="gen-20">Index : </xforms:label>
+   	<xforms:output value="index('repeat1')" id="xf-output-2">
+		<xforms:label>Index : </xforms:label>
 	</xforms:output>
 	
   </xhtml:body>

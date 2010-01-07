@@ -2,24 +2,24 @@
   <xhtml:head>
     <xhtml:title>4.6.1.b2 event sequenceing for range and upload controls - focus change with value change</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-      <xforms:instance id="gen-2">
+    <xforms:model>
+      <xforms:instance>
         <car>
           <price xsi:type="xsd:integer">25000</price>
           <pic xsi:type="xsd:base64Binary"/>
         </car>
       </xforms:instance>
-      <xforms:action ev:event="xforms-recalculate" id="gen-3">
-      	<xforms:insert at="index('repeat_event_tracker')" position="after" nodeset="/et:events/et:event" model="event_tracker" id="gen-4"/>
-        <xforms:setvalue model="event_tracker" ref="/et:events/et:event[index('repeat_event_tracker')]/@name" id="gen-5">xforms-recalculate</xforms:setvalue>
+      <xforms:action ev:event="xforms-recalculate">
+      	<xforms:insert at="index('repeat_event_tracker')" position="after" nodeset="/et:events/et:event" model="event_tracker"/>
+        <xforms:setvalue model="event_tracker" ref="/et:events/et:event[index('repeat_event_tracker')]/@name">xforms-recalculate</xforms:setvalue>
       </xforms:action>
-      <xforms:action ev:event="xforms-revalidate" id="gen-6">
-      	<xforms:insert at="index('repeat_event_tracker')" position="after" nodeset="/et:events/et:event" model="event_tracker" id="gen-7"/>
-        <xforms:setvalue model="event_tracker" ref="/et:events/et:event[index('repeat_event_tracker')]/@name" id="gen-8">xforms-revalidate</xforms:setvalue>
+      <xforms:action ev:event="xforms-revalidate">
+      	<xforms:insert at="index('repeat_event_tracker')" position="after" nodeset="/et:events/et:event" model="event_tracker"/>
+        <xforms:setvalue model="event_tracker" ref="/et:events/et:event[index('repeat_event_tracker')]/@name">xforms-revalidate</xforms:setvalue>
       </xforms:action>
-      <xforms:action ev:event="xforms-refresh" id="gen-9">
-      	<xforms:insert at="index('repeat_event_tracker')" position="after" nodeset="/et:events/et:event" model="event_tracker" id="gen-10"/>
-        <xforms:setvalue model="event_tracker" ref="/et:events/et:event[index('repeat_event_tracker')]/@name" id="gen-11">xforms-refresh</xforms:setvalue>
+      <xforms:action ev:event="xforms-refresh">
+      	<xforms:insert at="index('repeat_event_tracker')" position="after" nodeset="/et:events/et:event" model="event_tracker"/>
+        <xforms:setvalue model="event_tracker" ref="/et:events/et:event[index('repeat_event_tracker')]/@name">xforms-refresh</xforms:setvalue>
       </xforms:action>
     </xforms:model>
     <xforms:model id="event_tracker">
@@ -31,11 +31,11 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-14">
-    	<xforms:label class="title" id="gen-15">4.6.1.b2 event sequenceing for range and upload controls - focus change with value change</xforms:label>
+    <xforms:group>
+    	<xforms:label class="title">4.6.1.b2 event sequenceing for range and upload controls - focus change with value change</xforms:label>
     </xforms:group>
-    <xforms:group id="gen-16">
-    	<xforms:label id="gen-17">
+    <xforms:group>
+    	<xforms:label>
     		When you activate one of the 'Test' triggers below you must see a series of outputs for a "Value Change" 
     		sequence (xforms-recalculate, xforms-revalidate, and xforms-refresh). 
     		Reload the form to reset the event list.  
@@ -43,30 +43,30 @@
     </xforms:group>
     
     <xforms:range id="range1" ref="/car/price" start="20000" end="30000" step="1000">
-    	<xforms:label id="gen-19">range: </xforms:label>
+    	<xforms:label>range: </xforms:label>
     </xforms:range>
     
     <xforms:upload id="upload1" mediatype="image/jpg" ref="/car/pic">
-    	<xforms:label id="gen-21">upload (image): </xforms:label>
+    	<xforms:label>upload (image): </xforms:label>
     </xforms:upload>
     
-    <xforms:group id="gen-22">
-    	<xforms:trigger id="gen-23">
-    		<xforms:label id="gen-24">Test range</xforms:label>
-    		<xforms:setvalue ev:event="DOMActivate" ref="/car/price" id="gen-25">21000</xforms:setvalue>
-    		<xforms:setfocus ev:event="DOMActivate" control="upload1" id="gen-26"/>
+    <xforms:group>
+    	<xforms:trigger id="xf-trigger-1">
+    		<xforms:label>Test range</xforms:label>
+    		<xforms:setvalue ev:event="DOMActivate" ref="/car/price">21000</xforms:setvalue>
+    		<xforms:setfocus ev:event="DOMActivate" control="upload1"/>
     	</xforms:trigger>
     	
-    	<xforms:trigger id="gen-27">
-    		<xforms:label id="gen-28">Test upload</xforms:label>
-    		<xforms:setvalue ev:event="DOMActivate" ref="/car/pic" id="gen-29">WEZvcm1zIFJ1bGVz</xforms:setvalue>
-    		<xforms:setfocus ev:event="DOMActivate" control="range1" id="gen-30"/>
+    	<xforms:trigger id="xf-trigger-2">
+    		<xforms:label>Test upload</xforms:label>
+    		<xforms:setvalue ev:event="DOMActivate" ref="/car/pic">WEZvcm1zIFJ1bGVz</xforms:setvalue>
+    		<xforms:setfocus ev:event="DOMActivate" control="range1"/>
     	</xforms:trigger>
     </xforms:group>
     
     <xforms:repeat model="event_tracker" id="repeat_event_tracker" nodeset="/et:events/et:event">
-      <xforms:output ref="./@name" model="event_tracker" id="gen-32">
-        <xforms:label id="gen-33">Event fired:</xforms:label>
+      <xforms:output ref="./@name" model="event_tracker" id="xf-output-1">
+        <xforms:label>Event fired:</xforms:label>
       </xforms:output>
     </xforms:repeat>
   </xhtml:body>

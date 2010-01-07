@@ -2,8 +2,8 @@
   <xhtml:head>
     <xhtml:title>4.3.7.a xforms-focus event</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-      <xforms:instance id="gen-2">
+    <xforms:model>
+      <xforms:instance>
         <car>
         	<make/>
         	<year/>
@@ -12,27 +12,27 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-3">
-    	<xforms:label class="title" id="gen-4">4.3.7.a xforms-focus event</xforms:label>
+    <xforms:group>
+    	<xforms:label class="title">4.3.7.a xforms-focus event</xforms:label>
     </xforms:group>
-    <xforms:group id="gen-5">
-    	<xforms:label id="gen-6">
+    <xforms:group>
+    	<xforms:label>
     	  When you activate the Set Focus trigger you must see an xforms-focus message. 
     	</xforms:label>	
     </xforms:group>
     
-    <xforms:trigger id="gen-7">
-        <xforms:label id="gen-8">Set Focus</xforms:label>
-        <xforms:action ev:event="DOMActivate" id="gen-9">
-			<xforms:setfocus control="input1" id="gen-10"/>
+    <xforms:trigger id="xf-trigger-1">
+        <xforms:label>Set Focus</xforms:label>
+        <xforms:action ev:event="DOMActivate">
+			<xforms:setfocus control="input1"/>
 		</xforms:action>
     </xforms:trigger>
 
-	<xforms:group id="gen-11">
+	<xforms:group>
 	    <xforms:input ref="/car/year" id="input1">
-	        <xforms:label id="gen-13">Target control:</xforms:label>
-			<xforms:action ev:event="xforms-focus" id="gen-14">
-				<xforms:message level="modal" id="gen-15">xforms-focus</xforms:message>
+	        <xforms:label>Target control:</xforms:label>
+			<xforms:action ev:event="xforms-focus">
+				<xforms:message level="modal">xforms-focus</xforms:message>
 			</xforms:action>
 	    </xforms:input>
 	</xforms:group>

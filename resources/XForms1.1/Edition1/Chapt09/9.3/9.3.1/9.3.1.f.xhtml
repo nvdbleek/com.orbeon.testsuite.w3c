@@ -2,8 +2,8 @@
   	<xhtml:head>
     	<xhtml:title>9.3.1.f switch element within repeat element</xhtml:title>
     	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    	<xforms:model id="gen-1">
-       		<xforms:instance id="gen-2">
+    	<xforms:model>
+       		<xforms:instance>
 				<myset>
 				  <repeatnodes>
 				    <go/>
@@ -19,11 +19,11 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group id="gen-3">
-  			<xforms:label class="title" id="gen-4">9.3.1.f switch element within repeat element</xforms:label>
+  		<xforms:group>
+  			<xforms:label class="title">9.3.1.f switch element within repeat element</xforms:label>
   		</xforms:group>	
-  		<xforms:group id="gen-5">
-  			<xforms:label id="gen-6">
+  		<xforms:group>
+  			<xforms:label>
   				You must see three sets of the statement "You are in the In case" and Go To Out Case triggers. 
   				When you activate a Go To Out Case trigger, the corresponding statement must change to 
   				"You are in the Out case" and the trigger must be replaced by a Go To In Case trigger. 
@@ -32,24 +32,24 @@
   				statements or triggers. 
   			</xforms:label>	
   		</xforms:group>
-  		<xforms:group id="gen-7">
-  		  <xforms:repeat nodeset="/myset/repeatnodes/go" id="gen-8">
-	  		  	<xforms:switch id="gen-9">
+  		<xforms:group>
+  		  <xforms:repeat nodeset="/myset/repeatnodes/go">
+	  		  	<xforms:switch>
 	  		  	  <xforms:case id="in" selected="true">
-		  		  	  <xforms:group id="gen-11">
-		  		  	    <xforms:output ref="/myset/labels/incase" id="gen-12"/>
-						<xforms:trigger id="gen-13">
-						  <xforms:label id="gen-14">Go To Out Case</xforms:label>
-						  <xforms:toggle ev:event="DOMActivate" case="out" id="gen-15"/>
+		  		  	  <xforms:group>
+		  		  	    <xforms:output ref="/myset/labels/incase" id="xf-output-1"/>
+						<xforms:trigger id="xf-trigger-1">
+						  <xforms:label>Go To Out Case</xforms:label>
+						  <xforms:toggle ev:event="DOMActivate" case="out"/>
 						</xforms:trigger>
 					  </xforms:group>
 	  		  	  </xforms:case>
 	  		  	  <xforms:case id="out">
-	  		  	    <xforms:group id="gen-17">
-		  		  	    <xforms:output ref="/myset/labels/outcase" id="gen-18"/>
-						<xforms:trigger id="gen-19">
-						  <xforms:label id="gen-20">Go To In Case</xforms:label>
-						  <xforms:toggle ev:event="DOMActivate" case="in" id="gen-21"/>
+	  		  	    <xforms:group>
+		  		  	    <xforms:output ref="/myset/labels/outcase" id="xf-output-2"/>
+						<xforms:trigger id="xf-trigger-2">
+						  <xforms:label>Go To In Case</xforms:label>
+						  <xforms:toggle ev:event="DOMActivate" case="in"/>
 						</xforms:trigger>
 					</xforms:group>
 	  		  	  </xforms:case>

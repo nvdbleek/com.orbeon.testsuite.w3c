@@ -3,7 +3,7 @@
 		<xhtml:title>7.2.c context node always resides within the context model</xhtml:title>
 		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
 		<xforms:model id="M1">
-			<xforms:instance id="gen-2">
+			<xforms:instance>
 				<test:value xmlns:test="http://example.org">
 					1
 				</test:value>
@@ -11,7 +11,7 @@
 		</xforms:model>
 
 		<xforms:model id="M2">
-			<xforms:instance id="gen-4">
+			<xforms:instance>
 				<test:value xmlns:test="http://example.org">
 					2
 				</test:value>
@@ -19,7 +19,7 @@
 		</xforms:model>
 
 		<xforms:model id="M3">
-			<xforms:instance id="gen-6">
+			<xforms:instance>
 				<test:value xmlns:test="http://example.org">
 					3
 				</test:value>
@@ -27,13 +27,13 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-		<xforms:group id="gen-7">
-			<xforms:label class="title" id="gen-8">
+		<xforms:group>
+			<xforms:label class="title">
 				7.2.c context node always resides within the context model
 			</xforms:label>
 		</xforms:group>	
-		<xforms:group id="gen-9">
-			<xforms:label id="gen-10">
+		<xforms:group>
+			<xforms:label>
 			<!-- 
 				Rule 3: Define three XForms models identified as M1, M2 and
 				M3 in document order. Create three outputs, the first with
@@ -47,21 +47,21 @@
 			</xforms:label>
 		</xforms:group>
 		
-		<xforms:group id="gen-11">
-			<xforms:output xmlns:test="http://example.org" ref="/test:value" id="gen-12">
-				<xforms:label id="gen-13">First Number : </xforms:label>
+		<xforms:group>
+			<xforms:output xmlns:test="http://example.org" ref="/test:value" id="xf-output-1">
+				<xforms:label>First Number : </xforms:label>
 				<!-- Should be 1 -->
 			</xforms:output>
 		</xforms:group>
-		<xforms:group id="gen-14">
-			<xforms:output xmlns:test="http://example.org" ref="/test:value" model="M2" id="gen-15">
-				<xforms:label id="gen-16">Second Number : </xforms:label>
+		<xforms:group>
+			<xforms:output xmlns:test="http://example.org" ref="/test:value" model="M2" id="xf-output-2">
+				<xforms:label>Second Number : </xforms:label>
 				<!-- Should be 2 -->
 			</xforms:output>
 		</xforms:group>
-		<xforms:group model="M3" id="gen-17">
-			<xforms:output xmlns:test="http://example.org" ref="/test:value" id="gen-18">
-				<xforms:label id="gen-19">Third Number : </xforms:label>
+		<xforms:group model="M3">
+			<xforms:output xmlns:test="http://example.org" ref="/test:value" id="xf-output-3">
+				<xforms:label>Third Number : </xforms:label>
 				<!-- Should be 3 -->
 			</xforms:output>
 		</xforms:group>

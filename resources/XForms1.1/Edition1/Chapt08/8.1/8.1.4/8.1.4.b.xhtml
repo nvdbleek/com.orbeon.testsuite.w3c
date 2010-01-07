@@ -2,8 +2,8 @@
   	<xhtml:head>
     	<xhtml:title>8.1.4.b data binding restrictions for textarea element</xhtml:title>
     	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    	<xforms:model id="gen-1">
-       		<xforms:instance id="gen-2">
+    	<xforms:model>
+       		<xforms:instance>
           		<ex:message>
              		<ex:body xsi:type="question">
              		  <ex:child>bad</ex:child>
@@ -23,18 +23,18 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  	    <xforms:group id="gen-3">
-  		    <xforms:label class="title" id="gen-4">8.1.4.b data binding restrictions for textarea element</xforms:label>
+  	    <xforms:group>
+  		    <xforms:label class="title">8.1.4.b data binding restrictions for textarea element</xforms:label>
         </xforms:group>
-		<xforms:group id="gen-5">
-			<xforms:label id="gen-6">
+		<xforms:group>
+			<xforms:label>
 			  This page has a textarea control bound to a complexType datatype. Textarea controls can only bind 
 			  to simpleContent. The textarea control must not work correctly, generate an error, not appear on this 
 			  page or otherwise make the problem known. 
 			</xforms:label>
 		</xforms:group>
-			<xforms:textarea ref="/ex:message/ex:body" id="gen-7">
- 				<xforms:label id="gen-8">Bound to Complex Content</xforms:label>
+			<xforms:textarea ref="/ex:message/ex:body" id="xf-textarea-1">
+ 				<xforms:label>Bound to Complex Content</xforms:label>
  	     	</xforms:textarea>
 			
   </xhtml:body>

@@ -2,101 +2,101 @@
   <xhtml:head>
     <xhtml:title>7.8.3.a digest() function using sha1, md5, and sha256</xhtml:title>
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    <xforms:model id="gen-1">
-      <xforms:instance id="gen-2">
+    <xforms:model>
+      <xforms:instance>
 	<root/>
       </xforms:instance>
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group id="gen-3">
-      <xforms:label class="title" id="gen-4">7.8.3.a digest() function using sha1, md5, and sha256</xforms:label>
+    <xforms:group>
+      <xforms:label class="title">7.8.3.a digest() function using sha1, md5, and sha256</xforms:label>
     </xforms:group>
 
-    <xforms:group id="gen-5">
-      <xforms:label id="gen-6">
+    <xforms:group>
+      <xforms:label>
 	You must see the group label "PASS" for all Tests. 
 	If the function does not return the correct value you will see a group label
 	with the word "FAIL" and the incorrect value.
       </xforms:label>
     </xforms:group>
 
-    <xforms:group id="gen-7">
-      <xforms:label id="gen-8">Test 1</xforms:label>
-      <xforms:group ref="self::node()[digest('abc', 'SHA-1', 'hex') = 'a9993e364706816aba3e25717850c26c9cd0d89d']" id="gen-9">
-	<xforms:label id="gen-10">Test 1 : PASS</xforms:label>
+    <xforms:group>
+      <xforms:label>Test 1</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'SHA-1', 'hex') = 'a9993e364706816aba3e25717850c26c9cd0d89d']">
+	<xforms:label>Test 1 : PASS</xforms:label>
       </xforms:group>
 
-      <xforms:group ref="self::node()[digest('abc', 'SHA-1', 'hex') != 'a9993e364706816aba3e25717850c26c9cd0d89d']" id="gen-11">
-	<xforms:label id="gen-12">Test 1 : FAIL</xforms:label>
-	<xforms:output value="digest('abc', 'SHA-1', 'hex')" id="gen-13">
-	  <xforms:label id="gen-14">Bad Value=</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'SHA-1', 'hex') != 'a9993e364706816aba3e25717850c26c9cd0d89d']">
+	<xforms:label>Test 1 : FAIL</xforms:label>
+	<xforms:output value="digest('abc', 'SHA-1', 'hex')" id="xf-output-1">
+	  <xforms:label>Bad Value=</xforms:label>
 	</xforms:output>
       </xforms:group>
     </xforms:group>
 
-    <xforms:group id="gen-15">
-      <xforms:label id="gen-16">Test 2</xforms:label>
-      <xforms:group ref="self::node()[digest('abc', 'MD5', 'hex') = '900150983cd24fb0d6963f7d28e17f72']" id="gen-17">
-	<xforms:label id="gen-18">Test 2 : PASS </xforms:label>
+    <xforms:group>
+      <xforms:label>Test 2</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'MD5', 'hex') = '900150983cd24fb0d6963f7d28e17f72']">
+	<xforms:label>Test 2 : PASS </xforms:label>
       </xforms:group>
-      <xforms:group ref="self::node()[digest('abc', 'MD5', 'hex') != '900150983cd24fb0d6963f7d28e17f72']" id="gen-19">
-	<xforms:label id="gen-20">Test 2 : FAIL </xforms:label>
-	<xforms:output value="digest('abc', 'MD5', 'hex')" id="gen-21">
-	  <xforms:label id="gen-22">Bad Value=</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'MD5', 'hex') != '900150983cd24fb0d6963f7d28e17f72']">
+	<xforms:label>Test 2 : FAIL </xforms:label>
+	<xforms:output value="digest('abc', 'MD5', 'hex')" id="xf-output-2">
+	  <xforms:label>Bad Value=</xforms:label>
 	</xforms:output>
       </xforms:group>
     </xforms:group>
 
 
-    <xforms:group id="gen-23">
-      <xforms:label id="gen-24">Test 3</xforms:label>
-      <xforms:group ref="self::node()[digest('abc', 'SHA-256', 'hex') = 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad']" id="gen-25">
-	<xforms:label id="gen-26">Test 3 : PASS </xforms:label>
+    <xforms:group>
+      <xforms:label>Test 3</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'SHA-256', 'hex') = 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad']">
+	<xforms:label>Test 3 : PASS </xforms:label>
       </xforms:group>
-      <xforms:group ref="self::node()[digest('abc', 'SHA-256', 'hex') != 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad']" id="gen-27">
-	<xforms:label id="gen-28">Test 3 : FAIL </xforms:label>
-	<xforms:output value="digest('abc', 'SHA-256', 'hex')" id="gen-29">
-	  <xforms:label id="gen-30">Bad Value=</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'SHA-256', 'hex') != 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad']">
+	<xforms:label>Test 3 : FAIL </xforms:label>
+	<xforms:output value="digest('abc', 'SHA-256', 'hex')" id="xf-output-3">
+	  <xforms:label>Bad Value=</xforms:label>
 	</xforms:output>
       </xforms:group>
     </xforms:group>
 
-    <xforms:group id="gen-31">
-      <xforms:label id="gen-32">Test 4</xforms:label>
-      <xforms:group ref="self::node()[digest('abc', 'SHA-1', 'base64')= 'qZk+NkcGgWq6PiVxeFDCbJzQ2J0=']" id="gen-33">
-	<xforms:label id="gen-34">Test 4 : PASS </xforms:label>
+    <xforms:group>
+      <xforms:label>Test 4</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'SHA-1', 'base64')= 'qZk+NkcGgWq6PiVxeFDCbJzQ2J0=']">
+	<xforms:label>Test 4 : PASS </xforms:label>
       </xforms:group>
-      <xforms:group ref="self::node()[digest('abc', 'SHA-1', 'base64')!= 'qZk+NkcGgWq6PiVxeFDCbJzQ2J0=']" id="gen-35">
-	<xforms:label id="gen-36">Test 4 : FAIL </xforms:label>
-	<xforms:output value="digest('abc', 'SHA-1', 'base64')" id="gen-37">
-	  <xforms:label id="gen-38">Bad Value=</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'SHA-1', 'base64')!= 'qZk+NkcGgWq6PiVxeFDCbJzQ2J0=']">
+	<xforms:label>Test 4 : FAIL </xforms:label>
+	<xforms:output value="digest('abc', 'SHA-1', 'base64')" id="xf-output-4">
+	  <xforms:label>Bad Value=</xforms:label>
 	</xforms:output>
       </xforms:group>
     </xforms:group>
 
-    <xforms:group id="gen-39">
-      <xforms:label id="gen-40">Test 5</xforms:label>
-      <xforms:group ref="self::node()[digest('abc', 'MD5', 'base64')='kAFQmDzST7DWlj99KOF/cg==']" id="gen-41">
-	<xforms:label id="gen-42">Test 5 : PASS </xforms:label>
+    <xforms:group>
+      <xforms:label>Test 5</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'MD5', 'base64')='kAFQmDzST7DWlj99KOF/cg==']">
+	<xforms:label>Test 5 : PASS </xforms:label>
       </xforms:group>
-      <xforms:group ref="self::node()[digest('abc', 'MD5', 'base64')!= 'kAFQmDzST7DWlj99KOF/cg==']" id="gen-43">
-	<xforms:label id="gen-44">Test 5 : FAIL </xforms:label>
-	<xforms:output value="digest('abc', 'MD5', 'base64')" id="gen-45">
-	  <xforms:label id="gen-46">Bad Value=</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'MD5', 'base64')!= 'kAFQmDzST7DWlj99KOF/cg==']">
+	<xforms:label>Test 5 : FAIL </xforms:label>
+	<xforms:output value="digest('abc', 'MD5', 'base64')" id="xf-output-5">
+	  <xforms:label>Bad Value=</xforms:label>
 	</xforms:output>
       </xforms:group>
     </xforms:group>
 
-    <xforms:group id="gen-47">
-      <xforms:label id="gen-48">Test 6</xforms:label>
-      <xforms:group ref="self::node()[digest('abc', 'SHA-256', 'base64')='ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=']" id="gen-49">
-	<xforms:label id="gen-50">Test 6 : PASS </xforms:label>
+    <xforms:group>
+      <xforms:label>Test 6</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'SHA-256', 'base64')='ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=']">
+	<xforms:label>Test 6 : PASS </xforms:label>
       </xforms:group>
-      <xforms:group ref="self::node()[digest('abc', 'SHA-256', 'base64')!= 'ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=']" id="gen-51">
-	<xforms:label id="gen-52">Test 6 : FAIL </xforms:label>
-	<xforms:output value="digest('abc', 'SHA-256', 'base64')" id="gen-53">
-	  <xforms:label id="gen-54">Bad Value=</xforms:label>
+      <xforms:group ref="self::node()[digest('abc', 'SHA-256', 'base64')!= 'ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=']">
+	<xforms:label>Test 6 : FAIL </xforms:label>
+	<xforms:output value="digest('abc', 'SHA-256', 'base64')" id="xf-output-6">
+	  <xforms:label>Bad Value=</xforms:label>
 	</xforms:output>
       </xforms:group>
     </xforms:group>

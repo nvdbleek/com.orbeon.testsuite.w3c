@@ -2,8 +2,8 @@
   	<xhtml:head>
     	<xhtml:title>8.1.5.b value attribute of output element</xhtml:title>
     	<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
-    	<xforms:model id="gen-1">
-       		<xforms:instance id="gen-2">
+    	<xforms:model>
+       		<xforms:instance>
  		    	<car>
    			   		<make>Lotus</make>
    			   		<year>2005</year>
@@ -15,23 +15,23 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  	    <xforms:group id="gen-4">
-  		    <xforms:label class="title" id="gen-5">8.1.5.b value attribute of output element</xforms:label>
+  	    <xforms:group>
+  		    <xforms:label class="title">8.1.5.b value attribute of output element</xforms:label>
   		</xforms:group>
-  		<xforms:group id="gen-6">
-  			<xforms:label id="gen-7">
+  		<xforms:group>
+  			<xforms:label>
   			  You must see the value "1032" for the Tax output control and 
   			  the value "2005" for the Car Year output control. 
 			</xforms:label>
 		</xforms:group>
-		<xforms:group id="gen-8">
-	  		<xforms:output value="0.024 * /car/price" id="gen-9">
-	     		<xforms:label id="gen-10">Tax : </xforms:label>
+		<xforms:group>
+	  		<xforms:output value="0.024 * /car/price" id="xf-output-1">
+	     		<xforms:label>Tax : </xforms:label>
 	  		</xforms:output>
 	  	</xforms:group>
-  		<xforms:group id="gen-11">
-	  		<xforms:output value="/car/price" bind="year_bind" id="gen-12">
-	  			<xforms:label id="gen-13">Car Year : </xforms:label>
+  		<xforms:group>
+	  		<xforms:output value="/car/price" bind="year_bind" id="xf-output-2">
+	  			<xforms:label>Car Year : </xforms:label>
 			</xforms:output>
 		</xforms:group>
   </xhtml:body>
