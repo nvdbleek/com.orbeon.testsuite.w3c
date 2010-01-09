@@ -1,63 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	version="2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml"
-	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xfts="http://www.w3c.org/MarkUp/Forms/XForms/Test/11"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	exclude-result-prefixes="xsl ev">
+	version="2.0" xmlns:xftr="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner"
+	>
 
+	<xsl:output method="html" indent="yes" />
+	
+	<xsl:variable name="processor-wait">1000</xsl:variable>
+	<xsl:variable name="echo-service-wait">2000</xsl:variable>
 
-	<xsl:output method="html" indent="yes" name="html" />
-
-
-	<xsl:template match="/xfts:testSuite/xfts:specChapter[1]">
-		<html>
-			<head>
-				<title><xsl:value-of select="concat(@chapterName, @chapterTitle)"/></title>
-				<link rel="stylesheet" type="text/css" href="../../selenium-core/core/selenium.css" />
-		        <script language="JavaScript" type="text/javascript" src="../../selenium-core/core/scripts/selenium-browserdetect.js"></script>
-			</head>
-			<body>
-				<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium">
-					<tbody>
-						<tr><td><b><xsl:value-of select="concat(@chapterName, @chapterTitle)"/></b></td></tr>
-						<xsl:for-each select="xfts:testCase">
-							<tr><td><a href="{substring-before(substring-after(xfts:testCaseLink, '../../'), '.xhtml')}.html"><xsl:value-of select="concat(xfts:testCaseName, ' ', xfts:testCaseDescription)"/></a></td></tr>
-						</xsl:for-each>
-					</tbody>
-				</table>
-			</body>
+	
+	<xsl:template match="xftr:test-case">
+		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+			<table cellpadding="1" cellspacing="1" border="1">
+			  <tbody>
+			    <tr>
+			      <td rowspan="1" colspan="3"><xsl:value-of select="xftr:assert-title[1]/@title"/></td>
+			    </tr>
+			    <xsl:apply-templates />
+			  </tbody>
+			</table>
 		</html>
-		<xsl:apply-templates/>
 	</xsl:template>
 	
-	<xsl:template match="xfts:testCase">
-		<xsl:result-document href="{substring-before(substring-after(xfts:testCaseLink, '../../'), '.xhtml')}.html" format="html">
-			<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-				<table cellpadding="1" cellspacing="1" border="1">
-				  <tbody>
-				    <tr>
-				      <td rowspan="1" colspan="3"><xsl:value-of select="concat(xfts:testCaseName, ' ', xfts:testCaseDescription)"/></td>
-				    </tr>
-				    <tr>
-				    	<td>open</td>
-						<td>../../../xforms-test-suite/forms/XForms1.1/Edition1/<xsl:value-of select="substring-after(xfts:testCaseLink, '../../')"/></td>
-						<td></td>
-				    </tr>
-				    <tr>
-				    	<td>assertTitle</td>
-						<td>Orbeon Forms Example Applications - <xsl:value-of select="concat(lower-case(xfts:testCaseName), ' ', xfts:testCaseDescription)"/></td>
-						<td></td>
-				    </tr>
-				    <tr>
-				    	<td>fail</td>
-						<td>Test not implemented yet!</td>
-						<td></td>
-				    </tr>
-				  </tbody>
-				</table>
-			</html>
-		</xsl:result-document>
+	<xsl:template match="xftr:open">
+		<tr>
+            <td>open</td>
+            <td>../../../xforms-test-suite/forms/XForms1.1/Edition1/<xsl:value-of select="@href"/></td>
+            <td></td>
+         </tr>
 	</xsl:template>
+
+	<xsl:template match="xftr:assert-title">
+		<xsl:choose>
+            <xsl:when test="@title = 'Results from echo.sh'">
+            	<tr>
+		            <td>waitForTitle</td>
+		            <td><xsl:value-of select="@title"/></td>
+		            <td><xsl:value-of select="$echo-service-wait"/></td>
+         		</tr>	
+			</xsl:when>
+			<xsl:otherwise>
+				<tr>
+		            <td>assertTitle</td>
+		            <td>Orbeon Forms Example Applications - <xsl:value-of select="@title"/></td>
+		            <td></td>
+		         </tr>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-control-present">
+		<tr>
+            <td>waitForXFormsInputElementPresent</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-control-not-present">
+		<tr>
+            <td>waitForXFormsInputElementNotPresent</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-control-valid">
+		<tr>
+            <td>waitForXFormsControlValid</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-control-invalid">
+		<tr>
+            <td>waitForXFormsControlInvalid</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-control-readonly">
+		<tr>
+            <td>waitForXFormsControlReadonly</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-control-readwrite">
+		<tr>
+            <td>waitForXFormsControlReadwrite</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-control-required">
+		<tr>
+            <td>waitForXFormsControlRequired</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-control-optional">
+		<tr>
+            <td>waitForXFormsControlOptional</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-selection-options">
+		<tr>
+            <td>assertXFormsSelectionOptions</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="@options"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:select-option">
+		<tr>
+            <td>xFormsSelectOption</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="@option"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:type-input">
+		<tr>
+            <td>xFormsTypeInput</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="@value"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:click">
+		<tr>
+            <td>click</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:wait-for-page-to-load">
+		<tr>
+            <td>waitForPageToLoad</td>
+            <td><xsl:value-of select="$echo-service-wait"/></td>
+            <td></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-text-present">
+		<tr>
+            <td>assertTextPresent</td>
+            <td><xsl:value-of select="@text"/></td>
+            <td></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-text-not-present">
+		<tr>
+            <td>assertTextNotPresent</td>
+            <td><xsl:value-of select="@text"/></td>
+            <td></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:fail">
+		<tr>
+            <td>fail</td>
+            <td><xsl:value-of select="@msg"/></td>
+            <td></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:*">
+		<xsl:message>Element <xsl:value-of select="name(.)"/> not implemented!</xsl:message>		
+	</xsl:template>
+
 
 	<xsl:template match="text()"/>
 

@@ -72,16 +72,16 @@
 				<include name="*.js"/>
 			</fileset>
 		</copy>
-	</target>
-
-
-	<target name="generateHTMLWebtests" description="generate Selenium HTML Webtests">
-		<xslt basedir="${resources.dir}/XForms1.1/Edition1/driverPages/results" destdir="work/selenium-tests" style="build/selenium.xsl" force="true">
+		
+		<xslt basedir="src/tests" destdir="work/selenium-tests" style="build/selenium.xsl">
 			<classpath refid="saxon.class.path" />
-			<include name="*.xml"/>
-			<exclude name="XF11_01_Results.xml"/>
-			<mapper type="glob" from="*Results.xml" to="*Suite.html" />
+			<include name="**/*.xml"/>
+			<mapper type="glob" from="*.xml" to="*.html" />
 		</xslt>
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/selenium-tests">
+			<fileset dir="work/selenium-tests" includes="**/*" />
+		</copy>
+		
 	</target>
 
 	<target name="generateTests" description="generate tests based on test suite">

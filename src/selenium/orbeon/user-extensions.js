@@ -25,7 +25,7 @@ Selenium.prototype.getXFormsSelectionOptions = function(locator) {
 	return selenium.getSelectOptions(locator).join(',');
 };
 
-Selenium.prototype.doXFormsSelect = function(locator, label) {
+Selenium.prototype.doXFormsSelectOption = function(locator, label) {
 	selenium.doSelect(locator, "label=" + label);
 };
 
