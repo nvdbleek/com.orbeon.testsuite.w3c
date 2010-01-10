@@ -7,29 +7,84 @@
                    
      nvdbleek                                                                
      ====================================================================== -->
-<project name="Update test suite" default="update" basedir="..">
+<project name="Update test suite" default="deploy-tests" basedir="..">
+	<xmlproperty file="build.properties.local.xml" semanticAttributes="true" keepRoot="false" />
 	<xmlproperty file="build.properties.xml" semanticAttributes="true" keepRoot="false" />
+	
 	<property name="resources.dir" value="${basedir}/resources" />
 	<property name="work.dir" value="work" />
-	<property name="orbeon.install.dir" value="C:/workspaces/OrbeonGit/orbeon-forms/build/orbeon-war" />
 
 	<description>
             Update and prepare test suite for running inside orbeon
 			wget --accept=xhtml --no-parent --wait 1 --recursive --no-host-directories --cut-dirs=4 --exclude-directories=MarkUp/Forms/Test/XForms1.1/Edition1/driverPages/,MarkUp/Forms/Test/XForms1.1/Edition1/zip/ http://www.w3.org/MarkUp/Forms/Test/XForms1.1/Edition1/
     </description>
+	
+	<target name="check-properties">
+		<fail unless="orbeon.install.baseurl">Please fill in the url to access the orbeon web-application (orbeon.install.baseurl) in your build.properties.local.xml</fail>
+		<fail unless="orbeon.install.dir">Please fill in the orbeon install dir (orbeon.install.dir) in your build.properties.local.xml</fail>
+	</target>
 
 
+	<!--
+	Open tests:
+		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_Suite.html&resultsUrl=..%2FpostResults
+		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_02_Suite.html&resultsUrl=..%2FpostResults
+		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_AppendixB_Suite.html&resultsUrl=..%2FpostResults
+	-->
+	<!-- Generates the selenium tests based on the XML and delploy them in your orbeon installation -->
+	<target name="deploy-tests" depends="check-properties, generate-selenium-tests" description="Generates the selenium tests based on the XML and delploy them in your orbeon installation">
+		<echo>Deploying apps to orbeon instalation ${orbeon.install.dir}</echo>
+		
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps">
+			<fileset dir="resources/apps" includes="**/*" />
+		</copy>
+		
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/forms">
+			<fileset dir="resources" includes="XForms1.1/Edition1/**/*" />
+		</copy>
+		
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/selenium-core/core">
+			<fileset dir="src/selenium/core">
+				<include name="*"/>
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/selenium-core/core/scripts" overwrite="true">
+			<fileset dir="src/selenium/orbeon">
+				<include name="*.js"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/selenium-tests">
+			<fileset dir="work/selenium-tests" includes="**/*" />
+		</copy>
+		
+	</target>
+	
+	<!-- Generates the selenium tests based on the XML they will be generated work/selenium-tests --> 
+	<target name="generate-selenium-tests" description="Generates the selenium tests based on the XML">
+		<echo>Generating selenium tests to ${work.dir}/selenium-tests</echo>
+		<xslt basedir="src/tests" destdir="${work.dir}/selenium-tests" style="build/selenium.xsl">
+			<classpath refid="saxon.class.path" />
+			<include name="**/*.xml"/>
+			<mapper type="glob" from="*.xml" to="*.html" />
+		</xslt>
+	</target>
+	
 	<!-- ================================= 
-          target: update tests             
+          target: update-wg should be executed when you want to update the tests after updating the W3C test suite               
          ================================= -->
-	<target name="update" depends="patch-tests, deploy-tests" description="Update and prepare test suite for running inside orbeon">
-
+	<target name="update-wg" depends="check-properties, patch-tests-orbeon, deploy-tests" description="Update and prepare test suite for running inside orbeon after the W3C tests have been updated">
+		
 	</target>
 
 	<!-- - - - - - - - - - - - - - - - - - 
           target: patch tests                     
          - - - - - - - - - - - - - - - - - -->
-	<target name="patch-tests">
+	<!-- Patches the the W3C XForms tests so they can be run in orbeon (adds IDs used by the test framework) -->
+	<target name="patch-tests-orbeon" >
+		<echo>Patching W3C test suite, so it can be run in test framework</echo>
 		<move todir="${resources.dir}/XForms1.1/Edition1" includeemptydirs="false">
 			<fileset dir="${resources.dir}/XForms1.1/Edition1">
 				<exclude name="**/*.bak" />
@@ -48,43 +103,8 @@
 	</target>
 
 	
-	<!--
-	Open tests:
-		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_Suite.html&resultsUrl=..%2FpostResults
-		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_02_Suite.html&resultsUrl=..%2FpostResults
-		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_AppendixB_Suite.html&resultsUrl=..%2FpostResults
-	-->
-	<target name="deploy-tests">
-		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps">
-			<fileset dir="resources/apps" includes="**/*" />
-		</copy>
-		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/forms">
-			<fileset dir="resources" includes="XForms1.1/Edition1/**/*" />
-		</copy>
-		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/selenium-core/core">
-			<fileset dir="src/selenium/core">
-				<include name="*"/>
-				<include name="**/*"/>
-			</fileset>
-		</copy>
-		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/selenium-core/core/scripts" overwrite="true">
-			<fileset dir="src/selenium/orbeon">
-				<include name="*.js"/>
-			</fileset>
-		</copy>
-		
-		<xslt basedir="src/tests" destdir="work/selenium-tests" style="build/selenium.xsl">
-			<classpath refid="saxon.class.path" />
-			<include name="**/*.xml"/>
-			<mapper type="glob" from="*.xml" to="*.html" />
-		</xslt>
-		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/selenium-tests">
-			<fileset dir="work/selenium-tests" includes="**/*" />
-		</copy>
-		
-	</target>
-
-	<target name="generateTests" description="generate tests based on test suite">
+	<!-- This target was only needed to generate initially all test xml files, you probably never need to use this target -->
+	<target name="-generate-base-tests" description="internal target, generate base tests based on the W3C test suite">
 		<xslt basedir="${resources.dir}/XForms1.1/Edition1/driverPages/results" destdir="work/tests" style="build/gen-tests.xsl" force="true">
 			<classpath refid="saxon.class.path" />
 			<include name="*.xml"/>
@@ -93,41 +113,6 @@
 		</xslt>
 	</target>
 
-
-	<!-- ================================= 
-	          target: start selenium RC             
-	     ================================= -->
-	<target name="start-seleniumRC">
-		<echo />
-		<echo message="************************************************************************************" />
-		<echo message="Starting seleniumRC on ${test.selenium.server.server}:${test.selenium.server.port} via ${test.selenium.server.jar}" />
-		<echo message="************************************************************************************" />
-		<echo />
-
-		<java jar="${test.selenium.server.jar}" fork="true" spawn="true">
-			<arg value="-userExtensions"/>
-			<arg path="src/selenium/user-extensions.js"/>
-		</java>
-
-		<waitfor maxwait="20" maxwaitunit="second">
-			<and>
-				<socket server="${test.selenium.server.server}" port="${test.selenium.server.port}" />
-				<http url="${test.selenium.server.url}" errorsBeginAt="${test.selenium.server.errorsBeginAt}" />
-			</and>
-		</waitfor>
-	</target>
-
-	<!-- ================================= 
-			target: stop selenium RC             
-		 ================================= -->
-	<target name="stop-seleniumRC">
-		<echo />
-		<echo message="************************************************************************************" />
-		<echo message="Stopping seleniumRC" />
-		<echo message="************************************************************************************" />
-		<echo />
-		<get taskname="selenium-shutdown" src="http://${test.selenium.server.server}:${test.selenium.server.port}/selenium-server/driver/?cmd=shutDownSeleniumServer" dest="result.txt" ignoreerrors="false" />
-	</target>
 
 	<xmlcatalog id="html">
 		<dtd publicId="-//W3C//DTD XHTML 1.0 Transitional//EN" location="build/html/xhtml1-transitional.dtd" />
