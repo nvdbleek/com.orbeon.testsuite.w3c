@@ -36,7 +36,9 @@ Selenium.prototype.isClassPresentOnElement = function(locator, expectedClass) {
 		+ containingClassSelector(expectedClass) + "]");
 };
 
-
+Selenium.prototype.isXFormsException = function(exception) {
+	return selenium.getTitle() === "Orbeon Forms - An Error has Occurred";
+};
 
 
 function containingClassSelector(className) {

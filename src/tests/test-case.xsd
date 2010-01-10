@@ -108,6 +108,20 @@
 			      <xs:attribute name="value" use="required"/>
 			    </xs:complexType>
 			  </xs:element>
+			  <xs:element name="assert-exception">
+			    <xs:complexType>
+			      <xs:attribute name="type" use="required">
+			        <xs:simpleType>
+			          <xs:restriction base="xs:token">
+			            <xs:enumeration value="xforms-binding-exception"/>
+			            <xs:enumeration value="xforms-compute-exception"/>
+			            <xs:enumeration value="xforms-version-exception"/>
+			            <xs:enumeration value="xforms-link-exception"/>
+			          </xs:restriction>
+			        </xs:simpleType>
+			      </xs:attribute>
+			    </xs:complexType>
+			  </xs:element>
 			  <xs:element name="type-input">
 			    <xs:complexType>
 			      <xs:attribute name="locator" use="required"/>

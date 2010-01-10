@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	version="2.0" xmlns:xftr="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner"
+	version="2.0" 
+	xmlns:xftr="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	>
 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1"/>
@@ -35,6 +37,9 @@
          </tr>
 	</xsl:template>
 
+	<!-- Don't check title -->
+	<xsl:template match="xftr:assert-title[following-sibling::*[1][node-name(.) = xs:QName('xftr:assert-exception')]]" />
+
 	<xsl:template match="xftr:assert-title">
 		<xsl:choose>
             <xsl:when test="@title = 'Results from echo.sh'">
@@ -52,8 +57,16 @@
 		         </tr>
 			</xsl:otherwise>
 		</xsl:choose>
-	</xsl:template>
+	</xsl:template>	
 
+	<xsl:template match="xftr:assert-exception">
+		<tr>
+            <td>assertXFormsException</td>
+            <td><xsl:value-of select="@type"/></td>
+            <td></td>
+         </tr>
+	</xsl:template>
+	
 	<xsl:template match="xftr:assert-control-present">
 		<tr>
             <td>waitForXFormsInputElementPresent</td>
