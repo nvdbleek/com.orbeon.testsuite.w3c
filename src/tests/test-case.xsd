@@ -102,6 +102,12 @@
 			      <xs:attribute name="option" use="required"/>
 			    </xs:complexType>
 			  </xs:element>
+			  <xs:element name="assert-control-value">
+			    <xs:complexType>
+			      <xs:attribute name="locator" use="required"/>
+			      <xs:attribute name="value" use="required"/>
+			    </xs:complexType>
+			  </xs:element>
 			  <xs:element name="type-input">
 			    <xs:complexType>
 			      <xs:attribute name="locator" use="required"/>
