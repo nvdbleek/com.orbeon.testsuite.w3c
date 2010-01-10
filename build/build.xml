@@ -26,10 +26,7 @@
 
 
 	<!--
-	Open tests:
-		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_Suite.html&resultsUrl=..%2FpostResults
-		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_02_Suite.html&resultsUrl=..%2FpostResults
-		http://localhost:8080/orbeon-git/apps/selenium-core/core/TestRunner.html?test=..%2F..%2Fxforms-test-suite%2Fselenium-tests%2FXF11_AppendixB_Suite.html&resultsUrl=..%2FpostResults
+		Open ${orbeon.install.baseurl}/xforms-test-suite/ to run the tests.
 	-->
 	<!-- Generates the selenium tests based on the XML and delploy them in your orbeon installation -->
 	<target name="deploy-tests" depends="check-properties, generate-selenium-tests" description="Generates the selenium tests based on the XML and delploy them in your orbeon installation">
@@ -60,6 +57,7 @@
 			<fileset dir="work/selenium-tests" includes="**/*" />
 		</copy>
 		
+		<echo>Open ${orbeon.install.baseurl}/xforms-test-suite/ to run the tests.</echo>
 	</target>
 	
 	<!-- Generates the selenium tests based on the XML they will be generated work/selenium-tests --> 

@@ -23,8 +23,7 @@
 	<page path-info="/xforms-test-suite/forms/(.+).xhtml" matcher="oxf:perl5-matcher"
 		view="forms/${1}.xhtml" />
 		
-	<page path-info="/xforms-test-suite/boe" matcher="oxf:perl5-matcher"
-		view="forms/XForms1.1/Edition1/Chapt02/2.3.a.xhtml" />
+	<page path-info="/xforms-test-suite/"  view="test-driver.xhtml" />
 	
 
 	<epilogue url="oxf:/config/epilogue.xpl" />
