@@ -16,10 +16,10 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
 	  		<xforms:label class="title">10.2.a setvalue elements with expression or literal</xforms:label>
 	  	</xforms:group>
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   			  You must see the value "white" in the Color output control, the value 
   			  "excellent" in the Condition output control, and the value "Toyoto" 
@@ -30,7 +30,7 @@
   			  When you activate the Set Make trigger the value in the Make output must not change. 
 			</xforms:label>
   		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 		  <xforms:output ref="/car/color" id="xf-output-1">
 			<xforms:label>Color : </xforms:label>
 		  </xforms:output>
@@ -41,7 +41,7 @@
 			  </xforms:action>
 		  </xforms:trigger>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 			<xforms:output ref="/car/originalCondition" id="xf-output-2">
 				<xforms:label>Original Condition : </xforms:label>
 			</xforms:output>
@@ -53,7 +53,7 @@
 			</xforms:trigger>
 		</xforms:group>
 		
-		<xforms:group>
+		<xforms:group id="xf-group-5">
 			<xforms:output ref="/car/make" id="xf-output-3">
 				<xforms:label>Make : </xforms:label>
 			</xforms:output>

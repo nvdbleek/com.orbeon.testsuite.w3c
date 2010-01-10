@@ -6,5 +6,5 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt07/7.8/7.8.4/7.8.4.e.xhtml"/>
    <assert-title title="7.8.4.e hmac() function with invalid encoding method"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-exception type="xforms-compute-exception"/>
 </test-case>

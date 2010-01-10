@@ -66,15 +66,15 @@
     </xhtml:head>
 
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.3.b insert action with bind and model attributes</xforms:label>
         </xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 			  You must see the correct values for each output control below.
 			</xforms:label>
 		</xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
             <xforms:label>You must see the numbers 4, 5, 6, and 6 : </xforms:label>
             <xforms:repeat nodeset="number_list[2]/number">
                 <xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-1">
@@ -83,7 +83,7 @@
             </xforms:repeat>
         </xforms:group>
 
-        <xforms:group model="mod2">
+        <xforms:group model="mod2" id="xf-group-4">
             <xforms:label>You must see the numbers 7, 8, 9, 10, and 10 : </xforms:label>
             <xforms:repeat nodeset="number_list[1]/number">
                 <xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-2">
@@ -92,7 +92,7 @@
             </xforms:repeat>
         </xforms:group>
 
-        <xforms:group model="mod2">
+        <xforms:group model="mod2" id="xf-group-5">
             <xforms:label>You must see the numbers 11, 12, 13, 14, and 14 : </xforms:label>
             <xforms:repeat nodeset="number_list[2]/number">
                 <xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-3">

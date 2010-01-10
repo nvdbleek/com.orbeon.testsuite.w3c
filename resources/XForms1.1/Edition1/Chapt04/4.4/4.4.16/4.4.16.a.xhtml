@@ -13,15 +13,15 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group>
+  	<xforms:group id="xf-group-1">
   		<xforms:label class="title">4.4.16.a xforms-in-range event</xforms:label>
   	</xforms:group>
-  	<xforms:group>
+  	<xforms:group id="xf-group-2">
   		<xforms:label>
   			You must see an xforms-in-range message when you activate the In Range trigger. 
 	  	</xforms:label>	
 	</xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-3">
 		<xforms:trigger id="xf-trigger-1">
 			<xforms:label>In Range</xforms:label>
 			<xforms:setvalue ref="/car/quantity" ev:event="DOMActivate">5</xforms:setvalue>

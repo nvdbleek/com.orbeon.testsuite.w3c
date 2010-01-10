@@ -9,27 +9,27 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-	    <xforms:group>
+	    <xforms:group id="xf-group-1">
 		    <xforms:label class="title">
 			  7.9.7.a seconds-to-dateTime() function
 		    </xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 			  You must see the value "1970-01-01T00:00:00Z" for the Test 1 output. 
 			</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 			<xforms:output value="seconds-to-dateTime(0)" id="xf-output-1">
 				<xforms:label>Test 1 : </xforms:label>
 			</xforms:output>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 			<xforms:label>
 			You must not see a value for the Test 2 output. 
 			</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-5">
 			<xforms:output value="seconds-to-dateTime('NaN')" id="xf-output-2">
 				<xforms:label>Test 2 : </xforms:label>
 			</xforms:output>

@@ -20,11 +20,11 @@
 	</xhtml:head>
 	
 	<xhtml:body>
-		<xforms:group>
+		<xforms:group id="xf-group-1">
 			<xforms:label class="title">5.1.e built-in primitive type via xsi:type</xforms:label>
 		</xforms:group>
 
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 				When you activate the Valid Value trigger you must see an "xforms-valid" output 
 				for the date data type. When you activate the Invalid Value trigger you must see an 
@@ -50,7 +50,7 @@
 			</xforms:action>
 		</xforms:trigger>
 		
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 			<xforms:input ref="my_date" id="xf-input-1">
 				<xforms:label>date </xforms:label>
 				<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[1]">

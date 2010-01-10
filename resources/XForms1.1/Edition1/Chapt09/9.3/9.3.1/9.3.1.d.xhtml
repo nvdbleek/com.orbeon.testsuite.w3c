@@ -16,17 +16,17 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
   			<xforms:label class="title">9.3.1.d unrolling the repeat element</xforms:label>
   		</xforms:group>	
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   			  You must see two lists of items, Items In Cart 1 and Items In Cart 2.  Both lists must contain the 
   			  values "winshield wipers", "tires", "exhaust", and 
   			  "air freshener". 
 			</xforms:label>	
   		</xforms:group>
-  		<xforms:group>
+  		<xforms:group id="xf-group-3">
   			<xforms:label>
   				Items In Cart 1 : 
   			</xforms:label>
@@ -36,27 +36,27 @@
 					</xforms:output>
 			</xforms:repeat>
   		</xforms:group>
-  		<xforms:group>
+  		<xforms:group id="xf-group-4">
   			<xforms:label>
   				Items In Cart 2 :
   			</xforms:label>
   			<!-- unrolled repeat -->
-  			<xforms:group>
+  			<xforms:group id="xf-group-5">
 	  			<xforms:output ref="/cart/items/item[1]" id="xf-output-2">
 					<xforms:label/>
 			</xforms:output>
   			</xforms:group>
-  			<xforms:group>
+  			<xforms:group id="xf-group-6">
   			<xforms:output ref="/cart/items/item[2]" id="xf-output-3">
 						<xforms:label/>
 			</xforms:output>
 			</xforms:group>
-			<xforms:group>
+			<xforms:group id="xf-group-7">
   			<xforms:output ref="/cart/items/item[3]" id="xf-output-4">
 						<xforms:label/>
 			</xforms:output>
 			</xforms:group>
-			<xforms:group>
+			<xforms:group id="xf-group-8">
   			<xforms:output ref="/cart/items/item[4]" id="xf-output-5">
 						<xforms:label/>
 			</xforms:output>

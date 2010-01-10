@@ -11,10 +11,10 @@
       </xforms:model>
     </xhtml:head>
     <xhtml:body>
-      	<xforms:group>
+      	<xforms:group id="xf-group-1">
             <xforms:label class="title">5.2.6.a email datatype</xforms:label>
       	</xforms:group>
-      	<xforms:group>
+      	<xforms:group id="xf-group-2">
             <xforms:label>
               When you activate the Valid Email Test triggers you must see the message "You entered a 
               valid email". 
@@ -22,7 +22,7 @@
               invalid email". 
             </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
             <xforms:input ref="email_address" id="xf-input-1">
                 <xforms:label>Email address : </xforms:label>
 			<xforms:message ev:event="xforms-valid" level="modal">You entered a valid email</xforms:message>

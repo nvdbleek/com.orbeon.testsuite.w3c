@@ -26,10 +26,10 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
   			<xforms:label class="title">10.3.f insert action in repeat bound to collection</xforms:label>
   		</xforms:group>	
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   			  You must see an xforms-insert message after activating any of the Insert triggers. 
   			  The Insert At index 1 trigger must insert a new item at the beginning of the list. 
@@ -39,7 +39,7 @@
 			</xforms:label>	
   		</xforms:group>
 		<xforms:repeat id="lineset" nodeset="/lines/line">
-			<xforms:group>
+			<xforms:group id="xf-group-3">
 				<xforms:input ref="price" id="xf-input-1">
 					<xforms:label>Price:</xforms:label>
 				</xforms:input>

@@ -16,10 +16,10 @@
     	</xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">9.2.3.1.b case element child of the toggle element precedence testing</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
             <xforms:label>	<!-- in case I broke this test case, the filename used to be 3.4.b -->
               Activating different triggers will place the the switch element into different cases. When in the 
               In case, you must see a Go To Out Case trigger. When in the Out case, you must see a Go To Exit Case 
@@ -29,7 +29,7 @@
         <xforms:switch>
 			<xforms:case id="in" selected="true">
                 <xforms:label>You are in the In case</xforms:label>
-				<xforms:group>
+				<xforms:group id="xf-group-3">
 				  <xforms:trigger id="xf-trigger-1">
 				    <xforms:label>Go To Out Case</xforms:label>
 				    <xforms:toggle ev:event="DOMActivate" case="out"/>
@@ -38,7 +38,7 @@
 			</xforms:case>
 			<xforms:case id="out">
                 <xforms:label>You are in the Out case</xforms:label>
-				<xforms:group>
+				<xforms:group id="xf-group-4">
 				  <xforms:trigger id="edit">
 					  <xforms:label>Go To Exit Case</xforms:label>
 					  <!-- case attr in toggle and case element in toggle, element has precedence -->
@@ -57,7 +57,7 @@
 			</xforms:case>
 			<xforms:case id="exit" selected="true">
                 <xforms:label>You are in the Exit case</xforms:label>
-				<xforms:group>
+				<xforms:group id="xf-group-5">
 				  <xforms:trigger id="rtrn_edit">
 					  <xforms:label>Go To Out Case</xforms:label>
 					  <!-- case attr in toggle element with value attr in case element and inline content,

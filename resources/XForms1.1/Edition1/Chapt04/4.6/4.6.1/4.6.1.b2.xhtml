@@ -31,10 +31,10 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
     	<xforms:label class="title">4.6.1.b2 event sequenceing for range and upload controls - focus change with value change</xforms:label>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-2">
     	<xforms:label>
     		When you activate one of the 'Test' triggers below you must see a series of outputs for a "Value Change" 
     		sequence (xforms-recalculate, xforms-revalidate, and xforms-refresh). 
@@ -50,7 +50,7 @@
     	<xforms:label>upload (image): </xforms:label>
     </xforms:upload>
     
-    <xforms:group>
+    <xforms:group id="xf-group-3">
     	<xforms:trigger id="xf-trigger-1">
     		<xforms:label>Test range</xforms:label>
     		<xforms:setvalue ev:event="DOMActivate" ref="/car/price">21000</xforms:setvalue>

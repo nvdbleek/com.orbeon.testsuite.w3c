@@ -19,10 +19,10 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
   	   <xforms:label class="title">11.3.b xforms-submit-serialize event with submission-body property</xforms:label>
     </xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 	  <xforms:label>
 	    After you activate the Submit Now submit control you must see an xforms-submit-serialize 
 	    message. The page must also be replaced by the form data, where you must see the value 
@@ -33,7 +33,7 @@
        	<xforms:message level="modal">xforms-submit-serialize</xforms:message>
        	<xforms:setvalue ref="event('submission-body')">&lt;data&gt;MyNewData&lt;/data&gt;</xforms:setvalue>
     </xforms:action>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 		<xforms:submit submission="submission" id="xf-submit-1">
 	      	<xforms:label>Submit Now</xforms:label>
       	</xforms:submit>

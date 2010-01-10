@@ -10,10 +10,10 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">5.2.7.a card-number datatype</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
             <xforms:label>
               When you activate the Valid card-number Test triggers you must see the message "You entered a 
               valid card-number". 
@@ -21,7 +21,7 @@
               invalid card-number". 
             </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
             <xforms:input ref="/ID" id="xf-input-1">
                 <xforms:label>ID card number : </xforms:label>
                 <xforms:action ev:event="xforms-valid">

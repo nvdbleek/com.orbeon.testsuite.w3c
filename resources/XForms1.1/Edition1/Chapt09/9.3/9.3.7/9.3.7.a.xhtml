@@ -20,10 +20,10 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
   			<xforms:label class="title">9.3.7.a copy element</xforms:label>
   		</xforms:group>	
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
 	  			When you select a flavor from the select control below you must see the output "Icecream Order : 
 	  			" and 
@@ -32,7 +32,7 @@
 	  		</xforms:label>	
   		</xforms:group>
   		
-		<xforms:group>	
+		<xforms:group id="xf-group-3">	
 			<xforms:select model="cone" ref="/icecream/order" id="xf-select-1">
 				<xforms:label>Flavors</xforms:label>
 				<xforms:itemset model="flavors" nodeset="/flavors/flavor">

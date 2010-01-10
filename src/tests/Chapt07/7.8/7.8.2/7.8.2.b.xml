@@ -6,5 +6,5 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt07/7.8/7.8.2/7.8.2.b.xhtml"/>
    <assert-title title="7.8.2.b property() function with conformance-level property"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1" value="full"/>
 </test-case>

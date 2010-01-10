@@ -12,20 +12,20 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
   	    <xforms:label class="title">8.1.7.b end attribute of range element</xforms:label>
   	</xforms:group>
-  	<xforms:group>
+  	<xforms:group id="xf-group-2">
   		<xforms:label>
   			You must see a range control that ends at 50000. No start value is defined.
   		</xforms:label>
   	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 		<xforms:range ref="/car/mileage" end="50000" id="xf-range-1">
   			<xforms:label>Car mileage</xforms:label>
   		</xforms:range>
 	</xforms:group>
-	<xforms:group>	
+	<xforms:group id="xf-group-4">	
 		<xforms:output ref="/car/mileage" id="xf-output-1">
 			<xforms:label>Car mileage : </xforms:label>
 		</xforms:output>

@@ -18,16 +18,16 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.3.e insert action using position attribute</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
             <xforms:label>
               After activating any of the Test triggers the numbers output onto the page must match those on 
               the label of the activated trigger control. 
             </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
             <xforms:trigger id="xf-trigger-1">
                 <xforms:label>Test A: 1 2 3 5 4 5</xforms:label>
                 <xforms:action ev:event="DOMActivate">
@@ -61,7 +61,7 @@
                 </xforms:action>
             </xforms:trigger>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-4">
             <xforms:label>Integer sequence:</xforms:label>
         </xforms:group>
         <xforms:repeat nodeset="number_list[1]/number">

@@ -18,17 +18,17 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group>
+  	<xforms:group id="xf-group-1">
   		<xforms:label class="title">11.1.h validate attribute of submission element</xforms:label>
   		
   	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  When you activate the Submit (validate=true) submit control you must see an xforms-submit-error 
 		  message. When you activate the Submit (validate=false) submit control you must not see a message. 
 		</xforms:label>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 		<xforms:submit submission="sub_true" id="xf-submit-1">
 	      	<xforms:label>Submit (validate=true)</xforms:label>
       	</xforms:submit>

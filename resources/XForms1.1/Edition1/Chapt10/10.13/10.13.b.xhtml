@@ -23,10 +23,10 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
 	  		<xforms:label class="title">10.13.b reset element with model attribute</xforms:label>
 	  	</xforms:group>
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   			  When you activate the Reset Car Type Value trigger the value in the Car Type output must change to 
   			  "Mercedes". You must NOT see a message. 
@@ -34,7 +34,7 @@
   			  "white" and you must see an xforms-reset message. 
 			</xforms:label>
   		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 		<xforms:output model="m1" ref="/car" id="xf-output-1">
 			<xforms:label>Car Type : </xforms:label>
 		</xforms:output>
@@ -46,7 +46,7 @@
 			</xforms:action>
 		</xforms:trigger>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 		<xforms:output model="m2" ref="/car/color" id="xf-output-2">
 			<xforms:label>Car Color : </xforms:label>
 		</xforms:output>

@@ -12,17 +12,17 @@
         </xforms:model>	   
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
   			<xforms:label class="title">9.2.1.a2 switch element receives events</xforms:label>
   		</xforms:group>	
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   			  When you choose "yes" in the select1 control, you should see the message "Switch is readonly" 
   			  and the select1 control should be readonly too.
 	  		</xforms:label>	
   		</xforms:group>
   	
-					<xforms:group>
+					<xforms:group id="xf-group-3">
   	        <!-- Relying on event to bubble up -->
 	  	    <xforms:message ev:event="xforms-readonly" level="modal">Switch is readonly</xforms:message>
 	  	

@@ -46,50 +46,50 @@
           <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
      </xhtml:head>
      <xhtml:body>
-          <xforms:group>
+          <xforms:group id="xf-group-1">
                <xforms:label class="title">11.5.b accessing context information for xforms-submit-error event</xforms:label>
           </xforms:group>
-          <xforms:group>
+          <xforms:group id="xf-group-2">
                <xforms:label>
                  After activating the Submit To Bad URL submit control, the value "resource-error" must 
                  appear in the Error Name output control and the value "http://invaliduri.com8565/inval1d" 
                  must appear in the Error Information output control. 
 			</xforms:label>
           </xforms:group>
-          <xforms:group>
+          <xforms:group id="xf-group-3">
                <xforms:label/>
                <xforms:submit submission="sub_1" id="xf-submit-1">
                     <xforms:label>Submit To Bad URL</xforms:label>
                </xforms:submit>
           </xforms:group>
-          <xforms:group>
+          <xforms:group id="xf-group-4">
                <xforms:label/>
                <xforms:output ref="instance('error_catcher')/error_name" id="xf-output-1">
                     <xforms:label>Error Name : </xforms:label>
                </xforms:output>
           </xforms:group>
-          <xforms:group>
+          <xforms:group id="xf-group-5">
                <xforms:label/>
                <xforms:output ref="instance('error_catcher')/error_info" id="xf-output-2">
                     <xforms:label>Error Information : </xforms:label>
                </xforms:output>
           </xforms:group>
-          <xforms:group>
+          <xforms:group id="xf-group-6">
                <xforms:label/>
                <xforms:output ref="instance('error_catcher')/error_code" id="xf-output-3">
                     <xforms:label>Protocol Return Code : </xforms:label>
                </xforms:output>
           </xforms:group>
-          <xforms:group>
+          <xforms:group id="xf-group-7">
                <xforms:label>Header Information : </xforms:label>
                <xforms:repeat nodeset="instance('error_catcher')/error_headers/header">
-                    <xforms:group>
+                    <xforms:group id="xf-group-8">
                          <xforms:label/>
                          <xforms:output ref="./name" id="xf-output-4">
                               <xforms:label>Header Name : </xforms:label>
                          </xforms:output>
                     </xforms:group>
-                    <xforms:group>
+                    <xforms:group id="xf-group-9">
                          <xforms:label/>
                          <xforms:output ref="./value" id="xf-output-5">
                               <xforms:label>Header Contents : </xforms:label>

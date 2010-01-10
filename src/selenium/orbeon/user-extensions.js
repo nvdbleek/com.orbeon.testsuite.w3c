@@ -15,8 +15,10 @@ Selenium.prototype.doXFormsTypeInput = function(locator, value) {
 	selenium.doType(locator + "$xforms-input-1", value);
 };
 
-Selenium.prototype.isXFormsInputElementPresent = function(locator) {
-	return selenium.isClassPresentOnElement(locator, "xforms-input") && !selenium.isClassPresentOnElement(locator, "xforms-disabled-subsequent");
+Selenium.prototype.isXFormsControlElementPresent = function(locator, controlType) {
+	return selenium.isClassPresentOnElement(locator, "xforms-" + controlType) 
+		&& !selenium.isClassPresentOnElement(locator, "xforms-disabled")
+		&& !selenium.isClassPresentOnElement(locator, "xforms-disabled-subsequent");
 };
 
 

@@ -19,10 +19,10 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
   			<xforms:label class="title">9.3.1.f switch element within repeat element</xforms:label>
   		</xforms:group>	
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   				You must see three sets of the statement "You are in the In case" and Go To Out Case triggers. 
   				When you activate a Go To Out Case trigger, the corresponding statement must change to 
@@ -32,11 +32,11 @@
   				statements or triggers. 
   			</xforms:label>	
   		</xforms:group>
-  		<xforms:group>
+  		<xforms:group id="xf-group-3">
   		  <xforms:repeat nodeset="/myset/repeatnodes/go">
 	  		  	<xforms:switch>
 	  		  	  <xforms:case id="in" selected="true">
-		  		  	  <xforms:group>
+		  		  	  <xforms:group id="xf-group-4">
 		  		  	    <xforms:output ref="/myset/labels/incase" id="xf-output-1"/>
 						<xforms:trigger id="xf-trigger-1">
 						  <xforms:label>Go To Out Case</xforms:label>
@@ -45,7 +45,7 @@
 					  </xforms:group>
 	  		  	  </xforms:case>
 	  		  	  <xforms:case id="out">
-	  		  	    <xforms:group>
+	  		  	    <xforms:group id="xf-group-5">
 		  		  	    <xforms:output ref="/myset/labels/outcase" id="xf-output-2"/>
 						<xforms:trigger id="xf-trigger-2">
 						  <xforms:label>Go To In Case</xforms:label>

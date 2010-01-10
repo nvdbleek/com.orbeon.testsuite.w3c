@@ -16,6 +16,14 @@
 			<xsl:apply-templates />
 		</xsl:copy>
 	</xsl:template>
+	
+	<xsl:template match="xforms:group[not(@id)]">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" />
+			<xsl:attribute name="id">xf-group-<xsl:value-of select="count(preceding::xforms:group) + count(ancestor::xforms:group) + 1"/></xsl:attribute>
+			<xsl:apply-templates />
+		</xsl:copy>
+	</xsl:template>
 
 	<xsl:template match="@*|node()">
 		<xsl:copy>

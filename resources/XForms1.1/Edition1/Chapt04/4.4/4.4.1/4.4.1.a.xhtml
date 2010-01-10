@@ -25,16 +25,16 @@
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
 	</xhtml:head>	
 	<xhtml:body>
-		<xforms:group>
+		<xforms:group id="xf-group-1">
 			<xforms:label class="title">4.4.1.a xforms-insert event</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 				 Activate the Insert A Date trigger below to fire the xforms-insert event. You must see an 
 				 xforms-insert message and the correct values must be output below. 
 			</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 			<xforms:trigger id="xf-trigger-1">
 				<xforms:label>Insert A Date</xforms:label>
 				<xforms:action ev:event="DOMActivate">
@@ -42,13 +42,13 @@
 				</xforms:action>
 			</xforms:trigger>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
             <xforms:label>You must see the value "before" : </xforms:label>
 			<xforms:output model="description_catcher" ref="insert_description" id="xf-output-1">
 				<xforms:label/>
 			</xforms:output>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-5">
             <xforms:label>You must see the value "2006-01-01" : </xforms:label>
 			<xforms:output model="description_catcher" ref="new_value" id="xf-output-2">
 				<xforms:label/>

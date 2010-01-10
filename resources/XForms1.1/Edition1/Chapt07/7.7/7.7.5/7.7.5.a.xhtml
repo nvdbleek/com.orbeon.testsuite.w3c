@@ -12,21 +12,21 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-	    <xforms:group>
+	    <xforms:group id="xf-group-1">
 		    <xforms:label class="title">
 			7.7.5.a index() function
 		    </xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 				You must see the value "1" for Index.
 			</xforms:label>
 		</xforms:group>
 		<xforms:repeat nodeset="ex:value" id="myrepeat">
-			<xforms:group>
+			<xforms:group id="xf-group-3">
 			</xforms:group>
 		</xforms:repeat>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 			<xforms:output value="index('myrepeat')" id="xf-output-1">
 				<xforms:label>Index : </xforms:label>
 			</xforms:output>

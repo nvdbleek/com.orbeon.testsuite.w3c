@@ -9,10 +9,10 @@
 	</xforms:model>
 </xhtml:head>
 	<xhtml:body>
-		<xforms:group>
+		<xforms:group id="xf-group-1">
 			<xforms:label class="title">9.1.1.a2 group element inside case element of a switch</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 			  When you activate the Show Out Case trigger you must see "You are now in the Out case" 
 			  output to the screen and a Show In Case trigger. 
@@ -23,7 +23,7 @@
 		</xforms:group>
 		<xforms:switch>
 			<xforms:case id="in">
-				<xforms:group>
+				<xforms:group id="xf-group-3">
 					<xforms:label>You are now in the In case</xforms:label>
 					<xforms:message level="modal" ev:event="xforms-disabled">xforms-disabled</xforms:message>
 					<xforms:message level="modal" ev:event="xforms-enabled">xforms-enabled</xforms:message>
@@ -34,7 +34,7 @@
 				</xforms:trigger>
 			</xforms:case>
 			<xforms:case id="out">
-				<xforms:group>
+				<xforms:group id="xf-group-4">
 					<xforms:label>You are now in the Out case</xforms:label>
 					<xforms:message level="modal" ev:event="xforms-disabled">xforms-disabled</xforms:message>
 					<xforms:message level="modal" ev:event="xforms-enabled">xforms-enabled</xforms:message>

@@ -6,5 +6,6 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt07/7.9/7.9.7/7.9.7.a.xhtml"/>
    <assert-title title="7.9.7.a seconds-to-dateTime() function"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1" value="1970-01-01T00:00:00Z"/>
+   <assert-control-value locator="xf-output-1" value=""/>
 </test-case>

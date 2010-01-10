@@ -58,45 +58,45 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.4.d delete action using at attribute</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
           <xforms:label>
             You must see the correct values for each output control below. 
           </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
           <xforms:label>You must see only the numbers 1 and 2 : </xforms:label>
             <xforms:repeat nodeset="number_list[1]/number">
                 <xforms:output value="string(concat(. ,' '))" id="xf-output-1"/>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-4">
           <xforms:label>You must see only the numbers 4 and 6 : </xforms:label>
             <xforms:repeat nodeset="number_list[2]/number">
                 <xforms:output value="string(concat(. ,' '))" id="xf-output-2"/>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-5">
           <xforms:label>You must see only the numbers 8 and 9: </xforms:label>
             <xforms:repeat nodeset="number_list[3]/number">
                 <xforms:output value="string(concat(. ,' '))" id="xf-output-3"/>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-6">
           <xforms:label>You must see only the numbers 10 and 11 : </xforms:label>
             <xforms:repeat nodeset="number_list[4]/number">
                 <xforms:output value="string(concat(. ,' '))" id="xf-output-4"/>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-7">
           <xforms:label>You must see only the numbers 13 and 14 : </xforms:label>
             <xforms:repeat nodeset="number_list[5]/number">
                 <xforms:output value="string(concat(. ,' '))" id="xf-output-5"/>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-8">
           <xforms:label>You must see only the number 17 : </xforms:label>
             <xforms:repeat nodeset="instance('instance_2')/number_list/number">
                 <xforms:output value="string(concat(. ,' '))" id="xf-output-6"/>

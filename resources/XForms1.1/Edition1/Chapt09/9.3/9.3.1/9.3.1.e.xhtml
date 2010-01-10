@@ -19,10 +19,10 @@
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="xf-group-1">
             <xforms:label class="title">9.3.1.e repeat element example</xforms:label>
         </xforms:group>
-        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="xf-group-2">
             <xforms:label>
 				You must see three items (named a, b, and c) and a price for each item (3.00, 
 				32.25, and 132.99 respectively).  You must be able to add and remove items. 
@@ -30,10 +30,10 @@
 				initial price will be 0.00.
 			</xforms:label>
         </xforms:group>
-        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <xforms:group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="xf-group-3">
             <xforms:label/>
             <xforms:repeat id="lineset" nodeset="/lines/line">
-                <xforms:group>
+                <xforms:group id="xf-group-4">
                     <xforms:label/>
                     <xforms:input ref="price" id="xf-input-1">
                         <xforms:label>Line Item:</xforms:label>
@@ -56,7 +56,7 @@
             <xforms:label>Remove Current Item</xforms:label>
             <xforms:delete at="index('lineset')" ev:event="DOMActivate" nodeset="/lines/line"/>
         </xforms:trigger>
-        <xforms:group>
+        <xforms:group id="xf-group-5">
 			<xforms:output value="index('lineset')" id="xf-output-1">
 				<xforms:label>Current index : </xforms:label>
 			</xforms:output>

@@ -31,10 +31,10 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
   			<xforms:label class="title">10.4.e delete element rules</xforms:label>
   		</xforms:group>	
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   			  When you activate the Delete Item At Index trigger you must see an xforms-delete message. 
   			  After an item is deleted the Current index must not change unless the last item in the list was 
@@ -43,7 +43,7 @@
 			</xforms:label>	
   		</xforms:group>
 		<xforms:repeat id="lineset" nodeset="/lines/line">
-			<xforms:group>
+			<xforms:group id="xf-group-3">
 				<xforms:input ref="price" id="xf-input-1">
 					<xforms:label>Line Item</xforms:label>
 				</xforms:input>
@@ -52,7 +52,7 @@
 				</xforms:input>
 			</xforms:group>
 		</xforms:repeat>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 			<xforms:output value="index('lineset')" id="xf-output-1">
 				<xforms:label>Current index : </xforms:label>
 			</xforms:output>

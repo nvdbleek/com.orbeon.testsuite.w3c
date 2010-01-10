@@ -19,10 +19,10 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
   			<xforms:label class="title">10.5.a setindex element rules</xforms:label>
   		</xforms:group>
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   			  When you activate the Set index To -1 trigger you must see an xforms-scroll-first message 
   			  and the index must display the number 1. 
@@ -33,7 +33,7 @@
   			</xforms:label>
   		</xforms:group>
 		<xforms:repeat id="lineset" nodeset="/lines/line">
-			<xforms:group>
+			<xforms:group id="xf-group-3">
 				<xforms:input ref="price" id="xf-input-1">
 					<xforms:label>Price:</xforms:label>
 				</xforms:input>
@@ -41,12 +41,12 @@
 					<xforms:label>Name:</xforms:label>
 				</xforms:input>
 			</xforms:group>
-			<xforms:group>
+			<xforms:group id="xf-group-4">
 	  			<xforms:action ev:event="xforms-scroll-first" ev:observer="lineset">
 					<xforms:message level="modal">xforms-scroll-first</xforms:message>
 				</xforms:action>
 			</xforms:group>
-			<xforms:group>
+			<xforms:group id="xf-group-5">
 				<xforms:action ev:event="xforms-scroll-last" ev:observer="lineset">
 					<xforms:message level="modal">xforms-scroll-last</xforms:message>
 				</xforms:action>
@@ -71,7 +71,7 @@
 				<xforms:setindex repeat="lineset" index="2"/>
 			</xforms:action>
 		</xforms:trigger>
-		<xforms:group>
+		<xforms:group id="xf-group-6">
 		  <xforms:output value="index('lineset')" id="xf-output-1">
 			<xforms:label>index : </xforms:label>
 		  </xforms:output>

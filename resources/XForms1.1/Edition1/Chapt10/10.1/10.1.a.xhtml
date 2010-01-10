@@ -11,20 +11,20 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
 	  		<xforms:label class="title">10.1.a action element</xforms:label>
 	  	</xforms:group>
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   			  After you activate the Fire Test trigger the value in the Car Model output must be "BMW". 
   			</xforms:label>
   		</xforms:group>
-  		<xforms:group>
+  		<xforms:group id="xf-group-3">
 		  <xforms:input ref="car" id="xf-input-1">
 			<xforms:label>Car Model : </xforms:label>
 		  </xforms:input>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 		  <xforms:trigger id="xf-trigger-1">
   			<xforms:label>Fire Test</xforms:label>
   			<xforms:action ev:event="DOMActivate">

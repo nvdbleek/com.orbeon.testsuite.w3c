@@ -11,16 +11,16 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group>
+  	<xforms:group id="xf-group-1">
   		<xforms:label class="title">4.4.17.a xforms-out-of-range event</xforms:label>
   	</xforms:group>
-  	<xforms:group>
+  	<xforms:group id="xf-group-2">
   		<xforms:label>
   			You must see an xforms-out-of-range message only after you activate the 
   			Out Of Range trigger. 
   		</xforms:label>	
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 		<xforms:trigger id="xf-trigger-1">
 			<xforms:label>Out Of Range</xforms:label>
 			<xforms:setvalue ref="/car/quantity" ev:event="DOMActivate">-100</xforms:setvalue>

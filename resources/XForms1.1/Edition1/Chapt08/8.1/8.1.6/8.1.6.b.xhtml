@@ -15,16 +15,16 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
   	    <xforms:label class="title">8.1.6.b incremental attribute for upload element</xforms:label>
   	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  After activating the Upload control and selecting a file you must see an 
 		  xforms-value-changed message. 
   		</xforms:label>
   	</xforms:group>
-  	<xforms:group>
+  	<xforms:group id="xf-group-3">
   		<xforms:upload ref="/mail/picture/attach" incremental="true" id="xf-upload-1">
    			<xforms:label>Upload File:</xforms:label>
    			<xforms:filename ref="/mail/picture/name"/>

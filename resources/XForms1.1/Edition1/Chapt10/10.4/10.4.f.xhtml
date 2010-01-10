@@ -79,7 +79,7 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.4.f delete action and repeat element</xforms:label>
         </xforms:group>
         <xforms:repeat id="repeat_1" nodeset="instance('instance_1')/number_list"/>
@@ -89,32 +89,32 @@
         <xforms:repeat id="repeat_3" nodeset="instance('instance_3')/number_list">
             <xforms:repeat id="repeat_3_inner" nodeset="number"/>
         </xforms:repeat>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
           <xforms:label>
             You must see the correct values for each output control below. 
           </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
           <xforms:label>You must see the number 0 : </xforms:label>
             <xforms:output value="index('repeat_1')" id="xf-output-1">
             </xforms:output>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-4">
           <xforms:label>You must see the number 2 : </xforms:label>
             <xforms:output ref="instance('repeat_indices')/repeat_2" id="xf-output-2">
             </xforms:output>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-5">
           <xforms:label>You must see the number 1 : </xforms:label>
             <xforms:output ref="instance('repeat_indices')/repeat_2_inner" id="xf-output-3">
             </xforms:output>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-6">
           <xforms:label>You must see the number 2 : </xforms:label>
             <xforms:output ref="instance('repeat_indices')/repeat_3" id="xf-output-4">
             </xforms:output>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-7">
           <xforms:label>You must see the number 1 : </xforms:label>
             <xforms:output ref="instance('repeat_indices')/repeat_3_inner" id="xf-output-5">
             </xforms:output>

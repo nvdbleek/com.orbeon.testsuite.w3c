@@ -27,12 +27,12 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group>
+  	<xforms:group id="xf-group-1">
   		<xforms:label class="title">11.8.c header element with similar name elements</xforms:label>
   	</xforms:group>
   	<!-- This is the description label if we decide that by using a duplicate header name, the value of that
   	     duplicate header name should be added to the original header name. -->
-  	<xforms:group>
+  	<xforms:group id="xf-group-2">
   	  <xforms:label>
   	    When you activate the Submit Now submit control the page must be replaced by the form data. Among the 
   	    variables you must see one header named "myHeader". 
@@ -53,7 +53,7 @@
   	    The fifth myHeader must have the value &quot;myValue4&quot;.
   	  </xforms:label>
   	</xforms:group> -->
-  	<xforms:group>
+  	<xforms:group id="xf-group-3">
   	  <xforms:submit submission="sub1" id="xf-submit-1">
   	    <xforms:label>Submit Now</xforms:label>
   	  </xforms:submit>

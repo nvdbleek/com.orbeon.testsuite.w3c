@@ -28,10 +28,10 @@
           <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
      </xhtml:head>
      <xhtml:body>
-          <xforms:group>
+          <xforms:group id="xf-group-1">
                <xforms:label class="title">11.4.b accessing context information for xforms-submit-done event</xforms:label>
           </xforms:group>
-          <xforms:group>
+          <xforms:group id="xf-group-2">
                <xforms:label>
                  When you activate the Submit Now submission control the instance data of the form will be 
                  submitted but the page will not be replaced by the form data. If the submission is successful, 
@@ -39,28 +39,28 @@
                  header names or values returned they will be displayed in the Response Headers output. 
 			</xforms:label>
           </xforms:group>
-          <xforms:group>
+          <xforms:group id="xf-group-3">
                <xforms:label/>
                <xforms:submit submission="sub_1" id="xf-submit-1">
                     <xforms:label>Submit Now</xforms:label>
                </xforms:submit>
           </xforms:group>
-          <xforms:group>
+          <xforms:group id="xf-group-4">
                <xforms:label/>
                <xforms:output ref="instance('event_catcher')/return_code" id="xf-output-1">
                     <xforms:label>Response Status Code : </xforms:label>
                </xforms:output>
           </xforms:group>
-          <xforms:group>
+          <xforms:group id="xf-group-5">
                <xforms:label>Response Headers : </xforms:label>
                <xforms:repeat nodeset="instance('event_catcher')/response_headers/header">
-                    <xforms:group>
+                    <xforms:group id="xf-group-6">
                          <xforms:label/>
                          <xforms:output ref="./name" id="xf-output-2">
                               <xforms:label>Header Name : </xforms:label>
                          </xforms:output>
                     </xforms:group>
-                    <xforms:group>
+                    <xforms:group id="xf-group-7">
                          <xforms:label/>
                          <xforms:output ref="./value" id="xf-output-3">
                               <xforms:label>Header Contents : </xforms:label>

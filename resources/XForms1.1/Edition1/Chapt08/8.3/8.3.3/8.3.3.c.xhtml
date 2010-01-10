@@ -14,10 +14,10 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
       <xforms:label class="title">8.3.3.c value element with inline content</xforms:label>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-2">
        <xforms:label>
          When you pick a value from the Select A Color select1 control you must see the same value as the 
          output for the Your Color output control. 
@@ -38,7 +38,7 @@
           <xforms:value>green</xforms:value>
         </xforms:item>
       </xforms:select1>
-    <xforms:group>
+    <xforms:group id="xf-group-3">
       <xforms:output ref="/colors/mycolor" id="xf-output-1">
       	<xforms:label>Your Color : </xforms:label>
       </xforms:output>

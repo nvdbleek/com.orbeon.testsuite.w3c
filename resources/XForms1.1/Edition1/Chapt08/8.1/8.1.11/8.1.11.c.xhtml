@@ -11,10 +11,10 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
     	<xforms:label class="title">8.1.11.c appearance attribute of select1 element</xforms:label>
     </xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  You must see three select1 controls each with a different value for appearance (Full, Compact, or Minimal). 
 		  When you make a selection the first letter of the flavor must be displayed in the Selected Flavor 
@@ -24,7 +24,7 @@
     	<xforms:output ref="/icecream/flavor" id="xf-output-1">
     		<xforms:label>Selected Flavor : </xforms:label>
     	</xforms:output>
-    <xforms:group>
+    <xforms:group id="xf-group-3">
 		<xforms:select1 ref="/icecream/flavor" appearance="full" id="xf-select1-1">
 			<xforms:label>Select A Flavor(Full):</xforms:label>
 			<xforms:item>
@@ -41,7 +41,7 @@
 			</xforms:item>
 		</xforms:select1>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-4">
 		<xforms:select1 ref="/icecream/flavor" appearance="compact" id="xf-select1-2">
 			<xforms:label>Select A Flavor(Compact):</xforms:label>
 			<xforms:item>
@@ -58,7 +58,7 @@
 			</xforms:item>
 		</xforms:select1>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-5">
 		<xforms:select1 ref="/icecream/flavor" appearance="minimal" id="xf-select1-3">
 			<xforms:label>Select A Flavor(Minimal):</xforms:label>
 			<xforms:item>

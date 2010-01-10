@@ -6,5 +6,5 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt07/7.8/7.8.3/7.8.3.c.xhtml"/>
    <assert-title title="7.8.3.c digest() function negative test with invalid NCNAME property"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-exception type="xforms-compute-exception"/>
 </test-case>

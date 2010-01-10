@@ -11,10 +11,10 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
     	<xforms:label class="title">8.3.2.a item element</xforms:label>
     </xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  You must see a select control and a select1 control on the page. 
 		  The select control must contain two 
@@ -25,7 +25,7 @@
 		  another item element labeled Special 6.
 		</xforms:label>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 		<xforms:select ref="/icecream/flavor" id="xf-select-1">
 			<xforms:label>select control:</xforms:label>
 			<xforms:item>
@@ -45,7 +45,7 @@
 			</xforms:choices>
 		</xforms:select>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-4">
 		<xforms:select1 ref="/icecream/flavor" id="xf-select1-1">
 			<xforms:label>select1 control:</xforms:label>
 			<xforms:item>

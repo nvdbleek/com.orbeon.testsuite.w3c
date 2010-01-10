@@ -36,10 +36,10 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
     	<xforms:label class="title">4.6.1.b1 event sequencing for input, secret, textarea controls - focus change with value change</xforms:label>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-2">
     	<xforms:label>
     		When you activate one of the 'Test' triggers below you must see a series of outputs for a "Value Change" 
     		sequence (xforms-recalculate, xforms-revalidate, and xforms-refresh). 
@@ -59,7 +59,7 @@
         <xforms:label>textarea </xforms:label>
     </xforms:textarea>
     
-    <xforms:group>
+    <xforms:group id="xf-group-3">
     	<xforms:trigger id="xf-trigger-1">
     		<xforms:label>Test input</xforms:label>
     		<xforms:setvalue ev:event="DOMActivate" ref="/car/make">Honda</xforms:setvalue>

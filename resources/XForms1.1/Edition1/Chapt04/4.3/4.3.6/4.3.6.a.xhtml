@@ -9,10 +9,10 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group>
+  	<xforms:group id="xf-group-1">
   		<xforms:label class="title">4.3.6.a xforms-previous and xforms-next</xforms:label>
   	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  When you activate the Previous trigger you must see an xforms-previous message. 
 		  When you activate the Next trigger you must see an xforms-next message. 
@@ -33,7 +33,7 @@
       	  </xforms:action>
 	</xforms:trigger>
 	
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 	    <xforms:input ref="/car" id="input1">
 			<xforms:label>First Input:</xforms:label>
 	      	<xforms:action ev:event="xforms-next">

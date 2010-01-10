@@ -67,10 +67,10 @@
     <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
       <xforms:label class="title">5.2.1.a built-in primitive types which allow empty content</xforms:label>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-2">
       <xforms:label>
 	When the form first displays you should not see any valid or invalid messages.  If an implementation fires validity events on 
     form initialization (incorrectly) then you may see XFORMS-INVALID output for all types (except string) below.  This is not
@@ -108,7 +108,7 @@
 	<xforms:label>Result: </xforms:label>
       </xforms:output>
     </xforms:repeat>
-    <xforms:group>
+    <xforms:group id="xf-group-3">
       <xforms:input ref="my_dateTime" id="xf-input-1">
 	<xforms:label>dateTime</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[1]">
@@ -119,7 +119,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-4">
       <xforms:input ref="my_time" id="xf-input-2">
 	<xforms:label>time</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[2]">
@@ -130,7 +130,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-5">
       <xforms:input ref="my_date" id="xf-input-3">
 	<xforms:label>date</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[3]">
@@ -141,7 +141,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-6">
       <xforms:input ref="my_gYearMonth" id="xf-input-4">
 	<xforms:label>gYearMonth</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[4]">
@@ -152,7 +152,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-7">
       <xforms:input ref="my_gYear" id="xf-input-5">
 	<xforms:label>gYear</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[5]">
@@ -163,7 +163,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-8">
       <xforms:input ref="my_gMonthDay" id="xf-input-6">
 	<xforms:label>gMonthDay</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[6]">
@@ -174,7 +174,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-9">
       <xforms:input ref="my_gDay" id="xf-input-7">
 	<xforms:label>gDay</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[7]">
@@ -185,7 +185,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-10">
       <xforms:input ref="my_gMonth" id="xf-input-8">
 	<xforms:label>gMonth</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[8]">
@@ -196,7 +196,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-11">
       <xforms:input ref="my_string" id="xf-input-9">
 	<xforms:label>string</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[9]">
@@ -207,7 +207,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-12">
       <xforms:input ref="my_boolean" id="xf-input-10">
 	<xforms:label>boolean</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[10]">
@@ -218,7 +218,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-13">
             <xforms:output ref="my_base64Binary" id="xf-output-2">
                 <xforms:label>base64Binary</xforms:label>
                 <xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[11]">
@@ -229,7 +229,7 @@
                 </xforms:setvalue>
             </xforms:output>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-14">
             <xforms:output ref="my_hexBinary" id="xf-output-3">
                 <xforms:label>hexBinary</xforms:label>
                 <xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[12]">
@@ -240,7 +240,7 @@
                 </xforms:setvalue>
             </xforms:output>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-15">
       <xforms:input ref="my_float" id="xf-input-11">
 	<xforms:label>float</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[13]">
@@ -251,7 +251,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-16">
       <xforms:input ref="my_decimal" id="xf-input-12">
 	<xforms:label>decimal</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[14]">
@@ -262,7 +262,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-17">
       <xforms:input ref="my_double" id="xf-input-13">
 	<xforms:label>double</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[15]">
@@ -273,7 +273,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-18">
       <xforms:input ref="my_anyURI" id="xf-input-14">
 	<xforms:label>anyURI</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[16]">
@@ -284,7 +284,7 @@
 	</xforms:setvalue>
       </xforms:input>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-19">
       <xforms:input ref="my_QName" id="xf-input-15">
 	<xforms:label>QName</xforms:label>
 	<xforms:setvalue ev:event="xforms-invalid" model="event_model" ref="/events/event[17]">

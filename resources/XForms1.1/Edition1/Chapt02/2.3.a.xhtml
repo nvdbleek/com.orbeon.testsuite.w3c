@@ -31,10 +31,10 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">2.3.a Example: Value Constraints</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
             <xforms:label>
                 You must see a select1 control with the values "Cash" and "Credit" as well as two 
                 input controls on the page. 
@@ -43,7 +43,7 @@
             	and the input controls must have become unavailable. 
             </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
             <xforms:label>
             	If you have selected Credit then you must not be able to submit the form until valid data is 
             	entered into both input controls. A valid entry for Credit Card Number is a positive number with 
@@ -51,7 +51,7 @@
             	is a date in the format of gYearMonth, which is yyyy-mm (ex. 1998-12 for December 1998).
             </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-4">
         	<xforms:label>
         		When you activate the Submit Now submit control this page must be replaced by the form data. 
 				You must see the value "cc" and the values you entered in the Credit 

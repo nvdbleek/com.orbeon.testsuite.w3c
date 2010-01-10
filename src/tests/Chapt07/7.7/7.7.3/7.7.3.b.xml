@@ -6,5 +6,6 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt07/7.7/7.7.3/7.7.3.b.xhtml"/>
    <assert-title title="7.7.3.b max() function negative test"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1" value="NaN"/>
+   <assert-control-value locator="xf-output-2" value="NaN"/>
 </test-case>

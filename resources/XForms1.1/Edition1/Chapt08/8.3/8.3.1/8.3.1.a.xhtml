@@ -11,17 +11,17 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
     	<xforms:label class="title">8.3.1.a choices element</xforms:label>
     </xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  You must see a select control and a select1 control on the page. The select control must contain three 
 		  choices elements labeled Group 1, Group 2, and Group 3. The select1 control must contain three choices 
 		  elements labeled Group 4, Group 5, Group 6. 
 		</xforms:label>
 	</xforms:group>
-<xforms:group>
+<xforms:group id="xf-group-3">
   <xforms:select ref="/icecream/flavor" id="xf-select-1">
     <xforms:label>select control:</xforms:label>
     <xforms:choices>
@@ -59,7 +59,7 @@
     </xforms:choices>
   </xforms:select>
 </xforms:group>
-<xforms:group>
+<xforms:group id="xf-group-4">
   <xforms:select1 ref="/icecream/flavor" id="xf-select1-1">
     <xforms:label>select1 control:</xforms:label>
     <xforms:choices>

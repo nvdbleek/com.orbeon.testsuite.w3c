@@ -6,5 +6,16 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt07/7.8/7.8.4/7.8.4.a.xhtml"/>
    <assert-title title="7.8.4.a hmac() function using sha1, md5, and sha256"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-present locator="xf-group-3" type="group"/>
+   <assert-control-not-present locator="xf-group-5" type="group"/>
+   <assert-control-present locator="xf-group-6" type="group"/>
+   <assert-control-not-present locator="xf-group-8" type="group"/>
+   <assert-control-present locator="xf-group-9" type="group"/>
+   <assert-control-not-present locator="xf-group-11" type="group"/>
+   <assert-control-present locator="xf-group-12" type="group"/>
+   <assert-control-not-present locator="xf-group-14" type="group"/>
+   <assert-control-present locator="xf-group-15" type="group"/>
+   <assert-control-not-present locator="xf-group-17" type="group"/>
+   <assert-control-present locator="xf-group-18" type="group"/>
+   <assert-control-not-present locator="xf-group-20" type="group"/>
 </test-case>

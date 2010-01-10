@@ -18,10 +18,10 @@
 	</xhtml:head>
 
 	<xhtml:body>
-		<xforms:group>
+		<xforms:group id="xf-group-1">
 			<xforms:label class="title">11.2.c xforms-submit with empty instance data</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 			  After you activate the Submit Now submit control you must see an xforms-submit-error 
 			  message and see the value "no-data" as output from the Error Name output control. 
@@ -33,7 +33,7 @@
 			</xforms:message>
 			<xforms:setvalue ref="instance('error_holder')/error_name" value="event('error-type')"/>
 		</xforms:action>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 			<xforms:output ref="instance('error_holder')/error_name" id="xf-output-1">
 				<xforms:label>Error Name : </xforms:label>
 			</xforms:output>

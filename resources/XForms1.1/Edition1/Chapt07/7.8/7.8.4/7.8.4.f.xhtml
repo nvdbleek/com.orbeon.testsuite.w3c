@@ -9,11 +9,11 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
       <xforms:label class="title">7.8.4.f hmac() function using default encoding base64</xforms:label>
     </xforms:group>
 
-    <xforms:group>
+    <xforms:group id="xf-group-2">
       <xforms:label>
 	You must see the group label "PASS" for all Tests. 
 	If the function does not return the correct value you will see a group label
@@ -22,11 +22,11 @@
     </xforms:group>
 
     <!-- default is 'base64' -->
-    <xforms:group> 
-      <xforms:group ref="self::node()[hmac('key', 'abc', 'SHA-256')='nBluMtwBdfhvSxy4konWYZ3mvuaZ5MN45oMJ7Zehpqs=']">
+    <xforms:group id="xf-group-3"> 
+      <xforms:group ref="self::node()[hmac('key', 'abc', 'SHA-256')='nBluMtwBdfhvSxy4konWYZ3mvuaZ5MN45oMJ7Zehpqs=']" id="xf-group-4">
 	<xforms:label>Test 1 PASS </xforms:label>
       </xforms:group>
-      <xforms:group ref="self::node()[hmac('key', 'abc', 'SHA-256')!='nBluMtwBdfhvSxy4konWYZ3mvuaZ5MN45oMJ7Zehpqs=']">
+      <xforms:group ref="self::node()[hmac('key', 'abc', 'SHA-256')!='nBluMtwBdfhvSxy4konWYZ3mvuaZ5MN45oMJ7Zehpqs=']" id="xf-group-5">
 	<xforms:label>Test 1 FAIL: </xforms:label>
 	<xforms:output value="hmac('key', 'abc', 'SHA-256')" id="xf-output-1">
 	  <xforms:label>Bad Value =</xforms:label>

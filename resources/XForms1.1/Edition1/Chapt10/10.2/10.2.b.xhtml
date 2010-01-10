@@ -16,10 +16,10 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
 	  		<xforms:label class="title">10.2.b setvalue element with expression and literal, element with neither</xforms:label>
 	  	</xforms:group>
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   			  You must see the value "white" in the Color output control and the value 
   			  "excellent" in the Condition output control. 
@@ -28,7 +28,7 @@
   			  empty. 
 			</xforms:label>
   		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 		<xforms:output ref="/car/originalColor" id="xf-output-1">
 			<xforms:label>Color : </xforms:label>
 		</xforms:output>
@@ -40,7 +40,7 @@
 			</xforms:action>
 		</xforms:trigger>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 		<xforms:output ref="/car/originalCondition" id="xf-output-2">
 			<xforms:label>Condition : </xforms:label>
 		</xforms:output>

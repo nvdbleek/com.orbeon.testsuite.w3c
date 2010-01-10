@@ -18,10 +18,10 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
   	   <xforms:label class="title">11.3.a xforms-submit-serialize event</xforms:label>
     </xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 	  <xforms:label>
 	    After you activate the Submit Now submit control you must see an xforms-submit-serialize 
 	    message. The page must also be replaced by the form data, where you must see the values "Toyota" 
@@ -31,7 +31,7 @@
 	<xforms:action ev:event="xforms-submit-serialize" ev:observer="submission">
        	<xforms:message level="modal">xforms-submit-serialize</xforms:message>
     </xforms:action>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 		<xforms:submit submission="submission" id="xf-submit-1">
 	      	<xforms:label>Submit Now</xforms:label>
       	</xforms:submit>

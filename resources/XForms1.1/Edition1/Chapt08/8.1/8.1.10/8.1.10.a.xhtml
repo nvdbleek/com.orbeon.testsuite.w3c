@@ -11,16 +11,16 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
     	<xforms:label class="title">8.1.10.a selection attribute of select element</xforms:label>
     </xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 			You must be able to both select a value from the Select A Flavor select control and enter your own value 
 			into it. 
 		</xforms:label>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 	<xforms:select ref="/icecream/flavor" selection="open" id="xf-select-1">
 	    <xforms:label>Select A Flavor:</xforms:label>
 		<xforms:item>
@@ -37,7 +37,7 @@
 		</xforms:item>
 	</xforms:select>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-4">
 		<xforms:output ref="/icecream/flavor" id="xf-output-1">
 			<xforms:label>Selected Flavor : </xforms:label>
 		</xforms:output>

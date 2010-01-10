@@ -38,15 +38,15 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.3.c insert action using origin attribute</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
 			<xforms:label>
 			  You must see the correct values for each output control below.
 			</xforms:label>
 		</xforms:group>
-        <xforms:group ref="instance('first')">
+        <xforms:group ref="instance('first')" id="xf-group-3">
             <xforms:label>You must not see a value : </xforms:label>
             <xforms:repeat nodeset="instance('second')/number_list[2]/number">
                 <xforms:output class="hlist" value="concat(. ,' ')" id="xf-output-1">
@@ -54,7 +54,7 @@
                 </xforms:output>
             </xforms:repeat>
         </xforms:group>
-        <xforms:group ref="instance('first')">
+        <xforms:group ref="instance('first')" id="xf-group-4">
             <xforms:label>You must see the numbers 1, 2, 3, 0, and 3 : </xforms:label>
             <xforms:repeat nodeset="number_list[1]/number">
                 <xforms:output class="hlist" value="concat(. ,' ')" id="xf-output-2">

@@ -29,18 +29,18 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.3.j insert action - copying an attribute</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
           <xforms:label>You must not see the value "4.00" : </xforms:label>
           <xforms:output ref="instance('first')/item_list/item[1]/@price" id="xf-output-1"/>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
           <xforms:label>You must not see the value "5.00" : </xforms:label>
           <xforms:output ref="instance('first')/item_list/item[2]/@price" id="xf-output-2"/>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-4">
           <xforms:label>You must not see the value "6.00" : </xforms:label>
           <xforms:output ref="instance('first')/item_list/item[3]/@price" id="xf-output-3"/>
         </xforms:group>

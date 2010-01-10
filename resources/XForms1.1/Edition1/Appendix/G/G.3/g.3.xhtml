@@ -13,23 +13,23 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group>
+  	<xforms:group id="xf-group-1">
   		<xforms:label class="title">g.3 namespace example (non-normative)</xforms:label>
   	</xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-2">
 		<xforms:label>You should see a list of cars, with the background a 'teal' color 
 		for the current item. Also, the repeat items should have a dashed box 
 		around them.
 		</xforms:label>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-3">
     	<xforms:repeat nodeset="/car/make">
     		<xforms:output ref="." id="xf-output-1">
     			<xforms:label/>
     		</xforms:output>
     	</xforms:repeat>
     </xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-4">
 		
 	</xforms:group>
   </xhtml:body>

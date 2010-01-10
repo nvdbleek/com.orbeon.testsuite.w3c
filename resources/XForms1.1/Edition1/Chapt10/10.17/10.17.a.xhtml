@@ -33,10 +33,10 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.17.a conditional execution of XForms actions</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
             <xforms:label>
               When you activate the Enter Correct Answers trigger you must see numbers appear as answers for the 
               equations as well as the value "correct" output beside them. 
@@ -44,7 +44,7 @@
               equations as well as the value "incorrect" output beside them. 
             </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
             <xforms:label/>
             <xforms:output ref="user_answers/one" id="xf-output-1">
                 <xforms:label class="hlist">2 x 1 = </xforms:label>
@@ -57,7 +57,7 @@
                 <xforms:label/>
             </xforms:output>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-4">
             <xforms:label/>
             <xforms:output ref="user_answers/two" id="xf-output-3">
                 <xforms:label class="hlist">2 x 2 = </xforms:label>
@@ -70,7 +70,7 @@
                 <xforms:label/>
             </xforms:output>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-5">
             <xforms:label/>
             <xforms:output ref="user_answers/three" id="xf-output-5">
                 <xforms:label class="hlist">2 x 3 = </xforms:label>
@@ -83,7 +83,7 @@
                 <xforms:label/>
             </xforms:output>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-6">
             <xforms:label/>
             <xforms:output ref="user_answers/four" id="xf-output-7">
                 <xforms:label class="hlist">2 x 4 = </xforms:label>
@@ -96,7 +96,7 @@
                 <xforms:label/>
             </xforms:output>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-7">
             <xforms:label/>
             <xforms:output ref="user_answers/five" id="xf-output-9">
                 <xforms:label class="hlist">2 x 5 = </xforms:label>
@@ -109,7 +109,7 @@
                 <xforms:label/>
             </xforms:output>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-8">
           <xforms:trigger id="xf-trigger-1">
             <xforms:label>Enter Correct Answers</xforms:label>
               <xforms:setvalue ev:event="DOMActivate" ref="/two_table/user_answers/one">2</xforms:setvalue>

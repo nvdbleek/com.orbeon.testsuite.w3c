@@ -15,16 +15,16 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
   	    <xforms:label class="title">8.1.6.d data binding restrictions for upload element</xforms:label>
   	</xforms:group>
-  	<xforms:group>
+  	<xforms:group id="xf-group-2">
   		<xforms:label>
     	  You must have seen an xforms-binding-exception message or a fatal error due to an 
 		  xforms-binding-exception. The upload must not work correctly.
   		</xforms:label>
   	</xforms:group>
-    <xforms:group>
+    <xforms:group id="xf-group-3">
        	<xforms:upload ref="/mail/picture/attachment" id="xf-upload-1">
        		<xforms:label>Upload that binds to node with invalid datatype</xforms:label>
        		<xforms:filename ref="/mail/picture/name"/>
@@ -33,12 +33,12 @@
        		<xforms:message ev:event="xforms-binding-exception" level="modal">xforms-binding-exception</xforms:message>
        	</xforms:upload>
     </xforms:group>   	
-    <xforms:group>
+    <xforms:group id="xf-group-4">
 		<xforms:output ref="/mail/picture/name" id="xf-output-1">
   			<xforms:label>Filename : </xforms:label>
   		</xforms:output>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-5">
 		<xforms:output ref="/mail/picture/type" id="xf-output-2">
 			<xforms:label>Media type : </xforms:label>
 		</xforms:output>

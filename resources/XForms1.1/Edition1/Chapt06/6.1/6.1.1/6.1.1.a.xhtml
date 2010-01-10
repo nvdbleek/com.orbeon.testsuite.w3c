@@ -13,10 +13,10 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-	    <xforms:group>
+	    <xforms:group id="xf-group-1">
 		    <xforms:label class="title">6.1.1.a type property</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 			  When you activate the Check Month trigger you must see a message that says "You have entered 
 			  a valid gMonth". 
@@ -24,7 +24,7 @@
 			  a valid gYear". 
 			</xforms:label>	
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 			<xforms:input bind="month_bind" id="xf-input-1">
 				<xforms:label>Month : </xforms:label>
 				<xforms:action ev:event="xforms-valid">

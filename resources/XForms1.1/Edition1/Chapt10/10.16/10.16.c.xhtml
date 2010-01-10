@@ -13,15 +13,15 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-  	<xforms:group>
+  	<xforms:group id="xf-group-1">
 	  	<xforms:label class="title">10.16.c message element interface created at run time</xforms:label>
   	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  When you activate the See Message trigger you must see a message that says "Hello, world!". 
 		</xforms:label>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 	  <xforms:trigger id="xf-trigger-1">
 	    <xforms:label>See Message</xforms:label>
 	  	<xforms:setvalue ev:event="DOMActivate" ref="message">world</xforms:setvalue>

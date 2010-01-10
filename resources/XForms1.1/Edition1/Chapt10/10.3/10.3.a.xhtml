@@ -28,7 +28,7 @@
 		</xforms:model>
 	</xhtml:head>	
 	<xhtml:body>
-		<xforms:group>
+		<xforms:group id="xf-group-1">
 			<xforms:label class="title">10.3.a insert action using context attribute</xforms:label>
 		</xforms:group>		
 		<xforms:action ev:observer="mod1" ev:event="xforms-ready">
@@ -40,12 +40,12 @@
 				<xforms:insert context="number_list[3]" nodeset="number"/>
 				<xforms:insert nodeset="number_list[3]/number"/>
 		</xforms:action>		
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 			  You must see the correct values for each output control below.
 			</xforms:label>
 		</xforms:group>
-		<xforms:group ref="instance('first')">
+		<xforms:group ref="instance('first')" id="xf-group-3">
 			<xforms:label>You must see the numbers 1, 2, 3, and 3 : </xforms:label>
 			<xforms:repeat nodeset="number_list[1]/number">
 				<xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-1">
@@ -53,7 +53,7 @@
 				</xforms:output>
 			</xforms:repeat>
 		</xforms:group>		
-		<xforms:group ref="instance('first')">
+		<xforms:group ref="instance('first')" id="xf-group-4">
 			<xforms:label>You must see the numbers 4, 5, 6, 6, 6, and 6 : </xforms:label>
 			<xforms:repeat nodeset="/number_lists/number_list[2]/number">
 				<xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-2">
@@ -61,7 +61,7 @@
 				</xforms:output>
 			</xforms:repeat>
 		</xforms:group>		
-		<xforms:group ref="instance('second')">
+		<xforms:group ref="instance('second')" id="xf-group-5">
 			<xforms:label>You must see the numbers 0 and 0 : </xforms:label>
 			<xforms:repeat nodeset="number_list/number">
 				<xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-3">
@@ -70,7 +70,7 @@
 			</xforms:repeat>
 		</xforms:group>		
 		<!-- empty nodeset with context attr, insert should terminate without effect-->
-		<xforms:group>
+		<xforms:group id="xf-group-6">
 			<xforms:label>You must not see a value : </xforms:label>
 			<xforms:repeat nodeset="/number_lists/number_list[3]/number">
 				<xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-4">
@@ -79,7 +79,7 @@
 			</xforms:repeat>
 		</xforms:group>		
 		<!-- empty nodeset without context attr, insert should terminate without effect -->
-		<xforms:group>
+		<xforms:group id="xf-group-7">
 			<xforms:label>You must not see a value : </xforms:label>
 			<xforms:repeat nodeset="/number_lists/number_list[3]/number">
 				<xforms:output class="hlist" value="concat(. , ' ')" id="xf-output-5">

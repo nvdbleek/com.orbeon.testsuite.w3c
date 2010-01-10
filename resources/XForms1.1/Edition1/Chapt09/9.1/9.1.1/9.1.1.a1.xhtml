@@ -20,21 +20,21 @@
     	</xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-  		<xforms:group>
+  		<xforms:group id="xf-group-1">
   			<xforms:label class="title">9.1.1.a1 precedence of group element</xforms:label>
   		</xforms:group>	
-  		<xforms:group>
+  		<xforms:group id="xf-group-2">
   			<xforms:label>
   				You must not be able to see the Street Name and City input controls or they must 
   				be somehow unavailable to you. 
 	  		</xforms:label>	
   		</xforms:group>
-		<xforms:group bind="group1">
+		<xforms:group bind="group1" id="xf-group-3">
 			<xforms:input bind="input1" id="xf-input-1">
  				<xforms:label>Street Name</xforms:label>
  	     	</xforms:input>
 		</xforms:group>
- 		<xforms:group bind="group2">
+ 		<xforms:group bind="group2" id="xf-group-4">
 			<xforms:input bind="input2" id="xf-input-2">
  				<xforms:label>City</xforms:label>
  	     	</xforms:input> 

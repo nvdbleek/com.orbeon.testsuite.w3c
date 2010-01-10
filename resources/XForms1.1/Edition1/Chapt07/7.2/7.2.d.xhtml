@@ -26,12 +26,12 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-		<xforms:group>
+		<xforms:group id="xf-group-1">
 			<xforms:label class="title">
 				7.2.d context node for the computed expression is the node currently being processed
 			</xforms:label>
 		</xforms:group>	
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 			<!-- 
 				Rule 4: Create an instance with multiple Line elements each
@@ -45,7 +45,7 @@
 		</xforms:group>
 		
 		<xforms:repeat xmlns:test="http://example.org" nodeset="test:Line">
-			<xforms:group>
+			<xforms:group id="xf-group-3">
 				<xforms:output ref="test:Subtotal" id="xf-output-1">
 					<xforms:label>Subtotal : </xforms:label>
 				</xforms:output>

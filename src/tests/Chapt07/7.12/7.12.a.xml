@@ -6,5 +6,5 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../test-case.xsd">
    <open href="Chapt07/7.12/7.12.a.xhtml"/>
    <assert-title title="7.12.a invalid functions attribute in model element"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-exception type="xforms-compute-exception"/>
 </test-case>

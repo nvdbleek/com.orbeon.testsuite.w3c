@@ -12,23 +12,23 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
   	    <xforms:label class="title">8.1.6.1.a filename element</xforms:label>
   	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  After using the upload control to select a file you must see the file name displayed in the Filename output 
 		  control. 
 		</xforms:label>	
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
    		<xforms:upload ref="/mail/attachment" mediatype="image/*" id="xf-upload-1">
    			<xforms:label>Select an image to attach</xforms:label>
    			<xforms:filename ref="@filename"/>
    			<xforms:mediatype ref="@mediatype"/>
    		</xforms:upload>
    	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-4">
 		<xforms:output ref="/mail/attachment/@filename" id="xf-output-1">
 			<xforms:label>Filename : </xforms:label>
 		</xforms:output>

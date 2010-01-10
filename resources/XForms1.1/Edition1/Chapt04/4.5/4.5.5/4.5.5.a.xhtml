@@ -13,17 +13,17 @@
 	
 	<xhtml:body>
 	
-		<xforms:group>
+		<xforms:group id="xf-group-1">
 			<xforms:label class="title">4.5.5.a xforms-output-error event</xforms:label>
 		</xforms:group>
 		
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 				You must see an xforms-output-error message.
 			</xforms:label>
 		</xforms:group>
 		
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 			<xforms:output ref="data" mediatype="unknownMediatype" id="xf-output-1">
 			    <xforms:label>Output of unknownMediatype : </xforms:label>
 			    <xforms:message level="modal" ev:event="xforms-output-error">xforms-output-error</xforms:message>			

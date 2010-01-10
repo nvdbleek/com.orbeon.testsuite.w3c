@@ -11,21 +11,21 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
     	<xforms:label class="title">8.1.10.d value out of range of a select element</xforms:label>
     </xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  When you activate the Enter An Invalid Value trigger you must see an indication of an out-of-range 
 		  condition. This may take the form of an xforms-out-of-range message. 
 		</xforms:label>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 	<xforms:output ref="/icecream/flavor" id="xf-output-1">
 		<xforms:label>Selected Flavor : </xforms:label>
 	</xforms:output>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-4">
 	<xforms:select ref="/icecream/flavor" id="xf-select-1">
 		<xforms:label>Select a Flavor:</xforms:label>
 		<xforms:item>

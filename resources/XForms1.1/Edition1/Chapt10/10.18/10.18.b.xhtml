@@ -11,15 +11,15 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.18.b iteration of XForms actions using action element</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
             <xforms:label>
               After you activate the Run Test trigger the Number Of Nodes output must show the value "10". 
             </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
           <xforms:trigger id="xf-trigger-1">
             <xforms:label>Run Test</xforms:label>
             <xforms:action ev:event="DOMActivate" while="count(number) &lt; 10">

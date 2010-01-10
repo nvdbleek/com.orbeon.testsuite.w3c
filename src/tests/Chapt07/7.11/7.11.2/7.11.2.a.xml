@@ -6,5 +6,6 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt07/7.11/7.11.2/7.11.2.a.xhtml"/>
    <assert-title title="7.11.2.a event() function with inserted-nodes property"/>
-   <fail msg="Test not implemented yet!"/>
+   <click locator="xf-trigger-1"/>
+   <assert-control-value locator="xf-output-1" value="2006-01-01"/>
 </test-case>

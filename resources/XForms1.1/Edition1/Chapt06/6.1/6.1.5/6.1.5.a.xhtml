@@ -15,17 +15,17 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-		<xforms:group>
+		<xforms:group id="xf-group-1">
 			<xforms:label class="title">6.1.5.a calculate property</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 				You must see the output "Discount : 750" after you have activated the Enter 1500 trigger. 
 				You must see the output "Discount : 1000" after you have activated the Enter 2000 trigger. 
 			</xforms:label>
 		</xforms:group>
 		
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 			<xforms:trigger id="xf-trigger-1">
 				<xforms:label>Enter 250</xforms:label>
 				<xforms:setvalue ref="/order/item/amount" ev:event="DOMActivate">250</xforms:setvalue>

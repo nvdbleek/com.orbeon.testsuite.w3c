@@ -36,18 +36,18 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.4.c delete action using context attribute terminates with no effect</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
           <xforms:label>You must see the number 3 : </xforms:label>
             <xforms:output value="count(number_list)" id="xf-output-1"/>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
           <xforms:label>You must see the number 6 : </xforms:label>
             <xforms:output value="count(number_list[1]/number)" id="xf-output-2"/>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-4">
           <xforms:label>You must see the number 3 : </xforms:label>
             <xforms:output value="count(number_list[2]/number)" id="xf-output-3"/>
         </xforms:group>

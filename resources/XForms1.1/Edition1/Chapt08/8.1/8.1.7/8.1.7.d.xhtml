@@ -12,16 +12,16 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
   	    <xforms:label class="title">8.1.7.d incremental attribute of range element</xforms:label>
   	</xforms:group>
-  	<xforms:group>
+  	<xforms:group id="xf-group-2">
   		<xforms:label>
   			You must see a range control that displays an xforms-value-changed message 
   			when you change its value.
   		</xforms:label>
   	</xforms:group>
-  	<xforms:group>
+  	<xforms:group id="xf-group-3">
   		<xforms:range ref="/car/age" start="0" end="10" incremental="true" id="xf-range-1">
   			<xforms:label>Car age</xforms:label>
  	       	<xforms:action ev:event="xforms-value-changed">
@@ -29,7 +29,7 @@
  	       	</xforms:action>
   		</xforms:range>
 	</xforms:group>
-  	<xforms:group>
+  	<xforms:group id="xf-group-4">
 		<xforms:output ref="/car/age" id="xf-output-1">
 			<xforms:label>Car age : </xforms:label>
 		</xforms:output>

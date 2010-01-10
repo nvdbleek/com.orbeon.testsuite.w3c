@@ -69,17 +69,17 @@
 	
 	<xsl:template match="xftr:assert-control-present">
 		<tr>
-            <td>waitForXFormsInputElementPresent</td>
+            <td>waitForXFormsControlElementPresent</td>
             <td><xsl:value-of select="@locator"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td><xsl:value-of select="@type"/></td>
          </tr>
 	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-not-present">
 		<tr>
-            <td>waitForXFormsInputElementNotPresent</td>
+            <td>waitForXFormsControlElementNotPresent</td>
             <td><xsl:value-of select="@locator"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td><xsl:value-of select="@type"/></td>
          </tr>
 	</xsl:template>
 

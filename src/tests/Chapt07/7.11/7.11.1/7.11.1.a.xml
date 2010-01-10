@@ -6,5 +6,8 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt07/7.11/7.11.1/7.11.1.a.xhtml"/>
    <assert-title title="7.11.1.a choose() function"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1·1" value="Garfield"/>
+   <assert-control-value locator="xf-output-1·2" value="Heathcliff"/>
+   <assert-control-value locator="xf-output-1·3" value="Felix"/>
+   <assert-control-value locator="xf-output-1·4" value="Tom"/>
 </test-case>

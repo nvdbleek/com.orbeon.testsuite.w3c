@@ -11,17 +11,17 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
     	<xforms:label class="title">8.1.10.b incremental attribute of select element</xforms:label>
     </xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  You must see an xforms-value-changed message whenever you change the selection in the Select A Flavor 
 		  select control. When you make a selection a list of the first letter of the flavor(s) must be displayed in the Selected Flavor 
 		  output control. Each letter is separated by a space in the list. 
 		</xforms:label>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-3">
 	<xforms:select ref="/icecream/flavor" incremental="true" id="xf-select-1">
 		<xforms:label>Select A Flavor:</xforms:label>
 		<xforms:item>
@@ -41,7 +41,7 @@
      	</xforms:action>
 	</xforms:select>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-4">
 	<xforms:output ref="/icecream/flavor" id="xf-output-1">
 		<xforms:label>Selected Flavor : </xforms:label>
 	</xforms:output>

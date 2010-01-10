@@ -26,41 +26,41 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">3.2.3.b single-node binding - model attribute</xforms:label>
         </xforms:group>
         
-        <xforms:group>
+        <xforms:group id="xf-group-2">
         	<xforms:label>
         		<!-- model attribute points to a valid model;  -->
         		You must see the value "Mercedes": 
         	</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
             <xforms:output ref="make" model="car1" id="xf-output-1">
                 <xforms:label/>
             </xforms:output>
         </xforms:group>
         
-        <xforms:group>
+        <xforms:group id="xf-group-4">
         	<xforms:label>
         		<!-- model attribute points to a valid model;  -->
         		You must see the value "Acura": 
         	</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-5">
             <xforms:output ref="make" model="car2" id="xf-output-2">
                 <xforms:label/>
             </xforms:output>
         </xforms:group>
         
-        <xforms:group>
+        <xforms:group id="xf-group-6">
         	<xforms:label>
         		<!-- model has no meaning when bind attribute is present;  -->
         		For this output, a bind is overriding the model. You must see the value "Acura": 
         	</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-7">
             <xforms:output ref="year" model="car2" bind="bind_002" id="xf-output-3">
                 <xforms:label/>
             </xforms:output>

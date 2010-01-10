@@ -6,5 +6,7 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt07/7.9/7.9.8/7.9.8.a.xhtml"/>
    <assert-title title="7.9.8.a adjust-dateTime-to-timezone() function"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1" value="2007-10-07T02:22:00-07:00"/>
+   <assert-control-value locator="xf-output-2" value="2007-10-02T14:26:43-07:00"/>
+   <assert-control-value locator="xf-output-3" value=""/>
 </test-case>

@@ -18,21 +18,21 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-	    <xforms:group>
+	    <xforms:group id="xf-group-1">
 		    <xforms:label class="title">11.10.b submission response with the target data node receiving text</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 		    <xforms:label>
 			  You must see the value "Thomas" for the Car Owner output control. When you activate the 
 			  Replace Instance submit control the value must change to "Janel". 
 		    </xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 			<xforms:output ref="instance('instance2')/carOwner" id="xf-output-1">
 				<xforms:label>Car Owner : </xforms:label>
 			</xforms:output>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 			<xforms:submit submission="submit01" id="xf-submit-1">
 				<xforms:label>Replace Instance</xforms:label>
 			</xforms:submit>

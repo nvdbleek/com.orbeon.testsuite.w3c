@@ -20,23 +20,23 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-	    <xforms:group>
+	    <xforms:group id="xf-group-1">
 		    <xforms:label class="title">
 			7.10.1.a instance() function
 		    </xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 			  You must see the value "John" for the First Name output. 
 			  You must see the value "George" for the Second Name output. 
 			</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 		  <xforms:output ref="instance('orderform')/shipTo/firstName" id="xf-output-1">
 			<xforms:label>First Name : </xforms:label>
 		  </xforms:output>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 		  <xforms:output ref="instance()/shipTo/firstName" id="xf-output-2">
 			<xforms:label>Second Name : </xforms:label>
 		  </xforms:output>

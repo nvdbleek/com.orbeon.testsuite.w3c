@@ -19,15 +19,15 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.4.g delete action with xforms-delete event</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
             <xforms:label>
               You must have seen an xforms-delete message and you must not see the numbers 1, 2 and 3 below.
             </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
             <xforms:repeat nodeset="number_list/number">
                 <xforms:output value="concat(., ' ')" id="xf-output-1">
                     <xforms:label/>

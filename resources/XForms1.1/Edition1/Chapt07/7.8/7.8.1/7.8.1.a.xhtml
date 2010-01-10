@@ -12,23 +12,23 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
   	    <xforms:label class="title">
   		7.8.1.a if() function
   	    </xforms:label>
   	</xforms:group>
-  	<xforms:group>
+  	<xforms:group id="xf-group-2">
   		<xforms:label>
   			You must see the value "Yes" for the Adult output and the value "Unsafe" for the 
   			Safety output. 
   		</xforms:label>
   	</xforms:group>
-  	<xforms:group>
+  	<xforms:group id="xf-group-3">
 		<xforms:output value="if(ex:age &gt; 17, 'Yes', 'No')" id="xf-output-1">
    		    <xforms:label>Adult : </xforms:label>
 		</xforms:output>
 	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-4">
 		<xforms:output value="if(ex:points &lt; 6, 'Safe', 'Unsafe')" id="xf-output-2">
 			<xforms:label>Safety : </xforms:label> 
 		</xforms:output>

@@ -9,17 +9,17 @@
         </xforms:model>
     </xhtml:head>
     <xhtml:body>
-        <xforms:group>
+        <xforms:group id="xf-group-1">
             <xforms:label class="title">10.17.b conditional execution of XForms actions using action element</xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-2">
             <xforms:label>
               When you activate the Positive Test trigger you must see the message "This is the positive test". 
               When you activate the Negative Test trigger you must NOT see the message "This is the negative 
               test". 
             </xforms:label>
         </xforms:group>
-        <xforms:group>
+        <xforms:group id="xf-group-3">
             <xforms:trigger id="xf-trigger-1">
               <xforms:label>Positive Test</xforms:label>
               <xforms:action ev:event="DOMActivate" if="/root='beer'">

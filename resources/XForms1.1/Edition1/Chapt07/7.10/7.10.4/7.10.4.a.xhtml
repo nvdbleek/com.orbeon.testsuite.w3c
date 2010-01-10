@@ -37,12 +37,12 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-	    <xforms:group>
+	    <xforms:group id="xf-group-1">
 		    <xforms:label class="title">
 			7.10.4.a context() function
 		    </xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 			  You must initially see the value "Unknown" for the Bad Fruit picked output and 
 			  four triggers labeled "apple", "orange", "mandarine", and "tomato".
@@ -51,12 +51,12 @@
 
 			</xforms:label>
 		</xforms:group>
-		<xforms:group>              
+		<xforms:group id="xf-group-3">              
             <xforms:output ref="instance('fruitInstance')/bad-fruit" id="xf-output-1">
             	<xforms:label>Bad Fruit picked : </xforms:label>
             </xforms:output>
        </xforms:group> 
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 		    <xforms:repeat nodeset="instance('fruitInstance')/fruit" id="fruits-repeat">
            		<xforms:trigger id="xf-trigger-1">
           			<xforms:label ref="."/>

@@ -22,15 +22,15 @@
         <xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css" type="text/css"/>
 	</xhtml:head>	
 	<xhtml:body>
-		<xforms:group>
+		<xforms:group id="xf-group-1">
 			<xforms:label class="title">7.11.2.a event() function with inserted-nodes property</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 			<xforms:label>
 			  After you activate the Insert A Date trigger you must see the correct value as output. 
 			</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 			<xforms:trigger id="xf-trigger-1">
 				<xforms:label>Insert A Date</xforms:label>
 				<xforms:action ev:event="DOMActivate">
@@ -38,7 +38,7 @@
 				</xforms:action>
 			</xforms:trigger>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
             <xforms:label>You must see the XPath expression "/Dates/date" or "2006-01-01" : </xforms:label>
 			<xforms:output model="description_catcher" ref="insert_description" id="xf-output-1">
 				<xforms:label/>

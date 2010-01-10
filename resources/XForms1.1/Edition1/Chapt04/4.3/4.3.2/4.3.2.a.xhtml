@@ -19,10 +19,10 @@
 	    </xforms:model>
   	</xhtml:head>
   	<xhtml:body>
-   		<xforms:group>
+   		<xforms:group id="xf-group-1">
    			<xforms:label class="title">4.3.2.a xforms-recalculate event</xforms:label>
    		</xforms:group>
-    	<xforms:group>
+    	<xforms:group id="xf-group-2">
     		<xforms:label>
 				When you activate the Recalculate trigger you must see an xforms-recalculate message. 
 			</xforms:label>	
@@ -36,7 +36,7 @@
       	</xforms:trigger>
     	
     	<xforms:repeat id="repeat_002" nodeset="/carColors/color" startindex="1">
-    		<xforms:group>
+    		<xforms:group id="xf-group-3">
     		</xforms:group>
     	</xforms:repeat>
       	<xforms:repeat id="repeat_001" nodeset="/carColors/color" startindex="1">

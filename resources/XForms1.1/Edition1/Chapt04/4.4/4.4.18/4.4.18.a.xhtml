@@ -14,11 +14,11 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
     	<xforms:label class="title">4.4.18.a xforms-scroll-first and xforms-scroll-last events</xforms:label>
     </xforms:group>
     
-    <xforms:group>
+    <xforms:group id="xf-group-2">
     	<xforms:label>
     		You must see an xforms-scroll-first message when you activate the Scroll First trigger. 
     		You must see an xforms-scroll-last message when you activate the Scroll Last trigger. 
@@ -42,7 +42,7 @@
     </xforms:trigger>
     
     <xforms:repeat id="repeat_001" nodeset="/carColors/color" startindex="1">
-    	<xforms:group>
+    	<xforms:group id="xf-group-3">
     		<xforms:label/>
 	    </xforms:group>
     </xforms:repeat>

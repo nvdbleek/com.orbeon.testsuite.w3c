@@ -22,10 +22,10 @@
 		</xforms:model>
 	</xhtml:head>
 	<xhtml:body>
-	    <xforms:group>
+	    <xforms:group id="xf-group-1">
 		    <xforms:label class="title">11.10.c submission response with the target data node receiving instance</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-2">
 		    <xforms:label>
 			  You must see the values "Henry", "Acura", and "white" in the First 
 			  Instance. You must see the values "Thomas", "Toyota", and "silver" in 
@@ -34,43 +34,43 @@
 			  "Saturn", and "red". 
 		    </xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-3">
 		    <xforms:label class="subtitle">First Instance</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-4">
 			<xforms:output ref="/car/carOwner" id="xf-output-1">
 				<xforms:label>Car Owner : </xforms:label>
 			</xforms:output>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-5">
 			<xforms:output ref="/car/make" id="xf-output-2">
 				<xforms:label>Car Make : </xforms:label>
 			</xforms:output>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-6">
 			<xforms:output ref="/car/color" id="xf-output-3">
 				<xforms:label>Car Color : </xforms:label>
 			</xforms:output>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-7">
 		    <xforms:label class="subtitle">Second Instance</xforms:label>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-8">
 			<xforms:output ref="instance('instance2')/carOwner" id="xf-output-4">
 				<xforms:label>Car Owner : </xforms:label>
 			</xforms:output>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-9">
 			<xforms:output ref="instance('instance2')/make" id="xf-output-5">
 				<xforms:label>Car Make : </xforms:label>
 			</xforms:output>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-10">
 			<xforms:output ref="instance('instance2')/color" id="xf-output-6">
 				<xforms:label>Car Color : </xforms:label>
 			</xforms:output>
 		</xforms:group>
-		<xforms:group>
+		<xforms:group id="xf-group-11">
 			<xforms:submit submission="submit01" id="xf-submit-1">
 				<xforms:label>Replace Instance</xforms:label>
 			</xforms:submit>

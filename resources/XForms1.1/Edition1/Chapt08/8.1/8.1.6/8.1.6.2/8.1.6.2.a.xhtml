@@ -11,10 +11,10 @@
     </xforms:model>
   </xhtml:head>
   <xhtml:body>
-    <xforms:group>
+    <xforms:group id="xf-group-1">
   	    <xforms:label class="title">8.1.6.2.a mediatype element</xforms:label>
   	</xforms:group>
-	<xforms:group>
+	<xforms:group id="xf-group-2">
 		<xforms:label>
 		  After using the upload control to select a file you must see the file type displayed in the Mediatype output 
 		  control. 
@@ -25,7 +25,7 @@
    		<xforms:filename ref="@filename"/>
    		<xforms:mediatype ref="@type"/>
    	</xforms:upload>
-   	<xforms:group>
+   	<xforms:group id="xf-group-3">
 		<xforms:output ref="/mail/attachment/@type" id="xf-output-1">
 			<xforms:label>Mediatype : </xforms:label>
 		</xforms:output>
