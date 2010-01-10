@@ -3,7 +3,7 @@
 	version="2.0" xmlns:xftr="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner"
 	>
 
-	<xsl:output method="html" indent="yes" />
+	<xsl:output method="html" indent="yes" encoding="ISO-8859-1"/>
 	
 	<xsl:variable name="processor-wait">1000</xsl:variable>
 	<xsl:variable name="echo-service-wait">2000</xsl:variable>
@@ -16,6 +16,11 @@
 			    <tr>
 			      <td rowspan="1" colspan="3"><xsl:value-of select="xftr:assert-title[1]/@title"/></td>
 			    </tr>
+			    <tr>
+			        <td>setTimeout</td>
+			        <td><xsl:value-of select="max(($processor-wait, $echo-service-wait))"/></td>
+			        <td></td>
+				</tr> 
 			    <xsl:apply-templates />
 			  </tbody>
 			</table>
@@ -126,6 +131,14 @@
             <td>xFormsSelectOption</td>
             <td><xsl:value-of select="@locator"/></td>
             <td><xsl:value-of select="@option"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-control-value">
+		<tr>
+            <td>waitForXFormsControlValue</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="@value"/></td>
          </tr>		
 	</xsl:template>
 
