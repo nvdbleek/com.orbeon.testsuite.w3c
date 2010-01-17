@@ -6,5 +6,6 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt03/3.2/3.2.2/3.2.2.a.xhtml"/>
    <assert-title title="3.2.2.a src attribute"/>
-   <fail msg="Test not implemented yet!"/>
+   <!-- FIXME check label of output -->
+   <assert-control-value locator="xf-output-1" value="red"/>
 </test-case>

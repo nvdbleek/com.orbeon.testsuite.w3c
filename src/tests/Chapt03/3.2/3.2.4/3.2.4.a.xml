@@ -6,5 +6,5 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt03/3.2/3.2.4/3.2.4.a.xhtml"/>
    <assert-title title="3.2.4.a node-set binding - nodeset attribute and bind attribute override"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-selection-options locator="xf-select-1" options="Audi,BMW,Mercedes,Porsche,Volkswagen"/>
 </test-case>

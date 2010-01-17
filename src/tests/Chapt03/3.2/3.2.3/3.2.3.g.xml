@@ -6,5 +6,5 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt03/3.2/3.2.3/3.2.3.g.xhtml"/>
    <assert-title title="3.2.3.g first node rule"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1" value="Mercedes"/>
 </test-case>

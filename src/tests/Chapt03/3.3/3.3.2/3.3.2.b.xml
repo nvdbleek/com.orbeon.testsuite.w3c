@@ -6,5 +6,7 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt03/3.3/3.3.2/3.3.2.b.xhtml"/>
    <assert-title title="3.3.2.b instance with inline data"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1" value="Wendy"/>
+   <assert-control-value locator="xf-output-2" value="20"/>
+   <assert-control-value locator="xf-output-3" value="College"/>
 </test-case>

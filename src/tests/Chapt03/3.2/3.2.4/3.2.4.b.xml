@@ -6,5 +6,10 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt03/3.2/3.2.4/3.2.4.b.xhtml"/>
    <assert-title title="3.2.4.b node-set binding - model attribute of itemset element"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-selection-options locator="xf-select-1" options="Audi,BMW,Mercedes,Porsche,Volkswagen"/>
+   <select-option locator="xf-select-1" option="Porsche"/>
+   <!-- FIXME select a second option -->
+   <click locator="xf-submit-1"/>
+   <wait-for-page-to-load/>
+   <assert-text-present text="Porsche"/>
 </test-case>
