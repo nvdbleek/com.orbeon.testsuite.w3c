@@ -108,6 +108,19 @@
 			      <xs:attribute name="value" use="required"/>
 			    </xs:complexType>
 			  </xs:element>
+			  <xs:element name="assert-control-value-contains">
+			    <xs:complexType>
+			      <xs:attribute name="locator" use="required"/>
+			      <xs:attribute name="value" use="required"/>
+			    </xs:complexType>
+			  </xs:element>
+			  <xs:element name="assert-control-value-in-range">
+			    <xs:complexType>
+			      <xs:attribute name="locator" use="required"/>
+			      <xs:attribute name="start" use="required" type="xs:decimal"/>
+			      <xs:attribute name="end" use="required" type="xs:decimal"/>
+			    </xs:complexType>
+			  </xs:element>
 			  <xs:element name="assert-exception">
 			    <xs:complexType>
 			      <xs:attribute name="type" use="required">
@@ -120,6 +133,11 @@
 			          </xs:restriction>
 			        </xs:simpleType>
 			      </xs:attribute>
+			    </xs:complexType>
+			  </xs:element>
+			  <xs:element name="assert-message">
+			    <xs:complexType>
+			      <xs:attribute name="message" use="required"/>
 			    </xs:complexType>
 			  </xs:element>
 			  <xs:element name="type-input">

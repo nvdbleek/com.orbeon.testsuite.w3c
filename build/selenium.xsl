@@ -154,6 +154,22 @@
             <td><xsl:value-of select="@value"/></td>
          </tr>		
 	</xsl:template>
+	
+	<xsl:template match="xftr:assert-control-value-contains">
+		<tr>
+            <td>waitForCondition</td>
+            <td>selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>").indexOf("<xsl:value-of select="@value"/>") != -1</td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-control-value-in-range">
+		<tr>
+            <td>waitForCondition</td>
+            <td>(selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") &gt;= <xsl:value-of select="@start"/>) &amp;&amp; (selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") &lt;= <xsl:value-of select="@end"/>)</td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
 
 	<xsl:template match="xftr:type-input">
 		<tr>
@@ -182,14 +198,6 @@
 	<xsl:template match="xftr:assert-text-present">
 		<tr>
             <td>assertTextPresent</td>
-            <td><xsl:value-of select="@text"/></td>
-            <td></td>
-         </tr>		
-	</xsl:template>
-
-	<xsl:template match="xftr:assert-text-not-present">
-		<tr>
-            <td>assertTextNotPresent</td>
             <td><xsl:value-of select="@text"/></td>
             <td></td>
          </tr>		

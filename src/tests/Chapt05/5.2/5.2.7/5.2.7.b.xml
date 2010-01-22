@@ -6,5 +6,6 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt05/5.2/5.2.7/5.2.7.b.xhtml"/>
    <assert-title title="5.2.7.b card-number datatype - credit card example"/>
-   <fail msg="Test not implemented yet!"/>
+   <click locator="xf-trigger-1"/>
+   <assert-message message="You entered a valid card-number"/>
 </test-case>

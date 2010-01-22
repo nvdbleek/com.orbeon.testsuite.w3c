@@ -4,7 +4,6 @@ Selenium.prototype.getXFormsControlValue = function(locator) {
     return win.ORBEON.xforms.Document.getValue(locator);
 };
 
-
 Selenium.prototype.isXFormsControlInvalid = function(locator) {
 	return selenium.isClassPresentOnElement(locator, "xforms-invalid");
 };
@@ -42,6 +41,16 @@ Selenium.prototype.isXFormsException = function(exception) {
 	return selenium.getTitle() === "Orbeon Forms - An Error has Occurred";
 };
 
+Selenium.prototype.getEval = function(expr) {
+	try 
+	{
+    	return eval(expr);
+    } 
+	catch (e) 
+	{
+    	throw new SeleniumError(e.message);
+    }
+};
 
 function containingClassSelector(className) {
     return "contains(concat(' ',normalize-space(@class),' '),' " + className + " ')";

@@ -16,6 +16,7 @@ You can find the src of the tests in src/tests (see next session for an example)
 Currently the following chapters have tests:
 * Chapter 2
 * Chapter 3
+* Chapter 5
 * Chapter 7
 
 4. HOW IT WORKS

@@ -6,5 +6,5 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt05/5.2/5.2.3/5.2.3.a.xhtml"/>
    <assert-title title="5.2.3.a listItems datatype"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-message message="You entered a valid listItems"/>
 </test-case>

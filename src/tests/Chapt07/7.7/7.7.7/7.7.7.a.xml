@@ -6,5 +6,7 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt07/7.7/7.7.7/7.7.7.a.xhtml"/>
    <assert-title title="7.7.7.a random() function"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value-in-range locator="xf-output-1" start="0" end="1" />
+   <assert-control-value-in-range locator="xf-output-2" start="0" end="1" />
+   <assert-control-value-in-range locator="xf-output-3" start="0" end="1" />
 </test-case>

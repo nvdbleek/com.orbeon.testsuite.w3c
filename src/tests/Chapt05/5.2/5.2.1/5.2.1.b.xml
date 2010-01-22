@@ -6,5 +6,78 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt05/5.2/5.2.1/5.2.1.b.xhtml"/>
    <assert-title title="5.2.1.b XForms datatypes to allow empty content - built-in derived types"/>
-   <fail msg="Test not implemented yet!"/>
+   
+   <assert-control-value locator="xf-output-1·1" value=""/>
+   <assert-control-value locator="xf-output-1·2" value=""/>
+   <assert-control-value locator="xf-output-1·3" value=""/>
+   <assert-control-value locator="xf-output-1·4" value=""/>
+   <assert-control-value locator="xf-output-1·5" value=""/>
+   <assert-control-value locator="xf-output-1·6" value=""/>
+   <assert-control-value locator="xf-output-1·7" value=""/>
+   <assert-control-value locator="xf-output-1·8" value=""/>
+   <assert-control-value locator="xf-output-1·9" value=""/>
+   <assert-control-value locator="xf-output-1·10" value=""/>
+   <assert-control-value locator="xf-output-1·11" value=""/>
+   <assert-control-value locator="xf-output-1·12" value=""/>
+   <assert-control-value locator="xf-output-1·13" value=""/>
+   <assert-control-value locator="xf-output-1·14" value=""/>
+   <assert-control-value locator="xf-output-1·15" value=""/>
+   <assert-control-value locator="xf-output-1·16" value=""/>
+   <assert-control-value locator="xf-output-1·17" value=""/>
+   <assert-control-value locator="xf-output-1·18" value=""/>
+   <assert-control-value locator="xf-output-1·19" value=""/>
+   <assert-control-value locator="xf-output-1·20" value=""/>
+   <assert-control-value locator="xf-output-1·21" value=""/>
+   <assert-control-value locator="xf-output-1·22" value=""/>
+   <assert-control-value locator="xf-output-1·23" value=""/>
+   
+   <click locator="xf-trigger-1"/>
+   <assert-control-value-contains locator="xf-output-1·1" value="xforms-valid (normalizedString)"/>
+   <assert-control-value-contains locator="xf-output-1·2" value="xforms-valid (token)"/>
+   <assert-control-value-contains locator="xf-output-1·3" value="xforms-valid (language)"/>
+   <assert-control-value-contains locator="xf-output-1·4" value="xforms-valid (Name)"/>
+   <assert-control-value-contains locator="xf-output-1·5" value="xforms-valid (NCName)"/>
+   <assert-control-value-contains locator="xf-output-1·6" value="xforms-valid (ID)"/>
+   <assert-control-value-contains locator="xf-output-1·7" value="xforms-valid (IDREF)"/>
+   <assert-control-value-contains locator="xf-output-1·8" value="xforms-valid (IDREFS)"/>
+   <assert-control-value-contains locator="xf-output-1·9" value="xforms-valid (NMTOKEN)"/>
+   <assert-control-value-contains locator="xf-output-1·10" value="xforms-valid (NMTOKENS)"/>
+   <assert-control-value-contains locator="xf-output-1·11" value="xforms-valid (integer)"/>
+   <assert-control-value-contains locator="xf-output-1·12" value="xforms-valid (nonPositiveInteger)"/>
+   <assert-control-value-contains locator="xf-output-1·13" value="xforms-valid (negativeInteger)"/>
+   <assert-control-value-contains locator="xf-output-1·14" value="xforms-valid (long)"/>
+   <assert-control-value-contains locator="xf-output-1·15" value="xforms-valid (int)"/>
+   <assert-control-value-contains locator="xf-output-1·16" value="xforms-valid (short)"/>
+   <assert-control-value-contains locator="xf-output-1·17" value="xforms-valid (byte)"/>
+   <assert-control-value-contains locator="xf-output-1·18" value="xforms-valid (nonNegativeInteger)"/>
+   <assert-control-value-contains locator="xf-output-1·19" value="xforms-valid (unsignedLong)"/>
+   <assert-control-value-contains locator="xf-output-1·20" value="xforms-valid (unsignedInt)"/>
+   <assert-control-value-contains locator="xf-output-1·21" value="xforms-valid (unsignedShort)"/>
+   <assert-control-value-contains locator="xf-output-1·22" value="xforms-valid (unsignedByte)"/>
+   <assert-control-value-contains locator="xf-output-1·23" value="xforms-valid (positiveInteger)"/>
+   
+   <click locator="xf-trigger-2"/>
+   <assert-control-value-contains locator="xf-output-1·1" value="XFORMS-INVALID (normalizedString)"/>
+   <assert-control-value-contains locator="xf-output-1·2" value="XFORMS-INVALID (token)"/>
+   <assert-control-value-contains locator="xf-output-1·3" value="XFORMS-INVALID (language)"/>
+   <assert-control-value-contains locator="xf-output-1·4" value="XFORMS-INVALID (Name)"/>
+   <assert-control-value-contains locator="xf-output-1·5" value="XFORMS-INVALID (NCName)"/>
+   <assert-control-value-contains locator="xf-output-1·6" value="XFORMS-INVALID (ID)"/>
+   <assert-control-value-contains locator="xf-output-1·7" value="XFORMS-INVALID (IDREF)"/>
+   <assert-control-value-contains locator="xf-output-1·8" value="XFORMS-INVALID (IDREFS)"/>
+   <assert-control-value-contains locator="xf-output-1·9" value="xforms-valid (NMTOKEN)"/>
+   <assert-control-value-contains locator="xf-output-1·10" value="xforms-valid (NMTOKENS)"/>
+   <assert-control-value-contains locator="xf-output-1·11" value="XFORMS-INVALID (integer)"/>
+   <assert-control-value-contains locator="xf-output-1·12" value="XFORMS-INVALID (nonPositiveInteger)"/>
+   <assert-control-value-contains locator="xf-output-1·13" value="XFORMS-INVALID (negativeInteger)"/>
+   <assert-control-value-contains locator="xf-output-1·14" value="XFORMS-INVALID (long)"/>
+   <assert-control-value-contains locator="xf-output-1·15" value="XFORMS-INVALID (int)"/>
+   <assert-control-value-contains locator="xf-output-1·16" value="XFORMS-INVALID (short)"/>
+   <assert-control-value-contains locator="xf-output-1·17" value="XFORMS-INVALID (byte)"/>
+   <assert-control-value-contains locator="xf-output-1·18" value="XFORMS-INVALID (nonNegativeInteger)"/>
+   <assert-control-value-contains locator="xf-output-1·19" value="XFORMS-INVALID (unsignedLong)"/>
+   <assert-control-value-contains locator="xf-output-1·20" value="XFORMS-INVALID (unsignedInt)"/>
+   <assert-control-value-contains locator="xf-output-1·21" value="XFORMS-INVALID (unsignedShort)"/>
+   <assert-control-value-contains locator="xf-output-1·22" value="XFORMS-INVALID (unsignedByte)"/>
+   <assert-control-value-contains locator="xf-output-1·23" value="XFORMS-INVALID (positiveInteger)"/>
 </test-case>
