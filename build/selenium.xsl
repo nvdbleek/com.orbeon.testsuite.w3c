@@ -154,6 +154,15 @@
             <td><xsl:value-of select="$processor-wait"/></td>
          </tr>		
 	</xsl:template>
+	
+	<!-- trailing spaces of value are lost in normal assert-control-value test -->
+	<xsl:template match="xftr:assert-control-value[ends-with(@value, ' ')]">
+		<tr>
+            <td>waitForCondition</td>
+            <td>selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") == "<xsl:value-of select="@value"/>"</td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-value">
 		<tr>

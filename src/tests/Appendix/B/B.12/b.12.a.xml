@@ -6,5 +6,6 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Appendix/B/B.12/b.12.a.xhtml"/>
    <assert-title title="b.12.a Replace Instance with Insert"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-not-present locator="xf-output-1·1" type="output"/>
+   <assert-control-not-present locator="xf-output-1·2" type="output"/>
 </test-case>

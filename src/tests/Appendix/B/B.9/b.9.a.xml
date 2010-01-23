@@ -6,5 +6,6 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Appendix/B/B.9/b.9.a.xhtml"/>
    <assert-title title="b.9.a Copy Attribute List"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1·1" value="0 classified" />
+   <assert-control-value locator="xf-output-1·2" value="0 classified" />
 </test-case>

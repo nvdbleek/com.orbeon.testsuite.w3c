@@ -6,5 +6,5 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Appendix/B/B.15/b.15.a.xhtml"/>
    <assert-title title="b.15.a Insert Element into Non-Contiguous, Heterogeneous Nodeset"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1·1" value="" trim="true"/>
 </test-case>

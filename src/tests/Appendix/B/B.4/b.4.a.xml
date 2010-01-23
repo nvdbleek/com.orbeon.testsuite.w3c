@@ -6,5 +6,7 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Appendix/B/B.4/b.4.a.xhtml"/>
    <assert-title title="b.4.a Set Attribute"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1·1" value="23 classified" />
+   <assert-control-value locator="xf-output-1·2" value="42 classified" />
+   <assert-control-value locator="xf-output-1·3" value="68 classified" />
 </test-case>

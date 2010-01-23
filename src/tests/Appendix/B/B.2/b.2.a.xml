@@ -6,5 +6,6 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Appendix/B/B.2/b.2.a.xhtml"/>
    <assert-title title="b.2.a Append Element Copy"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1·1" value="Jane Doe" trim="true"/>
+   <assert-control-value locator="xf-output-1·2" value="" trim="true"/>
 </test-case>

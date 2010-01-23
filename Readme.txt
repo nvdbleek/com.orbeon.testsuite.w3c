@@ -18,6 +18,7 @@ Currently the following chapters have tests:
 * Chapter 3
 * Chapter 5
 * Chapter 7
+* Appendix B
 
 4. HOW IT WORKS
 The tests are written in a 'neutral' xml grammar. These xml files could be transformed 

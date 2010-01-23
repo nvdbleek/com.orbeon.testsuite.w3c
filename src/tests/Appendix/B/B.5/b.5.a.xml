@@ -6,5 +6,6 @@
            xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Appendix/B/B.5/b.5.a.xhtml"/>
    <assert-title title="b.5.a Remove Element"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1·1" value="SKU-0815 " />
+   <assert-control-not-present locator="xf-output-1·2" type="output" />
 </test-case>
