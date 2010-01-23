@@ -146,6 +146,14 @@
             <td><xsl:value-of select="@option"/></td>
          </tr>		
 	</xsl:template>
+	
+	<xsl:template match="xftr:assert-control-value[boolean(@trim)]">
+		<tr>
+            <td>waitForCondition</td>
+            <td>selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>").replace(/^\s\s*/, '').replace(/\s\s*$/, '') == "<xsl:value-of select="@value"/>"</td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-value">
 		<tr>
