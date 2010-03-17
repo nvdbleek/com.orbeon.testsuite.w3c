@@ -52,15 +52,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		Open ${orbeon.install.baseurl}/xforms-test-suite/ to run the tests.
 	-->
 	<!-- Generates the selenium tests based on the XML and delploy them in your orbeon installation -->
-	<target name="deploy-tests" depends="check-properties, generate-selenium-tests" description="Generates the selenium tests based on the XML and delploy them in your orbeon installation">
+	<target name="deploy-tests" depends="check-properties, generate-selenium-tests, deploy-forms-skippable" description="Generates the selenium tests based on the XML and delploy them in your orbeon installation">
 		<echo>Deploying apps to orbeon instalation ${orbeon.install.dir}</echo>
 		
 		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps">
 			<fileset dir="resources/apps" includes="**/*" />
-		</copy>
-		
-		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/forms">
-			<fileset dir="resources" includes="XForms1.1/Edition1/**/*" />
 		</copy>
 		
 		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/selenium-core/core">
@@ -81,6 +77,34 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		</copy>
 		
 		<echo>Open ${orbeon.install.baseurl}/xforms-test-suite/ to run the tests.</echo>
+	</target>
+	
+	<target name="deploy-forms" depends="check-properties">
+		<copy todir="work/xforms-test-suite/forms">
+			<fileset dir="resources" includes="XForms1.1/Edition1/**/*" />
+		</copy>
+		
+		<move todir="work/xforms-test-suite/forms" includeemptydirs="false">
+			<fileset dir="work/xforms-test-suite/forms">
+				<exclude name="**/*.bak" />
+				<exclude name="XForms1.1/Edition1/driverPages/**" />
+			</fileset>
+			<fileset dir="resources" includes="XForms1.1/Edition1/**/*" />
+			<mapper type="glob" from="*.xhtml" to="*.xhtml.bak" />
+		</move>
+		
+		<xslt basedir="work/xforms-test-suite/forms" destdir="work/xforms-test-suite/forms" style="build/change-echo-submissions.xsl">
+			<classpath refid="saxon.class.path" />
+			<mapper type="glob" from="*.xhtml.bak" to="*.xhtml" />
+			<xmlcatalog refid="html" />
+		</xslt>
+		<delete>
+			<fileset dir="work/xforms-test-suite/forms" includes="**/*.xhtml.bak" />
+		</delete>
+		
+		<copy todir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/forms">
+			<fileset dir="work/xforms-test-suite/forms" includes="XForms1.1/Edition1/**/*" />
+		</copy>
 	</target>
 	
 	<!-- Generates the selenium tests based on the XML they will be generated work/selenium-tests --> 
@@ -150,7 +174,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<delete>
 				<fileset dir="${basedir}/src/tests" includes="**/*.xml.bak" />
 			</delete>
-		</target>
+	</target>
+	
+	<target name="deploy-forms-skippable" unless="build.deply-forms.skip">
+		<antcall target="deploy-forms" />
+	</target>
 
 
 	<xmlcatalog id="html">

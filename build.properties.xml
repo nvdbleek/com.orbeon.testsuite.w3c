@@ -7,6 +7,11 @@
 				groupid="saxon" version="9" artifactId="saxon" />
 		</classpath>
 	</compile>
+	<build>
+		<!-- <deply-forms>
+			<skip/>
+		</deply-forms> -->
+	</build>
 	<orbeon>
 		<!-- Configure where your expanded orbeon war is located and what the url is to access the web-application. -->
 		<install>

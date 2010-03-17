@@ -55,7 +55,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<xsl:template match="xftr:open">
 		<tr>
             <td>open</td>
-            <td>../../../xforms-test-suite/forms/XForms1.1/Edition1/<xsl:value-of select="@href"/></td>
+            <td>../../xforms-test-suite/forms/XForms1.1/Edition1/<xsl:value-of select="@href"/></td>
             <td></td>
          </tr>
 	</xsl:template>
@@ -75,7 +75,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<xsl:otherwise>
 				<tr>
 		            <td>assertTitle</td>
-		            <td>Orbeon Forms Example Applications - <xsl:value-of select="@title"/></td>
+		            <td><xsl:value-of select="@title"/></td>
 		            <td></td>
 		         </tr>
 			</xsl:otherwise>
@@ -211,6 +211,14 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          </tr>		
 	</xsl:template>
 
+	<xsl:template match="xftr:assert-message">
+		<tr>
+            <td>waitForConfirmation</td>
+            <td><xsl:value-of select="@message"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+	</xsl:template>
+
 	<xsl:template match="xftr:type-input">
 		<tr>
             <td>xFormsTypeInput</td>
@@ -238,6 +246,14 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<xsl:template match="xftr:assert-text-present">
 		<tr>
             <td>assertTextPresent</td>
+            <td><xsl:value-of select="@text"/></td>
+            <td></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:assert-text-not-present">
+		<tr>
+            <td>assertTextNotPresent</td>
             <td><xsl:value-of select="@text"/></td>
             <td></td>
          </tr>		

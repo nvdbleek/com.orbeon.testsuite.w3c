@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- 
 Copyright (c) 2010, Nick Van den Bleeken
 All rights reserved.
@@ -21,25 +22,33 @@ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT 
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  -->
-<config xmlns="http://www.orbeon.com/oxf/controller" xmlns:oxf="http://www.orbeon.com/oxf/processors"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" instance-passing="forward">
+<xsl:stylesheet version="2.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xforms="http://www.w3.org/2002/xforms"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-	<files path-info="*.gif" />
-	<files path-info="*.css" />
-	<files path-info="*.pdf" />
-	<files path-info="*.js" />
-	<files path-info="*.png" />
-	<files path-info="*.jpg" />
-	<files path-info="*.xml" />
+	<xsl:template match="xforms:submission[@action = 'http://xformstest.org/cgi-bin/echo.sh']">
+		<xsl:copy>
+			<xsl:apply-templates select="@* except @action"/>
+			<xsl:attribute name="action">/xforms-test-suite/echo.sh</xsl:attribute>
+			
+			<xsl:apply-templates />
+		</xsl:copy>
+	</xsl:template>
 
-	<page path-info="/xforms-test-suite/forms/(.+).xhtml" matcher="oxf:perl5-matcher"
-		view="forms/${1}.xhtml" />
-		
-	<page path-info="/xforms-test-suite/"  view="test-driver.xhtml" />
-	
-	<page path-info="/xforms-test-suite/echo.sh" view="echo.xpl" />
-	
+	<xsl:template match="xforms:submission[@resource = 'http://xformstest.org/cgi-bin/echo.sh']">
+		<xsl:copy>
+			<xsl:apply-templates select="@* except @resource"/>
+			<xsl:attribute name="resource">/xforms-test-suite/echo.sh</xsl:attribute>
+			
+			<xsl:apply-templates />
+		</xsl:copy>
+	</xsl:template>
 
-	<epilogue url="oxf:/config/epilogue.xpl" />
 
-</config>
+	<xsl:template match="@*|node()">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" />
+			<xsl:apply-templates />
+		</xsl:copy>
+	</xsl:template>
+</xsl:stylesheet>
