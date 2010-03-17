@@ -211,14 +211,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          </tr>		
 	</xsl:template>
 
-	<xsl:template match="xftr:assert-message">
-		<tr>
-            <td>waitForConfirmation</td>
-            <td><xsl:value-of select="@message"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
-         </tr>		
-	</xsl:template>
-
 	<xsl:template match="xftr:type-input">
 		<tr>
             <td>xFormsTypeInput</td>
@@ -255,6 +247,19 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<tr>
             <td>assertTextNotPresent</td>
             <td><xsl:value-of select="@text"/></td>
+            <td></td>
+         </tr>		
+	</xsl:template>
+	
+	<xsl:template match="xftr:assert-message">
+		<tr>
+            <td>waitForXFormsMessage</td>
+            <td><xsl:value-of select="@message"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+		<tr>
+            <td>closeXFormsMessage</td>
+            <td></td>
             <td></td>
          </tr>		
 	</xsl:template>

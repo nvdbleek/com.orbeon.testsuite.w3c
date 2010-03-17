@@ -62,6 +62,31 @@ Selenium.prototype.isXFormsException = function(exception) {
 	return selenium.getTitle() === "Orbeon Forms - An Error has Occurred";
 };
 
+Selenium.prototype.getCurrentNrOfXFormsMessages = function() {
+	var win = selenium.browserbot.getUserWindow();
+    var recordedAlerts = win.ORBEON.xforms.Globals.recordedAlerts;
+	return recordedAlerts.length;
+};
+
+Selenium.prototype.getXFormsMessage = function() {
+	var win = selenium.browserbot.getUserWindow();
+	var recordedAlerts = win.ORBEON.xforms.Globals.recordedAlerts;
+	return recordedAlerts.length > 0 ? recordedAlerts[0] : null;
+};
+
+Selenium.prototype.doCloseXFormsMessage = function() {
+	var win = selenium.browserbot.getUserWindow();
+	for (var formIndex = 0; formIndex < win.document.forms.length; formIndex++) {
+		var form = win.document.forms[formIndex];
+		if (win.ORBEON.util.Dom.hasClass(form, "xforms-form")) {
+			var formID = win.document.forms[formIndex].id;
+			var formMessagePanel = win.ORBEON.xforms.Globals.formMessagePanel[formID];
+			formMessagePanel.hide();
+			break;
+		}
+	}
+};
+
 Selenium.prototype.getEval = function(expr) {
 	try 
 	{
