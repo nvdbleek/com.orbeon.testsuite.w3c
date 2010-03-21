@@ -18,6 +18,7 @@ Currently the following chapters have tests:
 * Chapter 3
 * Chapter 5
 * Chapter 7
+* Chapter 11
 * Appendix B
 
 4. HOW IT WORKS

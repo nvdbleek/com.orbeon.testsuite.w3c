@@ -251,7 +251,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          </tr>		
 	</xsl:template>
 	
-	<xsl:template match="xftr:assert-message">
+	<xsl:template match="xftr:assert-message | xftr:assert-message-or-exception">
 		<tr>
             <td>waitForXFormsMessage</td>
             <td><xsl:value-of select="@message"/></td>

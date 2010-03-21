@@ -24,6 +24,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <test-case xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner" xmlns:xf="http://www.w3.org/2002/xforms" xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../test-case.xsd">
    <open href="Chapt11/11.9/11.9.n.xhtml"/>
-   <assert-title title="11.9.n File Get as a submission option"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-title title="11.9.n File Get as a submission option (non-normative)"/>
+   <click locator="xf-submit-1"/>
+   <!-- FIXME: rewrite test, add output controls -->
 </test-case>

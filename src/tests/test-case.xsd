@@ -164,6 +164,12 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			      <xs:attribute name="message" use="required"/>
 			    </xs:complexType>
 			  </xs:element>
+			  <xs:element name="assert-message-or-exception">
+			    <xs:complexType>
+			      <xs:attribute name="message" use="required"/>
+			      <xs:attribute name="exception" use="required"/>
+			    </xs:complexType>
+			  </xs:element>
 			  <xs:element name="type-input">
 			    <xs:complexType>
 			      <xs:attribute name="locator" use="required"/>

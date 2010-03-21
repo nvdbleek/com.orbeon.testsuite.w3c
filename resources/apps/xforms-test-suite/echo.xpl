@@ -58,6 +58,10 @@
 								<xsl:text>SCRIPT_URI=http://xformstest.org/cgi-bin/echo.sh
 SCRIPT_URL=/cgi-bin/echo.sh
 </xsl:text>
+								<xsl:text>CONTENT_TYPE=</xsl:text>
+								<xsl:value-of select="content-type"/>
+								<xsl:text>
+</xsl:text>
 							</pre>
 						</body>
 					</html>	
