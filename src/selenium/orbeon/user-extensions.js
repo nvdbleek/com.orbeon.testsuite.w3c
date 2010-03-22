@@ -25,6 +25,11 @@ Selenium.prototype.getXFormsControlValue = function(locator) {
     return win.ORBEON.xforms.Document.getValue(locator);
 };
 
+Selenium.prototype.isXFormsInitialized = function(locator) {
+	var win = selenium.browserbot.getUserWindow();
+	return true; //win.ORBEON.xforms.Globals.topLevelListenerRegistered;
+};
+
 Selenium.prototype.isXFormsControlInvalid = function(locator) {
 	return selenium.isClassPresentOnElement(locator, "xforms-invalid");
 };
@@ -33,6 +38,14 @@ Selenium.prototype.isXFormsControlInvalid = function(locator) {
 // Input controls
 Selenium.prototype.doXFormsTypeInput = function(locator, value) {
 	selenium.doType(locator + "$xforms-input-1", value);
+};
+
+Selenium.prototype.doXFormsTypeSecret = function(locator, value) {
+	selenium.doType(locator, value);
+};
+
+Selenium.prototype.doXFormsTypeTextArea = function(locator, value) {
+	selenium.doType(locator, value);
 };
 
 Selenium.prototype.isXFormsControlElementPresent = function(locator, controlType) {
@@ -68,10 +81,35 @@ Selenium.prototype.getCurrentNrOfXFormsMessages = function() {
 	return recordedAlerts.length;
 };
 
+Selenium.prototype.isXFormsMessages = function(messages) {
+	var win = selenium.browserbot.getUserWindow();
+    var recordedAlerts = win.ORBEON.xforms.Globals.recordedAlerts;
+    var messagesArray = messages.split(',');
+    if (recordedAlerts.length != messagesArray.length) {
+    	return false;
+    }
+    
+    for(var i = 0; i < messagesArray.length; ++i)
+    {
+    	var found = false;
+    	var message = user_extensions_trim(messagesArray[i]);
+    	for (var j = 0; j < recordedAlerts.length; ++j) {
+    		if (user_extensions_trim(recordedAlerts[j]) === message) {
+    			found = true;
+    			break;
+    		}
+    	}
+    	if (!found) {
+			return false;
+		}
+    }
+    return true;
+};
+
 Selenium.prototype.getXFormsMessage = function() {
 	var win = selenium.browserbot.getUserWindow();
 	var recordedAlerts = win.ORBEON.xforms.Globals.recordedAlerts;
-	return recordedAlerts.length > 0 ? recordedAlerts[0] : null;
+	return recordedAlerts.length > 0 ? user_extensions_trim(recordedAlerts[0]) : null;
 };
 
 Selenium.prototype.doCloseXFormsMessage = function() {
@@ -81,7 +119,36 @@ Selenium.prototype.doCloseXFormsMessage = function() {
 		if (win.ORBEON.util.Dom.hasClass(form, "xforms-form")) {
 			var formID = win.document.forms[formIndex].id;
 			var formMessagePanel = win.ORBEON.xforms.Globals.formMessagePanel[formID];
-			formMessagePanel.hide();
+			try {
+				formMessagePanel.hide();
+			}
+			catch(e) 
+			{ 
+				// silently catch NPE
+				//FIXME: messages displayed before xform-ready result in een NPE, due to a null subscriber on hide event
+			}
+			break;
+		}
+	}
+};
+
+Selenium.prototype.doCloseAllXFormsMessages = function() {
+	var win = selenium.browserbot.getUserWindow();
+	for (var formIndex = 0; formIndex < win.document.forms.length; formIndex++) {
+		var form = win.document.forms[formIndex];
+		if (win.ORBEON.util.Dom.hasClass(form, "xforms-form")) {
+			var formID = win.document.forms[formIndex].id;
+			var formMessagePanel = win.ORBEON.xforms.Globals.formMessagePanel[formID];
+			while(win.ORBEON.xforms.Globals.recordedAlerts.length > 0) {
+				try {
+					formMessagePanel.hide();
+				}
+				catch(e) 
+				{ 
+					// silently catch NPE
+					//FIXME: messages displayed before xform-ready result in een NPE, due to a null subscriber on hide event
+				}
+			}
 			break;
 		}
 	}
@@ -102,3 +169,10 @@ function containingClassSelector(className) {
     return "contains(concat(' ',normalize-space(@class),' '),' " + className + " ')";
 }
 
+function user_extensions_trim(s)
+{
+	var l=0; var r=s.length -1;
+	while(l < s.length && (s[l] == ' ' || s[l] == '\n' || s[l] == '\r' || s[l] == '\t')){	l++; }
+	while(r > l && (s[r] == ' ' || s[r] == '\n' || s[r] == '\r' || s[r] == '\t')) {	r-=1;	}
+	return s.substring(l, r+1);
+}

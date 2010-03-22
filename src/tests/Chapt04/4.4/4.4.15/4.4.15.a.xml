@@ -25,5 +25,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <test-case xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner" xmlns:xf="http://www.w3.org/2002/xforms" xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt04/4.4/4.4.15/4.4.15.a.xhtml"/>
    <assert-title title="4.4.15.a xforms-select and xforms-deselect events"/>
-   <fail msg="Test not implemented yet!"/>
+   <select-option locator="xf-select-1" option="Subaru"/>
+   <assert-message message="xforms-select"/>
+   <select-option locator="xf-select-1" option="Pinto"/>
+   <assert-message message="xforms-deselect"/>
 </test-case>

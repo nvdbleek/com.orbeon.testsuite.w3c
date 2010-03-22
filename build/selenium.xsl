@@ -58,6 +58,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <td>../../xforms-test-suite/forms/XForms1.1/Edition1/<xsl:value-of select="@href"/></td>
             <td></td>
          </tr>
+		<tr>
+            <td>waitForXFormsInitialized</td>
+            <td></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>
 	</xsl:template>
 
 	<!-- Don't check title -->
@@ -219,6 +224,22 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          </tr>		
 	</xsl:template>
 
+	<xsl:template match="xftr:type-secret">
+		<tr>
+            <td>xFormsTypeSecret</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="@value"/></td>
+         </tr>		
+	</xsl:template>
+
+	<xsl:template match="xftr:type-textarea">
+		<tr>
+            <td>xFormsTypeTextArea</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="@value"/></td>
+         </tr>		
+	</xsl:template>
+
 	<xsl:template match="xftr:click">
 		<tr>
             <td>click</td>
@@ -263,6 +284,27 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <td></td>
          </tr>		
 	</xsl:template>
+
+	<xsl:template match="xftr:assert-messages">
+		<tr>
+            <td>waitForXFormsMessages</td>
+            <td><xsl:value-of select="string-join(xftr:message, ',')"/></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>		
+		<tr>
+            <td>closeAllXFormsMessages</td>
+            <td></td>
+            <td></td>
+         </tr>		
+	</xsl:template>
+	
+	<xsl:template match="xftr:assert-no-message">
+		<tr>
+            <td>waitCurrentNrOfXFormsMessages</td>
+            <td>0</td>
+            <td><xsl:value-of select="$processor-wait"/></td>
+         </tr>
+    </xsl:template>
 
 	<xsl:template match="xftr:fail">
 		<tr>
