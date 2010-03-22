@@ -20,6 +20,7 @@ Currently the following chapters have tests:
 * Chapter 5
 * Chapter 6
 * Chapter 7
+* Chapter 10
 * Chapter 11
 * Appendix B
 

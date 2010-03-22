@@ -25,5 +25,17 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <test-case xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner" xmlns:xf="http://www.w3.org/2002/xforms" xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../test-case.xsd">
    <open href="Chapt10/10.4/10.4.b.xhtml"/>
    <assert-title title="10.4.b delete action using context and bind attributes"/>
-   <fail msg="Test not implemented yet!"/>
+   <assert-control-value locator="xf-output-1·1" value="4 "/>
+   <assert-control-value locator="xf-output-1·2" value="5 "/>
+   <assert-control-not-present locator="xf-output-1·3" type="output"/>
+   
+   <assert-control-value locator="xf-output-2·1" value="7 "/>
+   <assert-control-value locator="xf-output-2·2" value="8 "/>
+   <assert-control-value locator="xf-output-2·3" value="9 "/>
+   <assert-control-not-present locator="xf-output-2·4" type="output"/>
+   
+   <assert-control-value locator="xf-output-3·1" value="11 "/>
+   <assert-control-value locator="xf-output-3·2" value="12 "/>
+   <assert-control-value locator="xf-output-3·3" value="13 "/>
+   <assert-control-not-present locator="xf-output-3·4" type="output"/>
 </test-case>

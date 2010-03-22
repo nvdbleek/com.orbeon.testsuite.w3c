@@ -25,5 +25,27 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <test-case xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner" xmlns:xf="http://www.w3.org/2002/xforms" xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../test-case.xsd">
    <open href="Chapt10/10.17/10.17.a.xhtml"/>
    <assert-title title="10.17.a conditional execution of XForms actions"/>
-   <fail msg="Test not implemented yet!"/>
+   <click locator="xf-trigger-1"/>
+   <assert-control-value locator="xf-output-1" value="2"/>
+   <assert-control-value locator="xf-output-2" value="correct"/>
+   <assert-control-value locator="xf-output-3" value="4"/>
+   <assert-control-value locator="xf-output-4" value="correct"/>
+   <assert-control-value locator="xf-output-5" value="6"/>
+   <assert-control-value locator="xf-output-6" value="correct"/>
+   <assert-control-value locator="xf-output-7" value="8"/>
+   <assert-control-value locator="xf-output-8" value="correct"/>
+   <assert-control-value locator="xf-output-9" value="10"/>
+   <assert-control-value locator="xf-output-10" value="correct"/>   
+   <click locator="xf-trigger-2"/>
+   <assert-control-value locator="xf-output-1" value="0"/>
+   <assert-control-value locator="xf-output-2" value="incorrect"/>
+   <assert-control-value locator="xf-output-3" value="0"/>
+   <assert-control-value locator="xf-output-4" value="incorrect"/>
+   <assert-control-value locator="xf-output-5" value="0"/>
+   <assert-control-value locator="xf-output-6" value="incorrect"/>
+   <assert-control-value locator="xf-output-7" value="0"/>
+   <assert-control-value locator="xf-output-8" value="incorrect"/>
+   <assert-control-value locator="xf-output-9" value="0"/>
+   <assert-control-value locator="xf-output-10" value="incorrect"/>
+   
 </test-case>
