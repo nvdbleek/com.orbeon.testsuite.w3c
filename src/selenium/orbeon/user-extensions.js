@@ -34,6 +34,22 @@ Selenium.prototype.isXFormsControlInvalid = function(locator) {
 	return selenium.isClassPresentOnElement(locator, "xforms-invalid");
 };
 
+Selenium.prototype.isXFormsControlReadonly = function(locator) {
+	return selenium.isClassPresentOnElement(locator, "xforms-readonly");
+};
+
+Selenium.prototype.isXFormsControlReadwrite = function(locator) {
+	return !selenium.isClassPresentOnElement(locator, "xforms-readonly");
+};
+
+Selenium.prototype.isXFormsControlRequired = function(locator) {
+	return selenium.isClassPresentOnElement(locator, "xforms-required");
+};
+
+Selenium.prototype.isXFormsControlOptional = function(locator) {
+	return !selenium.isClassPresentOnElement(locator, "xforms-required");
+};
+
 
 // Input controls
 Selenium.prototype.doXFormsTypeInput = function(locator, value) {
