@@ -65,9 +65,14 @@ Selenium.prototype.doXFormsTypeTextArea = function(locator, value) {
 };
 
 Selenium.prototype.isXFormsControlElementPresent = function(locator, controlType) {
+	//alert("1 " + selenium.isElementPresent("xpath=//*[@id = '" + locator + "']"));
+	//alert("2 " + selenium.isElementPresent("xpath=//*[@id = '" + locator + "']/ancestor::span"));
+	//alert("3 " + selenium.isElementPresent("xpath=//*[@id = '" + locator + "']/ancestor::*[contains(concat(' ',normalize-space(@class),' '),'xforms-case-deselected')]"));
 	return selenium.isClassPresentOnElement(locator, "xforms-" + controlType) 
 		&& !selenium.isClassPresentOnElement(locator, "xforms-disabled")
-		&& !selenium.isClassPresentOnElement(locator, "xforms-disabled-subsequent");
+		&& !selenium.isClassPresentOnElement(locator, "xforms-disabled-subsequent")
+		&& !selenium.isClassPresentOnElement(locator, "xforms-case-deselected")
+		&& !selenium.isElementPresent("xpath=//*[@id = '" + locator + "']/ancestor::*[contains(concat(' ',normalize-space(@class),' '),'xforms-case-deselected')]");
 };
 
 
