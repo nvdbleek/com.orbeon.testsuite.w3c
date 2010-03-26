@@ -66,7 +66,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   		<xf:bind nodeset="instance('request')/close" relevant="xs:boolean(../auto)" type="xs:boolean"/>
   		<xf:bind nodeset="instance('request')/resultsUrl" relevant="xs:boolean(../auto)" type="xs:boolean"/>
   		
-  		<xf:submission id="run-tests" method="get" ref="instance('request')" resource="../selenium-core/core/TestRunner.html" replace="all"/>
+  		<xf:submission id="run-tests" method="get" ref="instance('request')" resource="../selenium-core/core/TestRunner.html" replace="all" />
   	</xf:model>
   </head>
   <body>
@@ -80,10 +80,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	  				<td>
 	  					<xf:trigger appearance="minimal">
 	  						<xf:label value="concat('Run ', @name)"/>
-	  						<xf:action ev:event="DOMActivate">
-	  							<xf:setvalue ref="instance('request')/test" value="context()/@url"/>
+	  						<xf:load ev:event="DOMActivate" resource="../selenium-core/core/TestRunner.html?test={encode-for-uri(context()/@url)}&amp;auto={instance('request')/auto}&amp;resultsUrl=/orbeon-git/xforms-test-suite/process-results" target="_blank"/>
+	  						<!-- <xf:action ev:event="DOMActivate">
+	  							<xf:setvalue ref="instance('request')/test" value=""/>
 	  							<xf:send submission="run-tests"/>
-	  						</xf:action>
+	  						</xf:action>  -->
 	  					</xf:trigger>
 	  				</td>
 	  			</tr>
@@ -91,7 +92,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	  	</tbody>
   	</table>
   	
-  	<!--  Doesn't work in Orbeon 
+  	<!--  Doesn't work in Orbeon -->
   	<xf:group ref="instance('request')" appearance="xxforms:fieldset">
   		<xf:label>Options</xf:label>
 	  	<div>
@@ -99,11 +100,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	  			<xf:label>Run automatically</xf:label>
 	  		</xf:input>
 	  	</div>
-	  	<div>
+	  	<!-- <div>
 	  		<xf:input ref="close">
 	  			<xf:label>Close afterwards</xf:label>
 	  		</xf:input>
-	  	</div>
-  	</xf:group> -->
+	  	</div> -->
+  	</xf:group> 
   </body>
 </html>
