@@ -30,8 +30,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	<xsl:output method="html" indent="yes" encoding="ISO-8859-1"/>
 	
-	<xsl:variable name="processor-wait">1000</xsl:variable>
-	<xsl:variable name="echo-service-wait">2000</xsl:variable>
+	<xsl:variable name="processor-wait">2000</xsl:variable>
+	<xsl:variable name="echo-service-wait">4000</xsl:variable>
 
 	
 	<xsl:template match="xftr:test-case">
@@ -97,7 +97,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	<xsl:template match="xftr:assert-control-present">
 		<tr>
-            <td>waitForXFormsControlElementPresent</td>
+            <td>assertXFormsControlElementPresent</td>
             <td><xsl:value-of select="@locator"/></td>
             <td><xsl:value-of select="@type"/></td>
          </tr>
@@ -105,7 +105,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	<xsl:template match="xftr:assert-control-not-present">
 		<tr>
-            <td>waitForXFormsControlElementNotPresent</td>
+            <td>assertXFormsControlElementNotPresent</td>
             <td><xsl:value-of select="@locator"/></td>
             <td><xsl:value-of select="@type"/></td>
          </tr>
@@ -113,49 +113,49 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	<xsl:template match="xftr:assert-control-valid">
 		<tr>
-            <td>waitForXFormsControlValid</td>
+            <td>assertXFormsControlValid</td>
             <td><xsl:value-of select="@locator"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td></td>
          </tr>		
 	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-invalid">
 		<tr>
-            <td>waitForXFormsControlInvalid</td>
+            <td>assertXFormsControlInvalid</td>
             <td><xsl:value-of select="@locator"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td></td>
          </tr>		
 	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-readonly">
 		<tr>
-            <td>waitForXFormsControlReadonly</td>
+            <td>assertXFormsControlReadonly</td>
             <td><xsl:value-of select="@locator"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td></td>
          </tr>		
 	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-readwrite">
 		<tr>
-            <td>waitForXFormsControlReadwrite</td>
+            <td>assertXFormsControlReadwrite</td>
             <td><xsl:value-of select="@locator"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td></td>
          </tr>		
 	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-required">
 		<tr>
-            <td>waitForXFormsControlRequired</td>
+            <td>assertXFormsControlRequired</td>
             <td><xsl:value-of select="@locator"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td></td>
          </tr>		
 	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-optional">
 		<tr>
-            <td>waitForXFormsControlOptional</td>
+            <td>assertXFormsControlOptional</td>
             <td><xsl:value-of select="@locator"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td></td>
          </tr>		
 	</xsl:template>
 
@@ -177,24 +177,24 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	<xsl:template match="xftr:assert-control-value[boolean(@trim)]">
 		<tr>
-            <td>waitForCondition</td>
+            <td>assertCondition</td>
             <td>selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>").replace(/^\s\s*/, '').replace(/\s\s*$/, '') == "<xsl:value-of select="@value"/>"</td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td></td>
          </tr>		
 	</xsl:template>
 	
 	<!-- trailing spaces of value are lost in normal assert-control-value test -->
 	<xsl:template match="xftr:assert-control-value[ends-with(@value, ' ')]">
 		<tr>
-            <td>waitForCondition</td>
+            <td>assertCondition</td>
             <td>selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") == "<xsl:value-of select="@value"/>"</td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td></td>
          </tr>		
 	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-value">
 		<tr>
-            <td>waitForXFormsControlValue</td>
+            <td>assertXFormsControlValue</td>
             <td><xsl:value-of select="@locator"/></td>
             <td><xsl:value-of select="@value"/></td>
          </tr>		
@@ -202,17 +202,17 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	<xsl:template match="xftr:assert-control-value-contains">
 		<tr>
-            <td>waitForCondition</td>
+            <td>assertCondition</td>
             <td>selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>").indexOf("<xsl:value-of select="@value"/>") != -1</td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td></td>
          </tr>		
 	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-value-in-range">
 		<tr>
-            <td>waitForCondition</td>
+            <td>assertCondition</td>
             <td>(selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") &gt;= <xsl:value-of select="@start"/>) &amp;&amp; (selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") &lt;= <xsl:value-of select="@end"/>)</td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td></td>
          </tr>		
 	</xsl:template>
 
@@ -242,9 +242,9 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	<xsl:template match="xftr:click">
 		<tr>
-            <td>click</td>
+            <td>xFormsClick</td>
             <td><xsl:value-of select="@locator"/></td>
-            <td></td>
+            <td><xsl:value-of select="$processor-wait"/></td>
          </tr>		
 	</xsl:template>
 
@@ -274,35 +274,25 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	<xsl:template match="xftr:assert-message | xftr:assert-message-or-exception">
 		<tr>
-            <td>waitForXFormsMessage</td>
+            <td>assertXFormsMessage</td>
             <td><xsl:value-of select="@message"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
-         </tr>		
-		<tr>
-            <td>closeXFormsMessage</td>
-            <td></td>
             <td></td>
          </tr>		
 	</xsl:template>
 
 	<xsl:template match="xftr:assert-messages">
 		<tr>
-            <td>waitForXFormsMessages</td>
+            <td>assertXFormsMessages</td>
             <td><xsl:value-of select="string-join(xftr:message, ',')"/></td>
-            <td><xsl:value-of select="$processor-wait"/></td>
-         </tr>		
-		<tr>
-            <td>closeAllXFormsMessages</td>
-            <td></td>
             <td></td>
          </tr>		
 	</xsl:template>
 	
-	<xsl:template match="xftr:assert-no-message">
+	<xsl:template match="xftr:assert-no-messages">
 		<tr>
-            <td>waitCurrentNrOfXFormsMessages</td>
-            <td>0</td>
-            <td><xsl:value-of select="$processor-wait"/></td>
+            <td>assertNoXFormsMessageVisible</td>
+            <td></td>
+            <td></td>
          </tr>
     </xsl:template>
 

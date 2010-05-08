@@ -77,7 +77,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		</copy>
 		
 		<mkdir dir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/test-results"/>
-		
+		<echo>Be sure that property oxf.url-rewriting.app-prefix is equal to '/apps'</echo> 
 		<echo>Open ${orbeon.install.baseurl}/xforms-test-suite/ to run the tests.</echo>
 	</target>
 	
@@ -91,7 +91,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 				<exclude name="**/*.bak" />
 				<exclude name="XForms1.1/Edition1/driverPages/**" />
 			</fileset>
-			<fileset dir="resources" includes="XForms1.1/Edition1/**/*" />
+			<fileset dir="work/xforms-test-suite/forms" includes="XForms1.1/Edition1/**/*" />
 			<mapper type="glob" from="*.xhtml" to="*.xhtml.bak" />
 		</move>
 		

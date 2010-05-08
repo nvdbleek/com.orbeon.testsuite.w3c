@@ -27,7 +27,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
 	<xsl:template match="xhtml:link[@rel = 'stylesheet']">
-		<xhtml:link rel="stylesheet" href="/apps/xforms-test-suite/TestSuite11.css"
+		<xhtml:link rel="stylesheet" href="/xforms-test-suite/TestSuite11.css"
 			type="text/css" />
 	</xsl:template>
 

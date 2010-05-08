@@ -54,14 +54,26 @@ Selenium.prototype.isXFormsControlOptional = function(locator) {
 // Input controls
 Selenium.prototype.doXFormsTypeInput = function(locator, value) {
 	selenium.doType(locator + "$xforms-input-1", value);
+	return Selenium.decorateFunctionWithTimeout(function() {
+		var win = selenium.browserbot.getUserWindow();
+	    return (win.ORBEON == undefined) || !(win.ORBEON.xforms.Globals.requestInProgress || win.ORBEON.xforms.Globals.eventQueue.length > 0);
+	  }, 5000);
 };
 
 Selenium.prototype.doXFormsTypeSecret = function(locator, value) {
 	selenium.doType(locator, value);
+	return Selenium.decorateFunctionWithTimeout(function() {
+		var win = selenium.browserbot.getUserWindow();
+	    return (win.ORBEON == undefined) || !(win.ORBEON.xforms.Globals.requestInProgress || win.ORBEON.xforms.Globals.eventQueue.length > 0);
+	  }, 5000);
 };
 
 Selenium.prototype.doXFormsTypeTextArea = function(locator, value) {
 	selenium.doType(locator, value);
+	return Selenium.decorateFunctionWithTimeout(function() {
+		var win = selenium.browserbot.getUserWindow();
+	    return (win.ORBEON == undefined) || !(win.ORBEON.xforms.Globals.requestInProgress || win.ORBEON.xforms.Globals.eventQueue.length > 0);
+	  }, 5000);
 };
 
 Selenium.prototype.isXFormsControlElementPresent = function(locator, controlType) {
@@ -75,6 +87,14 @@ Selenium.prototype.isXFormsControlElementPresent = function(locator, controlType
 		&& !selenium.isElementPresent("xpath=//*[@id = '" + locator + "']/ancestor::*[contains(concat(' ',normalize-space(@class),' '),'xforms-case-deselected')]");
 };
 
+Selenium.prototype.doXFormsClick = function(locator) {
+	selenium.doClick(locator);
+	return Selenium.decorateFunctionWithTimeout(function() {
+		var win = selenium.browserbot.getUserWindow();
+	    return (win.ORBEON == undefined) || !(win.ORBEON.xforms.Globals.requestInProgress || win.ORBEON.xforms.Globals.eventQueue.length > 0);
+	  }, 5000);
+};
+
 
 // Select controls
 Selenium.prototype.getXFormsSelectionOptions = function(locator) {
@@ -83,6 +103,10 @@ Selenium.prototype.getXFormsSelectionOptions = function(locator) {
 
 Selenium.prototype.doXFormsSelectOption = function(locator, label) {
 	selenium.doSelect(locator, "label=" + label);
+	return Selenium.decorateFunctionWithTimeout(function() {
+		var win = selenium.browserbot.getUserWindow();
+	    return (win.ORBEON == undefined) || !(win.ORBEON.xforms.Globals.requestInProgress || win.ORBEON.xforms.Globals.eventQueue.length > 0);
+	  }, 5000);
 };
 
 // Misc
@@ -96,84 +120,64 @@ Selenium.prototype.isXFormsException = function(exception) {
 	return selenium.getTitle() === "Orbeon Forms - An Error has Occurred";
 };
 
-Selenium.prototype.getCurrentNrOfXFormsMessages = function() {
+Selenium.prototype.isNoXFormsMessageVisible = function() {
 	var win = selenium.browserbot.getUserWindow();
-    var recordedAlerts = win.ORBEON.xforms.Globals.recordedAlerts;
-	return recordedAlerts.length;
+	var dialogEl = win.ORBEON.util.Dom.getElementById("xforms-message-dialog");
+	return (dialogEl == null || dialogEl.parentNode.style.visibility !== "visible");
 };
 
 Selenium.prototype.isXFormsMessages = function(messages) {
 	var win = selenium.browserbot.getUserWindow();
-    var recordedAlerts = win.ORBEON.xforms.Globals.recordedAlerts;
-    var messagesArray = messages.split(',');
-    if (recordedAlerts.length != messagesArray.length) {
-    	return false;
-    }
+	
+	var messagesArray = messages.split(',');
+	
+	var dialogEl = win.ORBEON.util.Dom.getElementById("xforms-message-dialog");
+	if (dialogEl == null || dialogEl.parentNode.style.visibility !== "visible") {
+		return false; // Dialog isn't visible
+	}
     
-    for(var i = 0; i < messagesArray.length; ++i)
-    {
-    	var found = false;
-    	var message = user_extensions_trim(messagesArray[i]);
-    	for (var j = 0; j < recordedAlerts.length; ++j) {
-    		if (user_extensions_trim(recordedAlerts[j]) === message) {
+	var bdEl = win.ORBEON.util.Dom.getChildElementByClass(dialogEl, "bd");
+	while(dialogEl.parentNode.style.visibility === "visible") {
+		var msg = user_extensions_trim(win.ORBEON.util.Dom.getStringValue(bdEl));
+		
+		var found = false;
+		for (var i = 0; i < messagesArray.length; ++i) {
+    		if (user_extensions_trim(messagesArray[i]) === msg) {
+    			messagesArray.splice(i, 1);
     			found = true;
+    			
+    			// Close message dialog
+    			win.ORBEON.util.Dom.getElementByTagName(dialogEl, "button").click()
+    			
     			break;
     		}
     	}
-    	if (!found) {
+		
+		if (!found) {
 			return false;
 		}
-    }
+	}
+	
     return true;
 };
 
 Selenium.prototype.getXFormsMessage = function() {
 	var win = selenium.browserbot.getUserWindow();
-	var recordedAlerts = win.ORBEON.xforms.Globals.recordedAlerts;
-	return recordedAlerts.length > 0 ? user_extensions_trim(recordedAlerts[0]) : null;
+
+	var dialogEl = win.ORBEON.util.Dom.getElementById("xforms-message-dialog");
+	if (dialogEl == null || dialogEl.parentNode.style.visibility !== "visible") {
+		return null; // Dialog isn't visible
+	}
+	
+	// Retrieve message
+	var msg = win.ORBEON.util.Dom.getStringValue(win.ORBEON.util.Dom.getChildElementByClass(dialogEl, "bd"));
+	
+	// Close message dialog
+	win.ORBEON.util.Dom.getElementByTagName(dialogEl, "button").click()
+	
+	return msg;
 };
 
-Selenium.prototype.doCloseXFormsMessage = function() {
-	var win = selenium.browserbot.getUserWindow();
-	for (var formIndex = 0; formIndex < win.document.forms.length; formIndex++) {
-		var form = win.document.forms[formIndex];
-		if (win.ORBEON.util.Dom.hasClass(form, "xforms-form")) {
-			var formID = win.document.forms[formIndex].id;
-			var formMessagePanel = win.ORBEON.xforms.Globals.formMessagePanel[formID];
-			try {
-				formMessagePanel.hide();
-			}
-			catch(e) 
-			{ 
-				// silently catch NPE
-				//FIXME: messages displayed before xform-ready result in een NPE, due to a null subscriber on hide event
-			}
-			break;
-		}
-	}
-};
-
-Selenium.prototype.doCloseAllXFormsMessages = function() {
-	var win = selenium.browserbot.getUserWindow();
-	for (var formIndex = 0; formIndex < win.document.forms.length; formIndex++) {
-		var form = win.document.forms[formIndex];
-		if (win.ORBEON.util.Dom.hasClass(form, "xforms-form")) {
-			var formID = win.document.forms[formIndex].id;
-			var formMessagePanel = win.ORBEON.xforms.Globals.formMessagePanel[formID];
-			while(win.ORBEON.xforms.Globals.recordedAlerts.length > 0) {
-				try {
-					formMessagePanel.hide();
-				}
-				catch(e) 
-				{ 
-					// silently catch NPE
-					//FIXME: messages displayed before xform-ready result in een NPE, due to a null subscriber on hide event
-				}
-			}
-			break;
-		}
-	}
-};
 
 Selenium.prototype.getEval = function(expr) {
 	try 

@@ -63,6 +63,9 @@ SCRIPT_URL=/cgi-bin/echo.sh
 								<xsl:text>
 </xsl:text>
 							</pre>
+							<pre>
+								<xsl:copy-of select="/."></xsl:copy-of>
+							</pre>
 						</body>
 					</html>	
 				</xsl:template>			
