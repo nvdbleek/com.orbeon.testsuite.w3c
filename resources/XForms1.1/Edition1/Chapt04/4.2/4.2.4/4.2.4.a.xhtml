@@ -9,7 +9,7 @@
 	</data>
       </xforms:instance>
       <!-- @if prevents this test from running when this page is closed for other reasons. -->
-      <xforms:load ev:event="xforms-model-destruct" if="boolean-from-string(tested)" resource="http://www.w3.org" show="new"/>
+      <xforms:load ev:event="xforms-model-destruct" if="boolean-from-string(tested)" show="new" resource="/xforms-test-suite/www.w3.org.html"/>
       <xforms:submission id="submission" action="http://xformstest.org/cgi-bin/echo.sh" method="post"/>
     </xforms:model>
   </xhtml:head>

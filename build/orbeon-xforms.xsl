@@ -49,7 +49,9 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		</xsl:copy>
 	</xsl:template>
 	
-	<xsl:template match="xforms:load[@resource]">
+	
+	<!-- Rewrite uri's (to prevent cross domain scripting problem) -->
+	<xsl:template match="xforms:load[@resource and not(xforms:resource)]">
 		<xsl:copy>
 			<xsl:apply-templates select="@* except @resource" />
 			<xsl:attribute name="resource"><xsl:value-of select="ext:map-load-uri(@resource)"/></xsl:attribute>
@@ -59,17 +61,33 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	<xsl:template match="xforms:load[xforms:resource]">
 		<xsl:copy>
-			<xsl:apply-templates select="@*" />
+			<xsl:apply-templates select="@* except @resource" />
+			<xsl:if test="@resource">
+				<xsl:attribute name="resource"><xsl:value-of select="ext:map-load-uri(@resource)"/></xsl:attribute>
+			</xsl:if>
 			<xsl:apply-templates select="child::node() except xforms:resource"/>
 			<xforms:resource>
 				<xsl:choose>
-					<xsl:when test="@value and starts-with(@value, '&apos;') and ends-with(@value, '&apos;')">
-						<xsl:attribute name="value">'<xsl:value-of select="ext:map-load-uri(substring(@value, 1, string-length(@value) - 2))"></xsl:value-of>'</xsl:attribute>
+					<xsl:when test="starts-with(xforms:resource/@value, &quot;'&quot;) and ends-with(xforms:resource/@value, &quot;'&quot;)">
+						<xsl:attribute name="value">'<xsl:value-of select="ext:map-load-uri(substring(xforms:resource/@value, 2, string-length(xforms:resource/@value) - 2))"></xsl:value-of>'</xsl:attribute>
 					</xsl:when>
-					<xsl:when test="@value"><xsl:copy-of select="@value"/></xsl:when>
+					<xsl:when test="xforms:resource/@value"><xsl:attribute name="value"><xsl:copy-of select="xforms:resource/@value"/></xsl:attribute></xsl:when>
 				</xsl:choose>
 				<xsl:value-of select="ext:map-load-uri(xforms:resource)"></xsl:value-of>
 			</xforms:resource>
+		</xsl:copy>
+	</xsl:template>
+	
+	<xsl:template match="uri">
+		<xsl:copy>
+			<xsl:value-of select="ext:map-load-uri(text())"></xsl:value-of>		
+		</xsl:copy>
+	</xsl:template>
+	
+	<xsl:template match="binduri[@uri]">
+		<xsl:copy>
+			<xsl:apply-templates select="@* except @uri" />
+			<xsl:attribute name="uri"><xsl:value-of select="ext:map-load-uri(@uri)"/></xsl:attribute>		
 		</xsl:copy>
 	</xsl:template>
 	

@@ -5,8 +5,8 @@
     	<xforms:model>
        		<xforms:instance>
 				<data>
-					<uri>http://www.w3.org/TR/xforms11/</uri>
-					<binduri uri="http://www.w3.org/TR/xforms11/"/>
+					<uri>/xforms-test-suite/xforms11.html</uri>
+					<binduri uri="/xforms-test-suite/xforms11.html"/>
 				</data>
        		</xforms:instance>
        		<xforms:bind id="uribind" nodeset="binduri/@uri"/>
@@ -24,7 +24,7 @@
   		</xforms:group>
 		<xforms:trigger id="xf-trigger-1">
 			<xforms:label>Load Xforms Spec From resource Attribute</xforms:label>
-			<xforms:load ev:event="DOMActivate" resource="http://www.w3.org/TR/xforms11/"/>
+			<xforms:load ev:event="DOMActivate" resource="/xforms-test-suite/xforms11.html"/>
 		</xforms:trigger>
 
 		<xforms:trigger id="xf-trigger-2">

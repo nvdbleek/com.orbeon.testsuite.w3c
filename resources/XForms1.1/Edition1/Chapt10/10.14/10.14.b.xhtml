@@ -6,7 +6,7 @@
        		<xforms:instance>
 				<data>
 					<uri>http://www.w3.org/TR/xforms/index-all.html</uri>
-					<binduri uri="http://www.w3.org/TR/xforms11/"/>
+					<binduri uri="/xforms-test-suite/xforms11.html"/>
 				</data>
        		</xforms:instance>
        		<xforms:bind id="uribind" nodeset="binduri/@uri"/>
@@ -26,17 +26,17 @@
 
 		<xforms:trigger id="xf-trigger-1">
 			<xforms:label>Show Not Defined</xforms:label>
-			<xforms:load ev:event="DOMActivate" resource="http://www.w3.org/TR/xforms11/"/>
+			<xforms:load ev:event="DOMActivate" resource="/xforms-test-suite/xforms11.html"/>
 		</xforms:trigger>
 		
 		<xforms:trigger id="xf-trigger-2">
 			<xforms:label>Show=Replace</xforms:label>
-			<xforms:load ev:event="DOMActivate" show="replace" resource="http://www.w3.org/TR/xforms11/"/>
+			<xforms:load ev:event="DOMActivate" show="replace" resource="/xforms-test-suite/xforms11.html"/>
 		</xforms:trigger>
 		
 		<xforms:trigger id="xf-trigger-3">
 			<xforms:label>Show=New</xforms:label>
-			<xforms:load ev:event="DOMActivate" show="new" resource="http://www.w3.org/TR/xforms11/"/>
+			<xforms:load ev:event="DOMActivate" show="new" resource="/xforms-test-suite/xforms11.html"/>
 		</xforms:trigger>
 
   </xhtml:body>
