@@ -34,6 +34,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    <assert-control-value locator="xf-output-1·5" value="5"/>
    <assert-control-value locator="xf-output-1·6" value="5"/>
    
+   <open href="Chapt10/10.3/10.3.d.xhtml"/>
+   <assert-title title="10.3.d insert action using at attribute"/>
    <click locator="xf-trigger-2"/>
    <assert-control-value locator="xf-output-1·1" value="1"/>
    <assert-control-value locator="xf-output-1·2" value="2"/>
@@ -42,6 +44,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    <assert-control-value locator="xf-output-1·5" value="4"/>
    <assert-control-value locator="xf-output-1·6" value="5"/>
    
+   <open href="Chapt10/10.3/10.3.d.xhtml"/>
+   <assert-title title="10.3.d insert action using at attribute"/>
    <click locator="xf-trigger-3"/>
    <assert-control-value locator="xf-output-1·1" value="1"/>
    <assert-control-value locator="xf-output-1·2" value="2"/>
@@ -50,6 +54,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    <assert-control-value locator="xf-output-1·5" value="4"/>
    <assert-control-value locator="xf-output-1·6" value="5"/>
    
+   <open href="Chapt10/10.3/10.3.d.xhtml"/>
+   <assert-title title="10.3.d insert action using at attribute"/>
    <click locator="xf-trigger-4"/>
    <assert-control-value locator="xf-output-1·1" value="1"/>
    <assert-control-value locator="xf-output-1·2" value="5"/>
@@ -58,6 +64,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    <assert-control-value locator="xf-output-1·5" value="4"/>
    <assert-control-value locator="xf-output-1·6" value="5"/>
 
+   <open href="Chapt10/10.3/10.3.d.xhtml"/>
+   <assert-title title="10.3.d insert action using at attribute"/>
    <click locator="xf-trigger-5"/>
    <assert-control-value locator="xf-output-1·1" value="1"/>
    <assert-control-value locator="xf-output-1·2" value="2"/>
@@ -66,6 +74,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    <assert-control-value locator="xf-output-1·5" value="5"/>
    <assert-control-value locator="xf-output-1·6" value="5"/>
 
+   <open href="Chapt10/10.3/10.3.d.xhtml"/>
+   <assert-title title="10.3.d insert action using at attribute"/>
    <click locator="xf-trigger-6"/>
    <assert-control-value locator="xf-output-1·1" value="1"/>
    <assert-control-value locator="xf-output-1·2" value="2"/>
@@ -74,6 +84,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    <assert-control-value locator="xf-output-1·5" value="5"/>
    <assert-control-value locator="xf-output-1·6" value="5"/>
 
+   <open href="Chapt10/10.3/10.3.d.xhtml"/>
+   <assert-title title="10.3.d insert action using at attribute"/>
    <click locator="xf-trigger-7"/>
    <assert-control-value locator="xf-output-2" value="5"/>
    <assert-control-value locator="xf-output-3" value="0"/>
