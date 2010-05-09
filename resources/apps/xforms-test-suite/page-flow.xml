@@ -39,6 +39,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	<page path-info="/xforms-test-suite/echo.sh" view="echo.xpl" />
 	<page path-info="/xforms-test-suite/process-results" view="process-results.xpl" />
+	<page path-info="/xforms-test-suite/report" view="generate-report.xpl" />
 	
 
 	<epilogue url="oxf:/config/epilogue.xpl" />
