@@ -170,7 +170,7 @@ Selenium.prototype.getXFormsMessage = function() {
 	}
 	
 	// Retrieve message
-	var msg = win.ORBEON.util.Dom.getStringValue(win.ORBEON.util.Dom.getChildElementByClass(dialogEl, "bd"));
+	var msg = user_extensions_trim(win.ORBEON.util.Dom.getStringValue(win.ORBEON.util.Dom.getChildElementByClass(dialogEl, "bd")));
 	
 	// Close message dialog
 	win.ORBEON.util.Dom.getElementByTagName(dialogEl, "button").click()
