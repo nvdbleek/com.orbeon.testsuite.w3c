@@ -25,6 +25,11 @@ Selenium.prototype.getXFormsControlValue = function(locator) {
     return win.ORBEON.xforms.Document.getValue(locator);
 };
 
+Selenium.prototype.getXFormsControlValueTrimmed = function(locator) {
+	var win = selenium.browserbot.getUserWindow();
+	return user_extensions_trim(win.ORBEON.xforms.Document.getValue(locator));
+};
+
 Selenium.prototype.isXFormsInitialized = function(locator) {
 	var win = selenium.browserbot.getUserWindow();
 	return true; //win.ORBEON.xforms.Globals.topLevelListenerRegistered;

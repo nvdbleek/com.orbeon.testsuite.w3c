@@ -177,21 +177,22 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	<xsl:template match="xftr:assert-control-value[boolean(@trim)]">
 		<tr>
-            <td>assertCondition</td>
-            <td>selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>").replace(/^\s\s*/, '').replace(/\s\s*$/, '') == "<xsl:value-of select="@value"/>"</td>
-            <td></td>
+            <td>assertXFormsControlValueTrimmed</td>
+            <td><xsl:value-of select="@locator"/></td>
+            <td><xsl:value-of select="@value"/></td>
          </tr>		
 	</xsl:template>
 	
 	<!-- trailing spaces of value are lost in normal assert-control-value test -->
 	<xsl:template match="xftr:assert-control-value[ends-with(@value, ' ')]">
 		<tr>
-            <td>assertCondition</td>
-            <td>selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") == "<xsl:value-of select="@value"/>"</td>
-            <td></td>
+            <td>assertEval</td>
+            <td>javascript{selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") == "<xsl:value-of select="@value"/>"}</td>
+            <td>true</td>
          </tr>		
 	</xsl:template>
-
+	
+	
 	<xsl:template match="xftr:assert-control-value">
 		<tr>
             <td>assertXFormsControlValue</td>
