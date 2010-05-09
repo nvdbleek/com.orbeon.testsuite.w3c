@@ -25,8 +25,13 @@
 	                    width:80%;
 	                    margin-left:auto;
 	                    margin-right:auto;
+	                    border-collapse: collapse;
                     }
-
+                    
+                    td {
+	                    border: 1px solid #789DB3;
+	                }
+                    
                     .true{font-weight:bold;}
                     .passed {background:green;}
                     .failed {background:red;}
@@ -36,19 +41,23 @@
             </head>
             <body>
             	<div>Overview:</div>
-            	<table border="1">
+            	<table>
             		<tr>
-            			<td>passed</td>
-            			<td>failed</td>
+            			<td class="passed">passed</td>
+            			<td class="failed">failed</td>
+            			<td class="unknown">unknown</td>
+            			<td>total</td>
             		</tr>
             		<tr>
-            			<td><xsl:value-of select="count(file[@pass='true'])"/></td>
-            			<td><xsl:value-of select="count(file[@pass='false'])"/></td>
+            			<td class="passed"><xsl:value-of select="count(test[@pass='true'])"/></td>
+            			<td class="failed"><xsl:value-of select="count(test[@pass='false'])"/></td>
+            			<td class="unknown"><xsl:value-of select="count(test[@pass!='true' and @pass!='false'])"/></td>
+            			<td><xsl:value-of select="count(test)"/></td>
             		</tr>
             	</table>
 							
                 <div>Details:</div>
-                <table border="1">
+                <table>
                 	<tr>
                          <td>Test Case</td>
                          <td>Description</td>
@@ -63,7 +72,7 @@
                          </tr> -->
                          
 
-                         <tr class="{if (@pass='true') then 'passed' else 'failed'}">
+                         <tr class="{if (@pass='true') then 'passed' else if (@pass='false') then 'failed' else 'unknown'}">
                              <td>
                                  <xsl:value-of select="substring-before(@name, ' ')"/>
                              </td>

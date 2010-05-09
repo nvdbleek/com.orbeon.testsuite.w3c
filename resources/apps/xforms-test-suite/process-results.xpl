@@ -30,7 +30,7 @@
 					<xsl:variable name="test-data" select="saxon:parse(replace(value, '&amp;nbsp;', '&amp;#160;'))"/>
 					<xsl:variable name="test-header-tr" select="$test-data/div/table/tbody/tr[1]"/>
 					<xsl:variable name="test-name" select="normalize-space($test-header-tr)"/>
-					<test name="{$test-name}" pass="{contains($test-header-tr/@class, 'status_passed')}" chapter="{substring($test-name,1,1)}"/>
+					<test name="{$test-name}" pass="{if ($test-data/div/table/tbody/tr[last()][td[1] != 'fail' or  normalize-space(td[2]) != 'Test not implemented yet!']) then contains($test-header-tr/@class, 'status_passed') else 'unknown'}" chapter="{substring($test-name,1,1)}"/>
 				</xsl:template>
 				
 				<xsl:template match="text()"/>

@@ -24,7 +24,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  -->
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xforms="http://www.w3.org/2002/xforms"
-	xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ext="http://www.myextensions.com/ext"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="ext xs">
 
 	<xsl:template match="xhtml:link[@rel = 'stylesheet']">
 		<xhtml:link rel="stylesheet" href="/xforms-test-suite/TestSuite11.css"
@@ -47,11 +48,46 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<xsl:apply-templates />
 		</xsl:copy>
 	</xsl:template>
+	
+	<xsl:template match="xforms:load[@resource]">
+		<xsl:copy>
+			<xsl:apply-templates select="@* except @resource" />
+			<xsl:attribute name="resource"><xsl:value-of select="ext:map-load-uri(@resource)"/></xsl:attribute>
+			<xsl:apply-templates />
+		</xsl:copy>
+	</xsl:template>
 
+	<xsl:template match="xforms:load[xforms:resource]">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" />
+			<xsl:apply-templates select="child::node() except xforms:resource"/>
+			<xforms:resource>
+				<xsl:choose>
+					<xsl:when test="@value and starts-with(@value, '&apos;') and ends-with(@value, '&apos;')">
+						<xsl:attribute name="value">'<xsl:value-of select="ext:map-load-uri(substring(@value, 1, string-length(@value) - 2))"></xsl:value-of>'</xsl:attribute>
+					</xsl:when>
+					<xsl:when test="@value"><xsl:copy-of select="@value"/></xsl:when>
+				</xsl:choose>
+				<xsl:value-of select="ext:map-load-uri(xforms:resource)"></xsl:value-of>
+			</xforms:resource>
+		</xsl:copy>
+	</xsl:template>
+	
 	<xsl:template match="@*|node()">
 		<xsl:copy>
 			<xsl:apply-templates select="@*" />
 			<xsl:apply-templates />
 		</xsl:copy>
 	</xsl:template>
+	
+	<xsl:function name="ext:map-load-uri" as="xs:string">
+	  <xsl:param name="uri" as="xs:string"/>
+	  <xsl:sequence  
+	     select="if ($uri = 'http://www.w3.org/TR/xforms11/')
+	             then '/xforms-test-suite/xforms11.html'
+	             else  if ($uri = 'http://www.w3.org')
+	             		then '/xforms-test-suite/www.w3.org.html'
+	             		else $uri"/>
+	</xsl:function>
+		
 </xsl:stylesheet>
