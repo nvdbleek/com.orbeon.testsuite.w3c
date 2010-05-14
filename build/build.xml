@@ -78,7 +78,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		
 		<mkdir dir="${orbeon.install.dir}/WEB-INF/resources/apps/xforms-test-suite/test-results"/>
 		<echo level="warning">Be sure that:</echo>
-		<echo level="warning">  * property oxf.url-rewriting.app-prefix is equal to '/apps'</echo> 
+		<echo level="warning">  * property oxf.url-rewriting.app-prefix is equal to '/apps' (you could run target copy-properties-local)</echo> 
 		<echo level="warning">  * WebAppResourceManagerFactory with /WEB-INF/resources has the highest priority</echo> 
 		<echo>Open ${orbeon.install.baseurl}/xforms-test-suite/ to run the tests.</echo>
 	</target>
@@ -149,6 +149,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<delete>
 			<fileset dir="${resources.dir}/XForms1.1/Edition1" includes="**/*.xhtml.bak" />
 		</delete>
+	</target>
+	
+	<target name="copy-properties-local">
+		<mkdir dir="${orbeon.install.dir}/WEB-INF/resources/config"/>
+		<copy file="src/orbeon/resources/config/properties-local.xml" todir="${orbeon.install.dir}/WEB-INF/resources/config"/>
 	</target>
 
 	

@@ -64,6 +64,7 @@
                          <td>Date</td>
                      </tr>
                      <xsl:for-each select="test">
+                     	<xsl:sort select="substring-before(@name, '.')" data-type="number"/>
                          <!-- <tr>
                              <xsl:variable name="headerCols" select="6 + count($config//config)"/>
                              <td colspan="{$headerCols}" style="background:#ccc;">
