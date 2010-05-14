@@ -24,7 +24,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <test-case xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner" xmlns:xf="http://www.w3.org/2002/xforms" xsi:schemaLocation="http://www.w3c.org/MarkUp/Forms/XForms/Test/Runner ../../../test-case.xsd">
    <open href="Chapt03/3.2/3.2.2/3.2.2.a.xhtml"/>
-   <assert-title title="3.2.2.a src attribute"/>
+   <assert-title title="3.2.2.a src attribute (non-normative)"/>
    <!-- FIXME check label of output -->
    <assert-control-value locator="xf-output-1" value="red"/>
+   <fail msg="Test not implemented yet!"/>
 </test-case>
