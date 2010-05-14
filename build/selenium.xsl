@@ -203,17 +203,17 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	<xsl:template match="xftr:assert-control-value-contains">
 		<tr>
-            <td>assertCondition</td>
-            <td>selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>").indexOf("<xsl:value-of select="@value"/>") != -1</td>
-            <td></td>
+            <td>assertEval</td>
+            <td>javascript{selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>").indexOf("<xsl:value-of select="@value"/>") != -1}</td>
+            <td>true</td>
          </tr>		
 	</xsl:template>
 
 	<xsl:template match="xftr:assert-control-value-in-range">
 		<tr>
-            <td>assertCondition</td>
-            <td>(selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") &gt;= <xsl:value-of select="@start"/>) &amp;&amp; (selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") &lt;= <xsl:value-of select="@end"/>)</td>
-            <td></td>
+            <td>assertEval</td>
+            <td>javascript{(selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") &gt;= <xsl:value-of select="@start"/>) &amp;&amp; (selenium.getXFormsControlValue("<xsl:value-of select="@locator"/>") &lt;= <xsl:value-of select="@end"/>)}</td>
+            <td>true</td>
          </tr>		
 	</xsl:template>
 
